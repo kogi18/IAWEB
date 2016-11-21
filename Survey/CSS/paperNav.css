@@ -1,0 +1,208 @@
+.paperNav-container{
+  text-align: initial;
+}
+
+#menu-button {
+  margin-left: 30%;
+  border: 2px solid rgba(41, 37, 47, .3);
+  background: rgba(41, 37, 47, 1);
+  padding: 14px;
+  width:  25px;
+  transition: background 750ms ease-in-out;
+  user-select: none;
+}
+
+.paperNav-container:hover #menu-button {
+  background: rgba(41, 37, 47, 0);
+}
+
+.hamburger {
+  position: relative;
+  width: 25px;
+  height: 20px;
+  transition: transform 750ms ease-in-out;
+}
+
+#menu-button:active .hamburger {
+  transition: transform 50ms;
+  transform: scale(.95);
+}
+
+.hamburger::before, .hamburger::after, .hamburger .inner {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: #ccc;
+  transform-origin: 100% 50%;
+  transition: all 750ms ease-in-out;
+}
+.hamburger::before {
+  top: -1px;
+}
+.hamburger .inner {
+  top: 9px;
+  transform-origin: 50% 50%;
+}
+.hamburger::after {
+  top: 19px;
+}
+
+.paperNav-container:hover .hamburger {
+  transform: rotateY(-180deg);
+}
+.paperNav-container:hover #menu-button:active .hamburger {
+  transform: scale(.95) rotateY(-180deg);
+}
+
+.paperNav-container:hover .hamburger::before,
+.paperNav-container:hover .hamburger::after,
+.paperNav-container:hover .hamburger .inner {
+  background: rgba(41, 37, 47, 1);
+}
+
+.paperNav-container:hover .hamburger::before {
+  transform: translate3d(-4px, 1px, 0) rotateZ(-45deg);  
+}
+.paperNav-container:hover .hamburger .inner {
+  transform: rotateY(-90deg); 
+  transition: transform 375ms, background-color 750ms ease-in-out;
+}
+.paperNav-container:hover .hamburger::after {
+  transform: translate3d(-4px, -1px, 0) rotateZ(45deg);  
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.paperNav-container:hover nav {
+  animation-duration: 10s;
+  animation-name: wind;
+  animation-iteration-count: infinite;
+}
+
+nav::before {
+  content: '';
+  position: absolute;
+  border-right: 1px solid rgba(41, 37, 47, .05);
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: 0;
+  background: rgba(162, 183, 190, .8);
+  transform: rotateY(90deg);
+  transition: transform 350ms;
+  transform-origin: 0 0;
+  transition-delay: 200ms;
+}
+.paperNav-container:hover nav::before {
+  transform: none;
+  transition-delay: 0;
+}
+
+nav ul {
+  position: absolute;
+  top: 25%;
+  left: 20px;
+  pointer-events: all;
+}
+
+nav li {
+  display: block;
+  overflow: hidden;
+  font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 26px;
+  line-height: 36px;
+  opacity: 0;
+  padding: 6px 0;
+  width: 220px;
+  transform: rotateY(90deg) rotateZ(-15deg);
+  transition: transform 350ms, opacity 250ms;
+  transform-origin: 0 0;
+}
+
+nav li a {
+  color: rgb(41, 37, 47);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+
+nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 220px;
+  bottom: 0;
+  height: 2px;
+  opacity: .5;
+  background: linear-gradient(to right, rgba(199, 25, 60, .4), rgba(199, 25, 60, .8));
+  transform: translateX(-220px);
+  transition: all 200ms 50ms;
+}
+nav li a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 400ms 100ms;
+}
+
+
+.paperNav-container:hover nav li {
+  opacity: 1;
+  transform: none;
+}
+
+nav li:nth-of-type(1) {
+  transition-delay: 400ms;
+}
+nav li:nth-of-type(2) {
+  transition-delay: 300ms;
+}
+nav li:nth-of-type(3) {
+  transition-delay: 200ms;
+}
+nav li:nth-of-type(4) {
+  transition-delay: 100ms;
+}
+nav li:nth-of-type(5) {
+  transition-delay: 0;
+}
+.paperNav-container:hover nav li:nth-of-type(1) {
+  transition-delay: 0;
+}
+.paperNav-container:hover nav li:nth-of-type(2) {
+  transition-delay: 100ms;
+}
+.paperNav-container:hover nav li:nth-of-type(4) {
+  transition-delay: 300ms;
+}
+.paperNav-container:hover nav li:nth-of-type(5) {
+  transition-delay: 400ms;
+}
+
+@keyframes wind {
+  0%, 100% {
+    transform: none; 
+  }
+  20% {
+    transform: rotateX(5deg) rotateY(8deg); 
+  }
+  40% {
+    transform: rotateX(-2deg); 
+  }
+  60% {
+    transform: rotateY(-3deg) rotateX(7deg); 
+  }
+  80% {
+    transform: rotateY(-4deg) rotateX(2deg); 
+  }
+}

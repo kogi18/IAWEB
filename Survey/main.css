@@ -6,6 +6,10 @@ navigation a{
 	margin-right: 10em;
 }
 
+li{
+	margin-bottom: 0.5em;
+}
+
 figure {
 	float: right;
 	text-align: center;
@@ -17,4 +21,10 @@ figcaption{
 
 img{
 	max-width:50%;
+}
+
+xmp{
+	background: gray;
+	tab-size: 1em;
+	max-width: 60%;
 }
