@@ -1,3 +1,20 @@
 body h1, h2{
 	text-align: center;
 }
+
+navigation a{
+	margin-right: 10em;
+}
+
+figure {
+	float: right;
+	text-align: center;
+}
+
+figcaption{
+	font-size: 10pt;
+}
+
+img{
+	max-width:50%;
+}
