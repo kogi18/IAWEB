@@ -91,7 +91,7 @@ nav {
 nav::before {
   content: '';
   position: absolute;
-  border-right: 1px solid rgba(41, 37, 47, .05);
+  border-left: 1px solid rgba(41, 37, 47, .05);
   top: -10px;
   bottom: -10px;
   left: -10px;
@@ -99,7 +99,7 @@ nav::before {
   background: rgba(162, 183, 190, .8);
   transform: rotateY(90deg);
   transition: transform 350ms;
-  transform-origin: 0 0;
+  transform-origin: 100% 0;
   transition-delay: 200ms;
 }
 .paperNav-container:hover nav::before {

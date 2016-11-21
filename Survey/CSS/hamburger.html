@@ -29,38 +29,76 @@
 					</ul>
 				</nav>
 			</div>
-			<figcaption>https://codepen.io/rboyce/pen/wlijs</figcaption>
-		</figure>
+				<figcaption>https://codepen.io/rboyce/pen/wlijs</figcaption>
+			</figure>
 
 		<!-- END OF ACTUAL CODE-->
 
 
 
 		<ul>
-			<li>Many variations: LINK</li>
+			<li>Metaphor: Menu packed together as a hamburger</li>
+			<li>Many variations but most commonly it rotates into an X</li>
 			<li>Maybe some useful data: <a href="https://vtldesign.com/web-strategy/website-design-development/hamburger-icon-flyout-menu-website-navigation/">https://vtldesign.com/web-strategy/website-design-development/hamburger-icon-flyout-menu-website-navigation/</a></li>
 		</ul>
 		<ul>
 			<li>HTML structure</li>
 			<xmp>
-				<div class="paperNav-container">
-					<div id="menu-button" role="button" title="sweet hamburger">
-						<div class="hamburger"><div class="inner"></div></div>
-					</div>
-					<nav>
-						<ul>
-							<li>
-								<a href="">Home Page</a>
-							</li>
-							<li>
-								<a href="">Other stuff</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+	<div class="paperNav-container">
+		<!-- ICON -->
+		<div id="menu-button" role="button" title="sweet hamburger">
+			<div class="hamburger"><div class="inner"></div></div>
+		</div>
+		<!-- HIDDEN MENU -->
+		<nav>
+			<ul>
+				<li>
+					<a href="">Home Page</a>
+				</li>
+				<li>
+					<a href="">Other stuff</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 			</xmp>
 
 			<li>Key CSS</li>
+			<xmp>
+	/*Creates the hamburger lines*/
+	.hamburger::before, .hamburger::after, .hamburger .inner {
+	  content: '';
+	  position: absolute;
+	  width: 25px;
+	  height: 2px;
+	  background: #ccc;
+	  transform-origin: 100% 50%;
+	  transition: all 750ms ease-in-out;
+	}
+	/*Turns the button around*/
+	.paperNav-container:hover .hamburger {
+	  transform: rotateY(-180deg);
+	}
+	/*Color change to make the button disappear*/
+	.paperNav-container:hover .hamburger::before,
+	.paperNav-container:hover .hamburger::after,
+	.paperNav-container:hover .hamburger .inner {
+	  background: rgba(41, 37, 47, 1);
+	}
+	/*Upper and bottom lines rotate into an X*/
+	.paperNav-container:hover .hamburger::before {
+	  transform: translate3d(-4px, 1px, 0) rotateZ(-45deg);  
+	}
+	.paperNav-container:hover .hamburger::after {
+	  transform: translate3d(-4px, -1px, 0) rotateZ(45deg);  
+	}
+	/*Middle line rotates into a point*/
+	.paperNav-container:hover .hamburger .inner {
+	  transform: rotateY(-90deg); 
+	  transition: transform 375ms, background-color 750ms ease-in-out;
+	}
+			</xmp>
+
 		</ul>
 		
 		<navigation>
