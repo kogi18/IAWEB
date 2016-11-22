@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Web UI Animation - CSS</title>
+		<title>Web UI Animation - CSS Hamburger</title>
 		<link rel="stylesheet" type="text/css" href="../main.css">
+		<link rel="stylesheet" type="text/css" href="hamburgerVariation.css">
 		<link rel="stylesheet" type="text/css" href="paperNav.css">
 	</head>
 
 	<body>
-		<h1>Navigation Hamburger</h1>
-		<h3>A menu interface</h3>
+		<h1>Navigation animation</h1>
+		<h3>Hamburger</h3>
 
 
 
 		<!-- THE ACTUAL CODE -->
+
 		<figure>
-			<div class="paperNav-container">
+			<div id="paperNav-container">
 				<div id="menu-button" role="button" title="sweet hamburger">
 					<div class="hamburger"><div class="inner"></div></div>
 				</div>
@@ -37,9 +39,42 @@
 
 
 		<ul>
-			<li>Metaphor: Menu packed together as a hamburger</li>
+			<li>A menu (hiding) interface/icon</li>
+			<li>Metaphor: Menu packed together tightly as a hamburger</li>
 			<li>Many variations but most commonly it rotates into an X</li>
-			<li>Maybe some useful data: <a href="https://vtldesign.com/web-strategy/website-design-development/hamburger-icon-flyout-menu-website-navigation/">https://vtldesign.com/web-strategy/website-design-development/hamburger-icon-flyout-menu-website-navigation/</a></li>
+			<!-- THE ACTUAL CODE -->
+			<figure class="left">
+				<div id="hamburgerVariation-container">
+					<div id="nav-icon1">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div id="nav-icon2">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div id="nav-icon3">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div id="nav-icon4">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<figcaption style="max-width: 300px;">https://codepen.io/designcouch/pen/Atyop</figcaption>
+			</figure>
+		<!-- END OF ACTUAL CODE-->
+
+			<li>Coined in Xerox 1981[source:vtldesign]</li>
 		</ul>
 		<ul>
 			<li>HTML structure</li>
@@ -102,8 +137,8 @@
 		</ul>
 		
 		<navigation>
-			<a href="../animation/uihowto.html">BACK</a>
-			<a href="hamburger.html">NEXT</a>
+			<a href="basic.html">BACK</a>
+			<a href="navigation.html">NEXT</a>
 		</navigation>
 
 	</body>

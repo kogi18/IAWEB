@@ -4,6 +4,12 @@ body h1, h2{
 
 navigation a{
 	margin-right: 10em;
+	border: solid rgb(200,200,200) 2px;
+	color: rgb(100,100,100);
+	padding: 3px 5px 3px 5px;
+-webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
 }
 
 li{
@@ -15,12 +21,18 @@ figure {
 	text-align: center;
 }
 
+figure.left{
+	float: none;
+	text-align: center;
+}
+
 figcaption{
 	font-size: 10pt;
+	padding: 0 3%;
 }
 
 img{
-	max-width:50%;
+	max-width:60%;
 }
 
 xmp{
