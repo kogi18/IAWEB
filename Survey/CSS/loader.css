@@ -18,6 +18,106 @@
   animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;
 }
 
+.pulzLoader
+
+
+.pulzLoader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.pulzLoader div {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  animation: pulz-loading 1s ease-in-out infinite;
+}
+.pulzLoader div:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.pulzLoader div:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.pulzLoader div:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.pulzLoader div:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+.dotsLoader{
+  overflow: hidden;
+}
+
+.dotsLoader div {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: 160px;
+  background-color: black;
+  border-radius: 50%;
+  animation: dots-move 4s infinite cubic-bezier(.2,.64,.81,.23);
+}
+.dotsLoader div:nth-child(2) {
+  animation-delay: 150ms;
+}
+.dotsLoader div:nth-child(3) {
+  animation-delay: 300ms;
+}
+.dotsLoader div:nth-child(4) {
+  animation-delay: 450ms;
+}
+
+.progressbarloader {
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+.progressbarloader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color: #2980b9;
+  animation: bar-loading 2s linear infinite;
+}
+
+@keyframes bar-loading {
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
+@keyframes dots-move {
+  0% {left: 0%;}
+  75% {left:100%;}
+  100% {left:100%;}
+}
+
+@keyframes pulz-loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
 @keyframes rotate {
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);

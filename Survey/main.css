@@ -40,3 +40,34 @@ xmp{
 	tab-size: 1em;
 	max-width: 60%;
 }
+
+#color-animation{
+	width: 100px;
+    height: 100px;
+    margin-right: 100px;
+    background-color: red;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:red;opacity: 1;transform: scale(1);}
+    25%  {background-color:yellow;transform: scale(0.8);}
+    50%  {background-color:blue;transform: scale(1);}
+    75%  {background-color:green;transform: scale(1.5);}
+    100% {background-color:red;opacity: 0.2;transform: scale(2);}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:red;opacity: 1;transform: scale(1);}
+    25%  {background-color:yellow;transform: scale(0.8);}
+    50%  {background-color:blue;transform: scale(1);}
+    75%  {background-color:green;transform: scale(1.5);}
+    100% {background-color:red;opacity: 0.2;transform: scale(2);}
+}
