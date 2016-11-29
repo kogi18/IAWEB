@@ -9,17 +9,48 @@
 		<h1>CSS</h1>
 		<h3>Cascading Style Sheets Animations</h3>
 		<ul>
-			<li>Do everything you can with CSS, use JS for remainder</li>
+			<li>Do everything you can with CSS, use JS for remainder.</li>
+			<li>Fast,</li>
+			<li>Stable (Fault tolerant),</li>
+			<li>Simple (Change between styles).</li>
 			<ul>
-				<li>Check browser support</li>
+				<li>Add the animation CSS properties to the changing HTML element</li>
+				<ul>
+					<li><u><b>animation-name</b></u>: desiredName;</li>
+					<li><u><b>animation-duration</b></u>: 5s;</li>
+					<li><b>animation-timing-function</b>: linear | ease | ease-in | ease-out | ease-in-out;</li>
+					<li><b>animation-delay</b>: 2s;</li>
+					<li><b>animation-iteration-count</b>: number | infinite;</li>
+					<li><b>animation-direction</b>: normal | reverse | alternate| alternate-reverse;</li>
+					<li><b>animation-fill-mode:</b>:none | forwards | backwards | both</li> 
+					<li><b>animation-play-state</b>: paused | running</li>
+					<li><b>animation</b>: desiredName 5s linear 2s infinite alternate none running;</li>
+				</ul>
+				<li>Fine-tune the actual animation through keyframes</li>
+				<ul>
+					<li><b>@keyframes</b> rule</li>
+					<xmp>
+div{
+	animation: desiredName 5s linear 2s infinite alternate;
+}
+
+@keyframes desiredName {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+					</xmp>
+				</ul>
+				<li>A powerful CSS property to change is <b>transform</b> with <b>transform-origin</b></li>
+				<ul>
+					<li>translate(x,y) | translate3d(x,y,z) | translateX(x) | translateY(y) | translateZ(z)</li>
+					<li>scale(x,y) | scale3d(x,y,z) | scaleX(x) | scaleY(y) | scaleZ(z)</li>
+					<li>rotate(angle) | scale3d(x,y,z, angle) | rotateX(angle) | rotateY(angle) | rotateZ(angle)</li>
+					<li>skew(x-angle,y-angle) | skewX(angle) | skewY(angle)</li>
+					<li>perspective(n)</li>
+				</ul>
 			</ul>
-			<li>Fast</li>
-			<li>Simple</li>
-			<ul>
-				<li>Add an CSS animation attribute to an HTML element</li>
-				<li>Finetune the animation trough keyframes</li>
-			</ul>
-			<li>Stable (Fault tolerant)</li>
 		</ul>
 
 		
