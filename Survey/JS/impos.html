@@ -12,8 +12,6 @@
 		<ul>
 			<li>Runtime controls and events HTML structure</li>
 			<xmp>
-	<body>
-  <link href='//fonts.googleapis.com/css?family=Signika+Negative:300' rel='stylesheet' type='text/css'>
 <div id="demo">
   <div id="bg">
     <div id="text">Impossible with CSS Animation.</div>
@@ -25,14 +23,17 @@
   <button id="reverse">reverse</button>
   <button id="restart">restart</button>
   <div>Speed: 
-    <label><input type="radio" name="speed" value="0.25" id="slow"> slow</label>
-    <label><input type="radio" name="speed" value="1" id="normal" checked> normal</label>
-    <label><input type="radio" name="speed" value="2" id="fast"> fast</label>
+    <label><input type="radio" name="speed"
+    	value="0.25" id="slow"> slow</label>
+    <label><input type="radio" name="speed"
+    	value="1" id="normal" checked> normal</label>
+    <label><input type="radio" name="speed"
+    	value="2" id="fast"> fast</label>
   </div>
 </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js'></script>
+  <script src='.../jquery.min.js'></script>
+<script src='.../jquery-ui.min.js'></script>
+<script src='.../TweenMax.min.js'></script>
 
     <script src="js/index.js"></script>
 
@@ -78,8 +79,9 @@ var $text = $("#text"),
     $restart = $("#restart"),
     $speed = $("input[name='speed']"),
     $slider = $("#slider"),
-    //"tl" is the timeline we'll add our tweens to. Then we can easily control the whole sequence as one object. 
-    tl = new TimelineLite({onUpdate:updateSlider, onComplete:onComplete, onReverseComplete:onComplete, paused:true});
+    //"tl" is the timeline we'll add our tweens to
+    tl = new TimelineLite({onUpdate:updateSlider,
+    onComplete:onComplete, onReverseComplete:onComplete, paused:true});
 
 	function updateSlider() {
   $slider.slider("value", tl.progress() * 100);
@@ -90,14 +92,16 @@ function onComplete() {
 }
 
 //do a simple split of the text so we can animate each character 
-//(doesn't require the advanced features of SplitText, so we just use split() and join())
-$text.html("<span>" + $text.html().split("").join("</span><span>").split("<span> </span>").join("<span>&nbsp;</span>") + "</span>");
+$text.html("<span>" + $text.html().split("").join("</span><span>")
+ .split("<span> </span>").join("<span>&nbsp;</span>") + "</span>");
 
 //set a perspective on the container
 TweenLite.set($text, {perspective:500});
 
 //all of the animation is created in this one line:
-tl.staggerTo($("#text span"), 4, {transformOrigin:"50% 50% -30px", rotationY:-360, rotationX:360, rotation:360, ease:Elastic.easeInOut}, 0.02);
+tl.staggerTo($("#text span"), 4, {transformOrigin:"50% 50% -30px",
+ rotationY:-360, rotationX:360, rotation:360,
+ ease:Elastic.easeInOut}, 0.02);
 
 //slider and button controls from here on...
 $slider.slider({
