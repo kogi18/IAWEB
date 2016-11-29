@@ -26,6 +26,13 @@ SVG Icons - svgicons.sparkk.fr
   stroke-width: 1;
 }
 
+.beer-container{
+	background-color: #ff9c08;
+    border-radius: 50%;
+    padding: 20px;
+    margin-right: 10%;
+}
+
 @keyframes doc-delete {
     0% { transform: translate(75%) scale(0.25); }
     15% { transform: translate(75%) scale(0.25); }
