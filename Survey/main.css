@@ -1,5 +1,10 @@
+body{
+    font-size: 2em;
+}
+
 body h1, h2{
 	text-align: center;
+    font-size: 3em;
 }
 
 navigation a{
@@ -13,7 +18,7 @@ navigation a{
 }
 
 li{
-	margin-bottom: 0.5em;
+	margin-bottom: 0.75em;
 }
 
 figure {
@@ -38,7 +43,8 @@ img{
 xmp{
 	background: lightgray;
 	tab-size: 1em;
-	max-width: 60%;
+	max-width: 55%;
+    font-size: 0.75em;
 }
 
 #color-animation{
