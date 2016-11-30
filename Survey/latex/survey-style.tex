@@ -1,0 +1,664 @@
+%----------------------------------------------------------------
+%
+%  File    :  survey-style.tex
+%
+%  Author  :  Keith Andrews, IICM, TU Graz, Austria
+% 
+%  Created :  27 May 93
+% 
+%  Changed :  19 Feb 2004
+% 
+%----------------------------------------------------------------
+
+
+\chapter{Language and Writing Style}
+
+\label{chap:Style}
+
+
+
+The classic reference for English writing style and grammar is
+\citet{StrunkWhite}. The original text is now available for free
+online \citep{Strunk}, so there is no excuse at all for writing poor
+English. Readers should consult it first, then continue reading this
+chapter. Another good free guide is \citet{NASAGuide}.
+
+\citet{Zobel-WritingCompSci} and \citet{BugsInWriting} are guides
+specifically aimed at computer science students.
+\citet{Phillips-HowGetPhD} gives practical advice for PhD
+students.
+
+The following Sections~\ref{sec:Clear} and \ref{sec:Gender} are
+adapted from the CHI'94 language and writing style guidelines.
+
+
+
+
+
+
+
+\section{Some Basic Rules of English}
+
+There are a few basic rules of English for academic writing, which are
+broken regularly by my students, particularly if they are non-native
+speakers of English. Here are some classic and often encountered
+examples:
+
+\begin{itemize}
+
+\item \emph{Never} use I, we, or you.
+
+Write in the passive voice (third person).
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & You can do this in two ways.   \\
+Good: & There are two ways this can be done.  \\
+\end{tabular}
+
+
+
+\item \emph{Never} use he or she, his or her.
+
+Write in the passive voice (third person).
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The user speaks his thoughts out loud.   \\
+Good: & The thoughts of the user are spoken out loud.  \\
+\end{tabular}
+
+See Section~\ref{sec:Gender} for many more examples.
+
+
+
+\item Stick to a consistent dialect of English. Choose either
+  British or American English and keep to it throughout the
+  whole of your thesis.
+
+
+
+\item Do \emph{not} use slang abbreviations such as ``it's'',
+  ``doesn't'', or ``don't''.
+
+Write the words out in full: ``it is'', ``does not'', and ``do not''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & It's very simple to\ldots       \\
+Good: & It is very simple to\ldots       \\
+\end{tabular}
+
+
+
+\item Do \emph{not} use abbreviations such as ``e.g.'' or
+  ``i.e.''. 
+
+Write the words out in full: ``for example'' and ``that is''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & \ldots in a tree, e.g. the items\ldots        \\
+Good: & \ldots in a tree, for example the items\ldots   \\
+\end{tabular}
+
+
+
+\item Do \emph{not} use slang such as ``a lot of''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & There are a lot of features\ldots       \\
+Good: & There are many features\ldots       \\
+\end{tabular}
+
+
+
+\item Do \emph{not} use slang such as ``OK'' or ``big''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & \ldots are represented by big areas.    \\
+Good: & \ldots are represented by large areas.  \\
+\end{tabular}
+
+
+
+\item Do \emph{not} use slang such as ``gets'' or ``got''.
+
+Use ``becomes'' or ``obtains'', or use the passive voice (third
+person).
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The radius gets increased\ldots       \\
+Good: & The radius is increased\ldots         \\
+\end{tabular}
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The user gets disoriented\ldots       \\
+Good: & The user becomes disoriented\ldots    \\
+\end{tabular}
+
+
+
+
+\item \emph{Never} start a sentence with ``But''.
+
+Use ``However,'' or ``Nevertheless,''. Or consider joining the
+sentence to the previous sentence with a comma.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & But there are numerous possibilities\ldots       \\
+Good: & However, there are numerous possibilities\ldots  \\
+\end{tabular}
+
+
+
+\item \emph{Never} start a sentence with ``Because''.
+
+Use ``Since'', ``Owing to'', or ``Due to''. Or turn the two
+halves of the sentence around.
+
+
+
+
+\item \emph{Never} start a sentence with ``Also''. Also should
+be placed in the middle of the sentence.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Also the target users are considered. \\
+Good: & The target users are also considered. \\
+\end{tabular}
+
+
+
+\item Do \emph{not} use ``that'' as a connecting word.
+
+Use ``which''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & \ldots a good solution that can be computed easily.  \\
+Good: & \ldots a good solution which can be computed easily.  \\
+\end{tabular}
+
+
+
+
+\item Do \emph{not} write single-sentence paragraphs. 
+
+Avoid writing two-sentence paragraphs. A paragraph should contain at
+least three, if not more, sentences.
+
+
+\end{itemize}
+
+
+
+% rules on the use of a comma in lists
+% http://en.wikipedia.org/wiki/Serial_comma
+
+
+
+
+
+
+
+
+\section{Avoid Austrianisms}
+\label{sec:Austrianisms}
+
+
+I see these mistakes time and time again. Please do not
+let me read one of them in your work.
+
+
+
+\begin{itemize}
+
+
+\item ``actual'' \neqsym ``current'' 
+
+If you mean ``aktuell'' in German, you probably mean
+``current'' in English.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The actual selection is cancelled. \\
+Good: & The current selection is cancelled. \\
+\end{tabular}
+
+
+
+\item ``allows to'' is not English.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The prototype allows to arrange components\ldots \\
+Good: & The prototype supports the arrangement of components\ldots \\
+\end{tabular}
+
+% they allow to achieve
+
+
+
+\item ``enables to'' is not English.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & it enables to recognise meanings\ldots \\
+Good: & it enables the recognition of meanings\ldots \\
+\end{tabular}
+
+
+\item ``according'' \neqsym ``corresponding'' 
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & For each browser, an according package is created. \\
+Good: & For each browser, a corresponding package is created. \\
+\end{tabular}
+
+
+
+\item ``per default'' is not English.
+
+Use ``by default''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Per default, the cursor is red. \\
+Good: & By default, the cursor is red. \\
+\end{tabular}
+
+
+
+
+\item ``As opposed to'' is not English.
+
+Use ``In contrast to''.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & As opposed to C, Java is object-oriented. \\
+Good: & In contrast to C, Java is object-oriented. \\
+\end{tabular}
+
+
+\item ``\emph{anything}-dimensional'' is spelt with a hyphen.
+
+For example: two-dimensional, three-dimensional.
+
+
+
+\item ``\emph{anything}-based'' is spelt with a hyphen.
+
+For example: tree-based, location-based.
+
+
+
+\item ``\emph{anything}-oriented'' is spelt with a hyphen.
+
+For example: object-oriented, display-oriented.
+
+
+\item ``\emph{anything}-side'' is spelt with a hyphen.
+
+For example: client-side, server-side.
+
+
+\item ``\emph{anything}-friendly'' is spelt with a hyphen.
+
+For example: user-friendly, customer-friendly.
+
+
+\item ``\emph{anything}-to-use'' is spelt with hyphens.
+
+For example: hard-to-use, easy-to-use.
+
+
+
+\item ``realtime'' is spelt with a hyphen if used as
+  an adjective, or as two separate words if used as a noun.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & \ldots display the object in realtime.  \\
+Bad:  & \ldots using realtime shadow casting.   \\
+Good: & \ldots display the object in real time. \\
+Good: & \ldots using real-time shadow casting.  \\
+\end{tabular}
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Clear Writing}
+\label{sec:Clear}
+
+The written and spoken language of your thesis is English as
+appropriate for presentation to an international audience. Please take
+special care to insure that your work is adapted to such an audience.
+In particular:
+
+\begin{itemize}
+\item Write in a straight-forward style, using simple sentence
+  structure.
+
+\item Use common and basic vocabulary. For example, use ``unusual''
+  for ``arcane'', and ``specialised'' for ``erudite''.
+
+\item Briefly define or explain all technical vocabulary the first
+  time it is mentioned, to ensure that the reader understands it.
+
+\item Explain all acronyms and abbreviations. For example, the first
+  time an acronym is used, write it out in full and place the acronym
+  in parentheses.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & \ldots When using the GUI version, the use may\ldots  \\
+Good: & \ldots When using the Graphical User Interface (GUI) version, the use may\ldots  \\
+\end{tabular}
+
+
+\item Avoid local references. For example, not everyone knows the
+  names of all the provincial capitals of Austria. If local context is
+  important to the material, describe it fully.
+
+\item Avoid ``insider'' comments. Ensure that your whole audience
+  understands any reference whose meaning you do not describe. For
+  example, do not assume that everyone has used a Macintosh or a
+  particular application.
+
+\item Do not ``play on words''. For example, do not use ``puns'',
+  particularly in the title of a piece. Phrases such as ``red
+  herring'' require cultural as well as technical knowledge of
+  English.
+
+\item Use unambiguous formats to represent culturally localised things
+  such as times, dates, personal names, currencies, and even
+  numbers. 9/11 is the 9th of November in most of the world.
+
+\item Be careful with humour. In particular, irony and sarcasm can be
+  hard to detect if you are not a native speaker.
+
+\item If you find yourself repeating the same word or phrase too often,
+  look in a thesaurus such as \citet{Roget,RogetInt} for an
+  alternative word with the same meaning.
+\end{itemize}
+
+
+Clear writing experts recognise that part of writing understandable
+documents is understanding and responding to the needs of the intended
+audience. It is the writer's job to maintain the audience's
+willingness to go on reading the document. Readers who are continually
+stumped by long words or offended by a pompous tone are likely to stop
+reading and miss the intended message.
+
+
+
+
+
+
+
+
+\section{Avoiding Gender Bias}
+\label{sec:Gender}
+
+Part of striking the right tone is handling gender-linked terms
+sensitively. Use of gender terms is controversial. Some writers use
+the generic masculine exclusively, but this offends many readers.
+Other writers are experimenting with ways to make English more
+neutral. Avoiding gender bias in writing involves two kinds of
+sensitivity:
+\begin{enumerate}
+\item being aware of potential bias in the kinds of observations and
+  characterisations that it is appropriate to make about women and men,
+  and
+
+\item being aware of certain biases that are inherent in the language
+  and of how you can avoid them.
+\end{enumerate}
+
+
+The second category includes using gender-specific nouns and pronouns
+appropriately. Here are some guidelines for handling these
+problems:
+\begin{itemize}
+
+\item Use a gender-neutral term when speaking generically of people:
+
+\begin{tabular}{ll}
+   man                 &   the human race        \\
+   mankind             &   humankind, people     \\
+   manpower            &   workforce, personnel  \\
+   man on the street   &   average person        \\
+\end{tabular}
+
+
+\item Avoid clearly gender-marked titles. Use neutral terms when
+good ones are available. For example:
+
+\begin{tabular}{ll}
+  chairman     &  chairperson               \\
+  spokesman    &  speaker, representative   \\
+  policeman    &  police officer            \\
+  stewardess   &  flight attendant          \\
+\end{tabular}
+
+
+
+\item If you are speaking of the holder of a position and you know the
+  gender of the person who currently occupies the position, use the
+  appropriate gender pronoun.  For example, suppose the ``head nurse''
+  is a man:
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The head nurse must file her report every Tuesday. \\
+Good: & The head nurse must file his report every Tuesday. \\
+\end{tabular}
+
+
+
+\item Rewrite sentences to avoid using gender pronouns. For example,
+  use the appropriate title or job name again:
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad: &
+Interview the user first and then ask him to fill out a questionnaire. \\
+%
+Good: &
+Interview the user first and then ask the user to fill out a questionnaire. \\
+\end{tabular}
+
+
+
+\item To avoid using the third person singular pronoun (his or her),
+  recast your statement in the plural:
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Each student should bring his text to class. \\
+Good: & All students should bring their texts to class. \\
+\end{tabular}
+
+
+
+\item Address your readers directly in the second person, if it is
+  appropriate to do so:
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The student must send in his application by the final deadline date. \\
+Good: & Send in your application by the final deadline date. \\
+\end{tabular}
+
+
+
+\item Replace third person singular possessives with articles.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Every student must hand his report in on Friday. \\
+Good: & Every student must hand the report in on Friday. \\
+\end{tabular}
+
+
+
+\item Write your way out of the problem by using the passive voice.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Each department head should do his own projections. \\
+Good: & Projections should be done by each department head. \\
+\end{tabular}
+
+
+
+\item Avoid writing awkward formulations such as ``s/he,'' ``he/she,''
+  or ``his/her.''  They interfere when someone is trying to read a
+  text aloud.  If none of the other guidelines has been helpful, use
+  the slightly less awkward forms ``he or she,'' and ``his or hers.''
+
+\end{itemize}
+Remember, the goal is to avoid constructions that will offend your
+readers so much as to distract them from the content of your work.
+
+
+
+
+\section{When to use Capitalisation}
+
+\emph{Capitalisation} means using a capital (upper case) initial
+letter for a word. \emph{Lowercasing} means writing the entire word in
+lower case. In many common writing styles, headings and titles are
+partially capitalised: the first and the principal (main) words are
+capitalised and other words are lowercased.
+
+Proper names, such as the names of people, towns, and countries, are
+always capitalised (Keith Andrews, the United Kingdom).
+
+
+
+\subsection{Titles and Headings}
+
+Capitalise all principal words: nouns, pronouns, adjectives, verbs,
+and adverbs, and the first word. Lowercase all articles, coordinating
+conjunctions (``for'', ``and'', ``nor'', ``but'', ``or'', ``yet'',
+``so''), and prepositions.
+
+For example:
+\begin{itemize}
+
+\item Here, ``it'' is a pronoun, which should always be capitalised.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Saying it Directly \\
+Good: & Saying It Directly \\
+\end{tabular}
+
+
+
+\item Here, ``is'' is a verb, which should always be capitalised.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & When is Enough Enough? \\
+Good: & When Is Enough Enough? \\
+\end{tabular}
+
+
+
+\item Here, ``in'' is being used as a preposition and should be 
+lowercased.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & The Elephant In the Room. \\
+Good: & The Elephant in the Room. \\
+\end{tabular}
+
+
+\item Here, ``in'' is being used as an adverb and should be 
+capitalised.
+
+\begin{tabular}{lp{0.9\hsize}}
+Bad:  & Handing in Your Work. \\
+Good: & Handing In Your Work. \\
+\end{tabular}
+
+
+\end{itemize}
+
+See \citet{WB-Capitalisation} for some slightly different rules and
+some more examples.
+
+
+% Capitalization in Titles
+% http://www.writersblock.ca/tips/monthtip/tipmar98.htm
+
+
+
+
+\subsection{Captions}
+
+The short version of a caption for a figure, table, or listing should
+be capitalised like a heading. It appears in the List of Figures or
+List of Tables. The long version of a caption for a figure, table, or
+listing should be written as full sentences, i.e. only the first word
+of each sentence and any proper names are capitalised.
+
+
+
+\subsection{Chapters, Sections, Figures and Tables}
+
+A specific, named or numbered entity, such as a particular chapter,
+section, figure, table, or listing is considered to be a proper name
+and thus the word Chapter, Section, Figure, etc.\ \emph{should be
+  capitalised}. For example, Chapter~\ref{chap:Browsers},
+Section~\ref{sec:Gender}, Figure~\ref{fig:Pistol},
+Table~\ref{tab:WinIconicLang}, or Listing~\ref{list:BibFile}. However,
+if an entity is not specifically named or numbered, then it should
+\emph{not} be capitalised. For example, when refering to the first
+chapter or the next section, without giving a name or number.
+
+
+
+
+
+
+
+
+
+\section{Use a Spelling Checker}
+
+In these days of high technology, spelling mistakes and typos are
+inexcusable. It is \emph{very} irritating for your supervisor to have
+to read through and correct spelling mistake after spelling mistake
+which could have been caught by an automated spelling checker.
+Believe me, irritating your supervisor is not a good idea.
+
+So, use a spelling checker \emph{before} you hand in \emph{any}
+version, whether it is a draft or a final version.
+Since this is apparently often forgotten, and sometimes even wilfully
+ignored, let me make it absolutely clear:
+\begin{quote}
+\begin{em}
+Use a spelling checker, please. \\
+Use a spelling checker! \\
+Use a spelling checker, you moron. \\
+\end{em}
+\end{quote}
+
+
+
+
+
+\section{Use a Dictionary}
+
+If you are not quite sure of the meaning of a word, then use a
+dictionary.  \citet{DictionaryCom} is a free English dictionary,
+\citet{DictChemnitz} and \citet{DictLeoOrg} are two very good
+English-German dictionaries.
+
+
+
+
+\section{Use a Thesaurus}
+
+If a word has been used several times already, and using another
+equivalent word might improve the readability of the text, then
+consult a thesaurus. \citet{Roget} and \citet{RogetInt} are free
+English thesauri.
+
+

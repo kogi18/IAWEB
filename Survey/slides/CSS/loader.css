@@ -1,0 +1,142 @@
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.squareloader {
+  width: 60px;
+  height: 60px;
+  margin: 60px;
+  animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;
+}
+
+.pulzLoader
+
+
+.pulzLoader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.pulzLoader div {
+  display: inline-block;
+  width: 10px;
+  height: 40px;
+  border-radius: 4px;
+  animation: pulz-loading 1s ease-in-out infinite;
+}
+.pulzLoader div:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.pulzLoader div:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.pulzLoader div:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.pulzLoader div:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+.dotsLoader{
+  overflow: hidden;
+}
+
+.dotsLoader div {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 450px;
+  background-color: black;
+  border-radius: 50%;
+  animation: dots-move 4s infinite cubic-bezier(.2,.64,.81,.23);
+}
+.dotsLoader div:nth-child(2) {
+  animation-delay: 150ms;
+}
+.dotsLoader div:nth-child(3) {
+  animation-delay: 300ms;
+}
+.dotsLoader div:nth-child(4) {
+  animation-delay: 450ms;
+}
+
+.progressbarloader {
+  height: 10px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+.progressbarloader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 10px;
+  background-color: #2980b9;
+  animation: bar-loading 2s linear infinite;
+}
+
+@keyframes bar-loading {
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
+@keyframes dots-move {
+  0% {left: 50%;}
+  75% {left:100%;}
+  100% {left:100%;}
+}
+
+@keyframes pulz-loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+@keyframes background {
+  0% {
+  background-color: #27ae60;
+  }
+  50% {
+    background-color: #9b59b6;
+  }
+  100% {
+    background-color: #c0392b;
+  }
+}
