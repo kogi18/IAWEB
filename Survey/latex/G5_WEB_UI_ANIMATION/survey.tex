@@ -1,0 +1,719 @@
+%----------------------------------------------------------------
+%
+%  File    :  survey.tex
+%
+%  Author  :  Keith Andrews, IICM, TU Graz, Austria
+%
+%  Created :  24 Mar 2010
+%
+%  Changed :  22 Nov 2016
+%
+%----------------------------------------------------------------
+
+
+\documentclass[11pt,onecolumn,twoside]{report}
+
+\usepackage[          % set page and margin sizes
+  a4paper,
+  twoside,
+  top=5mm,
+  bottom=10mm,
+  inner=15mm,
+  outer=15mm,
+  bindingoffset=10mm,
+  head=10mm,
+  foot=10mm,
+  headsep=15mm,
+  footskip=15mm,
+  includeheadfoot,
+]{geometry}
+% A4 is 210 x 297 mm
+
+
+
+\usepackage{txfonts}            % new times fonts
+\usepackage{relsize}            % relative font sizes \smaller \larger
+\usepackage{float}              % H for float placement
+\usepackage{setspace}           % line spacing
+
+\usepackage[T1]{fontenc}        % 8-bit output chars (must be before inputenx)
+\usepackage[utf8]{inputenx}     % input char encoding
+
+\usepackage{textcomp}           % symbols such as \texttimes and \texteuro
+\usepackage{latexsym}
+
+\usepackage{xspace}
+\usepackage{etoolbox}           % for \newrobustcmd
+\usepackage{makecmds}           % for \makecommand
+
+
+\usepackage[english,austrian,british]{babel}
+
+
+\usepackage[bf,sf]{titlesec}
+
+
+
+\setlength{\textfloatsep}{10mm plus 2mm minus 1mm}
+\setlength{\floatsep}{10mm plus 2mm minus 1mm}
+\setlength{\intextsep}{10mm plus 2mm minus 1mm}
+
+\setlength{\dbltextfloatsep}{10mm plus 2mm minus 1mm}
+\setlength{\dblfloatsep}{10mm plus 2mm minus 1mm}
+
+\setlength{\abovecaptionskip}{4mm plus 2mm minus 1mm}
+\setlength{\belowcaptionskip}{0mm}
+
+
+
+
+% use caption and subfig (caption2 and subfigure are now obsolete)
+
+\usepackage[
+  position=bottom,
+  margin=1cm,
+  font=small,
+  labelfont={bf,sf},
+  format=hang,
+  indention=0mm,
+]{caption,subfig}
+
+\captionsetup[subfigure]{
+  margin=0pt,
+  parskip=0pt,
+  hangindent=0pt,
+  indention=0pt,
+  singlelinecheck=true,
+}
+
+
+
+
+% fancyhdr to make nice headers and footers
+% and deal with long chapter names
+
+\usepackage{fancyhdr}         % headers and footers
+\pagestyle{fancy}             % must call to set defaults before redefining
+
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\thechapter.\ #1}{}
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection.\ #1}
+}
+\renewcommand{\headrulewidth}{0mm}
+\renewcommand{\footrulewidth}{0mm}
+\newcommand{\headlook}{\sffamily}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{%
+\parbox[t]{0.8\textwidth}{\headlook\nouppercase{\rightmark}}
+}
+\fancyhead[RE]{%
+\parbox[t]{0.8\textwidth}{\raggedleft\headlook\nouppercase{\leftmark}}
+}
+
+
+%\fancypagestyle{plain}{%   redefine plain style, but doesn't work
+%  \fancyhf{}    % clear all header and footer fields
+%  \fancyfoot[C]{\headlook \thepage} % except the center
+%  \renewcommand{\headrulewidth}{0pt}
+%  \renewcommand{\footrulewidth}{0pt}
+%}
+
+
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0.0,0.2,0.0}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.2}
+\definecolor{darkred}{rgb}{0.2,0.0,0.0}
+\definecolor{verylightgrey}{gray}{0.95}
+\definecolor{lightgrey}{gray}{0.9}
+\definecolor{black}{gray}{0.0}
+
+
+\usepackage{tabularx}
+
+
+\usepackage{listings}                 % for listings of source code
+\usepackage{calc}                     % for calulation below
+
+\makeatletter
+\newlength{\numwidth}%
+\setlength{\numwidth}{\widthof{\normalfont{\lst@numberstyle{99}}}}% Up to 2-digit (99) line numbers
+\def\lst@PlaceNumber{%
+  \makebox[\numwidth+1em][l]{%
+    \makebox[\numwidth][r]{\normalfont\lst@numberstyle{\thelstnumber}}%
+  }%
+}
+\makeatother
+
+\lstset{                              % set parameters for listings
+  floatplacement=tp,                  % default float placement
+  numberbychapter,
+  inputencoding=utf8,
+  language=,                          % empty = plain text
+  basicstyle=\small\ttfamily,
+  tabsize=2,
+  xleftmargin=1cm,
+  xrightmargin=1cm,
+  frame=none,
+  framexleftmargin=0mm,
+  rulesepcolor=\color{verylightgrey},
+  numbers=none,
+  numberstyle=\scriptsize,
+  numbersep=2ex,
+  breaklines,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\bfseries,
+  identifierstyle=,
+  stringstyle=,
+  captionpos=b,
+  abovecaptionskip=\abovecaptionskip,
+  belowcaptionskip=\belowcaptionskip,
+  aboveskip=\floatsep,
+  belowskip=\floatsep,
+  extendedchars=true,
+  literate=%
+    {©}{{\textcopyright}}1
+    {€}{{\texteuro}}1
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ö}{{\"o}}1
+    {ä}{{\"a}}1
+    {ü}{{\"u}}1,       % map some utf8 chars to replacements
+}
+
+
+\lstdefinelanguage{biblatex}   % based on biblatex v 2.7a from 2013-07-14
+{
+  keywords={%
+    @article,@book,@mvbook,@inbook,@bookinbook,@suppbook,%
+    @booklet,@collection,@mvcollection,@incollection,@suppcollection,%
+    @manual,@misc,@online,@patent,@periodical,@suppperiodical,%
+    @proceedings,@mvproceedings,@inproceedings,@reference,@mvreference,%
+    @inreference,@report,@set,@thesis,@unpublished,@xdata,%
+    @conference,@electronic,@mastersthesis,@phdthesis,@techreport,@www,%
+    @artwork,@audio,@bibnote,@commentary,@image,@jurisdiction,@legislation,%
+    @legal,@letter,@movie,@music,@performance,@review,@software,%
+    @standard,@video%
+  },
+  comment=[l][\itshape]{@comment},
+  sensitive=false,
+}
+
+
+\usepackage[short]{datetime}   % load datetime *after* babel, requires fmtcount
+% \newdateformat{britdate}{%
+% \ordinaldate{\THEDAY} \,\monthname[\THEMONTH] \THEYEAR
+% }
+\newdateformat{keithdate}{%
+\twodigit{\THEDAY}~\shortmonthname[\THEMONTH]~\THEYEAR
+}
+
+
+\usepackage[hyphens,obeyspaces]{url}
+\def\UrlFont{\smaller\ttfamily}
+
+
+
+\usepackage[
+  autostyle,
+  english=british,
+  threshold=0,
+  thresholdtype=lines,
+]{csquotes}
+\renewcommand{\mkcitation}[1]{\space#1}
+
+\newenvironment*{smallquote}          % smaller text within a block quote
+  {\quote\smaller}
+  {\endquote}
+\SetBlockEnvironment{smallquote}
+
+% put quotation marks around block quotes
+% \renewenvironment{quoteblock}{\openautoquote}{\closeautoquote}
+
+% I prefer double quotes as outer
+\DeclareQuoteStyle[keithbritish]{british}%  [variant]{style}
+  {\textquotedblleft}%                      opening outer mark
+  {\textquotedblright}%                     closing outer mark
+  [0.05em]%
+  {\textquoteleft}%                         opening inner mark
+  {\textquoteright}%                        closing inner mark
+
+\setquotestyle[keithbritish]{british}
+
+
+
+\usepackage[
+  backend=biber,
+  bibstyle=authoryear-ka,
+  citestyle=authoryear-ka,
+  sorting=nyt,
+  useprefix,                   % van and von are part of second name
+  mergedate=false,             % only for authoryear style
+  dashed=false,                % only for authoryear style
+  abbreviate=false,
+  maxcitenames=2,              % if more than two authors, then use et al
+  mincitenames=1,              % if exceeds 2 authors, then use 2
+  maxbibnames=99,              % print all authors in biblio
+  uniquename=init,
+  hyperref=true,
+  backref=true,
+  backrefstyle=two,
+  natbib=true,
+  sortlocale=en,
+]{biblatex}
+
+
+
+% set for csquotes, but \autocite only available
+% after biblatex is loaded
+\SetCiteCommand{\autocite}    % or maybe \parencite
+
+% more space between entries in bib
+\setlength\bibitemsep{1.5\itemsep}
+
+
+% remove URL: from in front of URLs
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat{doi}{\doi{#1}}
+\DeclareFieldFormat{isbn}{\isbn{#1}}
+\DeclareFieldFormat{issn}{\issn{#1}}
+
+% suppress urldate field
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldset=urldate, null]
+    }
+  }
+}
+
+% for article titles
+\DeclareFieldFormat{title:article}{\emph{#1}\midsentence}
+
+\DefineBibliographyStrings{british}{%
+  january          = {Jan},
+  february         = {Feb},
+  march            = {Mar},
+  april            = {Apr},
+  may              = {May},
+  june             = {Jun},
+  july             = {Jul},
+  august           = {Aug},
+  september        = {Sep},
+  october          = {Oct},
+  november         = {Nov},
+  december         = {Dec},
+}
+
+
+
+% \bibliography{kandrews,latex,writing,inm-plag}
+
+\addbibresource{writing.bib}
+\addbibresource{latex.bib}
+\addbibresource{kandrews.bib}
+\addbibresource{ivis.bib}
+
+
+
+
+\usepackage{ifpdf}
+
+\ifpdf
+  % pdflatex
+  \usepackage[pdftex]{graphicx}
+  \DeclareGraphicsExtensions{.pdf,.jpg,.png}
+  \pdfcompresslevel=9
+  \pdfpageheight=297mm
+  \pdfpagewidth=210mm
+  \usepackage[         % hyperref should be last package loaded
+    unicode,
+    pdftex,
+    pdftitle={Web UI Animation},
+    pdfsubject={},
+    pdfauthor={Rok Kogovšek, Alexei Kruglov, Fernando Pulido Ruiz, and Helmut Zöhrer},
+    pdfkeywords={survez, IAWEB, animation, UI, web},
+    bookmarks,
+    bookmarksnumbered,
+    linktocpage,
+    colorlinks,
+    linkcolor=darkred,
+    anchorcolor=red,
+    citecolor=darkgreen,
+    urlcolor=darkblue,
+    pdfview={FitH},
+    pdfstartview={Fit},
+    pdfpagemode=UseOutlines,       % open bookmarks in Acrobat
+    plainpages=false,              % avoids duplicate page number problem
+    pdfpagelabels,                 % avoids duplicate page number problem
+    breaklinks=true,               % allow links exceeding a single line
+  ]{hyperref}
+
+\else
+  % latex
+  % should never have to run latex, since l2h now understands pdflatex .aux
+  \usepackage[dvips]{graphicx}
+  \usepackage[dvips]{hyperref}
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+
+
+
+
+% \liintro list item intro is a style used when list items have an
+% introduction phrase (say in italics) followed by a colon.
+\newcommand{\liintro}[1]{\emph{#1}}
+
+
+\newcommand{\imgcredit}[1]
+{\smaller{}[#1]}
+
+
+
+\newcommand{\copyrightACM}
+{%
+Copyright \copyright\ by the Association for Computing Machinery, Inc.%
+}
+
+
+
+
+\newcommand{\daymonthyear}[3]
+{%
+\twodigit{#1}\hspace{0.7ex}\nolinebreak[2]\shortmonthname[#2]\hspace{0.7ex}\nolinebreak[2]#3%
+}
+
+
+\newcommand{\monthyear}[2]
+{%
+\shortmonthname[#1]\hspace{0.7ex}\nolinebreak[2]#2%
+}
+
+
+\newcommand{\yearmonthday}[3]
+{%
+\twodigit{#3}\hspace{0.7ex}\nolinebreak[2]\shortmonthname[#2]\hspace{0.7ex}\nolinebreak[2]#1%
+}
+
+
+\newcommand{\yearmonth}[2]
+{%
+\shortmonthname[#2]\hspace{0.7ex}\nolinebreak[2]#1%
+}
+
+
+
+% link to Amazon or
+% http://worldcatlibraries.org/wcpa/isbn/[ISBN number]
+
+\newrobustcmd{\isbn}[1]
+{%
+{%
+\ifpdf
+{\smaller ISBN}
+\href{http://www.amazon.com/exec/obidos/ASIN/#1/keithandrewshcic}{#1}%
+\else
+{\smaller ISBN}
+#1%
+\fi
+}%
+}
+
+
+
+% ISSN
+% http://www.bl.uk/services/bibliographic/issn.html
+% 8 digits, should be printed xxxx-xxxx
+% e.g. 0020-0190 is Information Processing Letters, Elsevier
+%
+% Lookup services:
+% http://kmittlib.lib.kmutt.ac.th:81/search/i?SEARCH=0020-0190
+% http://worldcatlibraries.org/wcpa/issn/0020-0190
+
+\newrobustcmd{\issn}[1]
+{%
+{%
+\ifpdf
+{\smaller ISSN}
+\href{http://worldcatlibraries.org/wcpa/issn/#1}{#1}%
+\else
+{\smaller ISSN}
+#1%
+\fi
+}%
+}
+
+
+
+% DOIs  http://www.doi.org/  e.g.
+% doi:10.1038/nature723
+% http://dx.doi.org/10.1038/nature723
+
+\newrobustcmd{\doi}[1]
+{%
+{%
+\def\UrlFont{\rmfamily}
+\ifpdf                                   % pdflatex
+\href{http://dx.doi.org/#1}{doi:\protect\nolinkurl{#1}}%
+\else                                    % latex
+doi:\protect\nolinkurl{#1}%
+\fi
+}%
+}
+
+
+
+
+
+\newrobustcmd{\website}[1]
+{%
+\ifpdf                                  % pdflatex
+\href{http://#1/}{\nolinkurl{#1}}%
+\else                                   % latex
+\nolinkurl{#1}%
+\fi
+}
+
+
+
+
+\newcommand{\news}[1]
+{%
+\ifpdf
+\href{news:#1}{\nolinkurl{#1}}
+\else
+\nolinkurl{#1}%
+\fi
+}
+
+
+
+
+
+
+
+
+% based on url package
+% define styles for class, file, and variable names
+% which break nicely at line breaks
+
+% make the macros robust so they work inside captions, etc
+
+\newcommand{\ttname}{\begingroup \smaller\urlstyle{tt}\Url}
+\newcommand{\rmname}{\begingroup \smaller\urlstyle{rm}\Url}
+\newcommand{\sfname}{\begingroup \smaller\urlstyle{sf}\Url}
+
+
+% cname is for class names
+\newrobustcmd{\cname}[1]{\sfname{#1}}
+
+% fname is for file names and directory names
+\newrobustcmd{\fname}[1]{\ttname{#1}}
+
+% vname is for variable names, domain names, email addresses
+\newrobustcmd{\vname}[1]{\ttname{#1}}
+
+
+
+% Euro symbol
+\newcommand{\euro}{\texteuro\,}
+
+% times symbol
+\newcommand{\timessym}{\texttimes\,}
+
+% approx symbol
+\newcommand{\approxsym}{\ensuremath\approx\,}
+
+% plusminus symbol
+\newcommand{\plusminussym}{\textpm\,}
+
+% not equal symbol
+\newcommand{\neqsym}{\ensuremath{\neq\,}}
+
+% rightarrow symbol
+\newcommand{\rightarrowsym}{\ensuremath\rightarrow\,\,}
+
+
+
+
+\newcommand{\TODO}[1]
+{
+{\textcolor{red}{[TODO: #1]}}
+}
+
+
+
+\newcommand{\fullh}{18cm}         % height of figures for 1 per page
+\newcommand{\halfh}{9.5cm}        % height of figures for 2 per page
+\newcommand{\thirdh}{6cm}         % height of figures for 3 per page
+
+
+\tolerance=400 
+  % makes some lines with lots of white space, but      
+  % tends to prevent words from sticking out in the margin
+
+
+
+
+
+\begin{document}
+
+\keithdate
+
+\normalsize
+\pagestyle{empty}         % for preliminary pages (no numbers shown)
+\pagenumbering{Roman}     % for pdf labels
+
+
+
+
+\begin{titlepage}
+
+\begin{center}
+{\Large \sffamily \bfseries Web UI Animation}
+
+\vspace{1cm}
+
+% {\large\sffamily Keith Andrews}
+
+{\large\sffamily Group 5}
+
+\vspace{5mm}
+
+{\large\sffamily Rok Kogovšek, Alexei Kruglov, Fernando Pulido Ruiz, and Helmut Zöhrer}
+
+\vspace{1cm}
+
+% Institute for Information Systems and Computer Media (IICM), \\
+% Graz University of Technology \\
+% A-8010 Graz, Austria \\[1cm]
+
+
+{\large
+706.041 Information Architecture and Web Usability WS 2016 \\
+Graz University of Technology \\
+A-8010 Graz, Austria  \\[1cm]
+}
+
+\vspace{1cm}
+
+% {\large 22 Nov 2016}
+
+{\large \today}
+
+
+\end{center}
+
+
+
+\vspace{2cm}
+
+\begin{quote}
+\begin{center}
+{\large\sffamily\bfseries Abstract}
+\end{center}
+
+TO DO
+
+Writing a survey can be a traumatic endevour. It might be a student's
+first foray into academic research. There are often obstacles and
+false dawns along the way. This survey paper takes a fresh look at the
+process and addresses new ways of accomplishing this daunting goal.
+
+The abstract should concisely describe what the survey is about.
+State the areas which are covered and also those which are not
+covered. Market your survey to your readership. Also, make sure you
+mention all relevant keywords in the abstract, since many readers read
+\emph{only} the abstract and many search engines index \emph{only} the
+title and the abstract.
+
+This survey explores the issues concerning the writing of an academic
+survey paper and presents numerous novel insights. Special attention
+is paid to the use of clear and simple English for an international
+audience, and advice is given as to the use of technical aids to
+production.
+\end{quote}
+
+\vfill
+
+\begin{center}
+{\small\sffamily \copyright ~ Copyright 2016 by the author(s),
+except as otherwise noted.}
+
+\vspace{2mm}
+{\footnotesize\sffamily This work is placed under a
+Creative Commons Attribution 4.0 International
+(\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}) licence. It uses the LaTex template from "Writing a Survey Paper" by Keith Andrews, used under CC BY 4.0 / Desaturated from original
+}
+\end{center}
+
+\end{titlepage}
+
+
+
+
+\cleardoublepage
+\pagestyle{plain}
+\pagenumbering{roman}
+
+
+
+{
+\setlength{\parskip}{3pt plus 3pt minus 3pt}     % compact tables of contents
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+
+\cleardoublepage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\cleardoublepage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\cleardoublepage
+\renewcommand{\lstlistlistingname}{List of Listings}
+\lstlistoflistings
+\addcontentsline{toc}{chapter}{List of Listings}
+}
+
+
+\cleardoublepage
+\pagestyle{headings}        % for main pages
+\pagenumbering{arabic}
+
+\cleardoublepage
+\include{survey-intro}
+
+% Fernando Pulido Ruiz
+\cleardoublepage
+\include{survey-animation}
+
+% Rok Kogovšek
+\cleardoublepage
+\include{survey-CSS}
+
+% Alexei Kruglov
+\include{survey-SVG}
+
+% Helmut Zöhrer
+\cleardoublepage
+\include{survey-JS}
+
+\cleardoublepage
+\include{survey-concl}
+
+\cleardoublepage
+\printbibliography[heading=bibintoc]
+
+
+\end{document}
+
