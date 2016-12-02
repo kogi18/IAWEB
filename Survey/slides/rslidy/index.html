@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta charset="UTF-8"/>
+
+<!-- for css3 media queries to work properly on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Web UI Animation</title> 
+
+<!-- Copyright © 2015 Keith Andrews -->
+<meta name="dcterms.rightsHolder" content="Copyright © 2016 Rok Kogovšek, Alexei Kruglov, Fernando Pulido Ruiz, Helmut Zöhrer" />
+
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/normalise.css" />
+<link rel="stylesheet" href="css/rslidy.css" />
+<link rel="stylesheet" href="css/slides-default.css" />
+
+<link rel="stylesheet" href="css/slides-keith.css" />
+
+<link rel="stylesheet" href="css/webuianimation.css" />
+
+
+<link rel="stylesheet" type="text/css" href="css/hamburgerVariation.css">
+<link rel="stylesheet" type="text/css" href="css/paperNav.css">
+
+<link rel="stylesheet" type="text/css" href="css/navigation.css">
+
+<link rel="stylesheet" type="text/css" href="css/loader.css">
+
+<link rel="stylesheet" type="text/css" href="css/svg.css">
+
+
+<script src="js/rslidy.js"></script>
+</head>
+
+<body>
+
+
+<div class="slide titleslide">
+<h1>Web UI Animation</h1>
+<h2>IAWEB 2016 Survey</h2>
+
+<p></p>
+
+<p>Group 5: Rok Kogovšek, Alexei Kruglov, Fernando Pulido Ruiz, Helmut Zöhrer</p>
+
+<p>Graz University of Technology, Austria</p>
+
+<div id="location">
+<p>
+Tue 22 Nov 2016, TU Graz, Graz, Austria.
+</p>
+</div>
+
+</div>
+
+<div class="slide">
+<h1>Overview</h1>
+
+<ol>
+  <li>Definition for Web UI Animation</li>
+  <li>Why is it useful in Web UI?</li>
+  <li>Often problems in development</li>
+  <li>Where to start planning?</li>
+  <li>How to plan?</li>
+  <li>CSS</li>
+  <li>CSS Navigation Animation</li>
+  <li>CSS Loading Animation</li>
+  <li>CSS & SVG Animation</li>
+  <li>JS</li>
+  <li>Lack of independent control</li>
+  <li>Runtime controls and events</li>
+
+</ol>
+
+</div>
+
+
+<div class="slide">
+<h1>Animation</h1>
+<h2>Definition for Web UI</h2>
+
+<figure><div id="color-animation"></div></figure>
+    <ul>
+      <li><u>Change of element attribute/s over time</u><i>[ValHead]</i></li>
+      <li>Not just motion:</li>
+      <ul>
+        <li>Color changing/fading,</li>
+        <li>Scaling,</li>
+        <li>Changing transparency, ...</li>
+      </ul>
+      
+    </ul>
+
+</div>
+
+<div class="slide">
+<h1>Animation</h1>
+    <h3>Why is it useful in Web UI?</h3>
+    <ul>
+      <li>Carries meaning (<a target="_blank" href="https://www.supremo.tv/typeterms/">https://www.supremo.tv/typeterms</a>).
+      </li>
+      <li>Easier navigation. (<i>Shows the current path</i>).
+      </li>
+      <li>Less brain memory load (<i>More information on-screen</i>).</li>
+      <li>Can improve decision making (<i>Show causality of choices</i>).</li>
+      <li>Can connect contexts (<i>Responsive Web Design</i>).</li>
+      <li>Feedback for the user (<i>Long loading times</i>).</li>
+      <li>Saves screen space (<i>Hiding elements and showing them through animation</i>).</li>
+      <li>Animation grabs attention (<a target="_blank" href="http://waaark.com/vision/
+">http://waaark.com</a>).
+        </li>
+      </ul>
+    </ul>
+</div>
+
+<div class="slide">
+  <h1>Animation</h1>
+  <h3>Often problems in development</h3>
+  <ul>
+    <li>Usually discussed at the end stages of the project.</li>
+    <li>Seen just as extra decoration.</li>
+    <ul>
+      <li>Should be part of the design!</li>
+    </ul>
+    <li>When everything is finished, it is "too late" to replan design (animation).</li>
+    <li>Animation is underestimated in design.</li>
+  </ul>
+
+</div>
+
+<div class="slide">
+  <h1>Animation</h1>
+    <h3>Where to start planning?</h3>
+
+    <ul>
+      <li>Start with planning already in early stages.</li>
+      <li>Animation can replace a fixed design element.</li>
+      <li>Add only animation that helps user and does not distract or lowers the UX.</li>
+      <li>Write about animation also in style guides and documentation.</li>
+      <li>Understand basic principles of animation (Disney 12 or other) and how they effect the user.</li>
+      <li>All important information most support accessibility(Animation is visual information).</li>
+    </ul>
+</div>
+
+<div class="slide">
+    <h1>Animation</h1>
+    <h3>How to plan?</h3>
+
+    <ul>
+      <li>In early stages storyboard sketching.</li>
+      <li>During design prototyping prototype also animation (it is part of the design).</li>
+    </ul>
+    
+    <figure class="left">
+      <a href="images/storyboard.jpeg">
+      <img class="jpeg" src="images/storyboard.jpeg"
+        alt="Storyboard sketching" />
+      </a>
+      <figcaption><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ff800706.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/ff800706.aspx</a> [Used with permission from Microsoft - Microsoft Copyrighted Content Guidelines]
+        </figcaption>
+    </figure>
+</div>
+
+<div class="slide">
+<h1>Visualising Hierarchies</h1>
+
+<a href="collage-hier.svg">
+<img class="svg" src="images/collage-hier.svg"
+  alt="Collage: Visualising Hierarchies" />
+</a>
+
+</div>
+
+<div class="slide">
+    <h1>CSS</h1>
+    <h3>Cascading Style Sheets Animations</h3>
+    <ul>
+      <li>Do everything you can with CSS, use JS for remainder.</li>
+      <li>Fast,</li>
+      <li>Stable (Fault tolerant),</li>
+      <li>Simple (Change between styles).</li>
+      <ul>
+        <li>Add the animation CSS properties to the changing HTML element</li>
+        <ul>
+          <li><u><b>animation-name</b></u>: desiredName;</li>
+          <li><u><b>animation-duration</b></u>: 5s;</li>
+          <li><b>animation-timing-function</b>: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(x1,y1,x2,y1) | steps(stepSize,start,end);</li>
+          <li><b>animation-delay</b>: 2s;</li>
+          <li><b>animation-iteration-count</b>: number | infinite;</li>
+          <li><b>animation-direction</b>: normal | reverse | alternate| alternate-reverse;</li>
+          <li><b>animation-fill-mode:</b>:none | forwards | backwards | both</li> 
+          <li><b>animation-play-state</b>: paused | running</li>
+          <li><b>animation</b>: desiredName 5s linear 2s infinite alternate none running;</li>
+        </ul>
+        <li>Fine-tune the actual animation through keyframes</li>
+        <ul>
+          <li><b>@keyframes</b> rule</li>
+          <xmp>
+  div{
+    animation: desiredName 5s linear 2s infinite alternate;
+  }
+
+  @keyframes desiredName {
+      0%   {background-color: red;}
+      25%  {background-color: yellow;}
+      50%  {background-color: blue;}
+      100% {background-color: green;}
+  }
+          </xmp>
+        </ul>
+        <li>A powerful CSS property to change is <b>transform</b> with <b>transform-origin</b></li>
+        <ul>
+          <li>translate(x,y) | translate3d(x,y,z) | translateX(x) | translateY(y) | translateZ(z)</li>
+          <li>scale(x,y) | scale3d(x,y,z) | scaleX(x) | scaleY(y) | scaleZ(z)</li>
+          <li>rotate(angle) | scale3d(x,y,z, angle) | rotateX(angle) | rotateY(angle) | rotateZ(angle)</li>
+          <li>skew(x-angle,y-angle) | skewX(angle) | skewY(angle)</li>
+          <li>perspective(n)</li>
+        </ul>
+      </ul>
+    </ul>
+</div>
+
+<div class="slide">
+
+    <h1>CSS Navigation animation</h1>
+    <h3>Hamburger</h3>
+<!-- THE ACTUAL CODE -->
+
+    <figure>
+      <div id="paperNav-container">
+        <div id="menu-button" role="button" title="sweet hamburger">
+          <div class="hamburger"><div class="inner"></div></div>
+        </div>
+        <nav id="paperNavNav">
+          <ul>
+            <li>
+              <a href="">Home Page</a>
+            </li>
+            <li>
+              <a href="">Other stuff</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+        <figcaption><a href="https://codepen.io/rboyce/pen/wlijs">https://codepen.io/rboyce/pen/wlijs</a></figcaption>
+      </figure>
+
+    <!-- END OF ACTUAL CODE-->
+
+
+
+    <ul>
+      <li>A menu (hiding) interface/icon</li>
+      <li>Metaphor: Menu packed together tightly as a hamburger</li>
+      <li>Many variations but most commonly it rotates into an X</li>
+      <!-- THE ACTUAL CODE -->
+      <figure class="left">
+        <div id="hamburgerVariation-container">
+          <div id="nav-icon1">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="nav-icon2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="nav-icon3">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="nav-icon4">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <figcaption style="max-width: 300px;"><a href="https://codepen.io/designcouch/pen/Atyop">https://codepen.io/designcouch/pen/Atyop</a></figcaption>
+      </figure>
+    <!-- END OF ACTUAL CODE-->
+
+      <li>Coined in Xerox 1981[source:vtldesign]</li>
+    </ul>
+    <ul>
+      <li>HTML structure</li>
+      <xmp>
+  <div class="paperNav-container">
+    <!-- ICON -->
+    <div id="menu-button" role="button" title="sweet hamburger">
+      <div class="hamburger"><div class="inner"></div></div>
+    </div>
+    <!-- HIDDEN MENU -->
+    <nav>
+      <ul>
+        <li>
+          <a href="">Home Page</a>
+        </li>
+        <li>
+          <a href="">Other stuff</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+      </xmp>
+
+      <li>Key CSS</li>
+      <xmp>
+  /*Creates the hamburger lines*/
+  .hamburger::before, .hamburger::after, .hamburger .inner {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #ccc;
+    transform-origin: 100% 50%;
+    transition: all 750ms ease-in-out;
+  }
+  /*Turns the button around*/
+  .paperNav-container:hover .hamburger {
+    transform: rotateY(-180deg);
+  }
+  /*Color change to make the button disappear*/
+  .paperNav-container:hover .hamburger::before,
+  .paperNav-container:hover .hamburger::after,
+  .paperNav-container:hover .hamburger .inner {
+    background: rgba(41, 37, 47, 1);
+  }
+  /*Upper and bottom lines rotate into an X*/
+  .paperNav-container:hover .hamburger::before {
+    transform: translate3d(-4px, 1px, 0) rotateZ(-45deg);  
+  }
+  .paperNav-container:hover .hamburger::after {
+    transform: translate3d(-4px, -1px, 0) rotateZ(45deg);  
+  }
+  /*Middle line rotates into a point*/
+  .paperNav-container:hover .hamburger .inner {
+    transform: rotateY(-90deg); 
+    transition: transform 375ms, background-color 750ms ease-in-out;
+  }
+      </xmp>
+
+    </ul>
+</div>
+
+<div class="slide">
+    <h1>CSS Navigation animation</h1>
+    <h3>Current menu position indicator</h3>
+
+
+
+    <!-- THE ACTUAL CODE -->
+
+    <figure>
+      <div class="container red topBotomBordersOut">
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>CONTACT</a>
+      </div>
+      <div class="container gray brackets">
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>CONTACT</a>
+      </div>
+      <div class="container orange borderYtoX">
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>CONTACT</a>
+      </div>
+      <div class="container green highlightTextOut">
+        <a alt="HOME">HOME</a>
+        <a alt="ABOUT">ABOUT</a>
+        <a alt="CONTACT">CONTACT</a>
+      </div>
+      <div class="container blue circleBehind">
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>CONTACT</a>
+      </div>
+      <figcaption><a href="https://codepen.io/EvyatarDa/pen/waKXMd">https://codepen.io/EvyatarDa/pen/waKXMd</a></figcaption>
+    </figure>
+    
+
+    <!-- END OF ACTUAL CODE-->
+
+
+
+    <ul>
+      <li>some kind of "opening up" effect</li>
+      <li>smooth translation</li>
+    </ul>
+    <ul>
+      <li>HTML structure</li>
+      <xmp>
+  <div class="container [color] [effectClass]">
+    <a alt="HOME">HOME</a>
+    <a alt="ABOUT">ABOUT</a>
+    <a alt="CONTACT">CONTACT</a>
+  </div>
+      </xmp>
+
+      <li>Key CSS</li>
+      <xmp>
+  /* Line definition + transition slowdown*/
+  div.[class] a:before, div.borderYtoX a:after
+  {
+    ...
+    height: 100%; /*vertical*/
+    width: 2px;   /*  line  */
+    content: '';
+    background: #FFF;
+    transition: all 0.3s; /* slows down the transition */
+  }
+  /* Top and Bottom borders go out */
+  div.topBotomBordersOut a:before
+  {
+    top: 0px;
+    transform: translateY(10px);
+  }
+
+  div.topBotomBordersOut a:after
+  {
+    bottom: 0px;
+    transform: translateY(-10px);
+  }
+
+  div.topBotomBordersOut a:hover:before,
+  div.topBotomBordersOut a:hover:after
+  {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+      </xmp>
+      <figure class="left">
+        <div class="container red topBotomBordersOut">
+          <a>HOME</a>
+          <a>ABOUT</a>
+          <a>CONTACT</a>
+        </div>
+      </figure>
+      <xmp>
+  /* Brackets go out */
+  div.brackets a:before
+  {
+    content: '(';
+    left: 0px;
+    transform: translateX(10px);
+  }
+
+  div.brackets a:after
+  {
+    content: ')';
+    right: 0px;
+    transform: translateX(-10px);
+  }
+
+  div.brackets a:hover:before, div.brackets a:hover:after
+  {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+      </xmp>
+      <figure class="left">
+        <div class="container gray brackets">
+          <a>HOME</a>
+          <a>ABOUT</a>
+          <a>CONTACT</a>
+        </div>
+      </figure>
+      <xmp>
+  /* Switch between vertical and horizontal line*/
+  div.borderYtoX a:before
+  {
+      left: 0px;
+      top: 0px;
+  }
+
+  div.borderYtoX a:after
+  {
+      right: 0px;
+      bottom: 0px;
+  }
+
+  div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
+  {
+      opacity: 1;
+      height: 2px;
+      width: 100%;
+  }
+      </xmp>
+      <figure class="left">
+        <div class="container orange borderYtoX">
+          <a>HOME</a>
+          <a>ABOUT</a>
+          <a>CONTACT</a>
+        </div>
+      </figure>
+      <xmp>
+  /*Scale and add opacity to text*/
+  div.highlightTextOut a:before,
+  div.highlightTextIn a:before
+  {
+    ...
+      content: attr(alt);
+      transition: all 0.3s;
+      transform: scale(0.8);
+      opacity: 0;
+  } 
+
+  div.highlightTextOut a:hover:before,
+  div.highlightTextIn a:hover:before
+  {
+      transform: scale(1);
+      opacity: 1;
+  }
+      </xmp>
+      <figure class="left">
+        <div class="container green highlightTextOut">
+          <a alt="HOME">HOME</a>
+          <a alt="ABOUT">ABOUT</a>
+          <a alt="CONTACT">CONTACT</a>
+        </div>
+      </figure>
+      <xmp>
+  /*switch circle opacity and scale*/
+  div.circleBehind a:before, div.circleBehind a:after
+  {
+      border: 4px solid #0277bd;
+      transform: translateX(-50%) translateY(-50%) scale(0.8);
+      border-radius: 50%;
+      background: transparent;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: -1;
+  }
+
+  div.circleBehind a:after
+  {
+      border-width: 2px;
+      transition: all 0.4s;
+  }
+
+  div.circleBehind a:hover:before
+  {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+
+  div.circleBehind a:hover:after
+  {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1.3);
+  }
+      </xmp>
+      <figure class="left">
+      <div class="container blue circleBehind">
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>CONTACT</a>
+      </div>
+    </figure>
+
+    </ul>
+</div>
+
+
+<div class="slide">
+<h1>CSS Loading animation</h1>
+    <h3>Rotating circle/shape</h3>
+
+
+    <ul>
+      <li>Simple and common</li>
+      <li>Shape is rotated either in 2D or 3D</li>
+    </ul>
+    <ul>
+      <li>HTML structure</li>
+      <xmp>
+  <div class="loader"></div>
+      </xmp>
+    <!-- THE ACTUAL CODE -->
+
+    <figure>
+      <center><div class="loader"></div></center>
+      <figcaption><a href="http://www.w3schools.com/howto/howto_css_loader.asp">http://www.w3schools.com/howto/howto_css_loader.asp</a></figcaption>
+    </figure>
+
+    <!-- END OF ACTUAL CODE-->
+      <li>2D Circle CSS</li>
+
+      <xmp>
+    .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+      </xmp>
+
+    </ul>
+    
+  <!-- THE ACTUAL CODE -->
+
+    <figure>
+      <center><div class="squareloader"></div></center>
+      <figcaption><a href="https://www.pexels.com/blog/css-only-loaders/">https://www.pexels.com/blog/css-only-loaders</a></figcaption>
+    </figure>
+
+    <!-- END OF ACTUAL CODE-->
+    <ul>
+      <li>3D Square CSS</li>
+      
+      <xmp>
+    .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+      </xmp>
+
+    </ul>
+</div>
+
+<div class="slide">
+<h1>CSS Loading animation</h1>
+    <h3>Horizontal/timeline-like movement</h3>
+
+
+
+    <ul>
+      <li>Movement or extension of shape in horizontal direction</li>
+      <li>Use of translation, scaling and</li>
+    </ul>
+    <ul>
+    <!-- THE ACTUAL CODE -->
+    <figure>
+      <div class="dotsLoader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <figcaption><a href="https://www.pexels.com/blog/css-only-loaders/">https://www.pexels.com/blog/css-only-loaders</a></figcaption>
+    </figure>
+    <!-- END OF ACTUAL CODE-->
+
+      <li>HTML structure</li>
+      <xmp>
+  <div class="pulzLoader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+      </xmp>
+    <li>Dots CSS</li>
+      
+      <xmp>
+  .dotsLoader div {
+    ...
+    background-color: black;
+    border-radius: 50%;
+    animation: dots-move 4s infinite cubic-bezier(.2,.64,.81,.23);
+  }
+  .dotsLoader div:nth-child(2) {
+    animation-delay: 150ms; /*Change delay per child*/
+  }
+  @keyframes dots-move {
+    0% {left: 0%;}
+    75% {left:100%;}
+    100% {left:100%;}
+  }
+      </xmp>
+      <!-- THE ACTUAL CODE -->
+        <figure>
+      <div class="progressbarloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <figcaption><a href="https://www.pexels.com/blog/css-only-loaders/">https://www.pexels.com/blog/css-only-loaders</a></figcaption>
+    </figure>
+    <!-- END OF ACTUAL CODE-->
+
+
+  <li>Progress bar loader CSS</li>
+
+      <xmp>
+  .progressbarloader:before{
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: #2980b9;
+    animation: bar-loading 2s linear infinite;
+  }
+
+  @keyframes bar-loading {
+      from {left: -200px; width: 30%;}
+      50% {width: 30%;}
+      80% { left: 50%;}
+      95% {left: 120%;}
+      to {left: 100%;}
+  }
+      </xmp>
+
+      <!-- THE ACTUAL CODE -->
+        <figure>
+      <div class="pulzLoader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <figcaption><a href="https://www.pexels.com/blog/css-only-loaders/">https://www.pexels.com/blog/css-only-loaders</a></figcaption>
+    </figure>
+    <!-- END OF ACTUAL CODE-->
+
+  <li>Pulz loader CSS</li>
+
+      <xmp>
+  .pulzLoader div {
+    ...
+    animation: pulz-loading 1s ease-in-out infinite;
+  }
+  .pulzLoader div:nth-child(1) {  
+    background-color: #3498db;  /*Change color per child*/
+    animation-delay: 0;     /*Change delay per child*/
+  }
+
+  @keyframes pulz-loading {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1, 2.2);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+      </xmp>
+    </ul>
+</div>
+
+<div class="slide">
+<h1>CSS & SVG animation</h1>
+    <h3>Animation of vector images</h3>
+
+    <figure>
+      <div class="beer-container">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="98px" height="100px" viewBox="0 0 98 100" enable-background="new 0 0 98 100" xml:space="preserve">
+<path fill="#FFFFFF" d="M85.715,26.547h-7.457c1.711-5.512,0.539-11.744-3.043-15.975c-3.587-4.236-9.158-6.766-14.896-6.766
+  c-4.109,0-7.852,1.29-10.733,3.6c-3.045-4.6-9.469-7.03-15.613-7.03c-7.055,0-14.166,3.225-16.001,10.323
+  c-1.147-0.196-2.492-0.347-3.91-0.347c-8.456,0-13.503,5.16-13.846,14.155c-0.185,4.844,1.047,8.677,3.662,11.394
+  c1.359,1.413,3.049,2.442,4.988,3.094v48.546c0,6.663,5.421,12.083,12.083,12.083h43.364c6.662,0,12.084-5.42,12.084-12.083v-9.373
+  c0,0,0,0.001,0.002,0.001c0.006,0,0.013-0.007,0.018-0.008l9.305,0.004c6.661,0,12.084-5.419,12.084-12.083V38.63
+  C97.799,31.968,92.378,26.547,85.715,26.547z"/>
+<path fill="none" d="M85.715,32.589H75.023v-0.178c-2.688,3-6.535,4.606-11.271,4.606c-4.216,0-8.304-1.251-10.778-2.189
+  c-2.216,2.709-6.748,6.943-13.577,7.167c-0.236,0.008-0.467,0.012-0.696,0.012c-6.706,0-10.612-3.162-12.737-5.904
+  c-2.943,2.091-7.034,3.49-11.06,3.669V87.54c0,3.321,2.719,6.041,6.042,6.041h43.366c3.322,0,6.041-2.72,6.041-6.041v-9.376
+  c0-3.322,2.723-6.041,6.043-6.041h9.318c3.322,0,6.043-2.719,6.043-6.042v-27.45C91.758,35.307,89.037,32.589,85.715,32.589z"/>
+<path fill="none" d="M75.042,32.605h10.69c1.653,0,3.156,0.674,4.25,1.759c-1.096-1.095-2.606-1.775-4.268-1.775H75.041
+  L75.042,32.605L75.042,32.605z"/>
+<path fill="none" d="M39.416,42.01c6.829-0.225,11.361-4.458,13.576-7.167c2.476,0.938,6.562,2.188,10.777,2.188
+  c4.727,0,8.567-1.6,11.254-4.588v-0.032c-2.688,3-6.535,4.606-11.271,4.606c-4.216,0-8.303-1.251-10.778-2.189
+  c-2.216,2.709-6.748,6.943-13.577,7.167c-0.236,0.008-0.467,0.012-0.696,0.012c-4.608,0-7.895-1.493-10.189-3.317
+  c2.295,1.831,5.586,3.332,10.207,3.332C38.949,42.022,39.18,42.018,39.416,42.01z"/>
+<path fill="none" d="M14.923,87.557V39.788c4.025-0.18,8.114-1.577,11.056-3.667c-0.004-0.006-0.01-0.012-0.014-0.018
+  c-2.943,2.091-7.034,3.49-11.06,3.669V87.54c0,1.669,0.688,3.186,1.792,4.281C15.603,90.727,14.923,89.217,14.923,87.557z"/>
+<polygon fill="#FF9C08" points="80.162,59.326 80.162,45.717 75.939,45.717 75.939,59.33 80.162,59.33 "/>
+<polygon fill="none" points="75.939,59.33 80.162,59.33 80.162,59.326 80.162,45.717 75.939,45.717 "/>
+<g>
+  <polygon fill="#FF9C08" points="75.939,59.33 80.162,59.33 80.162,59.326 80.162,45.717 75.939,45.717   "/>
+  <path fill="#FF9C08" d="M89.982,34.364c-1.094-1.085-2.597-1.759-4.25-1.759h-10.69h-0.001v-0.016h-0.018v-0.146
+    c-2.687,2.988-6.527,4.588-11.254,4.588c-4.215,0-8.302-1.25-10.777-2.188c-2.215,2.709-6.747,6.942-13.576,7.167
+    c-0.236,0.008-0.467,0.012-0.696,0.012c-4.621,0-7.912-1.501-10.207-3.332c-1.038-0.825-1.872-1.717-2.534-2.569
+    c-2.942,2.09-7.031,3.487-11.056,3.667v47.769c0,1.66,0.68,3.17,1.774,4.265c1.094,1.086,2.597,1.76,4.25,1.76h43.366
+    c3.322,0,6.041-2.72,6.041-6.041v-9.376c0-3.322,2.723-6.041,6.043-6.041h9.318c3.322,0,6.043-2.719,6.043-6.042v-27.45
+    C91.758,36.97,91.078,35.459,89.982,34.364z M85.6,59.297c0.01,0.526-0.062,2.496-1.494,3.98c-0.656,0.681-1.832,1.492-3.692,1.492
+    h-7.19c-1.502,0-2.721-1.219-2.721-2.72V42.999c0-1.502,1.219-2.719,2.721-2.719h7.03c1.979,0,3.205,0.814,3.884,1.498
+    c1.405,1.417,1.467,3.22,1.463,3.567V59.297z"/>
+</g>
+
+<path opacity="0.3" fill="#FFFFFF" enable-background="new" d="M28.018,81.221c0,1.975-1.6,3.573-3.574,3.573l0,0
+  c-1.974,0-3.574-1.601-3.574-3.573l0,0c0-1.975,1.601-3.574,3.574-3.574l0,0C26.418,77.646,28.018,79.246,28.018,81.221
+  L28.018,81.221z">
+
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="2.8s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M39.018,51.221c0,1.975-1.6,3.573-3.574,3.573l0,0
+  c-1.974,0-3.574-1.601-3.574-3.573l0,0c0-1.975,1.601-3.575,3.574-3.575l0,0C37.418,47.646,39.018,49.246,39.018,51.221
+  L39.018,51.221z">
+
+<animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="4s"
+                      repeatCount="indefinite"/>
+
+</path> 
+
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M65.018,81.221c0,1.975-1.6,3.573-3.574,3.573l0,0
+  c-1.973,0-3.573-1.601-3.573-3.573l0,0c0-1.975,1.601-3.574,3.573-3.574l0,0C63.418,77.646,65.018,79.246,65.018,81.221
+  L65.018,81.221z">
+
+<animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="2 50;2 -50;"
+                      dur="2.2s"
+                      repeatCount="indefinite"/>
+
+</path> 
+
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M58.018,59.221c0,1.975-1.6,3.573-3.574,3.573l0,0
+  c-1.973,0-3.573-1.601-3.573-3.573l0,0c0-1.975,1.601-3.574,3.573-3.574l0,0C56.418,55.646,58.018,57.246,58.018,59.221
+  L58.018,59.221z">
+
+<animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="2.5s"
+                      repeatCount="indefinite"/>
+
+</path>   
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M23.165,61.221c0,0.949-0.771,1.719-1.721,1.719l0,0
+  c-0.949,0-1.72-0.77-1.72-1.719l0,0c0-0.951,0.771-1.721,1.72-1.721l0,0C22.394,59.5,23.165,60.27,23.165,61.221L23.165,61.221z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="3s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M45.165,71.221c0,2.055-1.667,3.719-3.721,3.719l0,0
+  c-2.053,0-3.719-1.664-3.719-3.719l0,0c0-2.056,1.667-3.72,3.719-3.72l0,0C43.498,67.501,45.165,69.165,45.165,71.221L45.165,71.221
+  z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="4s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M43.877,86.221c0,1.344-1.09,2.432-2.434,2.432l0,0
+  c-1.343,0-2.433-1.088-2.433-2.432l0,0c0-1.345,1.09-2.434,2.433-2.434l0,0C42.788,83.787,43.877,84.876,43.877,86.221
+  L43.877,86.221z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="3s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M63.999,42.22c0,1.411-1.146,2.554-2.556,2.554l0,0
+  c-1.408,0-2.553-1.143-2.553-2.554l0,0c0-1.411,1.145-2.554,2.553-2.554l0,0C62.854,39.666,63.999,40.809,63.999,42.22L63.999,42.22
+  z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="3s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M23.109,46.601c0,0.709-0.575,1.283-1.285,1.283l0,0
+  c-0.708,0-1.283-0.573-1.283-1.283l0,0c0-0.709,0.575-1.284,1.283-1.284l0,0C22.534,45.317,23.109,45.891,23.109,46.601
+  L23.109,46.601z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="2s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M53.075,49.444c0,0.709-0.574,1.283-1.284,1.283l0,0
+  c-0.708,0-1.283-0.573-1.283-1.283l0,0c0-0.709,0.575-1.283,1.283-1.283l0,0C52.5,48.161,53.075,48.734,53.075,49.444L53.075,49.444
+  z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="2.5s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M53.497,74.723c0,0.711-0.575,1.283-1.284,1.283l0,0
+  c-0.708,0-1.283-0.572-1.283-1.283l0,0c0-0.709,0.575-1.281,1.283-1.281l0,0C52.921,73.439,53.497,74.014,53.497,74.723
+  L53.497,74.723z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="2.2s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M26.061,70.771c0,0.709-0.575,1.283-1.284,1.283l0,0
+  c-0.708,0-1.283-0.574-1.283-1.283l0,0c0-0.709,0.575-1.283,1.283-1.283l0,0C25.486,69.486,26.061,70.062,26.061,70.771
+  L26.061,70.771z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 50;0 -50;"
+                      dur="2s"
+                      repeatCount="indefinite"/>
+
+</path> 
+<path opacity="0.3" fill="#FFFFFF" enable-background="new    " d="M65.877,68.221c0,1.344-1.09,2.432-2.434,2.432l0,0
+  c-1.344,0-2.434-1.088-2.434-2.432l0,0c0-1.345,1.09-2.434,2.434-2.434l0,0C64.788,65.787,65.877,66.876,65.877,68.221
+  L65.877,68.221z">
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="-10 50;-10 -50;"
+                      dur="5s"
+                      repeatCount="indefinite"/>
+
+</path> 
+</svg>
+</div>
+<figcaption><a href="http://codepen.io/alistairtweedie/pen/GgPBqP">http://codepen.io/alistairtweedie/pen/GgPBqP</a></figcaption>
+</figure>
+
+    <ul>
+      <li>Define the imeage as vectors in SVG</li>
+      <li>Tranform the vectors with CSS or SVG</li>
+
+      <xmp>
+  <animateTransform attributeName="transform"
+    attributeType="XML"
+    type="translate"
+    values="0 50;0 -50;"
+    dur="2s"
+    repeatCount="indefinite"/>
+      </xmp>
+
+    </ul>
+    <ul>
+    <figure>
+      <svg class="svg-icon" viewBox="0 0 20 30">
+        <path id="svg-doc" d="M15.475,6.692l-4.084-4.083C11.32,2.538,11.223,2.5,11.125,2.5h-6c-0.413,0-0.75,0.337-0.75,0.75v13.5c0,0.412,0.337,0.75,0.75,0.75h9.75c0.412,0,0.75-0.338,0.75-0.75V6.94C15.609,6.839,15.554,6.771,15.475,6.692 M11.5,3.779l2.843,2.846H11.5V3.779z M14.875,16.75h-9.75V3.25h5.625V7c0,0.206,0.168,0.375,0.375,0.375h3.75V16.75z" transform="scale(0.25) translate(27.5)"></path>
+
+        <path id="svg-bottom" fill="none" d="M16.471,5.962c-0.365-0.066-0.709,0.176-0.774,0.538l-1.843,10.217H6.096L4.255,6.5c-0.066-0.362-0.42-0.603-0.775-0.538C3.117,6.027,2.876,6.375,2.942,6.737l1.94,10.765c0.058,0.318,0.334,0.549,0.657,0.549h8.872c0.323,0,0.6-0.23,0.656-0.549l1.941-10.765C17.074,6.375,16.833,6.027,16.471,5.962z" transform="scale(0.75) translate(4,20)"></path>
+        <path id="svg-deck" fill="none" d="M16.594,3.804H3.406c-0.369,0-0.667,0.298-0.667,0.667s0.299,0.667,0.667,0.667h13.188c0.369,0,0.667-0.298,0.667-0.667S16.963,3.804,16.594,3.804zM9.25,3.284h1.501c0.368,0,0.667-0.298,0.667-0.667c0-0.369-0.299-0.667-0.667-0.667H9.25c-0.369,0-0.667,0.298-0.667,0.667C8.583,2.985,8.882,3.284,9.25,3.284z" transform="scale(0.75) translate(4,20)"></path>
+      </svg>
+<figcaption><a href="http://svgicons.sparkk.fr/">http://svgicons.sparkk.fr</a></figcaption>
+    </figure>
+
+
+      <li>HTML/SVG structure</li>
+      <xmp>
+  <svg class="svg-icon" viewBox="0 0 20 20">
+    <path id="svg-doc" d="M15.475,6.692l-4.084-4.083C11.32,
+    2.538,11.223,2.5,11.125,2.5h-6c-0.413,0-0.75,0.337-0.75,
+    0.75v13.5c0,0.412,0.337,0.75,0.75,0.75h9.75c0.412,
+    0,0.75-0.338,0.75-0.75V6.94C15.609,6.839,15.554,6.771,
+    15.475,6.692 M11.5,3.779l2.843,2.846H11.5V3.779z
+    M14.875,16.75h-9.75V3.25h5.625V7c0,0.206,0.168,0.375,
+    0.375,0.375h3.75V16.75z"
+    transform="scale(0.25) translate(27.5)"></path>
+
+    <path id="svg-bottom" fill="none" d="M16.471,
+    5.962c-0.365-0.066-0.709,0.176-0.774,0.538l-1.843,
+    10.217H6.096L4.255,6.5c-0.066-0.362-0.42-0.603-0.775-0.538
+    C3.117,6.027,2.876,6.375,2.942,6.737l1.94,10.765c0.058,
+    0.318,0.334,0.549,0.657,0.549h8.872c0.323,0,0.6-0.23,
+    0.656-0.549l1.941-10.765C17.074,6.375,16.833,6.027,16.471,
+    5.962z"
+    transform="scale(0.75) translate(4,20)"></path>
+
+    <path id="svg-deck" fill="none" d="M16.594,3.804H3.406
+    c-0.369,0-0.667,0.298-0.667,0.667s0.299,0.667,0.667,
+    0.667h13.188c0.369,0,0.667-0.298,0.667-0.667S16.963,
+    3.804,16.594,3.804zM9.25,3.284h1.501c0.368,0,0.667-0.298,
+    0.667-0.667c0-0.369-0.299-0.667-0.667-0.667H9.25c-0.369,
+    0-0.667,0.298-0.667,0.667C8.583,2.985,8.882,3.284,9.25,3.284z"
+    transform="scale(0.75) translate(4,20)"></path>
+  </svg>
+      </xmp>
+
+<li>Key CSS</li>
+      <xmp>
+#svg-doc{
+  fill:red;
+  animation: doc-delete 4s linear infinite;
+}
+
+#svg-deck{
+  transform-origin: 100% 50%;
+  animation: deck-rot 4s linear infinite;
+}
+
+@keyframes doc-delete {
+  0% { transform: translate(75%) scale(0.25); }
+  15% { transform: translate(75%) scale(0.25); }
+  65% { transform: translate(85%,150%) scale(0.1) rotate(-180deg);}
+  100% { transform: translate(85%,150%) scale(0.1); opacity: 0;}
+}
+
+@keyframes deck-rot {
+  0% { transform: translate(-9%, 440%) rotate(0deg) scale(0.75); }
+  25% { transform: translate(-9%, 440%) rotate(90deg) scale(0.75);}
+  40% { transform: translate(-9%, 440%) rotate(90deg) scale(0.75);}
+  65% { transform: translate(-9%, 440%) rotate(0deg) scale(0.75);}
+  100% { transform: translate(-9%, 440%) rotate(0deg) scale(0.75);}
+}
+      </xmp>
+
+    </ul>
+</div>
+
+<div class="slide">
+  <h1>JS</h1>
+    <h3>JavaScript animation</h3>
+    <ul>
+      <li>When CSS does not offer support:</li>
+      <ul>
+        <li>Cosmetic problems and architectural problems.</li>
+        <li>Animate the scroll position.</li>
+        <li>Directional rotation.</li>
+        <li>Animate attributes.</li>
+        <li>Calculation need.</li>
+        <li>...</li>
+      </ul>
+
+      <li>When you need independent scale/rotation/position control.</li>
+      <li>Runtime controls and events.</li>
+      <li><a target="_blank" href="js/solar/index.html">Solar System Example</a> [Source:<a href="https://codepen.io/juliangarnier/pen/idhuG">https://codepen.io/juliangarnier/pen/idhuG</a>]</li>
+      <li><a target="_blank" href="js/svg-rocketman/index.html">SVG Rocketman</a> [Source:<a href="http://codepen.io/chrisgannon/pen/EjVyXN">http://codepen.io/chrisgannon/pen/EjVyXN</a>]</li>
+    </ul>
+
+</div>
+
+<div class="slide">
+  <h1>Go for JS or CSS</h1>
+    <h2>Decide which is the better choice</h3>
+    <ul>
+      <li> Use CSS animations for simple transitions, like changing the state of a UI element.
+      <li> Use JS animations to get advanced effects like bouncing, stop, pause, rewind, or slow down (you get more control over animations).
+      <li> When choosing to animate with JS one might consider using the Web Animations API or a modern framework (comfortable to work with).
+      <li> Using both CSS and JS might be a good idea as well:
+      <ul> <li> animations in CSS
+         <li> control states with JS
+      </ul>
+      </ul>
+</div>
+
+
+<div class="slide">
+  <h1>JS with CSS</h1>
+    <h3>Lack of independent scale/rotation/position control.</h3>
+    <li><a target="_blank" href="js/independent-transforms/index.html">Independent transforms</a> [Source:<a href="http://codepen.io/GreenSock/pen/kingu">http://codepen.io/GreenSock/pen/kingu</a>]</li>
+    <ul>
+      <li>Independent transforms HTML structure</li>
+      <xmp>
+<div id="demo">
+  
+  <div id="field">
+    <div id="box">Independent transforms</div>
+    
+    <div id="controls">
+      <button id="rotation">Spin rotation</button>
+      <button id="rotationX">Spin rotationX</button>
+      <button id="rotationY">Spin rotationY</button>
+      <button id="move">wander (position)</button>
+    </div>
+  </div>
+</div>
+  <script src='.../jquery.min.js'></script>
+<script src='.../TweenMax.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+      </xmp>
+      
+      <li>Independent transforms CSS structure</li>
+
+      <xmp>
+  #field {
+  position:relative;
+  display:table-cell;
+  height: 100%;
+  overflow:hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+
+  #box {
+  color: black;
+  font-size:24px;
+  padding: 10px 16px;
+  border: 2px solid black;
+  background: #9af600;
+  background: linear-gradient(to bottom, #9af600 0%,#71B200 100%);
+  display:inline-block;
+  border-radius: 10px;
+}
+#controls {
+  position:absolute;
+  color: #999;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+button {
+  margin: 2px;
+}
+      </xmp>
+  <li>Independent transforms JS</li>    
+  <xmp>
+//set a perspective on the container so we can see the 3D-ness
+TweenLite.set($field, {perspective: 500});
+//offset the origin on the z-axis to make the spins more interesting.
+TweenLite.set($box, {transformOrigin:"center center -150px"});
+//pulsate the box using scaleX and scaleY
+TweenMax.to($box, 1.2, {scaleX:0.8, scaleY:0.8,
+ force3D:true, yoyo:true, repeat:-1, ease:Power1.easeInOut});
+
+//on rollover, rotate the box but to avoid excessive spinning, 
+//we'll desensitize rollovers during the first second of animation.
+$box.hover(function() {
+  if (!ignoreRollovers) {
+    rotation += 360;
+    ignoreRollovers = true;
+    TweenLite.to($box, 2, {rotation:rotation, ease:Elastic.easeOut});
+    TweenLite.delayedCall(1, function() {
+      ignoreRollovers = false;
+    });
+  }
+}, function() {});
+
+$("#rotation").click(function() {
+  rotation += 360;
+  TweenLite.to($box, 2, {rotation:rotation, ease:Elastic.easeOut});
+});
+//randomly choose a place on the screen and animate there, repeat
+function wander() {
+  var x = (($field.width() - $box.width()) / 2) *
+  (Math.random() * 1.8 - 0.9),
+      y = (($field.height() - $box.height()) / 2) *
+  (Math.random() * 1.4 - 0.7);
+  wanderTween = TweenLite.to($box, 2.5, {x:x, y:y,
+  ease:Power1.easeInOut, onComplete:wander});
+}
+  </xmp
+</ul>
+</div>
+
+<div class="slide">
+  <h1>JS with CSS</h1>
+    <h3>Runtime controls and events.</h3>
+    <li><a target="_blank" href="js/impossible-with-css-controls/index.html">Runtime controls and events</a> [Source:<a href="http://codepen.io/GreenSock/pen/AwCKp">http://codepen.io/GreenSock/pen/AwCKp</a>]</li>
+    <ul>
+      <li>Runtime controls and events HTML structure</li>
+      <xmp>
+<div id="demo">
+  <div id="bg">
+    <div id="text">Impossible with CSS Animation.</div>
+  </div>
+</div>
+<div id="slider"></div>
+<div id="controls">
+  <button id="pause">play</button>
+  <button id="reverse">reverse</button>
+  <button id="restart">restart</button>
+  <div>Speed: 
+    <label><input type="radio" name="speed"
+      value="0.25" id="slow"> slow</label>
+    <label><input type="radio" name="speed"
+      value="1" id="normal" checked> normal</label>
+    <label><input type="radio" name="speed"
+      value="2" id="fast"> fast</label>
+  </div>
+</div>
+  <script src='.../jquery.min.js'></script>
+<script src='.../jquery-ui.min.js'></script>
+<script src='.../TweenMax.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+      </xmp>
+      
+  <li>Runtime controls and events CSS structure</li>
+
+      <xmp>
+#bg {
+  background-color:#000;
+  position:relative;
+  overflow:hidden;
+  display:inline-block;
+    width:500px;
+  height:70px;
+  border-radius: 8px;
+  border: 2px solid #777;
+} 
+#text {
+    position:absolute;
+    text-align:center;
+    width:500px;
+    height:70px;
+    line-height:68px;
+  font-size: 28px;
+} 
+#text span {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing:antialiased;
+    position:relative;
+    display:inline-block;
+    color:#FFF;
+} 
+
+      </xmp>
+  <li>Runtime controls and events JS</li>   
+  <xmp>
+  
+var $text = $("#text"),
+    $pause = $("#pause"),
+    $reverse = $("#reverse"),
+    $restart = $("#restart"),
+    $speed = $("input[name='speed']"),
+    $slider = $("#slider"),
+    //"tl" is the timeline we'll add our tweens to
+    tl = new TimelineLite({onUpdate:updateSlider,
+    onComplete:onComplete, onReverseComplete:onComplete, paused:true});
+
+  function updateSlider() {
+  $slider.slider("value", tl.progress() * 100);
+}
+function onComplete() {
+  tl.pause();
+  $pause.html("play");
+}
+
+//do a simple split of the text so we can animate each character 
+$text.html("<span>" + $text.html().split("").join("</span><span>")
+ .split("<span> </span>").join("<span>&nbsp;</span>") + "</span>");
+
+//set a perspective on the container
+TweenLite.set($text, {perspective:500});
+
+//all of the animation is created in this one line:
+tl.staggerTo($("#text span"), 4, {transformOrigin:"50% 50% -30px",
+ rotationY:-360, rotationX:360, rotation:360,
+ ease:Elastic.easeInOut}, 0.02);
+
+//slider and button controls from here on...
+$slider.slider({
+  range: false,
+  min: 0,
+  max: 100,
+  step:.1,
+    slide: function (event, ui) {
+  tl.progress( ui.value / 100 ).pause();
+    $pause.html("play");
+      }
+});
+  </xmp
+</ul>
+</div>
+
+<div class="slide">
+  <h1>Sources</h1>
+    <ul>
+      <li>Val Head;
+<em>Designing Interface Animation: Meaningful Motion for User Experience</em>;
+Rosenfeld Media, LLC, 2016.
+<span class="isbn">
+<a href="https://www.amazon.com/Designing-Interface-Animation-Meaningful-Experience/dp/1933820322">
+1933820322</a></span>
+</li>
+
+      <li>Jesse Rand: Meet the Hamburger Icon. <a href="https://vtldesign.com/web-strategy/website-design-development/hamburger-icon-flyout-menu-website-navigation/">https://vtldesign.com/web-strategy/website-design-development/hamburger-icon-flyout-menu-website-navigation/</a></li>
+      <li> Google Developer page: <a href="https://developers.google.com/web/fundamentals/design-and-ui/animations/css-vs-javascript">https://developers.google.com/web/fundamentals/design-and-ui/animations/css-vs-javascript</a></li>
+      <li>W3school: <a href="http://www.w3schools.com/css/css3_animations.asp">http://www.w3schools.com/css/css3_animations.asp</a></li>
+    </ul>
+</div>
+
+<div class="slide">
+<h1>Thank You</h1>
+
+</div>
+
+</body>
+</html>
