@@ -16,32 +16,36 @@
 \label{chap:CSS}
 
 Knowing the usefulness of animation in web UI and the correct way of animation planing are just the fundemantals for our conceptual plans. Those still need to be implemented to get the end product and here we usually hit a wall build from the various tools, that say they can all solve our problems. Even well established people in the field have stories as such to tell. Val Head actually started with animation due to an interesting Flash workshop. Flash was at that time the de facto king in its era, however as we know, that era is already dead. Nowdays we can acomplish
-all we could with Flash and more with just the core parts of the web, namely HTML, CSS and JS, 
+all we could with Flash and more with just the core parts of the web, namely HTML, CSS and JS
+\citep{head2016designing}.
 
-\section{Do everything you can with CSS}
+\section{Do Everything You Can With CSS}
 
-As \citet{champeon2003inclusive}
- said: {\em"Leave no one behind"}.
+\label{sec:everythingCSS}
 
-browsers, even modern browsers, have widely varying capabilities
-accessibility is for everyone, not just the disabled
-it is possible to support all browsers with X/HTML and CSS
+With Responsive web design (RWD) in our websites and animation being part of the design, see section \TODO{\ref{chap:Animation}}, it should be natural to use the guidelines of RWD also in animation planning. \citet{IAWEB} teaches us that one of the RWD components is also Progressive enhancement, which is best described with words of the conceptual authors \citet{champeon2003inclusive}: {\em"Leave no one behind. . . .  accessibility is for everyone, not just the disabled"}. With CSS nowdays being a core part of the web and at the same time being the lowest web component that enables animation with RWD guidelines\footnote{Of course one can just use an animated image, e.q. a GIF with an image sequence, and just append it with HTML into the design. However, this image will become a static component of the design and will not follow RWD guidelines.}, one should always implement with CSS and HTML alone as much of the desired animation as possible.
 
+Other supporting arguments for use of CSS as the starting point for web UI animation can be summarized with the the so called "Simple CSS Truths", a list of truths by \citet{palermoCSS} enhanced with the teachings of \citet{IAWEB}:
 
-Progressive Enhancement Strategies
-start with lowest common denominator (baseline)
-design for semantics and structure
-add features appropriate for baseline devices
-warnings about display, to be hidden with CSS
-“skip nav” links
-add features appropriate for accessibility
-alt, longdesc, title
-
-\citet{champeon2003inclusive}
-
+\begin{description}
+\item [CSS allows for separation of concerns] some detail
+\item [CSS is fast] some detail
+\item [CSS is responsive] some detail
+\item [CSS has a captive audience] some detail
+\item [CSS is everywhere] some detail
+\item [CSS is fault-tolarent] some detail
+\end{description}
 
 
 TO DO
+
+List
+Check browser compatibility
+
+% section everythingCSS (end)
+
+\section{CSS Animation Declaration} % (fold)
+\label{sec:declarationCSS}
 
 \citet{w3school}
 \citep{w3school}
@@ -50,5 +54,20 @@ TO DO
 \citet{vtldesign}
 \citep{vtldesign}
 
-\citet{head2016designing}
-\citep{head2016designing}
+
+% section declarationCSS (end)
+
+\section{CSS Examples} % (fold)
+\label{sec:CSS_Examples}
+
+% section CSS_Examples (end)
+
+\subsection{Navigation Animation} % (fold)
+\label{subsec:navigationCSS}
+
+% subsection navigationCSS (end)
+
+\subsection{Loading Animation} % (fold)
+\label{subsec:loadingCSS}
+
+% section loadingCSS (end)

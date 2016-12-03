@@ -2152,16 +2152,17 @@
     <bcf:citekey order="2">IEEE-DL</bcf:citekey>
     <bcf:citekey order="3">CiteSeer</bcf:citekey>
     <bcf:citekey order="4">Mendeley</bcf:citekey>
-    <bcf:citekey order="5">champeon2003inclusive</bcf:citekey>
-    <bcf:citekey order="6">champeon2003inclusive</bcf:citekey>
-    <bcf:citekey order="7">w3school</bcf:citekey>
-    <bcf:citekey order="8">w3school</bcf:citekey>
-    <bcf:citekey order="9">vtldesign</bcf:citekey>
-    <bcf:citekey order="10">vtldesign</bcf:citekey>
-    <bcf:citekey order="11">head2016designing</bcf:citekey>
-    <bcf:citekey order="12">head2016designing</bcf:citekey>
-    <bcf:citekey order="13">googleDev</bcf:citekey>
+    <bcf:citekey order="5">head2016designing</bcf:citekey>
+    <bcf:citekey order="6">IAWEB</bcf:citekey>
+    <bcf:citekey order="7">champeon2003inclusive</bcf:citekey>
+    <bcf:citekey order="8">palermoCSS</bcf:citekey>
+    <bcf:citekey order="9">IAWEB</bcf:citekey>
+    <bcf:citekey order="10">w3school</bcf:citekey>
+    <bcf:citekey order="11">w3school</bcf:citekey>
+    <bcf:citekey order="12">vtldesign</bcf:citekey>
+    <bcf:citekey order="13">vtldesign</bcf:citekey>
     <bcf:citekey order="14">googleDev</bcf:citekey>
+    <bcf:citekey order="15">googleDev</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global/" type="entry" sortscheme="nyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

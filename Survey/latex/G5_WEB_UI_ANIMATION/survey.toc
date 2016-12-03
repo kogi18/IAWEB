@@ -22,16 +22,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Cascading Style Sheets (CSS)}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Do everything you can with CSS}{5}{section.3.1}
+\contentsline {section}{\numberline {3.1}Do Everything You Can With CSS}{5}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Scalable Vector Graphics (SVG)}{6}{section.3.2}
+\contentsline {section}{\numberline {3.2}CSS Animation Declaration}{6}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}JavaScript (JS)}{7}{chapter.4}
+\contentsline {section}{\numberline {3.3}CSS Examples}{6}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{7}{section.4.1}
+\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{6}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{7}{section.4.2}
+\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{6}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Concluding Remarks}{9}{chapter.5}
+\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{7}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{11}{chapter*.5}
+\contentsline {chapter}{\numberline {4}JavaScript (JS)}{9}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{9}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{9}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Concluding Remarks}{11}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{13}{chapter*.5}
