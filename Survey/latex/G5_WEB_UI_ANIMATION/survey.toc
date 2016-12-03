@@ -34,7 +34,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}SVG}{6}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}JS}{7}{chapter.4}
+\contentsline {chapter}{\numberline {4}JavaScript (JS)}{7}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{7}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{7}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Concluding Remarks}{9}{chapter.5}
 \defcounter {refsection}{0}\relax 
