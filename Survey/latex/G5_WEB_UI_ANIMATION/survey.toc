@@ -18,21 +18,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Dividing up the Field}{1}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Composing a Title and Abstract}{1}{section.1.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Double-Sided Printing}{2}{section.1.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.6}Single Children}{2}{section.1.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.7}Make Captions Carry the Story Too}{2}{section.1.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.8}Avoid Orphan Floats}{2}{section.1.8}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Animation}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Cascading Style Sheets (CSS)}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Scalable Vector Graphics (SVG)}{6}{section.3.1}
+\contentsline {section}{\numberline {3.1}Do everything you can with CSS}{5}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Scalable Vector Graphics (SVG)}{6}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}JavaScript (JS)}{7}{chapter.4}
 \defcounter {refsection}{0}\relax 
