@@ -30,9 +30,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Animation}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}CSS}{5}{chapter.3}
+\contentsline {chapter}{\numberline {3}Cascading Style Sheets (CSS)}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}SVG}{6}{section.3.1}
+\contentsline {section}{\numberline {3.1}Scalable Vector Graphics (SVG)}{6}{section.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}JavaScript (JS)}{7}{chapter.4}
 \defcounter {refsection}{0}\relax 

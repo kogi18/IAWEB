@@ -1,0 +1,6 @@
+PWD /home/rok/Desktop/GIT/IAWEB/Survey/latex/G5_WEB_UI_ANIMATION
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT survey-CSS.tex
+OUTPUT survey-CSS.log

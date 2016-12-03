@@ -83,10 +83,7 @@
       <file>survey.bcf</file>
     </requires>
     <requires type="editable">
-      <file>writing.bib</file>
-      <file>latex.bib</file>
-      <file>kandrews.bib</file>
-      <file>ivis.bib</file>
+      <file>G5.bib</file>
     </requires>
   </external>
 </requests>
