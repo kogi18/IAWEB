@@ -52,27 +52,42 @@ Other supporting arguments for use of CSS as the starting point for web UI anima
 As stated in section \ref{sec:anime_motion}, animation is about changing an element's attribute(s) over time. In CSS we can redefine it as a switch between CSS styles for a HTML element that happens gradually over time. It is stated that CSS animation should be done with {\em{}Animation} property(ies) and {\em{}Keyframe} rule(s). This may be the most efficient CSS way to accomplish animation, but CSS animation can also be achieved with {\em{}Transition} property(ies) and {\em{}selector} pattern(s)\citep{w3schoolAnime,w3schoolTrans}.
 
 
-\TODO{\subsection{Animation Property and Keframe Rule}} % (fold)
+\subsection{Animation Property and Keframe Rule} % (fold)
 \label{sub:CSS_animation_keyframe}
 
+The prefered declaration for animation in CSS is done by setting animation properties to the element, that will change through time. This properties just define to which animation steps or keyframes the element is linked to and how the in-between-keyframe states are interpolated through time. \citet{w3schoolAnime} explains the different properties as follows:
+
 \begin{description}
-\item [animation-name:] desiredName
-\item [animation-duration:] 5s
-\item [animation-timing-function:] linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(x1,y1,x2,y1) | steps(stepSize, start, end)
-\item [animation-delay:] 2s
-\item [animation-iteration-count:] number | infinite
-\item [animation-direction:] normal | reverse | alternate| alternate-reverse
-\item [animation-fill-mode:] none | forwards | backwards | both
-\item [animation-play-state:] paused | running
+\item [animation-name:] Here the {\em{}@keyframe} rule name is used to link the rule to the element. Since CSS animation is a set of animation properties and keyframe rules, it is a neccasery property.
+\item [animation-duration:] Like-wise to the name, duration of the animation is also a neccasery property, since it defaults to 0. Animation is defined as a change over a time, so with the time duration being zero, of course there is no animation. Actual working values can be either seconds (\#s) or miliseconds (\#ms), that define one cycle of the animation.
+\item [animation-timing-function:] Defines the progression curve over time, that defines how the animation is interpolated. The valid values are linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(x1,y1,x2,y1) and steps(stepSize, start, end). Acording to \citet{head2016designing}, most animators have a hard time imagining the effect of functions that start with ease*. While linear and steps are simple to understand and enough for simple animations, the cubic-bezier function should be used, since it can define any desirable curve. The way the cubic-bezier function works, can be observed in figure \ref{fig:curve}.
+\item [animation-delay:] Defines how many seconds or miliseconds should the animation start be delayed. The default value is 0. It is useful, when we want multiple elements be animated one after another.
+\item [animation-iteration-count:] We can define with a number, how many loops of the cycle should be done or set it to infinite cycles for a non-stop replay. The default value is 1.
+\item [animation-direction:] With this property we describe in which way the animation is interpolated and what happens after the 1st cycle of animation. By setting it to the default normal, set it to reset the element into the state before animation and start it again. Reverse always starts from the end keyframe and goes towaqrds the starting keyframe, while alternate will alternate between normal and reverse by the oddness of the cycle number. Another option is the self-explanatory alternate-reverse.
+\item [animation-fill-mode:] Defines what happens to an unplayed element, be it after finishing the animation or during a delay wait. By the default none the element has the CSS style outside the keyframe rules. Forwards will use the style of the last keyframe, while backwards will use the style of the first keyframe. A special option is both, that uses the styles of both the start and end keyframe.
+\item [animation-play-state:] It is mostly a property used for testing and with control triggers. As the property name states it is either paused or running.
 \end{description}
-HEH
+
+Same as with other CSS properties animation properties can be combined into a single property, simply called animation and where the property values follow as stated:
 
 \begin{description}
 \item [animation:] name duration timing-function delay iteration-count direction fill-mode play-state;
 \end{description}
 
-Fine-tune the actual animation through keyframes
-@keyframes rule
+\begin{figure}[tp]
+\centering
+\includegraphics[keepaspectratio,width=\hsize,height=\halfh]
+{images/cubicBezier.png}
+
+\caption[Cubic-bezier Function]{
+With coordinates for the location of the start and end weight we can define the desired function curve for progression through time by how much each half of the function should be deformed away from a linear function \citep{head2016designing}.
+\imgcredit{The image is from the book
+"Designing interface animation" by \citet{head2016designing}, used under CC BY 2.0 / It is accessible at {\em{}https://www.flickr.com/photos/rosenfeldmedia/albums/72157671107313626}.
+}}
+\label{fig:curve}
+\end{figure}
+
+While the animation properties just link the element to the desired changes, the actual CSS changes are defined in the @keyframes rule. In the rule we can set the keyframes, that are the finishing times, when a change should end. The keyframe times are simply described with percantage from 0\% as the start keframe and 100\% as the end keyframe. To this times we simply set, which styles should be used at the appointed time. The interpolation function set in with animation property will during proccessing interpolate the undefined percantages. For a better understanding see listing \ref{list:nonmotionAnime}.
 
 
 \begin{lstlisting}[
@@ -94,12 +109,13 @@ div{
 	100% {background-color:red;opacity: 0.2;transform: scale(2);}
 }
 \end{lstlisting}
-
+\label{list:nonmotionAnime}
 % subsection CSS_animation_keyframe (end)
 
-\TODO{\subsection{Transition Property and Selector Pattern}} % (fold)
+\subsection{Transition Property and Selector Pattern} % (fold)
 \label{sub:CSS_transition}
 
+\TODO{edit}
 
 \begin{description}
 \item [transition-property:] propertyName | all
@@ -157,7 +173,7 @@ As stated in \TODO{ref section useful}, animation can help with navigation throu
 One the left we have a screenshot of code example hamburgerVariationCSS.html, which shows some of the different ways how hamburger icons are animated. On the right side we have hamburgerMenuCSS.html, that demonstrates the showing and hiding of the menu by hovering over the hamburger icon.
 \imgcredit{Screenshot taken by the authors of this survey. The code behind the pages is by using the \cite{hamburgerMenu,hamburgerVar} online snipets as a base.}
 }
-\label{fig:storyboard}
+\label{fig:hamburger}
 \end{figure}
 
 

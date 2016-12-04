@@ -36,23 +36,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Animation Property and Keframe Rule}{8}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Transition Property and Selector Pattern}{9}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Transition Property and Selector Pattern}{10}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}CSS Examples}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}CSS Examples}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{9}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{10}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Hamburger Icon}{9}{subsubsection*.6}
+\contentsline {subsubsection}{Hamburger Icon}{10}{subsubsection*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Current menu position indicator}{9}{subsubsection*.8}
+\contentsline {subsubsection}{Current menu position indicator}{10}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{9}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{10}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rotating Icon}{10}{subsubsection*.9}
+\contentsline {subsubsection}{Rotating Icon}{11}{subsubsection*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Horizontal movement}{10}{subsubsection*.10}
+\contentsline {subsubsection}{Horizontal movement}{11}{subsubsection*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{11}{section.3.4}
+\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{12}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}JavaScript (JS)}{13}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -62,4 +62,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Concluding Remarks}{15}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{17}{chapter*.11}
+\contentsline {chapter}{Bibliography}{17}{chapter*.12}
