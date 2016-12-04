@@ -451,6 +451,12 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT images/hamburgerVar.png
+INPUT ./images/hamburgerVar.png
+INPUT ./images/hamburgerVar.png
+INPUT images/hamburgerMenu.png
+INPUT ./images/hamburgerMenu.png
+INPUT ./images/hamburgerMenu.png
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/txfonts/t1xbss.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxphvb.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxbss.tfm
