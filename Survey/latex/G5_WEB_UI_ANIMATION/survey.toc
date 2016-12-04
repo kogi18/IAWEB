@@ -20,42 +20,48 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Animation}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}sections by F.P.R.}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}Not Just Motion!}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Cascading Style Sheets (CSS)}{5}{chapter.3}
+\contentsline {section}{\numberline {2.2}Why Animation in Web UI?}{3}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Do Everything You Can With CSS}{5}{section.3.1}
+\contentsline {section}{\numberline {2.3}Aim For Invisible Animation}{4}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}CSS Animation Declaration}{6}{section.3.2}
+\contentsline {section}{\numberline {2.4}Development of animation}{4}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Animation Property and Keframe Rule}{6}{subsection.3.2.1}
+\contentsline {chapter}{\numberline {3}Cascading Style Sheets (CSS)}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Transition Property}{6}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.1}Do Everything You Can With CSS}{7}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Selector Pattern}{6}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.2}CSS Animation Declaration}{8}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}CSS Examples}{6}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.1}Animation Property and Keframe Rule}{8}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{6}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.2.2}Transition Property}{8}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Hamburger Icon}{6}{subsubsection*.6}
+\contentsline {subsection}{\numberline {3.2.3}Selector Pattern}{8}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Current menu position indicator}{6}{subsubsection*.7}
+\contentsline {section}{\numberline {3.3}CSS Examples}{8}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{6}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{8}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rotating Icon}{6}{subsubsection*.8}
+\contentsline {subsubsection}{Hamburger Icon}{8}{subsubsection*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Horizontal movement}{6}{subsubsection*.9}
+\contentsline {subsubsection}{Current menu position indicator}{8}{subsubsection*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{7}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{8}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}JavaScript (JS)}{9}{chapter.4}
+\contentsline {subsubsection}{Rotating Icon}{8}{subsubsection*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{9}{section.4.1}
+\contentsline {subsubsection}{Horizontal movement}{8}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{9}{section.4.2}
+\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{9}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Concluding Remarks}{11}{chapter.5}
+\contentsline {chapter}{\numberline {4}JavaScript (JS)}{11}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{13}{chapter*.10}
+\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{11}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{11}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Concluding Remarks}{13}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{15}{chapter*.10}

@@ -391,6 +391,11 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxsl.tfm
 OUTPUT survey-animation.aux
 INPUT survey-animation.tex
 INPUT survey-animation.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ts1txr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ts1txr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/tcxr.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/txfonts/tcxr.vf
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtcxr.tfm
 INPUT images/storyboard.jpeg
 INPUT ./images/storyboard.jpeg
 INPUT ./images/storyboard.jpeg
@@ -447,9 +452,6 @@ INPUT survey-SVG.tex
 OUTPUT survey-JS.aux
 INPUT survey-JS.tex
 INPUT survey-JS.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ts1txr.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ts1txr.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/tcxr.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/t1txtt.fd
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/t1txtt.fd
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
@@ -457,8 +459,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/t1xbtt.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/txfonts/tcxr.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtcxr.tfm
 OUTPUT survey-concl.aux
 INPUT survey-concl.tex
 INPUT survey-concl.tex
