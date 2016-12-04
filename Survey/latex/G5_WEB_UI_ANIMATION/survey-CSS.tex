@@ -23,32 +23,35 @@ all we could with Flash and more with just the core parts of the web, namely HTM
 
 \label{sec:everythingCSS}
 
-With Responsive web design (RWD) in our websites and animation being part of the design, see section \TODO{\ref{chap:Animation}}, it should be natural to use the guidelines of RWD also in animation planning. \citet{IAWEB} teaches us that one of the RWD components is also Progressive enhancement, which is best described with words of the conceptual authors \citet{champeon2003inclusive}: {\em"Leave no one behind. . . .  accessibility is for everyone, not just the disabled"}. With CSS nowdays being a core part of the web and at the same time being the lowest web component that enables animation with RWD guidelines\footnote{Of course one can just use an animated image, e.q. a GIF with an image sequence, and just append it with HTML into the design. However, this image will become a static component of the design and will not follow RWD guidelines.}, one should always implement with CSS and HTML alone as much of the desired animation as possible.
+With Responsive web design (RWD) in our websites and animation being part of the design, see section \TODO{\ref{chap:Animation}}, it should be natural to use the guidelines of RWD also in animation planning. \citet{IAWEB} teaches us that one of the RWD guidelines is also Progressive enhancement, which is best described with words of the conceptual authors \citet{champeon2003inclusive}: {\em"Leave no one behind. . . .  accessibility is for everyone, not just the disabled"}. With CSS nowdays being a core part of the web and at the same time being the lowest web component that enables animation with RWD guidelines\footnote{Of course one can just use an animated image, e.q. a GIF with an image sequence, and just append it with HTML into the design. However, this image will become a static component of the design and will not follow RWD guidelines.}, one should always implement with CSS and HTML alone as much of the desired animation as possible. One has only to make sure the browser support for the animated attribute.
 
-Other supporting arguments for use of CSS as the starting point for web UI animation can be summarized with the the so called "Simple CSS Truths", a list of truths by \citet{palermoCSS} enhanced with the teachings of \citet{IAWEB}:
+Other supporting arguments for use of CSS as the starting point for web UI animation beside responsiveness can be summarized with the the so called "Simple CSS Truths", a list of truths by \citet{palermoCSS} enhanced with the teachings of \citet{IAWEB}:
 
 \begin{description}
-\item [CSS allows for separation of concerns] some detail
-\item [CSS is fast] some detail
-\item [CSS is responsive] some detail
-\item [CSS has a captive audience] some detail
-\item [CSS is everywhere] some detail
-\item [CSS is fault-tolarent] some detail
+\item [CSS allows for separation of concerns] -
+ With CSS the form is separated from the page's HTML structure and content. Makes it easier to read, maintain and crawl the code.
+
+\item [CSS has a captive audience] -
+ Support for CSS development is huge. At the same time more and more libraries, tools and frameworks focus on improving and simplifing CSS development. 
+
+\item [CSS is fast] - 
+ External CSS speeds up HTML downlaod and loading compared to HTMLs with duplicated inline styles. Compared to JavaScript it also processes transitions and animations faster.
+
+\item [CSS is fault-tolarent] - 
+ Browser-unknown enhancements are simply ignored by the browser, while the remainder is still used and displayed.
+
+\item [CSS is everywhere] - 
+ Modern browsers embrace CSS and feature support by each can be easily found online.
 \end{description}
-
-
-TO DO
-
-List
-Check browser compatibility
 
 % section everythingCSS (end)
 
 \section{CSS Animation Declaration} % (fold)
 \label{sec:declarationCSS}
 
-\citet{w3school}
-\citep{w3school}
+As stated in section \TODO{\ref{chap:Animation}}, animation is about changing an element's attribute(s) over time. In CSS we can redefine it as a switch between CSS styles for a HTML element that happens gradually over time. It is stated that animation 
+
+\citep{w3school}.
 
 
 \citet{vtldesign}
