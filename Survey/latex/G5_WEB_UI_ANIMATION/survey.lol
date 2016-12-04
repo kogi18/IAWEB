@@ -3,4 +3,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {3.2}Example of non-motion transition in CSS}{10}{lstlisting.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.1}Some Code Snippet}{15}{lstlisting.4.1}
+\contentsline {lstlisting}{\numberline {3.3}Example of Hamburger Icon in CSS}{11}{lstlisting.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {3.4}Example of Menu Animation in CSS}{12}{lstlisting.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {3.5}Example of Rotating Loading Animation in CSS}{13}{lstlisting.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {3.6}Example of Continues Movement Loading Animation in CSS}{14}{lstlisting.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {4.1}Some Code Snippet}{17}{lstlisting.4.1}

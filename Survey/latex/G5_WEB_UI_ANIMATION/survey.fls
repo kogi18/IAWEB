@@ -458,6 +458,9 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxi.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/t1xttsl.tfm
 INPUT images/hamburgerVar.png
 INPUT ./images/hamburgerVar.png
 INPUT ./images/hamburgerVar.png
@@ -467,6 +470,18 @@ INPUT ./images/hamburgerMenu.png
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/txfonts/t1xbss.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxphvb.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/txfonts/rtxbss.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT images/rotatingLoad.png
+INPUT ./images/rotatingLoad.png
+INPUT ./images/rotatingLoad.png
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+INPUT images/horizontalLoad.png
+INPUT ./images/horizontalLoad.png
+INPUT ./images/horizontalLoad.png
 OUTPUT survey-SVG.aux
 INPUT survey-SVG.tex
 INPUT survey-SVG.tex
@@ -502,6 +517,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtcxss.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb

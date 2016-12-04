@@ -46,22 +46,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Hamburger Icon}{11}{subsubsection*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Current menu position indicator}{11}{subsubsection*.9}
+\contentsline {subsubsection}{Current menu position indicator}{12}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{11}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{13}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rotating Icon}{12}{subsubsection*.10}
+\contentsline {subsubsection}{Rotating Icon}{13}{subsubsection*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Horizontal movement}{12}{subsubsection*.11}
+\contentsline {subsubsection}{Horizontal movement}{14}{subsubsection*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{13}{section.3.4}
+\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{16}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}JavaScript (JS)}{15}{chapter.4}
+\contentsline {chapter}{\numberline {4}JavaScript (JS)}{17}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{15}{section.4.1}
+\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{17}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{15}{section.4.2}
+\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{17}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Concluding Remarks}{17}{chapter.5}
+\contentsline {chapter}{\numberline {5}Concluding Remarks}{19}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{19}{chapter*.12}
+\contentsline {chapter}{Bibliography}{21}{chapter*.14}
