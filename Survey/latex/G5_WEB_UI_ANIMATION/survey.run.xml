@@ -85,6 +85,7 @@
     <requires type="editable">
       <file>G5.bib</file>
       <file>images/imgLocations.bib</file>
+      <file>listings/codeSource.bib</file>
     </requires>
   </external>
 </requests>
