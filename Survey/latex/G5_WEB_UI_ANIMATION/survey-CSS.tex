@@ -156,21 +156,33 @@ div:hover{
 
 % section declarationCSS (end)
 
+\subsection{Powerful Effect from Single Property} % (fold)
+\label{sub:transformCSS}
+
+While any CSS property can be defined for the animated change, there are some that can bring much more effect than others. Such would be the transform property, that can define translation, trotation and scalation in 2D and 3D space, plus also having options for skewing and puting into perspective the element. What is even more, is that all can be achieved at the same time. Just with combining it with the transform-origin property any kind of motion animation can be achieved.
+
+% subsection transformCSS (end)
+
+
 \section{CSS Examples} % (fold)
 \label{sec:CSS_Examples}
 
+While the previous sections tell us why animation can be useful, why CSS should be used and how to declare animation in CSS, we have yet to see CSS examples that show the difficulty to implement animation that brings benifits to the UI.
 % section CSS_Examples (end)
 
 \subsection{Navigation Animation} % (fold)
 \label{sub:navigationCSS}
 
-As stated in \TODO{ref section useful}, animation can help with navigation through tha page. In the examples we show two typical cases of such usage.
+As stated in section \ref{sec:anime_why}, animation can help with navigation through the page. In the code examples we show two typical cases of such usage, namely the famous hamburger icon and menu position animation.
 
-\TODO{\subsubsection{Hamburger Icon}} % (fold)
+\subsubsection{Hamburger Icon} % (fold)
 \label{subsub:hamburger}
 
-\citet{vtldesign}
-\citep{vtldesign}
+The name comes from the icon being a set of three horizontal parallel lines sticking close together, the same way as the hamburger patty and meet sticks together. The icon is a metaphor for the menu to be tightly packed together, when we hide it "within" the icon. From the metaphor we also see the usefulness of such a concept, being the saving of space with hiding the menu and by showing the menu showing also the navigation path we are taking.
+
+Implementations use various kinds of animations to make the use of the icon subtile and easy to use. Usually it is doen by rotating the lines in the icon into an X for showing the way of hiding or closing the menu and a sliding animation of the menu apearring from the border to show the navigation flow. An example of implementaations can be also observed in the code examples hamburgerVariationCSS.html and hamburgerMenuCSS.html.
+
+By the information provided by \citet{vtldesign}, it is believed that the origins of the concept go back to 1981 and the famous company Xerox. However the explosion of usage came into being in the last decade, when designers were face with the problem of small screens on mobile ddevices.
 
 \begin{figure}[tp]
 \centering

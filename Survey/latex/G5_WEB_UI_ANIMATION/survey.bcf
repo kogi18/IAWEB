@@ -2176,13 +2176,12 @@
     <bcf:citekey order="23">head2016designing</bcf:citekey>
     <bcf:citekey order="24">head2016designing</bcf:citekey>
     <bcf:citekey order="25">vtldesign</bcf:citekey>
-    <bcf:citekey order="26">vtldesign</bcf:citekey>
+    <bcf:citekey order="26">hamburgerMenu</bcf:citekey>
+    <bcf:citekey order="26">hamburgerVar</bcf:citekey>
     <bcf:citekey order="27">hamburgerMenu</bcf:citekey>
     <bcf:citekey order="27">hamburgerVar</bcf:citekey>
-    <bcf:citekey order="28">hamburgerMenu</bcf:citekey>
-    <bcf:citekey order="28">hamburgerVar</bcf:citekey>
+    <bcf:citekey order="28">googleDev</bcf:citekey>
     <bcf:citekey order="29">googleDev</bcf:citekey>
-    <bcf:citekey order="30">googleDev</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global/" type="entry" sortscheme="nyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>
