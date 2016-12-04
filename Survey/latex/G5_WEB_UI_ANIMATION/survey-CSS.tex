@@ -94,7 +94,7 @@ While the animation properties just link the element to the desired changes, the
 language=CSS,
 label=list:BibACMIEEE,
 caption={[Example of non-motion animation in CSS]%
-Simple example of non-motion animation with animation property and keyframes rule. A working example can be found in code/nonmotionAnimationCSS.html.
+Simple example of non-motion animation with animation property and keyframes rule. A working example can be found between the attached code examples under nonmotionAnimationCSS.html.
 }
 ]
 div{
@@ -115,21 +115,28 @@ div{
 \subsection{Transition Property and Selector Pattern} % (fold)
 \label{sub:CSS_transition}
 
-\TODO{edit}
+The transition property can be used the same way as th animation property for defining the linking and interpolation details. There are even similarities int hte properties:
 
 \begin{description}
-\item [transition-property:] propertyName | all
-\item [transition-duration:] 5s
-\item [transition-timing-function:] linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(x1,y1,x2,y1)
-\item [transition-delay:] 2s
+\item [transition-property:] With this property we can link the the transition to a change in CSS, similar as with animation-name. However here we specify which of the CSS properties of the element should be interpolated during the change. It can be one or more properties seperated with a comma. We also have the default option none and convenient all, that sets all propertis to interpolate.
+\item [transition-duration:] Same as animation-duration property.
+\item [transition-timing-function:] Same as animation-timinig-function property.
+\item [transition-delay:] Same as animation-delay property.
 \end{description}
 
+The unified property is also defined by the same order, with just less options:
+
+\begin{description}
+\item [transition:] property duration timing-function delay;
+\end{description}
+
+One can imagine the transition being a simplified version of the animation property, that can only have two keyframe, namely the start and end of the aniamtion or transtion. The start keyframe style is defined in the CSS style of the unchanged element, while the end frame is defined in a declaration where the specified transition property is changed. The easiest way to control such animations is with event seperators, such as :hover. This way we can define an animation to happen after hovering over the element. Since we can define just two keyframes and there ano repetitions, we are quite limited with the possible animations, which is also the reason for the animation property and keyframes rule to be used most of the time for animations. The limitations can be easily observed, when comparing the codes and results for \ref{list:nonmotionAnime} and \ref{list:nonmotionTransiton}.
 
 \begin{lstlisting}[
 language=CSS,
 label=list:BibACMIEEE,
 caption={[Example of non-motion transition in CSS]%
-Simple example of non-motion animation with transition property and hover selector. A working example can be found in code/nonmotionTransitionCSS.html.
+Simple example of non-motion animation with transition property and hover selector. A working example can be found between the attached code examples under nonmotionTransitionCSS.html.
 }
 ]
 div{
@@ -143,6 +150,7 @@ div:hover{
 	transform: scale(2);
 }
 \end{lstlisting}
+\label{list:nonmotionTransiton}
 
 % subsection CSS_transition (end)
 
