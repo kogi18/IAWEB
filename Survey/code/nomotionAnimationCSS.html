@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div{
+				margin: 25% 50%;
+				width: 100px;
+				height: 100px;
+				margin-right: 100px;
+				background-color: red;
+				animation-name: example;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+			}
+			/* Standard syntax */
+			@keyframes example {
+			0%   {background-color:red;opacity: 1;transform: scale(1);}
+			25%  {background-color:yellow;transform: scale(0.8);}
+			50%  {background-color:blue;transform: scale(1);}
+			75%  {background-color:green;transform: scale(1.5);}
+			100% {background-color:red;opacity: 0.2;transform: scale(2);}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

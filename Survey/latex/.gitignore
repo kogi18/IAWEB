@@ -1,6 +1,5 @@
 # changing files each pdflater or biber call
 *.aux
-*.pdf
 *.ps
 *.log
 *.dvi
@@ -10,3 +9,4 @@
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*/*/*.pdf

@@ -36,25 +36,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Animation Property and Keframe Rule}{8}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Transition Property}{8}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Transition Property and Selector Pattern}{9}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Selector Pattern}{8}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}CSS Examples}{9}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}CSS Examples}{8}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{9}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{8}{subsection.3.3.1}
+\contentsline {subsubsection}{Hamburger Icon}{9}{subsubsection*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Hamburger Icon}{8}{subsubsection*.6}
+\contentsline {subsubsection}{Current menu position indicator}{9}{subsubsection*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Current menu position indicator}{8}{subsubsection*.7}
+\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{9}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Loading Animation}{8}{subsection.3.3.2}
+\contentsline {subsubsection}{Rotating Icon}{9}{subsubsection*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rotating Icon}{8}{subsubsection*.8}
+\contentsline {subsubsection}{Horizontal movement}{9}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Horizontal movement}{8}{subsubsection*.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{9}{section.3.4}
+\contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}JavaScript (JS)}{11}{chapter.4}
 \defcounter {refsection}{0}\relax 

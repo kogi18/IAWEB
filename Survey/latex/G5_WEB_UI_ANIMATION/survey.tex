@@ -731,6 +731,24 @@ Creative Commons Attribution 4.0 International
 \addcontentsline{toc}{chapter}{List of Listings}
 }
 
+% define CSS source code coloring
+\lstdefinelanguage{CSS} 
+{ 
+keywords={},
+% CSS properties
+keywords={ border,transform,transition,duration,timing-function,animation,color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,size,white,space,min,width,opacity},
+% CSS rules
+keywords=[2]{@keyframes},
+% CSS selectors
+keywords=[3]{hover},
+sensitive=false, 
+morecomment=[l]{//}, 
+morecomment=[s]{/*}{*/}, 
+morestring=[b]",
+keywordstyle=\color{blue},
+keywordstyle=[2]\color{violet},
+keywordstyle=[3]\color{orange}
+}
 
 \cleardoublepage
 \pagestyle{headings}        % for main pages

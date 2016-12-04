@@ -23,7 +23,7 @@ all we could with Flash and more with just the core parts of the web, namely HTM
 
 \label{sec:everythingCSS}
 
-With Responsive web design (RWD) in our websites and animation being part of the design, see section \TODO{\ref{chap:Animation}}, it should be natural to use the guidelines of RWD also in animation planning. \citet{IAWEB} teaches us that one of the RWD guidelines is also Progressive enhancement, which is best described with words of the conceptual authors \citet{champeon2003inclusive}: {\em"Leave no one behind. . . .  accessibility is for everyone, not just the disabled"}. With CSS nowdays being a core part of the web and at the same time being the lowest web component that enables animation with RWD guidelines\footnote{Of course one can just use an animated image, e.q. a GIF with an image sequence, and just append it with HTML into the design. However, this image will become a static component of the design and will not follow RWD guidelines.}, one should always implement with CSS and HTML alone as much of the desired animation as possible. One has only to make sure the browser support for the animated attribute.
+With Responsive web design (RWD) in our websites and animation being part of the design, see section \ref{sec:anime_dev}, it should be natural to use the guidelines of RWD also in animation planning. \citet{IAWEB} teaches us that one of the RWD guidelines is also Progressive enhancement, which is best described with words of the conceptual authors \citet{champeon2003inclusive}: {\em"Leave no one behind. . . .  accessibility is for everyone, not just the disabled"}. With CSS nowdays being a core part of the web and at the same time being the lowest web component that enables animation with RWD guidelines\footnote{Of course one can just use an animated image, e.q. a GIF with an image sequence, and just append it with HTML into the design. However, this image will become a static component of the design and will not follow RWD guidelines.}, one should always implement with CSS and HTML alone as much of the desired animation as possible. One has only to make sure the browser support for the animated attribute.
 
 Other supporting arguments for use of CSS as the starting point for web UI animation beside responsiveness can be summarized with the the so called "Simple CSS Truths", a list of truths by \citet{palermoCSS} enhanced with the teachings of \citet{IAWEB}:
 
@@ -49,25 +49,78 @@ Other supporting arguments for use of CSS as the starting point for web UI anima
 \section{CSS Animation Declaration} % (fold)
 \label{sec:declarationCSS}
 
-As stated in section \TODO{\ref{chap:Animation}}, animation is about changing an element's attribute(s) over time. In CSS we can redefine it as a switch between CSS styles for a HTML element that happens gradually over time. It is stated that CSS animation should be done with {\em{}Animation} property(/ies) and {\em{}Keyframe} rule(s). However, that is not the only CSS way to accomplish animation, but of course the most efficient way \citep{w3school}.
+As stated in section \ref{sec:anime_motion}, animation is about changing an element's attribute(s) over time. In CSS we can redefine it as a switch between CSS styles for a HTML element that happens gradually over time. It is stated that CSS animation should be done with {\em{}Animation} property(ies) and {\em{}Keyframe} rule(s). This may be the most efficient CSS way to accomplish animation, but CSS animation can also be achieved with {\em{}Transition} property(ies) and {\em{}selector} pattern(s)\citep{w3schoolAnime,w3schoolTrans}.
 
 
 \TODO{\subsection{Animation Property and Keframe Rule}} % (fold)
 \label{sub:CSS_animation_keyframe}
 
+\begin{description}
+\item [animation-name:] desiredName
+\item [animation-duration:] 5s
+\item [animation-timing-function:] linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(x1,y1,x2,y1) | steps(stepSize, start, end)
+\item [animation-delay:] 2s
+\item [animation-iteration-count:] number | infinite
+\item [animation-direction:] normal | reverse | alternate| alternate-reverse
+\item [animation-fill-mode:] none | forwards | backwards | both
+\item [animation-play-state:] paused | running
+\end{description}
+HEH
+
+\begin{description}
+\item [animation:] desiredName 5s linear 2s infinite alternate none running;
+\end{description}
+
+Fine-tune the actual animation through keyframes
+@keyframes rule
+
+
+\begin{lstlisting}[
+language=CSS,
+label=list:BibACMIEEE,
+caption={[Example of non-motion animation in CSS]%
+Simple example of non-motion animation with animation property and keyframes rule. A working example can be found in code/nonmotionAnimationCSS.html.
+}
+]
+div{
+	animation: desiredName 4s linear 0s infinite alternate;
+}
+
+@keyframes desiredName {
+	0%   {background-color:red;opacity: 1;transform: scale(1);}
+	25%  {background-color:yellow;transform: scale(0.8);}
+	50%  {background-color:blue;transform: scale(1);}
+	75%  {background-color:green;transform: scale(1.5);}
+	100% {background-color:red;opacity: 0.2;transform: scale(2);}
+}
+\end{lstlisting}
+
 % subsection CSS_animation_keyframe (end)
 
-\TODO{\subsection{Transition Property}} % (fold)
+\TODO{\subsection{Transition Property and Selector Pattern}} % (fold)
 \label{sub:CSS_transition}
 
+
+\begin{lstlisting}[
+language=CSS,
+label=list:BibACMIEEE,
+caption={[Example of non-motion transition in CSS]%
+Simple example of non-motion animation with transition property and hover selector. A working example can be found in code/nonmotionTransitionCSS.html.
+}
+]
+div{
+	background-color: red;
+	opacity: 1;
+	transition: all 4s;
+}
+div:hover{
+	background-color:green;
+	opacity: 0.2;
+	transform: scale(2);
+}
+\end{lstlisting}
+
 % subsection CSS_transition (end)
-
-\TODO{\subsection{Selector Pattern}} % (fold)
-\label{sub:CSS_transition}
-
-% subsection CSS_transition (end)
-
-
 
 % section declarationCSS (end)
 
