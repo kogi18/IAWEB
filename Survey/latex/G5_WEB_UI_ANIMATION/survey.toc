@@ -20,17 +20,33 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Animation}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}sections by F.P.R.}{3}{section.2.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Cascading Style Sheets (CSS)}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Do Everything You Can With CSS}{5}{section.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}CSS Animation Declaration}{6}{section.3.2}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Animation Property and Keframe Rule}{6}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Transition Property}{6}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}Selector Pattern}{6}{subsection.3.2.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}CSS Examples}{6}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{6}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Hamburger Icon}{6}{subsubsection*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Current menu position indicator}{6}{subsubsection*.7}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}Loading Animation}{6}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Rotating Icon}{6}{subsubsection*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Horizontal movement}{6}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{7}{section.3.4}
 \defcounter {refsection}{0}\relax 
@@ -42,4 +58,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Concluding Remarks}{11}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{13}{chapter*.5}
+\contentsline {chapter}{Bibliography}{13}{chapter*.10}

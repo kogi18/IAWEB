@@ -2146,6 +2146,7 @@
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
     <bcf:datasource type="file" datatype="bibtex">G5.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex">images/imgLocations.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">ACM-DL</bcf:citekey>
@@ -2153,16 +2154,18 @@
     <bcf:citekey order="3">CiteSeer</bcf:citekey>
     <bcf:citekey order="4">Mendeley</bcf:citekey>
     <bcf:citekey order="5">head2016designing</bcf:citekey>
-    <bcf:citekey order="6">head2016designing</bcf:citekey>
-    <bcf:citekey order="7">IAWEB</bcf:citekey>
-    <bcf:citekey order="8">champeon2003inclusive</bcf:citekey>
-    <bcf:citekey order="9">palermoCSS</bcf:citekey>
-    <bcf:citekey order="10">IAWEB</bcf:citekey>
-    <bcf:citekey order="11">w3school</bcf:citekey>
-    <bcf:citekey order="12">vtldesign</bcf:citekey>
-    <bcf:citekey order="13">vtldesign</bcf:citekey>
-    <bcf:citekey order="14">googleDev</bcf:citekey>
-    <bcf:citekey order="15">googleDev</bcf:citekey>
+    <bcf:citekey order="6">microsoftStoryboard</bcf:citekey>
+    <bcf:citekey order="7">microsoftStoryboard</bcf:citekey>
+    <bcf:citekey order="8">head2016designing</bcf:citekey>
+    <bcf:citekey order="9">IAWEB</bcf:citekey>
+    <bcf:citekey order="10">champeon2003inclusive</bcf:citekey>
+    <bcf:citekey order="11">palermoCSS</bcf:citekey>
+    <bcf:citekey order="12">IAWEB</bcf:citekey>
+    <bcf:citekey order="13">w3school</bcf:citekey>
+    <bcf:citekey order="14">vtldesign</bcf:citekey>
+    <bcf:citekey order="15">vtldesign</bcf:citekey>
+    <bcf:citekey order="16">googleDev</bcf:citekey>
+    <bcf:citekey order="17">googleDev</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global/" type="entry" sortscheme="nyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>
