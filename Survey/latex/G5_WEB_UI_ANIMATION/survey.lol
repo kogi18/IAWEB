@@ -11,4 +11,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {3.6}Example of Continues Movement Loading Animation in CSS}{14}{lstlisting.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.1}Some Code Snippet}{17}{lstlisting.4.1}
+\contentsline {lstlisting}{\numberline {4.1}Example of independent transformations (rotation, position)}{17}{lstlisting.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {4.2}Example of making some text performing turn-around effect)}{18}{lstlisting.4.2}
