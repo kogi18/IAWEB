@@ -11,6 +11,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {3.6}Example of Continues Movement Loading Animation in CSS}{14}{lstlisting.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.1}Example of independent transformations (rotation, position)}{17}{lstlisting.4.1}
+\contentsline {lstlisting}{\numberline {3.7}Example of SVG embedded directyl into HTML}{16}{lstlisting.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.2}Example of making some text performing turn-around effect)}{18}{lstlisting.4.2}
+\contentsline {lstlisting}{\numberline {3.8}Define the imeage as vectors in SVG}{17}{lstlisting.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {3.9}Create SVG stucture into HTML}{18}{lstlisting.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {3.10}Create Keys CSS}{18}{lstlisting.3.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {4.1}Example of independent transformations (rotation, position)}{21}{lstlisting.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {4.2}Example of making some text performing turn-around effect)}{22}{lstlisting.4.2}

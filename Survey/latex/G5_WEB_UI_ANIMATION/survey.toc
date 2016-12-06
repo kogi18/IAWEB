@@ -6,17 +6,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{List of Figures}{iii}{chapter*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{v}{chapter*.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Listings}{vii}{chapter*.4}
+\contentsline {chapter}{List of Listings}{v}{chapter*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Not a Series of Summaries}{1}{section.1.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Read All the Papers and Research Some More}{1}{section.1.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Dividing up the Field}{1}{section.1.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Animation}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
@@ -44,24 +36,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}Navigation Animation}{11}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Hamburger Icon}{11}{subsubsection*.7}
+\contentsline {subsubsection}{Hamburger Icon}{11}{subsubsection*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Current menu position indicator}{12}{subsubsection*.9}
+\contentsline {subsubsection}{Current menu position indicator}{12}{subsubsection*.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}Loading Animation}{13}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rotating Icon}{13}{subsubsection*.10}
+\contentsline {subsubsection}{Rotating Icon}{13}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Horizontal movement}{14}{subsubsection*.12}
+\contentsline {subsubsection}{Horizontal movement}{14}{subsubsection*.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Scalable Vector Graphics (SVG)}{16}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}JavaScript (JS)}{17}{chapter.4}
+\contentsline {subsection}{\numberline {3.4.1}SVG basic graphical elements}{16}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{17}{section.4.1}
+\contentsline {subsection}{\numberline {3.4.2}SVG animation }{17}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{17}{section.4.2}
+\contentsline {subsubsection}{Create SVG stucture into HTML}{18}{subsubsection*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Concluding Remarks}{19}{chapter.5}
+\contentsline {subsubsection}{Define keyframe in CSS}{18}{subsubsection*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{21}{chapter*.14}
+\contentsline {chapter}{\numberline {4}JavaScript (JS)}{21}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}When to Use JS instead of CSS}{21}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{21}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Concluding Remarks}{23}{chapter.5}
