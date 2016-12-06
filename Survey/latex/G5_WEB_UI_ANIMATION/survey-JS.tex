@@ -6,7 +6,7 @@
 % 
 %  Created :  01 Dec 2016
 % 
-%  Changed :  X Dec 2016
+%  Changed :  06 Dec 2016
 % 
 %----------------------------------------------------------------
 
@@ -100,5 +100,19 @@ TweenLite.set($text, {perspective:500});
 tl.staggerTo($("#text span"), 4, {transformOrigin:"50% 50% -30px", rotationY:-360, rotationX:360, rotation:360, ease:Elastic.easeInOut}, 0.02);
 }
 \end{lstlisting}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[keepaspectratio,scale=0.25]{images/solar.png}
+\includegraphics[keepaspectratio,scale=0.25]{images/rocketman.png}
+
+\caption[Hamburger Examples]{
+We provide also great animation examples of combining CSS and JS in code folders solar and rocketmanSVG, to show the potential we can achieve. While the solar system at the top is purely CSS and JS, the bottom rocketman uses SVG with CSS and JS to draw more complex objects. This are not so much animations directed at UI development as simulations, however they greatly show the possibilities of CSS and JS for animation.
+\imgcredit{Screenshot taken by the authors of this survey. The code behind the pages is by using the \citet{solarSystem,rocketmanSVG} online snippets.}
+}
+\label{fig:hamburger}
+\end{figure}
+
 
 \label{list:imposJS}

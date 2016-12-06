@@ -6,19 +6,19 @@
 % 
 %  Created :  01 Dec 2016
 % 
-%  Changed :  X Dec 2016
+%  Changed :  06 Dec 2016
 % 
 %----------------------------------------------------------------
 
 
 \section{Scalable Vector Graphics (SVG)}
 \label{sect:SVG}
-%\TODO{{section by A.K.}}
-SVG (Scalable Vector Graphics) is an XML (Extensible Markup Language) based specification for describing two-dimensional graphics in a vector form. It is specified by W3C (World Wide Web Consortium). Initial release was made in 2001, and the latest release (1.1) was in 2011. Currently it is used in all latest major web browsers, such as Google Chrome, Mozilla Firefox and Internet Explorer, and in some vector graphics software editors, as Inkscape and Adobe Illustrator. In contrast to raster images, vector images are resolution independent, as the format itself is lossless. As mentioned before, the graphic is described in an XML textual file, which can be compressed with gzip. As a result of compression, web pages, where SVG is used load faster than those which use standard JPEG or PNG graphics solutions. Because graphics can be directly embedded into HTML, no extra HTTP requests are necessary. Above approaches lead to saving of the bandwidth, which is extremely important on the pages with higher loads. SVG has a support for different graphics effects and animations, which can be further enhanced with CSS and JavaScript. In case SVG graphic is made in a very complex node structure, browser can have problems rendering the image. In this case other technologies can be used. SVG integrates with other W3C standards such as the DOM and XSL\citep{w3schoolSVG}. 
+SVG (Scalable Vector Graphics) is an XML (Extensible Markup Language) based specification for describing two-dimensional graphics in a vector form. It is specified by W3C (World Wide Web Consortium). Initial release was made in 2001, and the latest release (1.1) was in 2011. Currently it is used in all latest major web browsers, such as Google Chrome, Mozilla Firefox and Internet Explorer, and in some vector graphics software editors, as Inkscape and Adobe Illustrator. In contrast to raster images, vector images are resolution independent, as the format itself is lossless. As mentioned before, the graphic is described in an XML textual file, which can be compressed with gzip. As a result of compression, web pages, where SVG is used load faster than those which use standard JPEG or PNG graphics solutions. Because graphics can be directly embedded into HTML, no extra HTTP requests are necessary. Above approaches lead to saving of the bandwidth, which is extremely important on the pages with higher loads. SVG has a support for different graphics effects and animations, which can be further enhanced with CSS and JavaScript. In case SVG graphic is made in a very complex node structure, browser can have problems rendering the image. In this case other technologies can be used. SVG integrates with other W3C standards such as the DOM and XSL. Since the graphics are described in vectors, we can change the properties of those through time to achieve much more complex animation than with just HTML elements \citep{w3schoolSVG}. 
 
-\subsection{SVG basic graphical elements} % (fold)
+\subsection{Defining Graphical Elementsin SVG} % (fold)
 \label{sub:SVG_basic_elemnts}
-As mentioned before SVG graphics can be embedded directly into HTML pages
+As mentioned before SVG graphics can be embedded directly into HTML pages as an HTML element:
+
 \begin{lstlisting}[
 language=CSS,
 label=list:BibACMIEEE,
@@ -27,13 +27,11 @@ Simple example code one circle embedded directyl into HTML.
 }
 ]
 <html>
-<body>
-
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-</svg>
-
-</body>
+	<body>
+		<svg width="100" height="100">
+		  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+		</svg>
+	</body>
 </html>
 
 \end{lstlisting}
@@ -51,38 +49,46 @@ This example shows how simple to add one element (circle) embedded directyl into
 \end{figure}
 SVG consists of different basic graphical elements, from which more complex elements can be derived. Basic elements included in SVG are:
 \begin{description}
-\item [<rect>] 	  -Element is used to draw a rectangle and variations of the shape of a rectangle.
-\item [<circle>]      	 -Element is used to create a simple circle with color options.
-\item [<line>]         	 -Element is used to create a line.
-\item [<polygon>]  	 -Element is used to create a graphic that contains at least three sides.
-\item [<polyline>]  	 -Element is used to provide any shape consisting of straight lines.
-\item [<path>]    	 -Element is used to define a path. Participates in paths drawing strongly to use to encourage the SVG editor to create complex graphics.
+\item [<rect>]  is used to draw a rectangle and variations of the shape of a rectangle.
+\item [<circle>] creates a simple circle with color options.
+\item [<line>] draws a line.
+\item [<polygon>] is used to create a graphic that contains at least three sides.
+\item [<polyline>] provides any shape consisting of straight lines.
+\item [<path>] defines a path. Use of a SVG editor is strongly encourage for path drawing to create complex graphics.
 \end{description}
 
-With these simple, basic of elements, you can build a very complex shapes. With heli additional graphics functions, you can create a moving figures, but if these figures create just only SVG, the program code will be very large and difficult to read.
+With these simple basic elements, one can build very complex shapes. With heli one has also additional graphics functions, where creation of a moving figure is also included. However, if these figures are created just by using SVG, the program code will be very large and difficult to read.
 \begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio,scale=0.5]{images/Car_svg.png}
 
 \caption[Complex picture with simple SVG elements]{
 Example to create one complex picture with simple SVG elements, with help geomety and color options.
-\imgcredit{Screenshot taken by the authors of this survey. The code behind the pages is by using the \citet{CarSVGl} online snippets as a base.}
+\imgcredit{Screenshot taken by the authors of this survey. The code behind the pages is by using the \citet{CarSVG} online snippets as a base.}
 
 }
 \label{fig:Circle_HTML}
 \end{figure}
 % SVG basic graphical elements (end)
-\subsection{SVG animation } % (fold)
-SVG element is a specific DOM element, which includes himself syntax standard HTML-element. SVG elements have unique tags, attributes and behaviors that enable them to determine any form that offer the opportunity to essentially produce directly to the DOM, images, and thereby benefit from the JavaScript and CSS-based manipulation. There are three main advantages to create graphics in SVG, than an image (PNG, JPEG, etc.): First, compresses incredibly well, certain terms in the SVG file format is smaller than their PNG / JPEG equivalents. Secondly, SVG graphics to scale to any resolution without loss of clarity; they look sharp on all desktop and mobile screens. Third, you can animate the individual components of the SVG graphics performance (with help JavaScript and CSS).SVG elements take some of the standard CSS properties, but not all. In addition, SVG takes a certain set of "presentation" attributes, such as fill, x and y, which also serve to determine both the SVG is visually observed. There is no functional difference between the SVG specification of style using CSS, or as an attribute - SVG specification only divide property under two. In following examples shows how SVG work with CSS together:
-\begin{description}
-\item [Define the imeage as vectors in SVG]
-\item [Tranform the vectors with CSS or SVG]
-\end{description}
+\subsection{Using SVG in CSS Animation } % (fold)
+\label{sub:usingSVGanime}
+SVG element is a specific DOM element, which includes himself syntax standard HTML-element. SVG elements have unique tags, attributes and behaviors that enable them to determine any form that offer the opportunity to essentially produce directly to the DOM, images, and thereby benefit from the JavaScript and CSS-based manipulation. There are three main advantages to create graphics in SVG comaped to statc images:
+\begin{enumerate}
+\item SVG can be compressed incredibly well. Certain images as SVGs are smaller than their PNG / JPEG equivalents.
+\item SVG graphics can be scaled without any loss of clarity to any resolution. Therefore they look sharp on all desktop and mobile screens.
+\item One can animate the individual components of the SVG graphic's performance with CSS or/and JavaScript. Keep in mind that SVG elements take some of the standard CSS properties, but not all.
+\end{enumerate}
+
+ In addition, SVG takes a certain set of "presentation" attributes, such as fill, x and y, which also serve to determine how the SVG is visually observed. There is no functional difference between the SVG specification of style using CSS, or as an SVG attribute \citep{w3schoolSVG}. In short, to animate and SVG, one has to:
+\begin{enumerate}
+\item Define the imeage as vectors in SVG.
+\item Tranform the vectors with SVG, CSS or JavaScript.
+\end{enumerate}
 \begin{lstlisting}[
 language=CSS,
 label=list:BibACMIEEE,
-caption={[Define the imeage as vectors in SVG]%
-Define the attribute for animate transorm.
+caption={[SVG declaration example for animation]%
+SVG declaration example for animation.
 }
 ]
 <animateTransform attributeName="transform"
@@ -94,12 +100,28 @@ Define the attribute for animate transorm.
 
 \end{lstlisting}
 \label{list:animateTransorm}
-\subsubsection {Create SVG stucture into HTML} % (fold)
+%\subsubsection {Create SVG stucture into HTML} % (fold)
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[keepaspectratio,scale=0.5]{images/icon_svg.png}
+\includegraphics[keepaspectratio,scale=0.5]{images/beer_svg.png}
+
+\caption[SVG Animation Examples]{
+Left example SVG is created by the authors to achieve a a trash bin animation with CSS. While the right example is a pure SVG beer animation. 
+\imgcredit{Screenshots taken by the authors of this survey. The animation code behind the trash bin is done by the authors, while the SVG objects are provided by \citet{trashSVG}.The beer code is based on the \citet{beerSVG} online snippets as a base.}
+
+}
+\label{fig:SVGExamples}
+\end{figure}
+
+
 \begin{lstlisting}[
 language=CSS,
 label=list:BibACMIEEE,
 caption={[Create SVG stucture into HTML]%
-Define svg class  with three simple {\em{}<path>} SVG elements with transform function .
+The definition of the trash bin vectors, in figure \ref{fig:SVGExamples}, with the path element, proveded by \citet{trashSVG}.
 }
 ]
 <svg class="svg-icon" viewBox="0 0 20 20">
@@ -133,12 +155,12 @@ Define svg class  with three simple {\em{}<path>} SVG elements with transform fu
 \end{lstlisting}
 \label{list:SVGStuctureHTML}
 
-\subsubsection {Define keyframe in CSS} % (fold)
+% \subsubsection {Define keyframe in CSS} % (fold)
 \begin{lstlisting}[
 language=CSS,
 label=list:BibACMIEEE,
-caption={[Create Keys CSS]%
-Create CSS with {\em{@keyframes}} for picture visualization  .
+caption={[SVG Animation with CSS Declaration]%
+The animation of the trash bin vectors, in figure \ref{fig:SVGExamples}, with the path element, proveded by \citet{trashSVG}. The animation wokrs together with the vectors in the previous listing.
 }
 ]
 #svg-doc{
@@ -167,28 +189,3 @@ Create CSS with {\em{@keyframes}} for picture visualization  .
 
 \end{lstlisting}
 \label{list:Keys_CSS}
-
-\begin{figure}[h]
-\centering
-\includegraphics[keepaspectratio,scale=0.5]{images/beer_svg.png}
-
-\caption[Complete example create animation SVG with CSS]{
-Example to create one complex moving animation in SVG with help of CSS.
-\imgcredit{Screenshot taken by the authors of this survey. The code behind the pages is by using the \citet{beerSVG} online snippets as a base.}
-
-}
-\label{fig:SVG_CSS}
-\end{figure}
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[keepaspectratio,scale=0.5]{images/icon_svg.png}
-
-\caption[Animation from finished icons]{
-Example to create animation with help prepared simple icons. 
-\imgcredit{Screenshot taken by the authors of this survey. The code behind the pages is by using the \citet{trashSVG} online snippets as a base.}
-
-}
-\label{fig:SVGWithSimpleIcons}
-\end{figure}

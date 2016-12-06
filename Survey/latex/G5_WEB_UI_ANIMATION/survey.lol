@@ -13,11 +13,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {3.7}Example of SVG embedded directyl into HTML}{16}{lstlisting.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {3.8}Define the imeage as vectors in SVG}{17}{lstlisting.3.8}
+\contentsline {lstlisting}{\numberline {3.8}SVG declaration example for animation}{18}{lstlisting.3.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {3.9}Create SVG stucture into HTML}{18}{lstlisting.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {3.10}Create Keys CSS}{18}{lstlisting.3.10}
+\contentsline {lstlisting}{\numberline {3.10}SVG Animation with CSS Declaration}{19}{lstlisting.3.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.1}Example of independent transformations (rotation, position)}{21}{lstlisting.4.1}
 \defcounter {refsection}{0}\relax 
