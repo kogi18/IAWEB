@@ -63,3 +63,5 @@
 \contentsline {section}{\numberline {4.2}Examples of Useful Animations with JS}{21}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Concluding Remarks}{23}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{25}{chapter*.19}
