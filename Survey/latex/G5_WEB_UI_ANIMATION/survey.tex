@@ -76,7 +76,10 @@
   labelfont={bf,sf},
   format=hang,
   indention=0mm,
-]{caption,subfig}
+]{caption}
+% ]{caption,subfig}
+
+\usepackage{subcaption}
 
 \captionsetup[subfigure]{
   margin=0pt,
@@ -717,21 +720,56 @@ Creative Commons Attribution 4.0 International
 
 % define CSS source code coloring
 \lstdefinelanguage{CSS} 
-{ 
+{
+alsoletter={<>/.\#},
 keywords={},
 % CSS properties
-keywords={ border,transform,transition,duration,timing-function,animation,color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,size,white,space,min,width,opacity},
+keywords={ border,transform,origin,transition,duration,timing-function,animation,color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,size,white,space,min,width,opacity,height,delay, content,radius, stroke, fill, cx, cy,attributeName, attributeType, values, type, dur, repeatCount, viewBox, d},
 % CSS rules
 keywords=[2]{@keyframes},
 % CSS selectors
-keywords=[3]{hover,before,after},
-sensitive=false, 
+keywords=[3]{hover,before,after, nth, child},
+% HTML attributes
+keywords=[4]{class, alt, id, role, href,
+% calss names for linking it together with CSS
+desiredName, spin, rotating, bar, loading, dots, move, pulz, delete, rot, docs, decks },
+% HTML tags
+keywords=[5]{
+  >, />, <html>, , </html> ,
+  % body
+  <body>, </body>,
+  % Divs
+  div, </div, <div, </div>, <div></div>,
+  % Paragraphs
+  </p, <p, </p>,
+  % scripts
+  </script, <script,
+  % navigation
+  a, <a, </a>,
+  nav, <nav>, </nav>,
+  ul, <ul>, </ul>,
+  li, <li>, </li>, <li><a, </a></li>,
+  % More tags...
+  <canvas, /canvas>, <svg, <rect, <animateTransform, </rect>, </svg>, <video, <source, <iframe, </iframe>, </video>, <image, </image>, <header, </header, <article, </article, <circle, <path, </path>
+  },
+  keywords=[6]{
+    .hamburger, .paperNav, container, .inner,
+    .topBotomBordersOut, .borderYtoX, .highlightTextOut, .circleLoader, .squareloader,
+    .dotsLoader, .progressbarloader,.pulzLoader, \#svg, doc, deck, .container
+  },
+sensitive=false,
+mathescape=true,
 morecomment=[l]{//}, 
-morecomment=[s]{/*}{*/}, 
-morestring=[b]",
+morecomment=[s]{/*}{*/},
+morestring=[b][\color{darkred}]",
+morestring=[b][\color{darkred}]',
+% morecomment=[s][\color{darkred}]{\ .}{\ },
 keywordstyle=\color{blue},
-keywordstyle=[2]\color{violet},
-keywordstyle=[3]\color{orange}
+keywordstyle=[2]\color{brown},
+keywordstyle=[3]\color{orange},
+keywordstyle=[4]\color{violet},
+keywordstyle=[5]\color{teal},
+keywordstyle=[6]\color{darkred}
 }
 
 \cleardoublepage

@@ -1,0 +1,50 @@
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 25em;
+  height: 25em;
+  overflow: visible;
+}
+
+.svg-icon path {
+  fill: #4691f6;
+}
+
+#svg-doc{
+	fill:red;
+    animation: doc-delete 4s linear infinite;
+}
+
+#svg-deck{
+	transform-origin: 100% 50%;
+    animation: deck-rot 4s linear infinite;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+.beer-container{
+	background-color: #ff9c08;
+    width: 15%;
+    border-radius: 50%;
+    padding: 5% 0 5% 7%;
+}
+
+@keyframes doc-delete {
+    0% { transform: translate(75%) scale(0.25); }
+    15% { transform: translate(75%) scale(0.25); }
+    65% { transform: translate(85%,150%) scale(0.1) rotate(-180deg);}
+    100% { transform: translate(85%,150%) scale(0.1); opacity: 0;}
+}
+
+@keyframes deck-rot {
+    0% { transform: translate(-9%, 440%) rotate(0deg) scale(0.75); }
+    25% { transform: translate(-9%, 440%) rotate(90deg) scale(0.75);}
+    40% { transform: translate(-9%, 440%) rotate(90deg) scale(0.75);}
+    65% { transform: translate(-9%, 440%) rotate(0deg) scale(0.75);}
+    100% { transform: translate(-9%, 440%) rotate(0deg) scale(0.75);}
+}

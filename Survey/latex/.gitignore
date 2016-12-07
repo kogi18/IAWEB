@@ -62,3 +62,4 @@ This is what the call to bibtex produces and what is included into your document
 *.ps
 *.dvi
 *.tex~
+*.lol
