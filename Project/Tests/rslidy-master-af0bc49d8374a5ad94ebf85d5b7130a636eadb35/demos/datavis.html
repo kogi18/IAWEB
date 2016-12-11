@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta charset="UTF-8"/>
+
+<!-- for css3 media queries to work properly on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<meta name="dcterms.rightsHolder" content="Copyright © 2015 Keith Andrews">
+
+<link rel="stylesheet" href="../css/reset.css"/>
+<link rel="stylesheet" href="../css/normalise.css"/>
+<link rel="stylesheet" href="../css/rslidy.css" />
+<link rel="stylesheet" href="../css/slides-default.css"/>
+
+
+<title>Andrews - (Open) Data Visualisation</title> 
+
+<script src="../js/rslidy.js"></script>
+</head>
+
+<body>
+
+
+<div class="slide">
+<h1>(Open) Data Visualisation</h1>
+
+<p>Prof. Keith Andrews</p>
+
+<p>IICM, Graz University of Technology, Austria</p>
+
+<p>
+<a href="http://www.iicm.tugraz.at/keith/">
+<code>http://www.iicm.tugraz.at/keith/</code>
+</a>
+</p>
+
+<p>
+Slides:<br/>
+<a href="http://keithandrews.com/talks/2015/bcg2015/">
+<code>http://keithandrews.com/talks/2015/bcg2015/</code>
+</a>
+</p>
+
+
+<p class="location">
+Fri 17 and Sat 18 Apr 2015, BarCamp Graz 2015, Graz, Austria.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Visualising Hierarchies</h1>
+
+<a href="images/collage-hier.svg">
+<img class="svg" src="images/collage-hier.svg"
+  alt="Collage: Visualising Hierarchies" />
+</a>
+
+</div>
+
+
+
+
+
+<div class="slide">
+<h1>Visualising Networks</h1>
+
+<a href="images/collage-network.svg">
+<img class="svg" src="images/collage-network.svg"
+  alt="Collage: Visualising Networks" />
+</a>
+
+</div>
+
+
+
+
+
+<div class="slide">
+<h1>Visualising Multidimensional Metadata</h1>
+
+<a href="images/collage-multidim.svg">
+<img class="svg" src="images/collage-multidim.svg"
+  alt="Collage: Visualising Multidimensional Metadata" />
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Visualising Object Collections (Feature Spaces)</h1>
+
+<a href="images/collage-object.svg">
+<img class="svg" src="images/collage-object.svg"
+  alt="Collage: Visualising Object Collections" />
+</a>
+
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Open Data Formats</h1>
+
+<ul>
+
+<li>Spreadsheet
+<ul>
+<li>Excel (xls), OpenOffice (ods), comma-separated value (csv),
+<abbr title="JavaScript Object Notation">JSON</abbr>, etc.</li>
+<li>machine-readable</li>
+<li>(potentially) with a guaranteed
+<a href="http://en.wikipedia.org/wiki/URI">URI</a></li>
+</ul>
+</li>
+
+
+<li>SPARQL + <abbr title="Resource Description Framework">RDF</abbr>
+<ul>
+<li>
+<a href="http://en.wikipedia.org/wiki/Resource_Description_Framework">
+RDF</a> triples in say XML notation.</li>
+<li>machine-readable</li>
+<li>(potentially) with a guaranteed
+<a href="http://en.wikipedia.org/wiki/URI">URI</a></li>
+<li>(potentially) live data = always current</li>
+
+<li>RDF "Dialects" for Statistical Data:
+<ul>
+
+<li><a href="http://www.w3.org/TR/vocab-data-cube/">
+The RDF Data Cube Vocabulary</a>
+W3C initiative, based on SDMX ISO standard.</li>
+
+<li><a href="http://www.w3.org/TR/skos-reference">
+Simple Knowledge Organization System (SKOS)</a>
+for concept hierarchies.</li>
+
+<li><a href="http://vocab.deri.ie/scovo">
+The Statistical Core Vocabulary (SCOVO)</a>
+earlier project, now deprecated.</li>
+</ul>
+
+</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Tools for Massaging Data</h1>
+
+<ul>
+
+<li>Scripting Languages
+<ul>
+<li>Python</li>
+<li>Perl</li>
+</ul>
+</li>
+
+
+<li>Data Cleaning
+<ul>
+<li>Wrangler<br/>
+<a href="http://vis.stanford.edu/wrangler/">
+<code>http://vis.stanford.edu/wrangler/</code></a>
+<br/>(web service)
+</li>
+
+<li>OpenRefine<br/>
+<a href="http://openrefine.org/">
+<code>openrefine.org</code></a>
+<br/>(download, but runs locally in web browser)
+</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Tools for Visualising Data</h1>
+
+<p>
+Four varieties:
+</p>
+
+<ul>
+<li>Web Services
+<ul>
+<li>must be online</li>
+<li>point and click</li>
+<li>can (sometimes must) share data</li>
+<li>can (sometimes must) share finished visualisations</li>
+</ul>
+</li>
+
+
+<li>Standalone Applications
+<ul>
+<li>download, install, and use locally</li>
+<li>point and click</li>
+<li>generally produce static visualisations (limited interaction)</li>
+</ul>
+</li>
+
+
+<li>Scripting Languages (with Libraries)
+<ul>
+<li>download, install, and use locally</li>
+<li>some basic programming</li>
+<li>generally produce static visualisations (limited interaction)</li>
+</ul>
+</li>
+
+
+<li>Toolkits (with Programming APIs)
+<ul>
+<li>download source code or library and use locally
+(sometimes remote service via API)</li>
+<li>much more programming</li>
+<li>can produce <em>fully interactive</em> visualisations</li>
+</ul>
+</li>
+
+
+</ul>
+
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Web Services</h1>
+
+<ul>
+
+<li>IBM Many Eyes
+<ul>
+<li>upload data (always public)</li>
+<li>create public visualisations (Java applets)</li>
+<li>
+<a href="http://many-eyes.com/">
+<code>many-eyes.com</code></a>
+</li>
+</ul>
+</li>
+
+
+
+<li>Tableau Public
+<ul>
+<li>upload data (public)</li>
+<li>analyse data</li>
+<li>create visualisations (public)</li>
+<li>create dashboards (public)</li>
+<li>
+<a href="http://tableausoftware.com/public/">
+<code>http://tableausoftware.com/public/</code></a>
+</li>
+</ul>
+</li>
+
+
+<li>Tibco Silver Spotfire<br/>
+<a href="http://silverspotfire.tibco.com/">
+<code>silverspotfire.tibco.com</code></a>
+</li>
+
+
+
+<li>Google Spreadsheets + Gadgets (dead)
+<ul>
+<li>upload data (private or shared)</li>
+<li>insert gadgets (private or shared)</li>
+<li>custom gadgets (Google Vis API) [Liquid Diagrams Gadgets]</li>
+<li>
+<a href="http://docs.google.com/">
+<code>docs.google.com</code></a>
+</li></ul>
+</li>
+
+
+<li>Datawrapper<br/>
+<a href="http://datawrapper.de/">
+<code>datawrapper.de</code></a>
+(either hosted or PHP on own server)
+</li>
+
+
+<li>verifiable.com (dead)</li>
+
+<li>swivel.com (dead)</li>
+
+
+<li>DataMaps.eu<br/>
+<a href="http://datamaps.eu/">
+<code>datamaps.eu</code></a>
+(produces choropleth maps in SVG)
+</li>
+
+
+<li>Google Maps API</li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Standalone Applications</h1>
+
+<ul>
+
+<li>Excel, OpenOffice Calc
+</li>
+
+<li>Adobe Illustrator
+</li>
+
+<li>Liquid Diagrams (not released)
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Scripting Languages (with Libraries)</h1>
+
+<ul>
+
+<li>R
+<ul>
+
+<li>lattice
+<a href="http://cran.r-project.org/web/packages/lattice/">
+<code>http://cran.r-project.org/web/packages/lattice/</code></a>
+</li>
+
+<li>ggplot2
+<a href="http://ggplot2.org/">
+<code>ggplot2.org</code></a>
+</li>
+
+<li>portfolio
+<a href="http://cran.r-project.org/web/packages/portfolio/">
+<code>http://cran.r-project.org/web/packages/portfolio/</code></a>
+</li>
+
+</ul>
+</li>
+
+
+
+
+<li>Python
+<ul>
+<li>SciPy<br/>
+<a href="http://scipy.org/">
+<code>scipy.org</code></a>
+</li>
+<li>Matplotlib<br/>
+<a href="http://matplotlib.sourceforge.net/">
+<code>http://matplotlib.sourceforge.net/</code></a>
+</li>
+<li>Veusz<br/>
+<a href="http://home.gna.org/veusz/">
+<code>http://home.gna.org/veusz/</code></a>
+</li>
+<li>SciDAVis<br/>
+<a href="http://scidavis.sourceforge.net/">
+<code>http://scidavis.sourceforge.net/</code></a>
+</li>
+<li>orange<br/>
+<a href="http://orange.biolab.si/">
+<code>http://orange.biolab.si/</code></a>
+</li>
+</ul>
+</li>
+
+
+
+<li>Processing
+<a href="http://processing.org/">
+<code>processing.org</code></a>
+</li>
+
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Toolkits (with Programming APIs)</h1>
+
+<ul>
+
+<li>Java
+<ul>
+<li>Prefuse<br/>
+<a href="http://prefuse.org/">
+<code>prefuse.org</code>
+</a>
+</li>
+
+<li>InfoVis Toolkit (ivtk)<br/>
+<a href="http://ivtk.sourceforge.net/">
+<code>ivtk.sourceforge.net</code>
+</a>
+</li>
+
+</ul>
+</li>
+
+
+
+
+<li>Actionscript (Flash, Flex)
+<ul>
+<li>Flare<br/>
+<a href="http://flare.prefuse.org/">
+<code>flare.prefuse.org</code>
+</a>
+</li>
+
+<li>Kap Lab Kalileo<br/>
+<a href="http://lab.kapit.fr/default/Kalileo/">
+<code>http://lab.kapit.fr/default/Kalileo/</code>
+</a>
+</li>
+
+<li>birdeye<br/>
+<a href="http://code.google.com/p/birdeye/">
+<code>http://code.google.com/p/birdeye/</code>
+</a>
+</li>
+
+</ul>
+</li>
+
+
+
+
+
+<li>Javascript (SVG, HTML5 Canvas 2D, WebGL)
+<ul>
+
+<li>Javascript InfoVis Toolkit (jit)<br/>
+<a href="http://thejit.org/">
+<code>thejit.org</code>
+</a>
+</li>
+
+<li>D3<br/>
+<a href="http://mbostock.github.com/d3/">
+<code>http://mbostock.github.com/d3/</code>
+</a>
+</li>
+
+
+<li>Modest Maps<br/>
+<a href="http://modestmaps.com/">
+<code>modestmaps.com</code>
+</a>
+</li>
+
+
+<li>Polymaps<br/>
+<a href="http://polymaps.org/">
+<code>polymaps.org</code>
+</a>
+</li>
+
+
+</ul>
+</li>
+
+
+
+<li>Many, many others (for C, C++, ...)
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+<div class="slide">
+<h1>Basic Graphics Technologies in the Web Browser</h1>
+
+<p>
+Ways to draw graphics dynamically using JavaScript:
+</p>
+
+<ul>
+<li>Canvas 2D (HTML Canvas 2D Context)<br/>
+<a href="http://w3.org/TR/2dcontext/">
+<code>http://w3.org/TR/2dcontext/</code></a>
+</li>
+
+
+<li>SVG-DOM (SVG nodes injected into the DOM)<br/>
+<a href="http://sitepoint.com/surviving-the-zombie-apocalypse-manipulating-svg-with-javascript/">
+<code>http://sitepoint.com/surviving-the-zombie-apocalypse-manipulating-svg-with-javascript/</code></a>
+</li>
+<!--
+http://petercollingridge.co.uk/data-visualisation/using-javascript-control-svg
+-->
+
+
+<li>WebGL<br/>
+<a href="http://webgl.org/">
+<code>webgl.org</code></a>
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Graphics Libraries (JavaScript)</h1>
+
+
+<ul>
+<li>raphael (2D: SVG-DOM)<br/>
+<a href="http://raphaeljs.com/">
+<code>raphaeljs.com</code></a>
+</li>
+
+
+<li>three.js (3D: WebGL, Canvas 2D, SVG-DOM)<br/>
+<a href="http://threejs.org/">
+<code>threejs.org</code></a>
+</li>
+
+
+<li>two.js (2D: WebGL, Canvas 2D, SVG-DOM)<br/>
+<a href="https://jonobr1.github.io/two.js/">
+<code>https://jonobr1.github.io/two.js/</code></a>
+</li>
+
+
+<li>pixi (2D: WebGL, Canvas 2D)<br/>
+<a href="http://pixijs.com/">
+<code>pixijs.com</code></a>
+</li>
+
+
+<li>plexx (2D: WebGL, Canvas 2D, SVG-DOM, Save As SVG)<br/>
+IICM
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="slide">
+<h1>InfoVis Toolkits (JavaScript)</h1>
+
+<ul>
+
+<li>D3 Data-Driven Documents (SVG-DOM)<br/>
+<a href="http://d3js.org/">
+<code>d3js.org</code></a>
+</li>
+
+
+<li>chartist (SVG-DOM)<br/>
+<a href="https://gionkunz.github.io/chartist-js/">
+<code>https://gionkunz.github.io/chartist-js/</code></a>
+</li>
+
+
+<li>chart.js (Canvas 2D)<br/>
+<a href="http://chartjs.org/">
+<code>chartjs.org</code></a>
+</li>
+
+
+<li>fluiddiagrams (three.js → plexx)<br/>
+<a href="http://projects.iicm.tugraz.at/fluiddiagrams/">
+<code>http://projects.iicm.tugraz.at/fluiddiagrams/</code></a>
+</li>
+
+
+<li>dimple.js (D3)<br/>
+<a href="http://dimplejs.org/">
+<code>dimplejs.org</code></a>
+</li>
+
+
+<li>c3 (D3)<br/>
+<a href="http://c3js.org/">
+<code>c3js.org</code></a>
+</li>
+
+
+<li>dc.js (D3)<br/>
+<a href="http://dc-js.github.io/dc.js/">
+<code>http://dc-js.github.io/dc.js/</code></a>
+</li>
+
+
+<li>vega (D3, Canvas 2D)<br/>
+<a href="https://trifacta.github.io/vega/">
+<code>https://trifacta.github.io/vega/</code></a>
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Examples of Visualising Data Given in RDF</h1>
+
+<p>Not many...</p>
+
+<ul>
+
+<li>UK Archives; Cabinet Office Organogram;
+<a href="http://data.gov.uk/organogram/cabinet-office">
+<code>http://data.gov.uk/organogram/cabinet-office</code>
+</a>
+<br/><a href="http://code.google.com/p/linked-data-api/source/browse/branches/organogram-2011-03-31/">
+<code>http://code.google.com/p/linked-data-api/source/browse/branches/organogram-2011-03-31/</code>
+</a>
+<br/>(Server-side processing of RDF, ships JSON to browser,
+and uses jit for visualisation).
+</li>
+
+
+
+
+<li>Jeni Tennison; Offence Hierarchy Visualisation with rdfQuery and JIT;
+<a href="http://www.jenitennison.com/blog/node/123">
+<code>http://www.jenitennison.com/blog/node/123</code>
+</a>
+
+<br/>Working version of demo:
+<a href="http://www.jenitennison.com/visualisation/offences.html?offences=http%3A%2F%2Fwww.jenitennison.com%2Fdata%2Fscheme%2Foffence%2Fcriminal-damage">
+<code>http://www.jenitennison.com/visualisation/offences.html?offences=http%3A%2F%2Fwww.jenitennison.com%2Fdata%2Fscheme%2Foffence%2Fcriminal-damage</code>
+</a>
+<br/>(Client-side processing of RDF, uses jit for visualisation).
+</li>
+
+
+
+
+<li>LODlive;
+<a href="http://en.lodlive.it">
+<code>http://en.lodlive.it</code>
+</a>
+<br/>(Client-side processing of RDF, uses jquery.jcanvas for visualisation).
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>A Eurostat Vis Tool</h1>
+
+<ol>
+<li>Get RDF data cube from Eurostat wrapper.</li>
+<li>Query data using SPARQL, save subset as RDF.</li>
+<li>Load RDF subset into web browser.</li>
+<li>Generate JSON format on the fly in browser.</li>
+<li>Visualise using ProtoVis.</li>
+</ol>
+</div>
+
+
+
+
+<!--
+
+<div class="slide">
+<h1>SPARQL RDF query</h1>
+
+<pre>
+&lt;html>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
+type="text/javascript">&lt;/script>
+&lt;script src="./dist/js/jquery.rdfquery.core-1.0.js"
+type="text/javascript">&lt;/script>
+&lt;script src="./dist/js/jquery.rdfquery.rdfa-1.0.js"
+type="text/javascript">&lt;/script>
+
+&lt;head>
+&lt;title>RDF 2 JSON&lt;title>
+&lt;/head>
+
+&lt;body>
+  &lt;p>Querying Eurostat data using SPARQL&lt;/p>
+  &lt;script>
+  $.get('./RDFexamples/tin00089_test2.rdf', null, function (rdfXml) {
+    var rdf, json = {};
+    var countries = new Array();
+    var values = 
+    rdf = $.rdf()
+      .load(rdfXml)
+      .prefix('', 'http://ontologycentral.com/2009/01/eurostat/ns#')
+      .prefix('qb', 'http://purl.org/linked-data/cube#')
+      .prefix('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+      .prefix('dcterms', 'http://purl.org/dc/terms/')
+      .prefix('sdmx-measure', 'http://purl.org/linked-data/sdmx/2009/measure#');
+      rdf
+      .where('?observation a qb:Observation')
+      .each(function () {
+
+...
+</pre>
+
+</div>
+
+-->
+
+
+
+
+<div class="slide">
+<h1>Example Eurostat Data in RDF/XML </h1>
+
+<pre>
+&lt;qb:Observation&gt;
+  &lt;qb:dataset rdf:resource="/id/tin00088#ds"&gt;&lt;/qb:dataset&gt;
+  &lt;hhtyp rdf:resource="/dic/hhtyp#TOTAL"&gt;&lt;/hhtyp&gt;
+  &lt;geo rdf:resource="/dic/geo#AT"&gt;&lt;/geo&gt;
+  &lt;dcterms:date&gt;2003&lt;/dcterms:date&gt;
+  &lt;sdmx-measure:obsValue&gt;37&lt;/sdmx-measure:obsValue&gt;
+&lt;/qb:Observation&gt;
+&lt;qb:Observation&gt;
+  &lt;qb:dataset rdf:resource="/id/tin00088#ds"&gt;&lt;/qb:dataset&gt;
+  &lt;hhtyp rdf:resource="/dic/hhtyp#TOTAL"&gt;&lt;/hhtyp&gt;
+  &lt;geo rdf:resource="/dic/geo#AT"&gt;&lt;/geo&gt;
+  &lt;dcterms:date&gt;2004&lt;/dcterms:date&gt;
+  &lt;sdmx-measure:obsValue&gt;45&lt;/sdmx-measure:obsValue&gt;
+&lt;/qb:Observation&gt;
+...
+</pre>
+
+Example dataset <a href="eurostat.rdf"><code>eurostat.rdf</code></a>.
+
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>JSON-like Data Example</h1>
+
+<pre>
+var eu_stats = {
+'AT': {name:'Austria', a:[33, 46, 54, 58, 64]},
+'BE': {name:'Belgium', a:[48, 56, 60, 63, 70]},
+'BG': {name:'Bulgaria', a:[10, 15, 21, 26, 26]},
+'CY': {name:'Cyprus', a:[12, 20, 33, 47, 51]},
+'CZ': {name:'Czech Republic', a:[17, 28, 36, 49, 54]},
+'DE': {name:'Germany', a:[34, 50, 55, 65, 75]},
+'DK': {name:'Denmark', a:[63, 70, 74, 76, 80]},
+...
+'SI': {name:'Slovenia', a:[34, 44, 50, 56, 62]},
+'SK': {name:'Slovakia', a:[11, 27, 35, 42, 49]},
+//'TR': {name:'', a:[0, 17, 22, 26, 34]},
+'UK': {name:'United Kingdom', a:[44, 57, 62, 69, 0]}
+};
+eu_stats.maxYear = 2010;
+eu_stats.minYear = 2006;
+eu_stats.yearIdx = function(year) { return -2006+year; }
+</pre>
+
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Final Eurostat Vis in Browser</h1>
+
+<img src="images/eurostat.png" alt="eurostat vis" />
+
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>A SKOS (Hierarchy) Vis Tool</h1>
+
+<ol>
+<li>Read SKOS data from file (or elsewhere) into browser:<br/>
+Example dataset <a href="faculty.rdf"><code>faculty.rdf</code></a>.
+</li>
+<li>Generate JSON format on the fly in browser.</li>
+<li>Visualise using D3.</li>
+</ol>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Final Eurostat Vis in Browser</h1>
+
+<img src="images/skos-faculty.png" alt="skos faculty hierarchy vis" />
+
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Open Data</h1>
+
+<ul>
+
+<li>Cooperation OGD Österreich;
+<em>Katalog offener Datensätze und Dienste</em>;
+<a href="http://data.gv.at/">
+<code>data.gv.at</code></a>
+</li>
+
+
+<li>Stadt Graz;
+<em>Open Government Data Graz</em>;
+<a href="http://data.graz.gv.at/">
+<code>data.graz.gv.at</code></a>
+</li>
+
+
+<li>UK Government;
+<em>data.gov.uk</em>;
+<a href="http://data.gov.uk/">
+<code>data.gov.uk</code></a>
+</li>
+
+
+<li>US Federal Government;
+<em>data.gov</em>;
+<a href="http://data.gov/">
+<code>data.gov</code></a>
+</li>
+
+
+<li>Open Knowledge Foundation;
+<em>okfn.org</em>;
+<a href="http://okfn.org/">
+<code>okfn.org</code></a>
+</li>
+
+<li>Open Knowledge Forum Austria;
+<em>opendata.at</em>;
+<a href="http://opendata.at/">
+<code>opendata.at</code></a>
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Books (HowTo Guides)</h1>
+
+<ul>
+
+<li>Nathan Yau;
+<em>Visualize This</em>;
+Wiley, Jul 2011.
+<span class="isbn">
+<a href="http://www.amazon.com/exec/obidos/ASIN/0470944889/keithandrewshcic">
+0470944889</a></span>
+</li>
+
+<li>Noah Iliinsky and Julie Steele;
+<em>Designing Data Visualizations</em>;
+O'Reilly, Sep 2011.
+<span class="isbn">
+<a href="http://www.amazon.com/exec/obidos/ASIN/1449312284/keithandrewshcic">
+1449312284</a></span>
+</li>
+
+<li>Brian Suda;
+<em>Designing with Data</em>;
+Five Simple Steps, Aug 2010.
+<span class="isbn">
+<a href="http://www.amazon.com/exec/obidos/ASIN/0956174086/keithandrewshcic">
+0956174086</a></span>
+<a href="http://designingwithdata.com/">
+<code>designingwithdata.com</code></a>
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Books (Hardcore InfoVis)</h1>
+
+<ul>
+
+<li>Matthew Ward, Georges Grinstein, and Daniel Keim;
+<em>Interactive Data Visualization</em>;
+A. K. Peters, Jul 2010.
+<span class="isbn">
+<a href="http://www.amazon.com/exec/obidos/ASIN/1568814739/keithandrewshcic">
+1568814739</a></span>
+</li>
+
+<li>Colin Ware;
+<em>Information Visualization: Perception for Design</em>;
+3<sup>rd</sup> Edition, Morgan Kaufmann, Dec 2012.
+<span class="isbn">
+<a href="http://www.amazon.com/exec/obidos/ASIN/0123814642/keithandrewshcic">
+0123814642</a></span>
+</li>
+
+<li>Robert Spence;
+<em>Information Visualization: Design for Interaction</em>;
+2<sup>nd</sup> Edition, Prentice Hall, 2006.
+<span class="isbn">
+<a href="http://www.amazon.com/exec/obidos/ASIN/0132065509/keithandrewshcic">
+0132065509</a></span>
+</li>
+
+<li>Tamara Munzner
+<em>Visualization Analysis and Design: Abstractions,
+Principles, and Methods</em>;
+A. K. Peters, 2014.
+<a href="http://www.cs.ubc.ca/~tmm/courses/533/book/">
+<code>http://www.cs.ubc.ca/~tmm/courses/533/book/</code></a>
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+
+<div class="slide">
+
+<h1>Videos</h1>
+
+<ul>
+
+<li>Hans Rosling;
+<em>Stats that Reshape Your Worldview</em>;
+TED 2006 Talk, 22 Feb 2006.
+<a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen.html">
+<code>http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen.html</code></a>
+</li>
+
+<li>David McCandless;
+<em>The Beauty of Data Visualization</em>;
+TED Global 2010 Talk, 14 Jul 2010.
+<a href="http://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization.html">
+<code>http://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization.html</code></a>
+</li>
+
+<li>Stephen Few;
+<em>Now You See It</em>;
+Tableau Customer Conference 2008 Talk, 22 Jul 2008.
+<a href="http://www.tableausoftware.com/mkt/downloads/StephanFew-TableauConference.wmv">
+<code>http://www.tableausoftware.com/mkt/downloads/StephanFew-TableauConference.wmv</code></a>
+</li>
+
+
+
+</ul>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Conferences</h1>
+
+<ul>
+
+<li><em>EuroVis 2015</em>;
+25-29 May 2015, Cagliari, Sardinia, Italy.
+<a href="http://eurovis.org/">
+<code>eurovis.org</code></a>
+</li>
+
+
+<li><em>IV 2015</em>;
+21-24 Jul 2015, Barcelona, Spain.
+<a href="http://www.graphicslink.co.uk/">
+<code>www.graphicslink.co.uk</code></a>
+</li>
+
+
+<li><em>IEEE Vis 2015</em>;
+25-30 Oct 2015, Chicago, Illinois, USA.
+<a href="http://ieeevis.org/">
+<code>ieeevis.org</code></a>
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Thank You</h1>
+
+<p>Prof. Keith Andrews</p>
+
+<p>IICM, Graz University of Technology, Austria</p>
+
+<p>
+<a href="http://www.iicm.tugraz.at/keith/">
+<code>http://www.iicm.tugraz.at/keith/</code>
+</a>
+</p>
+
+<p>
+Course Notes on Information Visualisation:<br/>
+<a href="http://courses.iicm.tugraz.at/ivis/ivis.pdf">
+<code>http://courses.iicm.tugraz.at/ivis/ivis.pdf</code>
+</a>
+</p>
+
+<p>
+These slides:<br/>
+<a href="http://keithandrews.com/talks/2015/bcg2015/">
+<code>http://keithandrews.com/talks/2015/bcg2015/</code>
+</a>
+</p>
+
+</div>
+
+
+
+
+
+<div class="slide">
+<!-- blank slide -->
+</div>
+
+
+
+<!--
+<div class="slide">
+<h1>Extra Slides</h1>
+</div>
+-->
+
+
+
+
+</body>
+</html>

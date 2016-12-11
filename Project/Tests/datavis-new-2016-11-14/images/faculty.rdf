@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:university="http://www.student.tugraz.at/ivis/faculty/university#" xml:lang="en" xml:base="http://www.student.tugraz.at/ivis/faculty/">
+    <skos:Concept rdf:about="">
+        <skos:topConceptOf rdf:resource=".."/>
+        <skos:prefLabel>Faculty</skos:prefLabel>
+        <skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Architecture Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Structural Design Institute</skos:prefLabel>   
+												<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">24</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Urban and Architectural History Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">32</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Architectural Theory Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">26</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Urbanism Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">35</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Architectural Typologies Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">33</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Architecture Technology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">44</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Spatial Design Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">31</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Architecture and Landscape Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">28</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Contemporary Art Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">22</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Housing Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">23</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Buildings and Energy Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">13</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Architecture and Media Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">26</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+        <skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Civil Engineering Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Structural Analysis Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">11</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Structural Concrete Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">22</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Steel Structures Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">21</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Technology and Testing of Building Materials Institute</skos:prefLabel>
+                				<skos:narrower>
+														<university:Institute>
+					              		<skos:prefLabel>Working Group Sustainability Assessment of the Institute of Technology and Testing of Building Materials</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+												</university:Institute>
+                        </skos:narrower>      
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">31</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Laboratory for Structural Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">10</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Timber Engineering and Wood Technology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">19</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Highway Engineering and Transport Planning Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">28</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Railway Engineering and Transport Economy Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">21</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Hydraulic Engineering and Water Resources Management Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">35</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Urban Water Management and Landscape Water Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">32</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Soil Mechanics and Foundation Engineering Institute</skos:prefLabel>
+                				<skos:narrower>
+														<university:Institute>
+					              		<skos:prefLabel>Working Group Computational Geotechnics of the Institute of Soil Mechanics and Foundation Engineering</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+												</university:Institute>                        
+												</skos:narrower>      
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">33</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Construction Management and Economics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">27</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Building Construction Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">29</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Rock Mechanics and Tunnelling Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">18</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Applied Geosciences Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">41</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Building Informatics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">16</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Applied Mechanics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">24</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+ 				<skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Mechanical Engineering and Economic Sciences Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Production Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">22</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Materials Science and Welding Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">39</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Strength of Materials Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">11</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Mechanics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">30</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Thermal Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">41</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Logistics Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">36</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Machine Components and Methods of Development Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">30</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Lightweight Design Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">21</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Internal Combustion Engines and Thermodynamics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">46</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Hydraulic Fluidmachinery Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">23</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Thermal Turbomachinery and Machine Dynamics Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Turbomachinery Optimization and CFD Methods of the Institute of Thermal Turbomachinery and Machine Dynamics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>     
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Metrology in Turbomachinery - Laser Optical Metrology of the Institute of Thermal Turbomachinery and Machine Dynamics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>     
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Machine Dynamics - Acoustics of the Institute of Thermal Turbomachinery and Machine Dynamics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>     
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Facilities and Workshop of the Institute of Thermal Turbomachinery and Machine Dynamics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>     
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">42</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Fluid Mechanics and Heat Transfer Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">29</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Automotive Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">33</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Vehicle Safety Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">27</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Tools and Forming Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">25</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Production Science and Management Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">23</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Industrial Management and Innovation Research Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">15</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>General Management and Organisation Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">12</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Business Economics and Industrial Sociology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">19</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Engineering and Business Informatics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">14</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+ 				<skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Electrical and Information Engineering Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Electric Drives and Machines Institute Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">44</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Electrical Power Systems Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">50</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>High Voltage Engineering and System Management Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">31</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Electricity Economics and Energy Innovation Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">20</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Fundamentals and Theory in Electrical Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">35</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Electrical Measurement and Measurement Signal Processing Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">41</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Electronics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">38</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Communication Networks and Satellite Communications Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">36</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Broadband Communication Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">8</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Signal Processing and Speech Communication Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">47</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Automation and Control Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">26</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Genomics and Bioinformatics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">33</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Human Computer Interfaces Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">10</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Medical Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">28</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Health Care Engineering with European Testing Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">19</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Technical Informatics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">41</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Biomechanics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">13</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Microwave and Photonic Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">28</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+ 				<skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Technical Mathematics and Technical Physics Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Analysis and Computational Number Theory (Math A) Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">51</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Optimization and Discrete Mathematics (Math B) Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">30</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Mathematical Structure Theory (Math C) Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">33</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Computational Mathematics (Math D) Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">17</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Statistics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">21</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Geometry Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">29</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Navigation Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">25</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Remote Sensing and Photogrammetry Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">18</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Geoinformation Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">11</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Experimental Physics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">45</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Solid State Physics Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">46</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Theoretical and Computational Physics Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Plasma Physics of the Institute of Theoretical and Computational Physics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>   
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Many Body Physics of the Institute of Theoretical and Computational Physics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>   
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">44</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Materials Physics Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Materials Physics of the Institute of Materials Physics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Radiation Physics of the Institute of Materials Physics</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">26</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Electron Microscopy and Fine Structure Research Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">50</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Engineering Geodesy and Measurement Systems Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">24</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Theoretical Geodesy and Satellite Geodesy Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">15</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+ 				<skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Technical Chemistry, Chemical and Process Engineering, Biotechnology Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Inorganic Chemistry Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">43</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Physical and Theoretical Chemistry Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Structure Science of the Institute of Physical and Theoretical Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Spectroscopy and Electrochemistry of the Institute of Physical and Theoretical Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">45</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Chemistry and Technology of Materials Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">50</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Organic Chemistry Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Biocatalysis of the Institute of Organic Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Glycochemistry and Glycobiology of the Institute of Organic Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Organic Synthesis and Chemical Biology of the Institute of Organic Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">29</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Analytical Chemistry and Food Chemistry Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Food Chemistry and Human Sensors of the Institute of Analytical Chemistry and Food Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Element Analysis and Applied Spectroscopy of the Institute of Analytical Chemistry and Food Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Sensor Materials of the Institute of Analytical Chemistry and Food Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Separation Techniques of the Institute of Analytical Chemistry and Food Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Applied Sensors of the Institute of Analytical Chemistry and Food Chemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">41</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Biochemistry Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Biophysical Chemistry of the Institute of Biochemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Chemistry of Functional Foods of the Institute of Biochemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Molecular Biology of the Institute of Biochemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Protein Biochemistry of the Institute of Biochemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Cell Biology of the Institute of Biochemistry</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">51</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Biotechnology and Biochemical Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">38</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Environmental Biotechnology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">29</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Molecular Biotechnology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">45</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Paper, Pulp and Fibre Technology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">37</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Chemical Engineering and Environmental Technology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">46</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Process and Particle Engineering Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">47</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+ 				<skos:narrower>
+            <skos:Concept>
+                <skos:inScheme rdf:resource=".."/>
+                <skos:broader rdf:resource=""/>
+                <skos:prefLabel>Computer Science Faculty</skos:prefLabel>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Applied Information Processing and Communications Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">46</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Information Systems and Computer Media Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">50</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Knowledge Management Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">42</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Theoretical Computer Science Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Neural Information Processing and Machine Learning of the Institute of Theoretical Computer Science</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Computational Geometry of the Institute of Theoretical Computer Science</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower>  
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">30</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Knowledge Discovery Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">39</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Computer Graphics and Vision Institute</skos:prefLabel>
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Computer Graphics and Interactive Systems of the Institute of Institute for Computer Graphics and Vision</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower> 
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group 3D Object Reconstruction of the Institute of Institute for Computer Graphics and Vision</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower> 
+                				<skos:narrower>
+<university:Institute>
+					              		<skos:prefLabel>Working Group Computer Vision of the Institute of Institute for Computer Graphics and Vision	</skos:prefLabel>
+														<university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">1</university:members>
+</university:Institute>
+                        </skos:narrower> 
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">50</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Computer Graphics and Knowledge Visualisation Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">31</university:members>
+                    </university:Institute>
+                </skos:narrower>
+                <skos:narrower>
+                    <university:Institute>
+                        <skos:inScheme rdf:resource=".."/>
+                        <skos:prefLabel>Software Technology Institute</skos:prefLabel>
+                        <university:members rdf:datatype="http://www.w3.org/2001/XMLSchema#token">50</university:members>
+                    </university:Institute>
+                </skos:narrower>
+            </skos:Concept>
+        </skos:narrower>
+    </skos:Concept>
+</rdf:RDF>
