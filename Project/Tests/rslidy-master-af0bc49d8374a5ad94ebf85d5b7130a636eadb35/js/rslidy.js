@@ -668,6 +668,20 @@ var Rslidy = (function () {
         // Invert everything
         var htmls = document.getElementsByTagName("html");
         this.utils.switchElementsClass(htmls, class_color_invert);
+
+		
+		
+		// NEW: invert status bar as well
+		if(document.body.style.backgroundColor == "")
+		{
+			document.body.style.backgroundColor = "#000000";
+		}
+		else
+		{
+			document.body.style.backgroundColor = "";
+		}
+		
+			
         // Apply invert again to elements which should stay the same (e.g. images)
         var imgs = document.getElementsByTagName("img");
         this.utils.switchElementsClass(imgs, class_color_invert);
