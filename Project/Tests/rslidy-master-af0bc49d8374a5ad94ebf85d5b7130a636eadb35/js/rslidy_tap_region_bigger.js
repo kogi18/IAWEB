@@ -439,8 +439,9 @@ var Rslidy = (function () {
         // Get old body
         var body_old = document.body.innerHTML;
         // Open status bar and content wrapper
-        var status_bar = '<div id="status-bar">';
-        status_bar += '<div id="status-bar-content">';
+		var status_bar = '<div id="status-bar">';
+		status_bar += '<div id="status-bar-content">';
+		status_bar += '<div id="progress-bar"></div>';
         // Add overview button
         status_bar += '<input type="button" value="Slides" id="button-overview" class="status-bar-item">';
         // Add TOC button
@@ -513,6 +514,10 @@ var Rslidy = (function () {
         // Normal key codes
         switch (key) {
             case (this.key_space):
+                if (mode == 0)
+                    this.navNext();
+                break;
+			case (this.key_enter):
                 if (mode == 0)
                     this.navNext();
                 break;
@@ -975,6 +980,9 @@ var Rslidy = (function () {
         var old_index = this.getCurrentSlideIndex();
         // Hide all slides and remove selected effect
         var content_section = document.getElementById("content-section");
+		
+		var progress_bar = document.getElementById("progress-bar");
+		progress_bar.style.width = 'calc(100%*' + (slide_index + 1) / this.num_slides + ')';
 	
         var original_slides = content_section.getElementsByClassName("slide");
         var slide_thumbnails = document.getElementsByClassName("slide-thumbnail");
@@ -1006,7 +1014,7 @@ var Rslidy = (function () {
         // Scroll to the top of this slide
         content_section.scrollTop = 0;
 		
-		window.scrollTo(0, 0);
+		//window.scrollTo(0, 0);
 		
         return 0;
     };

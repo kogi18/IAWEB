@@ -6,7 +6,7 @@ html {
 
 body {
   color: black;
-  /*background-color: rgb(255,0,0);*/
+  /* background-color: white;*/
   font: normal medium Verdana, sans-serif;
   /* allow words to be broken at hyphenation points */
   hyphens: auto;

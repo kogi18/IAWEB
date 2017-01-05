@@ -18,7 +18,7 @@ body
   overflow-x: hidden;
   overflow-y: hidden;
   z-index: -1;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 /*
@@ -33,7 +33,7 @@ body
 {
   width: 15em;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 0;
   list-style: none;
   background-color: rgb(200,200,200);
@@ -71,6 +71,7 @@ body
 /* Hover on link */
 .overview-item a:hover
 {
+
 
 }
 
@@ -133,7 +134,7 @@ body
 {
   height: 100%;
   width: auto;
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   position: absolute;
   top: 0;
   right: 0;
@@ -149,6 +150,7 @@ body
   
   transition: 0.5s cubic-bezier(.46,0,.74,1.27);
   }
+
 
 #content-section .slide
 {
@@ -211,21 +213,14 @@ body
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2em;
+  height: 2.3em;
   background-color: rgba(255,255,255,0);
   display: table;
   z-index: 1;
-  opacity: 0;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
-  
 }
 
-#status-bar:hover
-{
-	opacity: 1;
-
-}
 
 /*
 #status-bar
@@ -252,6 +247,19 @@ height:2em;
 */
 
 
+#progress-bar
+{
+  position: absolute;
+  bottom: 2em;
+
+  width: 100%;
+  height: 0.3em;
+  background-color: rgba(255,0,0,0.3);
+
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  z-index: 1;
+}
 
 
 #status-bar-content
@@ -262,14 +270,17 @@ height:2em;
 transform: translateY(2em);
     transition: all 0.4s ease-in-out;
 		
+		  padding-top: 2px;
+
 	
-	background: -webkit-linear-gradient(top, rgba(200,200,200,0.8), rgba(244,244,244,1)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom, rgba(200,200,200,0.8), rgba(244,244,244,1)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, rgba(200,200,200,0.8), rgba(244,244,244,1)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, rgba(200,200,200,0.8), rgba(244,244,244,1)); /* Standard syntax (must be last) */
+	background: -webkit-linear-gradient(top, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* Standard syntax (must be last) */
 	
 	
-	  border-top: 1px solid rgba(200,200,200,0.9);
+	  border-top: 1px solid rgba(200,200,200,1);
+	  
 
 }
 
@@ -307,6 +318,13 @@ transform: translateY(2em);
   margin-left: 2px;
   display: block;
 }
+
+/*
+.status-bar-item:hover
+{
+	background-color: rgba(244,244,244,0.5);
+}
+*/
 
 #timer
 {
@@ -354,10 +372,13 @@ transform: translateY(2em);
   font-size: 1.5em;
   bottom: calc(2em/1.5);
   right: calc(2em/1.5);
+
   width: auto;
   height: auto;
   padding: 0.2em;
   background-color: rgba(222,222,222,0.8);
+
+
   border: 1px solid rgba(127,127,127,0.95);
   z-index: 1;
   border-radius: 0.5em;
@@ -457,12 +478,45 @@ and (max-device-width: 799px)
   /*
   -- Elements
   */
+  
   #status-bar
   {
-    font-size: 0.8em !important;
-    height: calc(2.0em / 0.8) !important;
-	transform: scale(1,1.5);
+    font-size: 1.3em !important;
+    height: calc(3.3em) !important;
+	/*transform: scale(1,1.5);*/
   }
+  
+  #status-bar-content{  
+  transform: translateY(3em);
+}
+
+  
+  #menu
+  {
+    bottom: 3em;
+  }
+  
+  input
+  {
+	  line-height: 2.5em;
+  }
+  
+  .status-bar-item
+{
+  line-height: 2.5em;
+}
+
+
+#slide-caption
+{
+  line-height: 2.5em;
+}
+
+#progress-bar
+{
+  bottom: 3em;
+}
+
 
 }
 
