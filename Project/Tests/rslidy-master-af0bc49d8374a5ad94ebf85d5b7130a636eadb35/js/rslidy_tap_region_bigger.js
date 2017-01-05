@@ -66,8 +66,11 @@ var Rslidy = (function () {
         this.tilt_value_old = 0;
         this.motion_last = 0;
         this.motion_break = 500; // Minimum interval between movement gestures
-        this.help_text = "Welcome to rslidy!\n\n" +
-            "rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.\n\n" +
+		
+		// intial help_text
+        /*
+		this.help_text = "Welcome to rslidy!\n\n" +
+            "rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.\n\n"; +
             "• Use the buttons LEFT and RIGHT to navigate through the slide show. On devices with a touchscreen, it's possible to use swipe gestures.\n\n" +
             "• All available slides and a table of contents can be shown on the left side by clicking the corresponding buttons in the status bar on the bottom of the page.\n\n" +
             "• Settings for gestures and the night mode can be changed by clicking the Menu button in the status bar.\n\n" +
@@ -75,6 +78,17 @@ var Rslidy = (function () {
             "• If available, speaker notes can be toggled by pressing N or by double-tapping on touch devices.\n\n" +
             "• If enabled, the timer can be started/paused by pressing T or by clicking the timer in the status bar below.\n\n" +
             "Other settings like the aspect ratio of the slides and the zoom level of the thumbnails can be changed in the rslidy.js file.";
+		*/
+		
+		// NEW HELP TEXT
+		this.help_text = "<p>rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.</p>" +
+            "<ul> <li>Use the buttons LEFT and RIGHT to navigate through the slide show. On devices with a touchscreen, it is possible to use swipe gestures.</li>" +
+            "<li> All available slides and a table of contents can be shown on the left side by clicking the corresponding buttons in the status bar on the bottom of the page.</li>" +
+            "<li> Settings for gestures and the night mode can be changed by clicking the Menu button in the status bar.</li>" +
+            "<li> When using mobile device, Shake and Tilt gestures are enabled by default. These can be disabled in the menu. Tilting helps navigating, while shaking resets the presentation to the first slide.</li>" +
+            "<li> If available, speaker notes can be toggled by pressing N or by double-tapping on touch devices.</li>" +
+            "<li> If enabled, the timer can be started/paused by pressing T or by clicking the timer in the status bar below.</li></ul>" +
+            "<p>Other settings like the aspect ratio of the slides and the zoom level of the thumbnails can be changed in the rslidy.js file.</p>";
     }
     // ---
     // Description: Handles the initialization of rslidy, e.g. setting up the menus.
@@ -157,7 +171,7 @@ var Rslidy = (function () {
         document.getElementById("slide-caption").addEventListener('click', function () { this.tocToggleClicked(false); }.bind(this));
         document.getElementById("button-menu").addEventListener('click', function () { this.menuToggleClicked(false); }.bind(this));
         document.getElementById("button-help").addEventListener('click', function () { if (this.close_menu_on_selection == true)
-            this.menuToggleClicked(false); alert(this.help_text); }.bind(this));
+            this.menuToggleClicked(false); }.bind(this));
         document.getElementById("button-zoom-more").addEventListener('click', function (e) { this.changeSlideZoom(e, 1); }.bind(this));
         document.getElementById("button-zoom-reset").addEventListener('click', function (e) { this.changeSlideZoom(e, 0); }.bind(this));
         document.getElementById("button-zoom-less").addEventListener('click', function (e) { this.changeSlideZoom(e, -1); }.bind(this));
@@ -470,6 +484,7 @@ var Rslidy = (function () {
         // Set new body
         document.body.innerHTML = status_bar + body_old;
     };
+	
     // ---
     // Description: Adds the menu to the document.
     // ---
@@ -479,7 +494,8 @@ var Rslidy = (function () {
         // Open menu (hidden at beginning)
         var menu = '<div id="menu" class="hidden">';
         // Add menu content
-        menu += '<div class="menu-content"><a id="button-help" href="javaScript:void(0);">Help</a></div>';
+		var texttt = this.help_text;
+        menu += '<div class="menu-content"><button id="button-help" onclick="openSweetAlert(' + '\'' + texttt + '\'' + ');">Help</button></div>';
         menu += '<div class="menu-content"><a href="#" id="button-zoom-more">A+</a> <a href="#" id="button-zoom-reset">R</a> <a href="#" id="button-zoom-less">A-</a></div>';
         menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" disabled></label></div>';
         menu += '<div class="menu-content"><label>Shake <input type="checkbox" value="Shake" id="checkbox-shake" disabled></label></div>';
@@ -1314,6 +1330,18 @@ var Utils = (function () {
     };
     return Utils;
 })();
+
+function openSweetAlert(string) {
+	swal({
+	title: "Welcome to rslidy!",
+	html: string,
+	showCancelButton: false,
+	confirmButtonText: "Got it!",
+	animation: true,
+	}, function (confirmed) {
+  });
+}
+
 function start() {
     var rslidy = new Rslidy();
     rslidy.init();
