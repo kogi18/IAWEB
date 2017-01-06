@@ -461,15 +461,17 @@ var Rslidy = (function () {
         // Add TOC button
         status_bar += '<input type="button" value="ToC" id="button-toc" class="status-bar-item">';
         // Add buttons for previous/next slide
-        var image_previous = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
+        /*
+		var image_previous = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
         var image_next = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /></svg>'>";
         var image_first = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
         var image_last = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /></svg>'>";
-        status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav">';
-        status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" type="button">' + 'First' + '</button>';
-        status_bar += '<button id="status-bar-nav-button-previous" class="status-bar-nav-button" type="button">' + image_previous + '</button>';
-        status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" type="button">' + image_next + '</button>';
-        status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" type="button">' + 'Last' + '</button>';
+        */
+		status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav">';
+        status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" type="button">' + '<strong>|<</strong>' + '</button>';
+        status_bar += '<button id="status-bar-nav-button-previous" class="status-bar-nav-button" type="button">' + '<strong><</strong>' + '</button>';
+        status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" type="button">' + '<strong>></strong>' + '</button>';
+        status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" type="button">' + '<strong>>|</strong>' + '</button>';
         status_bar += '</div>';
         // Add menu button
         status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" type="button">';
@@ -534,6 +536,8 @@ var Rslidy = (function () {
                     this.navNext();
                 break;
 			case (this.key_enter):
+				if (document.getElementById("slide-input") === document.activeElement)
+					break;
                 if (mode == 0)
                     this.navNext();
                 break;
@@ -1026,7 +1030,8 @@ var Rslidy = (function () {
         var slide_caption = document.getElementById("slide-caption");
         slide_caption.innerHTML = " /" + this.num_slides;
         var slide_input = document.getElementById("slide-input");
-        slide_input.value = slide_index_one_indexed;
+        
+		slide_input.value = slide_index_one_indexed;
         // Scroll to the top of this slide
         content_section.scrollTop = 0;
 		

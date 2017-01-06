@@ -118,7 +118,25 @@ var Rslidy = (function () {
             slide_links[i].addEventListener('click', function (e) { this.slideSelected(e); }.bind(this));
         }
         // Mouse down/up listener for next slide (also prevent navigation by clicking on links)
-        document.getElementById("content-section").addEventListener('mousedown', function (e) { this.start_x = e.clientX; this.start_y = e.clientY; }.bind(this));
+        document.getElementById("content-section").addEventListener('mousedown', function (e) { this.start_x = e.clientX; this.start_y = e.clientY;
+			// NEW: clicking somewhere inside the content hides the menu
+			var menu = document.getElementById("menu");
+			if (menu.classList.contains("hidden") == false)
+			{
+				menu.style.WebkitTransition = 'opacity 0.3s';
+				menu.style.MozTransition = 'opacity 0.3s';
+				
+				menu.style.opacity = 0;
+				
+				setTimeout(function() {
+					menu.classList.add("hidden");
+				}, 300);
+				
+				
+			}
+		
+		}.bind(this));
+		
         document.getElementById("content-section").addEventListener('mouseup', function (e) {
             if (this.start_x == e.clientX && this.start_y == e.clientY
                 && document.getElementById("checkbox-clicknav").checked)
@@ -133,6 +151,8 @@ var Rslidy = (function () {
         document.getElementById("button-toc").addEventListener('click', function () { this.tocToggleClicked(false); }.bind(this));
         document.getElementById("status-bar-nav-button-previous").addEventListener('click', function () { this.navPrevious(); }.bind(this));
         document.getElementById("status-bar-nav-button-next").addEventListener('click', function () { this.navNext(); }.bind(this));
+        document.getElementById("status-bar-nav-button-first").addEventListener('click', function () { this.showSlide(0); }.bind(this));
+        document.getElementById("status-bar-nav-button-last").addEventListener('click', function () { this.showSlide(this.num_slides - 1); }.bind(this));
         document.getElementById("timer").addEventListener('click', function () { this.toggleTimer(); }.bind(this));
         document.getElementById("slide-caption").addEventListener('click', function () { this.tocToggleClicked(false); }.bind(this));
         document.getElementById("button-menu").addEventListener('click', function () { this.menuToggleClicked(false); }.bind(this));
@@ -428,9 +448,13 @@ var Rslidy = (function () {
         // Add buttons for previous/next slide
         var image_previous = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
         var image_next = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /></svg>'>";
+        var image_first = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
+        var image_last = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /></svg>'>";
         status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav">';
+        status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" type="button">' + 'First' + '</button>';
         status_bar += '<button id="status-bar-nav-button-previous" class="status-bar-nav-button" type="button">' + image_previous + '</button>';
         status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" type="button">' + image_next + '</button>';
+        status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" type="button">' + 'Last' + '</button>';
         status_bar += '</div>';
         // Add menu button
         status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" type="button">';
@@ -480,6 +504,12 @@ var Rslidy = (function () {
         this.shift_pressed = e.shiftKey;
         this.alt_pressed = e.altKey;
         this.meta_pressed = e.metaKey;
+		
+		var content_section = document.getElementById("content-section");
+		
+		var step = 1;
+		var i = 0;
+		
         // Normal key codes
         switch (key) {
             case (this.key_space):
@@ -508,16 +538,28 @@ var Rslidy = (function () {
                 break;
             case (this.key_up):
                 if (mode == 0)
-                    this.navPrevious();
-                break;
+					// busy wait to ease scrolling
+					for (var i = 1; i <= 10; i++) {
+						(function(index) {
+							setTimeout(function() { content_section.scrollTop -= index*step; }, i * 20);
+						})(i);
+					}
+					e.preventDefault();
+				break;
             case (this.key_right):
                 if (mode == 0)
                     this.navNext();
                 break;
             case (this.key_down):
                 if (mode == 0)
-                    this.navNext();
-                break;
+					// busy wait to ease scrolling
+					for (var i = 1; i <= 10; i++) {
+						(function(index) {
+							setTimeout(function() { content_section.scrollTop += index*step; }, i * 20);
+						})(i);
+					}					
+					e.preventDefault();
+				break;
             case (this.key_n):
                 if (mode == 0)
                     this.toggleSpeakerNotes(null, false);
@@ -603,11 +645,35 @@ var Rslidy = (function () {
     Rslidy.prototype.menuToggleClicked = function (close_only) {
         close_only = close_only || false;
         // Toggle menu show status
-        var menu = document.getElementById("menu");
+		
+		
+		// NEW: fade in/out effects
+		
+		var menu = document.getElementById("menu");
         if (menu.classList.contains("hidden") == true)
-            menu.classList.remove("hidden");
+		{			
+			menu.classList.remove("hidden");
+			menu.classList.add("not_hidden");	
+			
+			setTimeout(function() {
+				menu.style.WebkitTransition = 'opacity 0.3s';
+				menu.style.MozTransition = 'opacity 0.3s';
+			
+				menu.style.opacity = 1;
+			}, 5);
+		}
         else
-            menu.classList.add("hidden");
+		{			
+			menu.style.WebkitTransition = 'opacity 0.3s';
+			menu.style.MozTransition = 'opacity 0.3s';
+			
+			menu.style.opacity = 0;
+			
+			setTimeout(function() {
+				menu.classList.remove("not_hidden");
+				menu.classList.add("hidden");
+			}, 300);
+		}
     };
     // ---
     // Description: Called whenever one of the text size buttons is clicked.
@@ -668,6 +734,20 @@ var Rslidy = (function () {
         // Invert everything
         var htmls = document.getElementsByTagName("html");
         this.utils.switchElementsClass(htmls, class_color_invert);
+
+		
+		
+		// NEW: invert status bar as well
+		if(document.body.style.backgroundColor == "")
+		{
+			document.body.style.backgroundColor = "#000000";
+		}
+		else
+		{
+			document.body.style.backgroundColor = "";
+		}
+		
+			
         // Apply invert again to elements which should stay the same (e.g. images)
         var imgs = document.getElementsByTagName("img");
         this.utils.switchElementsClass(imgs, class_color_invert);
@@ -895,6 +975,7 @@ var Rslidy = (function () {
         var old_index = this.getCurrentSlideIndex();
         // Hide all slides and remove selected effect
         var content_section = document.getElementById("content-section");
+	
         var original_slides = content_section.getElementsByClassName("slide");
         var slide_thumbnails = document.getElementsByClassName("slide-thumbnail");
         var url_parts = window.location.href.split(this.url_delimiter);
@@ -924,6 +1005,9 @@ var Rslidy = (function () {
         slide_input.value = slide_index_one_indexed;
         // Scroll to the top of this slide
         content_section.scrollTop = 0;
+		
+		window.scrollTo(0, 0);
+		
         return 0;
     };
     // ---

@@ -88,14 +88,8 @@ body {
  */
 
 a {
-    color: blue;
-	text-decoration: underline;
 	
-    -webkit-transition: all 0.3s; /* For Safari 3.1 to 6.0 */
-    transition: all 0.3s;
-	outline: thin dotted;
-	outline-color: rgba(0,0,255,0);
-
+	color: blue;
 }
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
@@ -112,7 +106,7 @@ a:focus {
 a:active,
 a:hover {
 	outline: thin dotted;
-	outline-color: rgba(0,0,255,1);
+	outline-color: rgba(0,0,255,0.8);
 }
 
 /* ==========================================================================
