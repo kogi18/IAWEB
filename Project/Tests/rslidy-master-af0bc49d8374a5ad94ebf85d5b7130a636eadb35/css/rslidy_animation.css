@@ -1,0 +1,53 @@
+/* display none does not work with transitions and animation
+	the problem happens because display:none removes the element from rendering list
+	the alternative is switching the visibility BUT
+		- first all DIVs have to have the display reseted back to inline
+		- all DIVs are setup by default as hidden by visibility, and dimensions
+		- animation has setup in last/first step the visibility and dimensions
+		- reverse animation has problems with visibility
+		- JS rslidy_tap_region_bigger.js IS MODIFIED, to trigger animate class
+*/
+
+
+
+body.animated .slide{
+	display: block !important;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	padding: 0;
+	/* General animation settings */
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+
+/* General animation settings for new slide */
+body.animated :not(.hidden).slide,
+/* Also sets the calls for default animation of opacity change */
+body.animated.opacity :not(.hidden).slide,
+body.animated :not(.hidden).slide.opacity-animation{
+	animation-delay: 1s;
+	animation-name: opacityOn; /* Default animation */
+}
+
+/* General animation settings for old slide */
+body.animated .hidden.slide.animate,
+/* Also sets the calls for default animation of opacity change */
+body.animated.opacity .hidden.slide.animate,
+body.animated .hidden.slide.animate.opacity-animation{
+	animation-name: opacityOff; /* Default animation */
+}
+
+@keyframes opacityOff{
+	0%		{opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	99%		{opacity: 0; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{opacity: 0; visibility: hidden;	height: 0;		width: 0;		padding: 0;}
+}
+
+@keyframes opacityOn{
+	0%		{opacity: 0; visibility: hidden;	height: 0;		width: 0;		padding: 0;}
+	1%		{opacity: 0; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+}

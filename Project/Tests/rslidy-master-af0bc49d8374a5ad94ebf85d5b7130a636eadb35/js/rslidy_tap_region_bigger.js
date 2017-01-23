@@ -105,6 +105,7 @@ var Rslidy = (function () {
         this.injectStatusBar();
         this.injectMenu();
         this.setCurrentSlide(0, true);
+        this.removeAnimation();
         this.addListeners();
         this.doStyleAdaptions();
         // Platform specific settings
@@ -1008,6 +1009,16 @@ var Rslidy = (function () {
         var slide_thumbnails = document.getElementsByClassName("slide-thumbnail");
         var url_parts = window.location.href.split(this.url_delimiter);
         for (var i = 0; i < original_slides.length; i++) {
+            // for out animation of previous active slide 
+            // showSlide triggers hashChange => showSlide is 2x triggered => i != slide_index
+            // since it is 2x triggered a simple fix of i+/-1 is for keeping the correct previous slide to be animated
+            if(!original_slides[i].classList.contains("hidden") && i != slide_index ||
+                (original_slides[i].classList.contains("animate") && (i+1 == slide_index || i-1 == slide_index))){
+                original_slides[i].classList.add("animate");
+            }
+            else{
+                original_slides[i].classList.remove("animate");
+            }
             original_slides[i].classList.add("hidden");
             slide_thumbnails[i].classList.remove("slide-selected");
         }
@@ -1038,6 +1049,15 @@ var Rslidy = (function () {
 		//window.scrollTo(0, 0);
 		
         return 0;
+    };
+    // ---
+    //  Description: Initialization causes all slides to have animate attribute - so a simple loop to remove it was built
+    // ---
+    Rslidy.prototype.removeAnimation = function () {
+        var original_slides = document.getElementById("content-section").getElementsByClassName("slide");
+        for (var i = 0; i < original_slides.length; i++) {
+            original_slides[i].classList.remove("animate");
+        }
     };
     // ---
     // Description: Toggles speaker nodes for current slide if available.
