@@ -1,14 +1,15 @@
-/* display none does not work with transitions and animation
+/*
+	display none does not work with transitions and animation
 	the problem happens because display:none removes the element from rendering list
 	the alternative is switching the visibility BUT
 		- first all DIVs have to have the display reseted back to inline
 		- all DIVs are setup by default as hidden by visibility, and dimensions
 		- animation has setup in last/first step the visibility and dimensions
 		- reverse animation has problems with visibility
-		- JS rslidy_tap_region_bigger.js IS MODIFIED, to trigger animate class
+		- JS rslidy_tap_region_bigger.js IS MODIFIED, to trigger animate, animatedForward and animatedBackwards classes
+		- animatedForward and animatedBackwards classes are used for complex animations to be consistent with the direction
+		- slides without animation direction have duration set to 0 to show them imidiately (e.q. initialization of rSlidy)
 */
-
-
 
 body.animated .slide{
 	display: block !important;
@@ -23,15 +24,19 @@ body.animated .slide{
 	animation-timing-function: linear;
 }
 
-/* General animation settings for new slide */
-body.animated :not(.hidden).slide,
-/* Also sets the calls for default animation of opacity change */
-body.animated.opacity :not(.hidden).slide,
-body.animated :not(.hidden).slide.opacity-animation{
-	animation-delay: 1s;
-	animation-name: opacityOn; /* Default animation */
+/* Without direction we skip the animation*/
+body.animated :not(.animatedForward):not(.animatedBackwards).slide{
+	animation-duration: 0s;
+}
+/* TIME DELAY FOR NEW SLIDE SHOULD BE SAME AS TRANSITION DURATION*/
+body.animated :not(.hidden).slide{
+	animation-delay: 1s;		
 }
 
+
+/*********************************************************************/
+/*					 DEFAULT OPACITY TRANSITION 					*/
+/*********************************************************************/
 /* General animation settings for old slide */
 body.animated .hidden.slide.animate,
 /* Also sets the calls for default animation of opacity change */
@@ -39,6 +44,15 @@ body.animated.opacity .hidden.slide.animate,
 body.animated .hidden.slide.animate.opacity-animation{
 	animation-name: opacityOff; /* Default animation */
 }
+
+/* General animation settings for new slide */
+body.animated :not(.hidden).slide,
+/* Also sets the calls for default animation of opacity change */
+body.animated.opacity :not(.hidden).slide,
+body.animated :not(.hidden).slide.opacity-animation{
+	animation-name: opacityOn; /* Default animation */
+}
+
 
 @keyframes opacityOff{
 	0%		{opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
@@ -51,3 +65,116 @@ body.animated .hidden.slide.animate.opacity-animation{
 	1%		{opacity: 0; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
 	100%	{opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
 }
+
+/*********************************************************************/
+
+
+
+
+/*********************************************************************/
+/* 		SLIDING MOVEMENT TRANSITION - Right and Left direction 		*/
+/*********************************************************************/
+body.animated.sliding-left .slide,
+body.animated.sliding-right .slide,
+body.animated .slide.sliding-left-animation,
+body.animated .slide.sliding-right-animation{
+	animation-duration: 0.5s;
+}
+body.animated.sliding-left :not(.hidden).slide,
+body.animated.sliding-right :not(.hidden).slide,
+body.animated :not(.hidden).slide.sliding-left-animation,
+body.animated :not(.hidden).slide.sliding-right-animation{
+	animation-duration: 0.5s;
+}
+/* Right sliding*/
+body.animated.sliding-right .hidden.slide.animate.animatedForward,
+body.animated .hidden.slide.animate.animatedForward.sliding-right-animation{
+	animation-name: slidingForwardOld;
+}
+body.animated.sliding-right :not(.hidden).slide.animatedForward,
+body.animated :not(.hidden).slide.animatedForward.sliding-right-animation{
+	animation-name: slidingForwardNew;
+}
+body.animated.sliding-right .hidden.slide.animate.animatedBackwards,
+body.animated .hidden.slide.animate.animatedBackwards.sliding-right-animation{
+	animation-name: slidingBackwardsOld;
+}
+body.animated.sliding-right :not(.hidden).slide.animatedBackwards,
+body.animated :not(.hidden).slide.animatedBackwards.sliding-right-animation{
+	animation-name: slidingBackwardsNew;
+}
+/* Left sliding*/
+body.animated.sliding-left .hidden.slide.animate.animatedForward,
+body.animated .hidden.slide.animate.animatedForward.sliding-left-animation{
+	animation-name: slidingBackwardsOld;
+}
+body.animated.sliding-left :not(.hidden).slide.animatedForward,
+body.animated :not(.hidden).slide.animatedForward.sliding-left-animation{
+	animation-name: slidingBackwardsNew;
+}
+body.animated.sliding-left .hidden.slide.animate.animatedBackwards,
+body.animated .hidden.slide.animate.animatedBackwards.sliding-left-animation{
+	animation-name: slidingForwardOld;
+}
+body.animated.sliding-left :not(.hidden).slide.animatedBackwards,
+body.animated :not(.hidden).slide.animatedBackwards.sliding-left-animation{
+	animation-name: slidingForwardNew;
+}
+
+
+@keyframes slidingForwardOld{
+	0%		{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	99%		{transform: translate(100%,0);	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{transform: translate(100%,0);	visibility: hidden;		height: 0;		width: 0;		padding: 0;}
+}
+
+@keyframes slidingForwardNew{
+	0%		{transform: translate(-100%,0);	visibility: hidden;		height: 0;		width: 0;		padding: 0;}
+	1%		{transform: translate(-100%,0); visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+}
+
+@keyframes slidingBackwardsOld{
+	0%		{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	99%		{transform: translate(-100%,0);	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{transform: translate(-100%,0);	visibility: hidden;		height: 0;		width: 0;		padding: 0;}
+}
+
+@keyframes slidingBackwardsNew{
+	0%		{transform: translate(100%,0);	visibility: hidden;		height: 0;		width: 0;		padding: 0;}
+	1%		{transform: translate(100%,0);	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+}
+
+/*********************************************************************/
+
+
+
+
+/*********************************************************************/
+/* 							SCALE TRANSITION						*/
+/*********************************************************************/
+
+body.animated.scale .hidden.slide.animate,
+body.animated .hidden.slide.animate.scale-animation{
+	animation-name: scaleDown; /* Default animation */
+}
+
+body.animated.scale :not(.hidden).slide,
+body.animated :not(.hidden).slide.scale-animation{
+	animation-name: scaleUp; /* Default animation */
+}
+
+@keyframes scaleDown{
+	0%		{transform: scale(1,1);		opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	99%		{transform: scale(0.1,0.1);	opacity: 0; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{transform: scale(0.1,0.1);	opacity: 0; visibility: hidden;		height: 0;		width: 0;		padding: 0;}
+}
+
+@keyframes scaleUp{
+	0%		{transform: scale(0.1,0.1);	opacity: 0; visibility: hidden;		height: 0;		width: 0;		padding: 0;}
+	1%		{transform: scale(0.1,0.1);	opacity: 0; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{transform: scale(1,1);		opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+}
+
+/*********************************************************************/

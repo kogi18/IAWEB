@@ -1012,18 +1012,35 @@ var Rslidy = (function () {
             // for out animation of previous active slide 
             // showSlide triggers hashChange => showSlide is 2x triggered => i != slide_index
             // since it is 2x triggered a simple fix of i+/-1 is for keeping the correct previous slide to be animated
+            // the additional Backwards and Forward is for complex animations needed
             if(!original_slides[i].classList.contains("hidden") && i != slide_index ||
                 (original_slides[i].classList.contains("animate") && (i+1 == slide_index || i-1 == slide_index))){
                 original_slides[i].classList.add("animate");
+                if(old_index < slide_index){
+                    original_slides[i].classList.add("animatedForward");
+                    original_slides[i].classList.remove("animatedBackwards");
+                }else if(old_index > slide_index){
+                    original_slides[i].classList.add("animatedBackwards");  
+                    original_slides[i].classList.remove("animatedForward");         
+                }
             }
             else{
                 original_slides[i].classList.remove("animate");
+                if(slide_index != old_index){
+                    original_slides[i].classList.remove("animatedForward");
+                    original_slides[i].classList.remove("animatedBackwards");
+                }
             }
             original_slides[i].classList.add("hidden");
             slide_thumbnails[i].classList.remove("slide-selected");
         }
         // Show specified slide and add selected effect
         original_slides[slide_index].classList.remove("hidden");
+        if(old_index < slide_index){
+            original_slides[slide_index].classList.add("animatedForward");
+        }else if(old_index > slide_index){
+            original_slides[slide_index].classList.add("animatedBackwards");           
+        }
         slide_thumbnails[slide_index].classList.add("slide-selected");
         // Scroll to it in the overview, but only if the element is not already in the view (and decide on block start/end)
         var child = slide_thumbnails[slide_index];
@@ -1057,6 +1074,8 @@ var Rslidy = (function () {
         var original_slides = document.getElementById("content-section").getElementsByClassName("slide");
         for (var i = 0; i < original_slides.length; i++) {
             original_slides[i].classList.remove("animate");
+            original_slides[i].classList.remove("animatedBackwards");
+            original_slides[i].classList.remove("animatedForward");
         }
     };
     // ---
