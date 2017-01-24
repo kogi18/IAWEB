@@ -170,8 +170,8 @@ var Rslidy = (function () {
         document.getElementById("overview_trigger").addEventListener('mouseout', function () { this.overviewToggleClicked(false); }.bind(this));
         document.getElementById("toc_trigger").addEventListener('mouseout', function () { this.tocToggleClicked(false); }.bind(this));
 
-        document.getElementById("button-overview").addEventListener('click', function () { this.full_overview_locked = this.full_overview_locked != true; this.overviewToggleClicked(false); }.bind(this));
-        document.getElementById("button-toc").addEventListener('click', function () { this.toc_overview_locked = this.toc_overview_locked != true; this.tocToggleClicked(false); }.bind(this));
+        document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; this.overviewToggleClicked(false); }.bind(this));
+        document.getElementById("button-toc").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-toc")], "clicked");  this.toc_overview_locked = this.toc_overview_locked != true; this.tocToggleClicked(false); }.bind(this));
         document.getElementById("status-bar-nav-button-previous").addEventListener('click', function () { this.navPrevious(); }.bind(this));
         document.getElementById("status-bar-nav-button-next").addEventListener('click', function () { this.navNext(); }.bind(this));
         document.getElementById("status-bar-nav-button-first").addEventListener('click', function () { this.showSlide(0); }.bind(this));
