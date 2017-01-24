@@ -28,27 +28,58 @@ body
 /*
 -- Overview panel
 */
-
-#overview
-{
+#overview, #toc,
+#overview_trigger,
+#toc_trigger{
   width: 15em;
   height: 100%;
   position: fixed;
-  z-index: 0;
+  display: block;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+}
+
+#overview, #toc
+{
   list-style: none;
   background-color: rgb(200,200,200);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
   margin: 0 0 2em 0;
-  padding: 0;
 
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   word-wrap: break-word;
+  transition: 0.5s cubic-bezier(.46,0,.74,1.27);
+}
+
+
+#content-section:not(.shifted-toc) ~ #toc_trigger #toc{
+  right: -15em;
+}
+#content-section:not(.shifted-overview) ~ #overview_trigger #overview{
+  left: -15em;
+}
+
+#overview_trigger,
+#toc_trigger{
+  z-index: 1;
+}
+
+#overview_trigger, #overview{
+  left: 0;
+}
+
+#toc_trigger, #toc{
+  right: 0;
+}
+
+#toc{
+  padding-top: 1em;
+}
+
+#toc .slide-link{
+  padding-left: 1em;
 }
 
 /* Items inside the canvas container (e.g. presentation slides) */
@@ -160,9 +191,14 @@ body
   font-size: 1em;
 }
 
-.shifted
+.shifted-overview
 {
   left: 15em !important;
+}
+
+.shifted-toc
+{
+  right: 15em !important;
 }
 
 /* Main content area */
@@ -219,7 +255,7 @@ body
   height: 2.3em;
   background-color: rgba(255,255,255,0);
   display: table;
-  z-index: 1;
+  z-index: 2;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
@@ -443,7 +479,7 @@ transform: translateY(2em);
   
   padding: 0.5em;
   
-  z-index: 1;
+  z-index: 2;
   border-radius: 0.25em;
 }
 
@@ -630,9 +666,14 @@ and (orientation: portrait)
   }
 
   /* In case the user had the overview panel open */
-  .shifted
+  .shifted-overview
   {
     left: 0em !important;
+  }
+
+  .shifted-toc
+  {
+    right: 0em !important;
   }
 
   /* In case the user had the low light mode activated */
