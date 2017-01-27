@@ -696,10 +696,14 @@ var Rslidy = (function () {
 		// NEW: fade in/out effects
 		
 		var menu = document.getElementById("menu");
+        var menu_button = document.getElementById("button-menu");
+
         if (menu.classList.contains("hidden") == true)
 		{			
 			menu.classList.remove("hidden");
-			menu.classList.add("not_hidden");	
+			menu.classList.add("not_hidden");
+
+            menu_button.value = "X";	
 			
 			setTimeout(function() {
 				menu.style.WebkitTransition = 'opacity 0.3s';
@@ -714,6 +718,8 @@ var Rslidy = (function () {
 			menu.style.MozTransition = 'opacity 0.3s';
 			
 			menu.style.opacity = 0;
+
+            menu_button.value = "Menu";
 			
 			setTimeout(function() {
 				menu.classList.remove("not_hidden");
