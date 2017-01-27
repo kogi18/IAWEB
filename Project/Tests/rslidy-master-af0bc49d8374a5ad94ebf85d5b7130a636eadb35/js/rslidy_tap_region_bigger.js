@@ -21,9 +21,9 @@ var Rslidy = (function () {
         this.alt_pressed = false;
         this.meta_pressed = false;
         this.scroll_block_switch = false;
-        this.full_overview = true;
+        this.full_overview = false;
         this.full_overview_locked = false;
-        this.toc_overview = true;
+        this.toc_overview = false;
         this.toc_overview_locked = false;
         this.low_light_mode = false;
         this.timer_enabled = false;
@@ -167,11 +167,11 @@ var Rslidy = (function () {
         // Button listeners
         document.getElementById("overview_trigger").addEventListener('mouseover', function () { this.overviewToggleClicked(false); }.bind(this));
         document.getElementById("toc_trigger").addEventListener('mouseover', function () { this.tocToggleClicked(false); }.bind(this));
-        document.getElementById("overview_trigger").addEventListener('mouseout', function () { this.overviewToggleClicked(false); }.bind(this));
-        document.getElementById("toc_trigger").addEventListener('mouseout', function () { this.tocToggleClicked(false); }.bind(this));
+        document.getElementById("overview_trigger").addEventListener('mouseout', function () { this.overviewToggleClicked(true); }.bind(this));
+        document.getElementById("toc_trigger").addEventListener('mouseout', function () { this.tocToggleClicked(true); }.bind(this));
 
-        document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; this.overviewToggleClicked(false); }.bind(this));
-        document.getElementById("button-toc").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-toc")], "clicked");  this.toc_overview_locked = this.toc_overview_locked != true; this.tocToggleClicked(false); }.bind(this));
+        document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));
+        document.getElementById("button-toc").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-toc")], "clicked");  this.toc_overview_locked = this.toc_overview_locked != true; this.tocToggleClicked(!document.getElementById("button-toc").classList.contains("clicked")); }.bind(this));
         document.getElementById("status-bar-nav-button-previous").addEventListener('click', function () { this.navPrevious(); }.bind(this));
         document.getElementById("status-bar-nav-button-next").addEventListener('click', function () { this.navNext(); }.bind(this));
         document.getElementById("status-bar-nav-button-first").addEventListener('click', function () { this.showSlide(0); }.bind(this));
@@ -351,7 +351,7 @@ var Rslidy = (function () {
         body_new = body_new + overview_content;
         // Set new body (and wrap div around overview and content section)
         document.body.innerHTML = '<div id="new-body">' + body_new + '</div>';
-        // Reset styles for slide navigation (e.g. transform)
+        // Reset styles for slide navigation (e.g. transform)11
         this.adjustOverviewPanel();
     };
     // ---
@@ -625,14 +625,20 @@ var Rslidy = (function () {
         // Close overview menu if desired
         if (this.close_navigation_on_selection == true) {
             var content_section = document.getElementById("content-section");
+            var buttonOV = document.getElementById("button-overview");
+            var buttonTOC = document.getElementById("button-toc");
             content_section.classList.remove("shifted-overview");
             content_section.classList.remove("shifted-toc");
-            /*
+            if(buttonOV.classList.contains("clicked")){
+                this.utils.switchElementsClass([buttonOV], "clicked");
+                this.full_overview_locked = true;
+            }
+            if(buttonTOC.classList.contains("clicked")){
+                this.utils.switchElementsClass([buttonTOC], "clicked");
+                this.toc_overview_locked = true;
+            }
             this.full_overview = false;
             this.toc_overview = false;
-            this.full_overview_locked = false;
-            this.toc_overview_locked = false;
-            */
         }
         // Prevent link clicking (iOS)
         e.preventDefault();
@@ -642,23 +648,19 @@ var Rslidy = (function () {
     // close_only: Specifies whether the overview should only be closed.
     // ---
     Rslidy.prototype.overviewToggleClicked = function (close_only) {
+        console.log("OV: " + this.full_overview + " LOCKED: " + this.full_overview_locked + " CLOSE: " + close_only);
         close_only = close_only || false;
-        // Hide slide-thumbnails / thumbnail-captions, show slide-links (switch only if overview was on links before)
-       /* if (this.full_overview == false) {
-            var slide_thumbnails = document.getElementsByClassName("slide-thumbnail");
-            this.utils.switchElementsClass(slide_thumbnails, "hidden");
-            var thumbnail_captions = document.getElementsByClassName("thumbnail-caption");
-            this.utils.switchElementsClass(thumbnail_captions, "hidden");
-            var slide_links = document.getElementsByClassName("slide-link");
-            this.utils.switchElementsClass(slide_links, "hidden");
-       }
-    */    // Set new checkbox status (don't do this if overview was open AND on links before)
+
+        // for when navigation should hide during left/right manu click
+        if(close_only && this.full_overview_locked && !this.full_overview){
+            this.full_overview_locked = false;
+        }
+
         var content_section = document.getElementById("content-section");
-        if (!(content_section.classList.contains("shifted-overview") == true && this.full_overview == false) && this.full_overview_locked == false ||
-            content_section.classList.contains("shifted-overview") == false && this.full_overview_locked == true){
+        if((this.full_overview_locked && !this.full_overview && !close_only && !content_section.classList.contains("shifted-overview")) ||
+            (!this.full_overview_locked && this.full_overview == close_only)){
             this.utils.switchElementsClass([content_section], "shifted-overview"); // Fix for Chrome on iOS
-            // Set overview to thumbnails
-            this.full_overview = true;
+            this.full_overview = this.full_overview != true;
         }
     };
     // ---
@@ -666,25 +668,21 @@ var Rslidy = (function () {
     // close_only: Specifies whether the overview should only be closed.
     // ---
     Rslidy.prototype.tocToggleClicked = function (close_only) {
+        console.log("TOC: " + this.toc_overview + " LOCKED: " + this.toc_overview_locked + " CLOSE: " + close_only);
+
         close_only = close_only || false;
-        // Hide slide-thumbnails / thumbnail-captions, show slide-links (switch only if overview was on links before)
-        
-   /*     if (this.toc_overview == true) {
-        /*    var slide_thumbnails = document.getElementsByClassName("slide-thumbnail");
-            this.utils.switchElementsClass(slide_thumbnails, "hidden");
-            var thumbnail_captions = document.getElementsByClassName("thumbnail-caption");
-            this.utils.switchElementsClass(thumbnail_captions, "hidden");
-          var slide_links = document.getElementsByClassName("slide-link");
-            this.utils.switchElementsClass(slide_links, "hidden");
+
+        // for when navigation should hide during left/right manu click
+        if(close_only && this.toc_overview_locked && !this.toc_overview){
+            this.toc_overview_locked = false;
         }
-   */     // Set new checkbox status (don't do this if overview was open AND on links before)
+
         var content_section = document.getElementById("content-section");
-        if (!(content_section.classList.contains("shifted-toc") == true && this.toc_overview == false) && this.toc_overview_locked == false ||
-            content_section.classList.contains("shifted-toc") == false && this.toc_overview_locked == true){
+        if((this.toc_overview_locked && !this.toc_overview && !close_only && !content_section.classList.contains("shifted-toc")) ||
+            (!this.toc_overview_locked && this.toc_overview == close_only)){
             this.utils.switchElementsClass([content_section], "shifted-toc"); // Fix for Chrome on iOS
-            // Set overview to thumbnails
-            this.toc_overview = true;
-    }
+            this.toc_overview = this.toc_overview != true;
+        }
     };
     // ---
     // Description: Called whenever the menu button is clicked.
