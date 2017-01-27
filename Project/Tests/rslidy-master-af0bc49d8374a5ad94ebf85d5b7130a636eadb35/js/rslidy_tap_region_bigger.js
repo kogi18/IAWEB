@@ -703,7 +703,7 @@ var Rslidy = (function () {
 			menu.classList.remove("hidden");
 			menu.classList.add("not_hidden");
 
-            menu_button.value = "X";	
+            setTimeout(function() { menu_button.value = "X";}, 300); // 0.3s	
 			
 			setTimeout(function() {
 				menu.style.WebkitTransition = 'opacity 0.3s';
@@ -718,8 +718,8 @@ var Rslidy = (function () {
 			menu.style.MozTransition = 'opacity 0.3s';
 			
 			menu.style.opacity = 0;
-
-            menu_button.value = "Menu";
+            
+            setTimeout(function() { menu_button.value = "Menu";}, 300); // 0.3s 
 			
 			setTimeout(function() {
 				menu.classList.remove("not_hidden");

@@ -495,12 +495,12 @@ transform: translateY(2em);
 */
 .hidden
 {
-  display: none !important;
+  display: none;
 }
 
 .not_hidden
 {
-  display: visible !important;
+  display: visible;
 }
 
 .invisible
@@ -572,7 +572,7 @@ and (max-device-width: 799px)
   */
   .hidden-on-mobile
   {
-    display: none !important;
+    display: none;
   }
 
   /*
