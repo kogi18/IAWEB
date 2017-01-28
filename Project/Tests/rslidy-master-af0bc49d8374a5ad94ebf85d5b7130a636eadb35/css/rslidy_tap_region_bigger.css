@@ -267,6 +267,8 @@ body
   overflow: hidden;
 }
 
+
+/*
 button, .status-bar-item{
     cursor: pointer;
 	background-color: rgb(100,100,100);
@@ -274,16 +276,17 @@ button, .status-bar-item{
     border-radius: 0.25em;
 	transition: background-color 0.3s;
 	
-	/*
+	
 	filter: invert(0%);
 	transition: filter 0.1s;
-	*/
+	
 }
+
 
 button:hover, .status-bar-item:hover{
 	background-color: rgb(80,80,80);
 }
-
+*/
 
 
 button:focus, .status-bar-item:focus{
@@ -381,9 +384,10 @@ transform: translateY(2em);
 
 .status-bar-nav-button
 {
-  margin-left: 1px;
-  margin-right: 1px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
+
 
 
 #status-bar-button-nav
@@ -397,6 +401,8 @@ transform: translateY(2em);
 {
   color: white; 
 }
+
+
 
 #status-bar-nav-link-previous
 {
@@ -452,7 +458,7 @@ transform: translateY(2em);
 #slide-caption
 {
   float: right;
-  color: rgb(255,0,0);
+  color: black;
   background-color: rgba(255,0,0,0);
   opacity: 1.0 !important;
   margin-right: 5px;
