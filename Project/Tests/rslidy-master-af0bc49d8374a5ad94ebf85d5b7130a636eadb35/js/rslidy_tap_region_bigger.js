@@ -475,6 +475,7 @@ var Rslidy = (function () {
         // Open status bar and content wrapper
 		var status_bar = '<div id="status-bar">';
 		status_bar += '<div id="status-bar-content">';
+		status_bar += '<div id="progress-bar-indicator"></div>';
 		status_bar += '<div id="progress-bar"></div>';
         status_bar += '<input type="button" value="Slides" title="Pin slides preview on the left side" id="button-overview" class="status-bar-item">';
         // Add overview button
@@ -1031,6 +1032,8 @@ var Rslidy = (function () {
         var content_section = document.getElementById("content-section");
 		
 		var progress_bar = document.getElementById("progress-bar");
+		var progress_bar_indicator = document.getElementById("progress-bar-indicator");
+		progress_bar_indicator.style.left = 'calc(-0.4em + 100%*' + (slide_index + 1) / this.num_slides + ')';
 		progress_bar.style.width = 'calc(100%*' + (slide_index + 1) / this.num_slides + ')';
 	
         var original_slides = content_section.getElementsByClassName("slide");
