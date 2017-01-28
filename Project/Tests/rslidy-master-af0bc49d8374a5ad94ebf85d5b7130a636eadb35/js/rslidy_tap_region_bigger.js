@@ -185,6 +185,9 @@ var Rslidy = (function () {
         document.getElementById("status-bar-nav-button-last").addEventListener('click', function () { this.showSlide(this.num_slides - 1); }.bind(this));
         document.getElementById("timer").addEventListener('click', function () { this.toggleTimer(); }.bind(this));
         document.getElementById("slide-caption").addEventListener('click', function () { this.tocToggleClicked(false); }.bind(this));
+		
+		document.getElementById("status-bar-pin-button").addEventListener('click', function () { this.pinToggleClicked(false); }.bind(this));
+		
         document.getElementById("button-menu").addEventListener('click', function () { this.menuToggleClicked(false); }.bind(this));
         document.getElementById("button-help").addEventListener('click', function () { if (this.close_menu_on_selection == true)
             this.menuToggleClicked(false); }.bind(this));
@@ -496,7 +499,8 @@ var Rslidy = (function () {
         // Open status bar and content wrapper
 		var status_bar = '<div id="status-bar">';
 		status_bar += '<div id="status-bar-content">';
-		status_bar += '<div id="progress-bar-indicator"></div>';
+		status_bar += '<div id="progress-bar-indicator-left"></div>';
+		status_bar += '<div id="progress-bar-indicator-right"></div>';
 		status_bar += '<div id="progress-bar"></div>';
         status_bar += '<input type="button" value="Slides" title="Pin slides preview on the left side" id="button-overview" class="status-bar-item" style="width: 4em">';
         // Add overview button
@@ -509,6 +513,8 @@ var Rslidy = (function () {
         var image_first = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"1,0 4,0 4,16 1,16\" style=\"fill:black;\" /> /><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /> /> </svg>'>";
 		var image_last = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /><polygon points=\"15,0 12,0 12,16 15,16\" style=\"fill:black;\" /></svg>'>";
         
+		var image_pin = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"11\" cy=\"3\" r=\"3\" stroke=\"black\" stroke-width=\"0.5\" fill=\"rgba(0,0,0,0.9)\" /><polygon points=\"11,5 10,4 0,16\" style=\"fill:black;\" /></svg>'>";
+		
         // Add left nevigation buttons
 		status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav-left">';
         status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" title="Go to the first slide" type="button">' + image_first + '</button>';
@@ -524,9 +530,11 @@ var Rslidy = (function () {
         status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" title="Go to the next slide" type="button">' + image_next + '</button>';
         status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" title="Go to the last slide" type="button">' + image_last + '</button>';
         status_bar += '</div>';
+		
         // Add menu button
         status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" title="Open the menu" type="button">';
-         // Add timer
+        status_bar += '<button id="status-bar-pin-button" class="status-bar-item" title="Pin the status bar" type="button">' + image_pin + '</button>';
+		 // Add timer
         status_bar += '<div class="status-bar-item" id="timer">00:00</div>';
         // Close content wrapper and status bar
         status_bar += '</div>';
@@ -757,6 +765,45 @@ var Rslidy = (function () {
 			}, 300);
 		}
     };
+	
+	
+	
+	Rslidy.prototype.pinToggleClicked = function (close_only) {
+        close_only = close_only || false;
+        // Toggle menu show status
+		
+		
+		// NEW: fade in/out effects
+		
+        var pin_button = document.getElementById("status-bar-pin-button");
+        var status_bar = document.getElementById("status-bar-content");
+		var indicator_left = document.getElementById("progress-bar-indicator-left");
+		var indicator_right = document.getElementById("progress-bar-indicator-right");
+
+        if (pin_button.title == "Pin the status bar")
+		{
+			pin_button.title = "Unpin the status bar";
+			status_bar.style = "transform: translateY(0);";
+			pin_button.style.WebkitTransition = 'opacity 0.3s';
+			pin_button.style.MozTransition = 'opacity 0.3s';
+			
+			pin_button.style.opacity = 0.5;
+			indicator_left.style.visibility = "hidden";
+			indicator_right.style.visibility = "hidden";
+		}
+        else
+		{			
+			pin_button.title = "Pin the status bar";
+			status_bar.removeAttribute('style');
+			
+			pin_button.style.opacity = 1;
+			
+			indicator_left.style.visibility = "visible";
+			indicator_right.style.visibility = "visible";
+		}
+    };
+	
+	
     // ---
     // Description: Called whenever one of the text size buttons is clicked.
     // e: The event.
@@ -1059,8 +1106,8 @@ var Rslidy = (function () {
         var content_section = document.getElementById("content-section");
 		
 		var progress_bar = document.getElementById("progress-bar");
-		var progress_bar_indicator = document.getElementById("progress-bar-indicator");
-		progress_bar_indicator.style.left = 'calc(-0.8em + 100%*' + (slide_index + 1) / this.num_slides + ')';
+		//var progress_bar_indicator = document.getElementById("progress-bar-indicator");
+		//progress_bar_indicator.style.left = 'calc(-0.8em + 100%*' + (slide_index + 1) / this.num_slides + ')';
 		progress_bar.style.width = 'calc(100%*' + (slide_index + 1) / this.num_slides + ')';
 	
         var original_slides = content_section.getElementsByClassName("slide");
