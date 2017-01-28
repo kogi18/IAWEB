@@ -352,21 +352,42 @@ height:2em;
   z-index: 1;
 }
 
-#progress-bar-indicator
+#progress-bar-indicator-left
 {
   position: absolute;
   bottom: 2.45em;
 
   /*width: 0.4em;
   height: 0.3em;*/
-  left: 0;
+  left: 1em;
   /*background-color: rgba(48, 133, 214, 0.5);*/
   /*background-color: rgba(26, 83, 255,0.9);*/
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 0.4em 0.5em 0.4em;
-  border-color: transparent transparent rgba(26, 83, 255,0.3) transparent;
+  border-color: transparent transparent rgba(200,200,200,0.5) transparent;
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  z-index: 1;
+}
+
+
+#progress-bar-indicator-right
+{
+  position: absolute;
+  bottom: 2.45em;
+
+  /*width: 0.4em;
+  height: 0.3em;*/
+  right: 1em;
+  /*background-color: rgba(48, 133, 214, 0.5);*/
+  /*background-color: rgba(26, 83, 255,0.9);*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.4em 0.5em 0.4em;
+  border-color: transparent transparent rgba(200,200,200,0.5) transparent;
 
   /*border: 1px solid rgba(127,127,127,0.95);*/
   z-index: 1;
@@ -509,6 +530,13 @@ height:2em;
   float: right;
   margin-right: 2px;
   width: 70px;
+}
+
+#status-bar-pin-button
+{
+  float: right;
+  margin-right: 2px;
+  min-width: 2em;
 }
 
 /*
@@ -674,7 +702,7 @@ and (max-device-width: 799px)
   bottom: 3em;
 }
 
-#progress-bar-indicator
+#progress-bar-indicator-left, #progress-bar-indicator-right
 {
   bottom: 3.3em;
 }
