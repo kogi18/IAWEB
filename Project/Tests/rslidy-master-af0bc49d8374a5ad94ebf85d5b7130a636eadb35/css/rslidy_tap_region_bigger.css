@@ -259,8 +259,7 @@ body
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2.3em;
-  background-color: rgba(255,255,255,0);
+  padding-top: 5em;
   display: table;
   z-index: 2;
   transition: all 0.4s ease-in-out;
@@ -379,28 +378,28 @@ border-color: transparent transparent rgba(26, 83, 255,0.3) transparent;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-transform: translateY(2em);
-    transition: all 0.4s ease-in-out;
+  transform: translateY(2em);
+  transition: all 0.4s ease-in-out;
+
+  height: 2.3em;
+  background-color: rgba(255,255,255,0);
 		
-		  padding-top: 2px;
+	padding-top: 2px;
 
 	
 	background: -webkit-linear-gradient(top, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* Standard syntax (must be last) */
-	
-	
-	  border-top: 1px solid rgba(200,200,200,1);
-	  
+  background: -o-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* Standard syntax (must be last) */
 
+
+  border-top: 1px solid rgba(200,200,200,1);
 }
 
-#status-bar-content:hover
+#status-bar:hover #status-bar-content
 {
 	transform: translateY(0);
 }
-
 
 .status-bar-nav-button
 {
