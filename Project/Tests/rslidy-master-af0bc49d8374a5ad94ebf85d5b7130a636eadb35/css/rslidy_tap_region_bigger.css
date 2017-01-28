@@ -579,7 +579,7 @@ and (max-device-width: 799px)
   */
   .hidden-on-mobile
   {
-    display: none;
+    display: none !important;
   }
 
   /*
