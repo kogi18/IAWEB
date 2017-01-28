@@ -225,8 +225,9 @@ var Rslidy = (function () {
         // Set motion break if device changes from PORTRAIT to LANDSCAPE or vice versa (prevent unintended slide navigation)
         window.addEventListener("orientationchange", function (e) { this.motion_last = (new Date).getTime(); }.bind(this));
 		
-		// Input listeners
+		  // Input listeners
         var images = document.getElementsByTagName("img");
+	//	var content_section = document.getElementById("content-section");
 		var images  = content_section.getElementsByTagName("img");
 
         for (var i=0, len=images.length, img; i<len; i++) {
@@ -1437,6 +1438,7 @@ function openSweetAlert(string) {
   });
 }
 
+
 function openSweetAlert2(string) {
     swal({
     html: string,
@@ -1446,6 +1448,9 @@ function openSweetAlert2(string) {
     }, function (confirmed) {
   });
 }
+ 
+
+
 // Description: Enables the browser to first draw the loader, before initialization is started
 // ---
 function preload() {
@@ -1457,25 +1462,10 @@ function preload() {
     loader.offsetHeight; // no need to store this anywhere, the reference is enough
     loader.style.display='block';
     */
-}<<<<<<< .mine    html: string,
-    showCancelButton: false,
-	confirmButtonText: "Close!",
-    animation: true,
-    }, function (confirmed) {
-  });
 }
-=======// ---
-function preload() {
-    //Append the CSS loading animation placeholder to original body.
-    var body_old = document.body.innerHTML
-    document.body.innerHTML = '<div id="loader"><div>r</div><div>S</div><div>l</div><div>i</div><div>d</div><div>y</div></div>' + body_old;
-    var loader = document.getElementById('loader');
- /*   loader.style.display = 'none';
-    loader.offsetHeight; // no need to store this anywhere, the reference is enough
-    loader.style.display='block';
-    */
-}
->>>>>>> .theirsfunction start() {
+
+
+function start() {
     var start = performance.now();
     // Append the loading animation placeholder at almost JS start
     preload();
