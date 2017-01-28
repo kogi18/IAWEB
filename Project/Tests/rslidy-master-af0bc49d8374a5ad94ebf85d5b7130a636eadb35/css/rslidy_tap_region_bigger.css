@@ -21,6 +21,14 @@ body
   /*background-color: white;*/
 }
 
+
+
+a
+{
+	text-decoration: underline;
+}
+
+
 /*
 -- overview/content separation
 */
@@ -373,7 +381,7 @@ button:hover, .status-bar-item:hover{
 	background-color: rgb(80,80,80);
 }
 */
-
+.s
 
 button:focus, .status-bar-item:focus{
 	outline: 0;
@@ -439,21 +447,42 @@ height:2em;
   z-index: 1;
 }
 
-#progress-bar-indicator
+#progress-bar-indicator-left
 {
   position: absolute;
   bottom: 2.45em;
 
   /*width: 0.4em;
   height: 0.3em;*/
-  left: 0;
+  left: 1em;
   /*background-color: rgba(48, 133, 214, 0.5);*/
   /*background-color: rgba(26, 83, 255,0.9);*/
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 0.4em 0.5em 0.4em;
-  border-color: transparent transparent rgba(26, 83, 255,0.3) transparent;
+  border-color: transparent transparent rgba(200,200,200,0.5) transparent;
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  z-index: 1;
+}
+
+
+#progress-bar-indicator-right
+{
+  position: absolute;
+  bottom: 2.45em;
+
+  /*width: 0.4em;
+  height: 0.3em;*/
+  right: 1em;
+  /*background-color: rgba(48, 133, 214, 0.5);*/
+  /*background-color: rgba(26, 83, 255,0.9);*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.4em 0.5em 0.4em;
+  border-color: transparent transparent rgba(200,200,200,0.5) transparent;
 
   /*border: 1px solid rgba(127,127,127,0.95);*/
   z-index: 1;
@@ -496,14 +525,34 @@ height:2em;
 
 
 
-#status-bar-button-nav
+#status-bar-button-nav-left,
+#status-bar-button-nav-info,
+#status-bar-button-nav-info div,
+#status-bar-button-nav-info input,
+#status-bar-button-nav-right
 {
-  display: inline-block;
-  margin-top: 0px !important;
+  display: inline-flex;
   font-family: Verdana,Geneva,sans-serif; 
+  margin: 0 !important;
 }
 
-#status-bar-button-nav:hover
+
+#slide-input-container, #slide-caption{
+  font-size: 18px;
+  padding: 1px 0;
+}
+
+#slide-input-container{
+  padding-left: 6px;
+}
+
+#slide-caption{
+  padding-left: 3px;
+  padding-right: 6px;
+}
+
+#status-bar-button-nav-left:hover,
+#status-bar-button-nav-right:hover
 {
   color: white; 
 }
@@ -576,6 +625,13 @@ height:2em;
   float: right;
   margin-right: 2px;
   width: 70px;
+}
+
+#status-bar-pin-button
+{
+  float: right;
+  margin-right: 2px;
+  min-width: 2em;
 }
 
 /*
@@ -702,11 +758,26 @@ and (max-device-width: 799px)
   -- Elements
   */
 
+  #overview, #toc,
+  #overview_trigger,
+  #toc_trigger{
+    width: 7.5em;
+  }
+
+  #content-section:not(.shifted-toc) ~ #toc_trigger #toc{
+    right: -7.5em;
+  }
+  #content-section:not(.shifted-overview) ~ #overview_trigger #overview{
+    left: -7.5em;
+  }
+
+
   
   #status-bar
   {
     font-size: 1.3em !important;
     height: calc(3.3em) !important;
+    padding-top: 0 !important;
 	/*transform: scale(1,1.5);*/
   }
   
@@ -741,7 +812,7 @@ and (max-device-width: 799px)
   bottom: 3em;
 }
 
-#progress-bar-indicator
+#progress-bar-indicator-left, #progress-bar-indicator-right
 {
   bottom: 3.3em;
 }

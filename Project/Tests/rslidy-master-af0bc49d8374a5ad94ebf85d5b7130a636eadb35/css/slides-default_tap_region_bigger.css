@@ -251,12 +251,17 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
   max-height: 20em;
 }
 
-.swal2-modal {
-    width:100% !important;
-    height:100% !important;
+
+.swal2-modal.imageAlert {
+    min-height: inherit !important;
+    min-width: inherit !important;
+    width: 95% !important;
+    max-height:95% !important;
+    max-width: 95% !important;
 }
 
-.swal2-content {
+.swal2-modal.imageAlert .swal2-content {
     width:100% !important;
     height:100% !important;
+    text-align: center;
 }
