@@ -21,6 +21,14 @@ body
   /*background-color: white;*/
 }
 
+
+
+a
+{
+	text-decoration: underline;
+}
+
+
 /*
 -- overview/content separation
 */

@@ -202,6 +202,7 @@ var Rslidy = (function () {
         document.getElementById("checkbox-clicknav").addEventListener('click', function () { if (this.close_menu_on_selection == true)
             this.menuToggleClicked(false); }.bind(this));
         document.getElementById("checkbox-lowlightmode").addEventListener('click', function () { this.lowLightModeToggleClicked(); }.bind(this));
+        document.getElementById("checkbox-hideaddressbar").addEventListener('click', function () { this.hideAddressBarToggleClicked(); }.bind(this));
         // Input listeners
         document.getElementById("slide-input").addEventListener('keyup', function (e) { this.slideInputKeyPressed(e); }.bind(this));
         // Window listeners
@@ -561,6 +562,7 @@ var Rslidy = (function () {
         menu += '<div class="menu-content"><label>Shake <input type="checkbox" value="Shake" id="checkbox-shake" disabled></label></div>';
         menu += '<div class="menu-content"><label>Click Nav <input type="checkbox" value="Tilt" id="checkbox-clicknav"></label></div>';
         menu += '<div class="menu-content"><label>Low Light Mode <input type="checkbox" value="Low Light Mode" id="checkbox-lowlightmode"></label></div>';
+        menu += '<div class="menu-content"><label>Hide Address Bar <input type="checkbox" value="Hide Address Bar" id="checkbox-hideaddressbar"></label></div>';
         // Close menu
         menu += '</div>';
         // Set new body
@@ -835,6 +837,75 @@ var Rslidy = (function () {
         if (this.close_menu_on_selection == true)
             this.menuToggleClicked(false);
     };
+	
+	
+	
+	Rslidy.prototype.hideAddressBarToggleClicked = function () {
+		
+		
+	if(document.getElementById("checkbox-hideaddressbar").checked == true)
+	{
+		
+		var jq = document.createElement("script");
+
+	jq.addEventListener("load", proceed); // pass my hoisted function
+	jq.src = "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js";
+	document.querySelector("head").appendChild(jq);
+	
+		function proceed () {
+		$('a[href]').each(function () {
+							var href = this.href;
+			
+							$(this).removeAttr('href').css('cursor', 'pointer').click(function () { // gets rid of the href (no addres on mouseover) but has pointer as cursor
+								if (href.toLowerCase().indexOf("#") >= 0) {
+			
+								} else {
+									var redirectWindow = window.open(href, '_self');
+									redirectWindow.location; // opens in new tab
+								}
+							});
+						});
+
+		}
+	}
+	else if(document.getElementById("checkbox-hideaddressbar").checked == false)
+	{
+		var jq = document.createElement("script");
+
+	jq.addEventListener("load", proceed); // pass my hoisted function
+	jq.src = "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js";
+	document.querySelector("head").appendChild(jq);
+	
+		function proceed () {
+		$('a').each(function () {
+			$(this).removeAttr("style");
+			var href = $(this).text();
+							$(this).attr("href", href).click(function () { // gets rid of the href (no addres on mouseover) but has pointer as cursor
+							
+								
+								if (href.toLowerCase().indexOf("#") >= 0) {
+			
+								} else {
+									var redirectWindow = window.open(href, '_self');
+									redirectWindow.location; // opens in new tab
+								}
+								
+							});
+						});
+
+		}
+	}
+
+		
+		
+		
+        // Close menu if this.close_menu_on_selection == true
+        if (this.close_menu_on_selection == true)
+            this.menuToggleClicked(false);
+    };
+	
+	
+	
     // ---
     // Description: Called whenever a key in the slide input text box was pressed.
     // e: The event.
