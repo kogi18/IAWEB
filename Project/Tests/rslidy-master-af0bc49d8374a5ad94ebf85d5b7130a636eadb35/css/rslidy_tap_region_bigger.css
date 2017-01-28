@@ -507,7 +507,7 @@ transform: translateY(2em);
   padding: 0.2em;
   background-color: rgba(233,233,233,0.9);
 
-    box-shadow: 0.2em -0.05em 0.1em rgba(127,127,127,0.8);
+  box-shadow: 0.05em -0.05em 0.1em rgba(127,127,127,0.8);
 
   /*border: 1px solid rgba(127,127,127,0.95);*/
   
@@ -521,6 +521,10 @@ transform: translateY(2em);
 .menu-content
 {
   text-align: right;
+}
+
+#menu input[type=checkbox]{
+  transform: scale(1.5) translate(0,-1px);
 }
 
 /*
