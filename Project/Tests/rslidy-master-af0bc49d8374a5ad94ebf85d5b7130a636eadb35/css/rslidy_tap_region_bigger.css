@@ -340,7 +340,7 @@ height:2em;
 #progress-bar
 {
   position: absolute;
-  bottom: 2em;
+  bottom: 2.15em;
 
   width: 100%;
   height: 0.3em;
@@ -355,18 +355,18 @@ height:2em;
 #progress-bar-indicator
 {
   position: absolute;
-  bottom: 2.3em;
+  bottom: 2.45em;
 
   /*width: 0.4em;
   height: 0.3em;*/
   left: 0;
   /*background-color: rgba(48, 133, 214, 0.5);*/
   /*background-color: rgba(26, 83, 255,0.9);*/
-width: 0;
-height: 0;
-border-style: solid;
-border-width: 0 0.4em 0.5em 0.4em;
-border-color: transparent transparent rgba(26, 83, 255,0.3) transparent;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.4em 0.5em 0.4em;
+  border-color: transparent transparent rgba(26, 83, 255,0.3) transparent;
 
   /*border: 1px solid rgba(127,127,127,0.95);*/
   z-index: 1;
@@ -378,7 +378,7 @@ border-color: transparent transparent rgba(26, 83, 255,0.3) transparent;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  transform: translateY(2em);
+  transform: translateY(2.15em);
   transition: all 0.4s ease-in-out;
 
   height: 2.3em;
