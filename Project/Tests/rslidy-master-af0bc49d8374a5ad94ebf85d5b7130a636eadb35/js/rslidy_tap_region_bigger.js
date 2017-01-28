@@ -224,6 +224,22 @@ var Rslidy = (function () {
         }
         // Set motion break if device changes from PORTRAIT to LANDSCAPE or vice versa (prevent unintended slide navigation)
         window.addEventListener("orientationchange", function (e) { this.motion_last = (new Date).getTime(); }.bind(this));
+		
+		// Input listeners
+        var images = document.getElementsByTagName("img");
+		var images  = content_section.getElementsByTagName("img");
+
+        for (var i=0, len=images.length, img; i<len; i++) {
+          img = images[i];
+          img.addEventListener("click", function() {
+            var sourceImage = document.createElement('img');
+            sourceImage.src = this.src;
+
+            sourceImage.style.height = "100%";
+            sourceImage.style.width = "100%";
+            openSweetAlert2(sourceImage);
+          });
+        }
     };
     // ---
     // Description: Used for final style adaptions.
@@ -526,7 +542,7 @@ var Rslidy = (function () {
 		menu += '<hr>'
         menu += '<div class="menu-content" style="text-align:center"><button id="button-zoom-more" style="width:30%" title="Increase font size">A+</button> <button id="button-zoom-reset" style="width:20%" title="Reset font size">R</button> <button id="button-zoom-less" style="width:30%" title="Decrease font size">A-</button></div>';
         menu += '<hr>'
-		menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" disabled></label></div>';
+        menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" disabled></label></div>';
         menu += '<div class="menu-content"><label>Shake <input type="checkbox" value="Shake" id="checkbox-shake" disabled></label></div>';
         menu += '<div class="menu-content"><label>Click Nav <input type="checkbox" value="Tilt" id="checkbox-clicknav"></label></div>';
         menu += '<div class="menu-content"><label>Low Light Mode <input type="checkbox" value="Low Light Mode" id="checkbox-lowlightmode"></label></div>';
@@ -648,13 +664,13 @@ var Rslidy = (function () {
             if(buttonOV.classList.contains("clicked")){
                 this.utils.switchElementsClass([buttonOV], "clicked");
                 buttonOV.value = "Slides";
-                this.full_overview_locked = false;
+            this.full_overview_locked = false;
             }
             if(buttonTOC.classList.contains("clicked")){
                 this.utils.switchElementsClass([buttonTOC], "clicked");
                 buttonTOC.value = "ToC";
-                this.toc_overview_locked = false;
-            }
+            this.toc_overview_locked = false;
+        }
             this.full_overview = false;
             this.toc_overview = false;
         }
@@ -689,7 +705,7 @@ var Rslidy = (function () {
             (!this.toc_overview_locked && this.toc_overview == close_only)){
             this.utils.switchElementsClass([content_section], "shifted-toc"); // Fix for Chrome on iOS
             this.toc_overview = this.toc_overview != true;
-        }
+    }
     };
     // ---
     // Description: Called whenever the menu button is clicked.
@@ -725,7 +741,7 @@ var Rslidy = (function () {
 			menu.style.MozTransition = 'opacity 0.3s';
 			
 			menu.style.opacity = 0;
-            
+			
             setTimeout(function() { menu_button.value = "Menu";}, this.button_delay);  
 			
 			setTimeout(function() {
@@ -1421,7 +1437,15 @@ function openSweetAlert(string) {
   });
 }
 
-// ---
+function openSweetAlert2(string) {
+    swal({
+    html: string,
+    showCancelButton: false,
+	confirmButtonText: "Close!",
+    animation: true,
+    }, function (confirmed) {
+  });
+}
 // Description: Enables the browser to first draw the loader, before initialization is started
 // ---
 function preload() {
@@ -1433,8 +1457,25 @@ function preload() {
     loader.offsetHeight; // no need to store this anywhere, the reference is enough
     loader.style.display='block';
     */
+}<<<<<<< .mine    html: string,
+    showCancelButton: false,
+	confirmButtonText: "Close!",
+    animation: true,
+    }, function (confirmed) {
+  });
 }
-function start() {
+=======// ---
+function preload() {
+    //Append the CSS loading animation placeholder to original body.
+    var body_old = document.body.innerHTML
+    document.body.innerHTML = '<div id="loader"><div>r</div><div>S</div><div>l</div><div>i</div><div>d</div><div>y</div></div>' + body_old;
+    var loader = document.getElementById('loader');
+ /*   loader.style.display = 'none';
+    loader.offsetHeight; // no need to store this anywhere, the reference is enough
+    loader.style.display='block';
+    */
+}
+>>>>>>> .theirsfunction start() {
     var start = performance.now();
     // Append the loading animation placeholder at almost JS start
     preload();
@@ -1442,7 +1483,7 @@ function start() {
     var rslidy = new Rslidy();
     // timeout allows the repaint to catch a break between preload and init
     setTimeout(function(){
-        rslidy.init();
+    rslidy.init();
     }, 1);
 }
 window.onload = start;
