@@ -118,6 +118,8 @@ var Rslidy = (function () {
         this.adjustSVGReplacementsWidth();
         // Initialize the timer
         this.initTimer();
+        // Loading finished - loader is hidden
+        document.getElementById('loader').classList.add("hidden");
     };
     // ---
     // Description: Adds event listeners like left/right keys.
@@ -138,7 +140,7 @@ var Rslidy = (function () {
         }
         // Mouse down/up listener for next slide (also prevent navigation by clicking on links)
         document.getElementById("content-section").addEventListener('mousedown', function (e) { this.start_x = e.clientX; this.start_y = e.clientY;
-			// NEW: clicking somewhere inside the content hides the menu
+			// clicking somewhere inside the content hides the menu
 			var menu = document.getElementById("menu");
 			if (menu.classList.contains("hidden") == false)
 			{
@@ -651,7 +653,7 @@ var Rslidy = (function () {
     // close_only: Specifies whether the overview should only be closed.
     // ---
     Rslidy.prototype.overviewToggleClicked = function (close_only) {
-        console.log("OV: " + this.full_overview + " LOCKED: " + this.full_overview_locked + " CLOSE: " + close_only);
+        //console.log("OV: " + this.full_overview + " LOCKED: " + this.full_overview_locked + " CLOSE: " + close_only);
         close_only = close_only || false;
 
         var content_section = document.getElementById("content-section");
@@ -666,8 +668,7 @@ var Rslidy = (function () {
     // close_only: Specifies whether the overview should only be closed.
     // ---
     Rslidy.prototype.tocToggleClicked = function (close_only) {
-        console.log("TOC: " + this.toc_overview + " LOCKED: " + this.toc_overview_locked + " CLOSE: " + close_only);
-
+        //console.log("TOC: " + this.toc_overview + " LOCKED: " + this.toc_overview_locked + " CLOSE: " + close_only);
         close_only = close_only || false;
 
         var content_section = document.getElementById("content-section");
@@ -1405,8 +1406,28 @@ function openSweetAlert(string) {
   });
 }
 
+// ---
+// Description: Enables the browser to first draw the loader, before initialization is started
+// ---
+function preload() {
+    //Append the CSS loading animation placeholder to original body.
+    var body_old = document.body.innerHTML
+    document.body.innerHTML = '<div id="loader"><div>r</div><div>S</div><div>l</div><div>i</div><div>d</div><div>y</div></div>' + body_old;
+    var loader = document.getElementById('loader');
+ /*   loader.style.display = 'none';
+    loader.offsetHeight; // no need to store this anywhere, the reference is enough
+    loader.style.display='block';
+    */
+}
 function start() {
+    var start = performance.now();
+    // Append the loading animation placeholder at almost JS start
+    preload();
+
     var rslidy = new Rslidy();
-    rslidy.init();
+    // timeout allows the repaint to catch a break between preload and init
+    setTimeout(function(){
+        rslidy.init();
+    }, 1);
 }
 window.onload = start;

@@ -1,4 +1,6 @@
 /*
+	ANIMATED SLIDE TRANSITIONS
+
 	display none does not work with transitions and animation
 	the problem happens because display:none removes the element from rendering list
 	the alternative is switching the visibility BUT
@@ -11,28 +13,36 @@
 		- slides without animation direction have duration set to 0 to show them imidiately (e.q. initialization of rSlidy)
 */
 
-body.animated .slide{
-	display: block !important;
+body.animated .slide, #loader.hidden{	/*Same for hidden rslidy loading animation*/
+	display: block;
 	overflow: hidden;
 	visibility: hidden;
 	height: 0;
 	width: 0;
 	padding: 0;
-	/* General animation settings */
+}
+
+/* General transition animation settings */
+body.animated .slide{
 	animation-fill-mode: forwards;
 	animation-duration: 1s;
 	animation-timing-function: linear;
 }
 
+/* Set also the progressbar width transition with same duration as 2 slides*/
+#progress-bar{
+	transition: width 2s;
+}
+
 /* Without direction we skip the animation*/
 body.animated :not(.animatedForward):not(.animatedBackwards).slide{
 	animation-duration: 0s;
+	animation-delay: 0.001s; /* for loader preloading it is set to the minimum JS 1ms delay*/
 }
 /* TIME DELAY FOR NEW SLIDE SHOULD BE SAME AS TRANSITION DURATION*/
 body.animated :not(.hidden).slide{
 	animation-delay: 1s;		
 }
-
 
 /*********************************************************************/
 /*					 DEFAULT OPACITY TRANSITION 					*/
@@ -178,3 +188,39 @@ body.animated :not(.hidden).slide.scale-animation{
 }
 
 /*********************************************************************/
+
+
+
+
+/* Big File loading animation */
+#loader {
+	margin: 30% 0;
+	font-size: 3em;
+	text-align: center;
+}
+
+#loader div{
+	display: inline-block;
+	padding: 0.2em;
+	animation: jump-loading 1s ease-in-out infinite;
+}
+
+#loader.hidden{
+	border-width: 0;
+	margin: 0;
+	animation-play-state: paused;
+}
+
+/*Change delay per child*/
+#loader div:nth-child(1) {  animation-delay: 	0;	}
+#loader div:nth-child(2) {  animation-delay: 0.1s;	}
+#loader div:nth-child(3) {  animation-delay: 0.2s;	}
+#loader div:nth-child(4) {  animation-delay: 0.3s;	}
+#loader div:nth-child(5) {  animation-delay: 0.4s;	}
+#loader div:nth-child(6) {  animation-delay: 0.5s;	}
+
+@keyframes jump-loading {
+	0%	{	transform: translate(0,		0);		}
+	20% {	transform: translate(0, -1.5em);	}
+	40% {	transform: translate(0,		0);		}
+}
