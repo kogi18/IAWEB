@@ -250,3 +250,13 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
   max-width: 100%;
   max-height: 20em;
 }
+
+.swal2-modal {
+    width:100% !important;
+    height:100% !important;
+}
+
+.swal2-content {
+    width:100% !important;
+    height:100% !important;
+}
