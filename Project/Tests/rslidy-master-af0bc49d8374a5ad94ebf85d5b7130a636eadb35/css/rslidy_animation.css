@@ -23,10 +23,15 @@ body.animated .slide, #loader.hidden{	/*Same for hidden rslidy loading animation
 }
 
 /* General transition animation settings */
-body.animated .slide{
+body.animated .slide,
+body.animated .slide ul.incremental li:not(.invisible){
 	animation-fill-mode: forwards;
 	animation-duration: 1s;
 	animation-timing-function: linear;
+}
+
+body.animated .slide ul.incremental li:not(.invisible){
+	animation-fill-mode: backwards;
 }
 
 /* Set also the progressbar width transition with same duration as 2 slides*/
@@ -63,6 +68,12 @@ body.animated :not(.hidden).slide.opacity-animation{
 	animation-name: opacityOn; /* Default animation */
 }
 
+body.animated .slide ul.incremental li:not(.invisible),
+body.animated.opacity .slide ul.incremental li:not(.invisible),
+body.animated .slidel.opacity-animation ul.incrementa li:not(.invisible),
+body.animated .slide ul.incremental.opacity-animation li:not(.invisible){
+	animation-name: opacityOnList; /* Default animation */	
+}
 
 @keyframes opacityOff{
 	0%		{opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
@@ -76,6 +87,12 @@ body.animated :not(.hidden).slide.opacity-animation{
 	100%	{opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
 }
 
+@keyframes opacityOnList{
+	0%		{opacity: 0; visibility: hidden;	height: 0;		width: 0;	}
+	1%		{opacity: 0; visibility: visible;	height: auto;	width: auto;}
+	100%	{opacity: 1; visibility: visible;	height: auto;	width: auto;}
+}
+
 /*********************************************************************/
 
 
@@ -86,51 +103,95 @@ body.animated :not(.hidden).slide.opacity-animation{
 /*********************************************************************/
 body.animated.sliding-left .slide,
 body.animated.sliding-right .slide,
+body.animated.sliding-left-right .slide,
+body.animated.sliding-right-left .slide,
 body.animated .slide.sliding-left-animation,
-body.animated .slide.sliding-right-animation{
+body.animated .slide.sliding-right-animation,
+body.animated .slide.sliding-left-right-animation,
+body.animated .slide.sliding-right-left-animation{
 	animation-duration: 0.5s;
 }
 body.animated.sliding-left :not(.hidden).slide,
 body.animated.sliding-right :not(.hidden).slide,
+body.animated.sliding-left-right :not(.hidden).slide,
+body.animated.sliding-right-left :not(.hidden).slide,
 body.animated :not(.hidden).slide.sliding-left-animation,
-body.animated :not(.hidden).slide.sliding-right-animation{
+body.animated :not(.hidden).slide.sliding-right-animation,
+body.animated :not(.hidden).slide.sliding-left-right-animation,
+body.animated :not(.hidden).slide.sliding-right-left-animation{
 	animation-duration: 0.5s;
 }
-/* Right sliding*/
+
+/* Right sliding */
 body.animated.sliding-right .hidden.slide.animate.animatedForward,
-body.animated .hidden.slide.animate.animatedForward.sliding-right-animation{
+body.animated .hidden.slide.animate.animatedForward.sliding-right-animation,
+/* Left sliding */
+body.animated.sliding-left .hidden.slide.animate.animatedBackwards,
+body.animated .hidden.slide.animate.animatedBackwards.sliding-left-animation,
+/* Right-Left sliding */
+body.animated.sliding-right-left .hidden.slide.animate.animatedForward,
+body.animated .hidden.slide.animate.animatedForward.sliding-right-left-animation,
+body.animated.sliding-right-left .hidden.slide.animatedBackwards,
+body.animated .hidden.slide.animatedBackwards.sliding-right-left-animation{
 	animation-name: slidingForwardOld;
 }
+/* Right sliding */
 body.animated.sliding-right :not(.hidden).slide.animatedForward,
-body.animated :not(.hidden).slide.animatedForward.sliding-right-animation{
+body.animated :not(.hidden).slide.animatedForward.sliding-right-animation,
+/* Left sliding*/
+body.animated.sliding-left :not(.hidden).slide.animatedBackwards,
+body.animated :not(.hidden).slide.animatedBackwards.sliding-left-animation,
+/* Left-Right sliding */
+body.animated.sliding-left-right :not(.hidden).slide.animatedForward,
+body.animated :not(.hidden).slide.animatedForward.sliding-left-right-animation,
+body.animated.sliding-left-right :not(.hidden).slide.animatedBackwards,
+body.animated :not(.hidden).slide.animatedBackwards.sliding-left-right-animation{
 	animation-name: slidingForwardNew;
 }
+/* Right sliding */
 body.animated.sliding-right .hidden.slide.animate.animatedBackwards,
-body.animated .hidden.slide.animate.animatedBackwards.sliding-right-animation{
-	animation-name: slidingBackwardsOld;
-}
-body.animated.sliding-right :not(.hidden).slide.animatedBackwards,
-body.animated :not(.hidden).slide.animatedBackwards.sliding-right-animation{
-	animation-name: slidingBackwardsNew;
-}
+body.animated .hidden.slide.animate.animatedBackwards.sliding-right-animation,
 /* Left sliding*/
 body.animated.sliding-left .hidden.slide.animate.animatedForward,
-body.animated .hidden.slide.animate.animatedForward.sliding-left-animation{
+body.animated .hidden.slide.animate.animatedForward.sliding-left-animation,
+/* Left-Right sliding */
+body.animated.sliding-left-right .hidden.slide.animatedForward,
+body.animated .hidden.slide.animatedForward.sliding-left-right-animation,
+body.animated.sliding-left-right .hidden.slide.animatedBackwards,
+body.animated .hidden.slide.animatedBackwards.sliding-left-right-animation{
 	animation-name: slidingBackwardsOld;
 }
+/* Right sliding */
+body.animated.sliding-right :not(.hidden).slide.animatedBackwards,
+body.animated :not(.hidden).slide.animatedBackwards.sliding-right-animation,
+/* Left sliding*/
 body.animated.sliding-left :not(.hidden).slide.animatedForward,
-body.animated :not(.hidden).slide.animatedForward.sliding-left-animation{
+body.animated :not(.hidden).slide.animatedForward.sliding-left-animation,
+/* Right-Left sliding */
+body.animated.sliding-right-left :not(.hidden).slide.animatedForward,
+body.animated :not(.hidden).slide.animatedForward.sliding-right-left-animation,
+body.animated.sliding-right-left :not(.hidden).slide.animatedBackwards,
+body.animated :not(.hidden).slide.animatedBackwards.sliding-right-left-animation{
 	animation-name: slidingBackwardsNew;
 }
-body.animated.sliding-left .hidden.slide.animate.animatedBackwards,
-body.animated .hidden.slide.animate.animatedBackwards.sliding-left-animation{
-	animation-name: slidingForwardOld;
-}
-body.animated.sliding-left :not(.hidden).slide.animatedBackwards,
-body.animated :not(.hidden).slide.animatedBackwards.sliding-left-animation{
-	animation-name: slidingForwardNew;
+
+body.animated.sliding-left .slide ul.incremental li:not(.invisible),
+body.animated.sliding-right-left .slide ul.incremental li:not(.invisible),
+body.animated .slide.sliding-left-animation ul.incremental li:not(.invisible),
+body.animated .slide.sliding-right-left-animation ul.incremental li:not(.invisible),
+body.animated .slide ul.incremental.sliding-left-animation li:not(.invisible),
+body.animated .slide ul.incremental.sliding-right-left-animation li:not(.invisible){
+	animation-name: slidingLeftList;
 }
 
+body.animated.sliding-right .slide ul.incremental li:not(.invisible),
+body.animated.sliding-left-right .slide ul.incremental li:not(.invisible),
+body.animated .slide.sliding-right-animation ul.incremental li:not(.invisible),
+body.animated .slide.sliding-left-right-animation ul.incremental li:not(.invisible),
+body.animated .slide ul.incremental.sliding-right-animation li:not(.invisible),
+body.animated .slide ul.incremental.sliding-left-right-animation li:not(.invisible){
+	animation-name: slidingRightList;
+}
 
 @keyframes slidingForwardOld{
 	0%		{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;	padding: 2em;}
@@ -156,6 +217,18 @@ body.animated :not(.hidden).slide.animatedBackwards.sliding-left-animation{
 	100%	{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;	padding: 2em;}
 }
 
+@keyframes slidingRightList{
+	0%		{transform: translate(-100%,0);	visibility: hidden;		height: 0;		width: 0;	}
+	1%		{transform: translate(-100%,0); visibility: visible;	height: auto;	width: auto;}
+	100%	{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;}
+}
+
+@keyframes slidingLeftList{
+	0%		{transform: translate(100%,0);	visibility: hidden;		height: 0;		width: 0;	}
+	1%		{transform: translate(100%,0);	visibility: visible;	height: auto;	width: auto;}
+	100%	{transform: translate(0,0);		visibility: visible;	height: auto;	width: auto;}
+}
+
 /*********************************************************************/
 
 
@@ -167,12 +240,18 @@ body.animated :not(.hidden).slide.animatedBackwards.sliding-left-animation{
 
 body.animated.scale .hidden.slide.animate,
 body.animated .hidden.slide.animate.scale-animation{
-	animation-name: scaleDown; /* Default animation */
+	animation-name: scaleDown;
 }
 
 body.animated.scale :not(.hidden).slide,
 body.animated :not(.hidden).slide.scale-animation{
-	animation-name: scaleUp; /* Default animation */
+	animation-name: scaleUp;
+}
+
+body.animated.scale .slide ul.incremental li:not(.invisible),
+body.animated .slide.scale-animation ul.incremental li:not(.invisible),
+body.animated .slide ul.incremental.scale-animation li:not(.invisible){
+	animation-name: scaleList;
 }
 
 @keyframes scaleDown{
@@ -185,6 +264,12 @@ body.animated :not(.hidden).slide.scale-animation{
 	0%		{transform: scale(0.1,0.1);	opacity: 0; visibility: hidden;		height: 0;		width: 0;		padding: 0;}
 	1%		{transform: scale(0.1,0.1);	opacity: 0; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
 	100%	{transform: scale(1,1);		opacity: 1; visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+}
+
+@keyframes scaleList{
+	0%		{transform: scale(0.1,0.1);	opacity: 0; visibility: hidden;		height: 0;		width: 0;	}
+	1%		{transform: scale(0.1,0.1);	opacity: 0; visibility: visible;	height: auto;	width: auto;}
+	100%	{transform: scale(1,1);		opacity: 1; visibility: visible;	height: auto;	width: auto;}
 }
 
 /*********************************************************************/
