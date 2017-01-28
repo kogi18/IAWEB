@@ -147,6 +147,10 @@ var Rslidy = (function () {
 				menu.style.WebkitTransition = 'opacity 0.3s';
 				menu.style.MozTransition = 'opacity 0.3s';
 				
+				var menu_button = document.getElementById("button-menu");
+				menu_button.value = "Menu";
+
+				
 				menu.style.opacity = 0;
 				
 				setTimeout(function() {
@@ -475,29 +479,30 @@ var Rslidy = (function () {
         // Open status bar and content wrapper
 		var status_bar = '<div id="status-bar">';
 		status_bar += '<div id="status-bar-content">';
+		status_bar += '<div id="progress-bar-indicator"></div>';
 		status_bar += '<div id="progress-bar"></div>';
+        status_bar += '<input type="button" value="Slides" title="Pin slides preview on the left side" id="button-overview" class="status-bar-item" style="width: 4em">';
         // Add overview button
-        status_bar += '<input type="button" value="Slides" id="button-overview" class="status-bar-item">';
         // Add TOC button
-        status_bar += '<input type="button" value="ToC" id="button-toc" class="status-bar-item">';
+        status_bar += '<input type="button" value="ToC" title="Pin table of content on the right side" id="button-toc" class="status-bar-item" style="width: 3.5em">';
         // Add buttons for previous/next slide
-        /*
+        
 		var image_previous = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
         var image_next = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /></svg>'>";
-        var image_first = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";
-        var image_last = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /></svg>'>";
-        */
+        var image_first = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"1,0 4,0 4,16 1,16\" style=\"fill:black;\" /> /><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /> /> </svg>'>";
+		var image_last = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /><polygon points=\"15,0 12,0 12,16 15,16\" style=\"fill:black;\" /></svg>'>";
+        
 		status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav">';
-        status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" type="button">' + '<strong>|<</strong>' + '</button>';
-        status_bar += '<button id="status-bar-nav-button-previous" class="status-bar-nav-button" type="button">' + '<strong><</strong>' + '</button>';
-        status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" type="button">' + '<strong>></strong>' + '</button>';
-        status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" type="button">' + '<strong>>|</strong>' + '</button>';
+        status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" title="Go to the first slide" type="button">' + image_first + '</button>';
+        status_bar += '<button id="status-bar-nav-button-previous" class="status-bar-nav-button" title="Go to the previous slide" type="button">' + image_previous + '</button>';
+        status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" title="Go to the next slide" type="button">' + image_next + '</button>';
+        status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" title="Go to the last slide" type="button">' + image_last + '</button>';
         status_bar += '</div>';
         // Add menu button
-        status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" type="button">';
+        status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" title="Open the menu" type="button">';
         // Add current slide number
-        status_bar += '<div class="status-bar-item" id="slide-caption"> /23</div>';
-        status_bar += '<div class="status-bar-item" id="slide-input-container"><input value="1" id="slide-input" type="textbox" maxlength="3"></div>';
+        status_bar += '<div class="status-bar-item" title="Pin table of content on the right side" id="slide-caption"> /23</div>';
+        status_bar += '<div class="status-bar-item" title="Jump to slide ..." id="slide-input-container"><input value="1" id="slide-input" type="textbox" maxlength="3"></div>';
         // Add timer
         status_bar += '<div class="status-bar-item" id="timer">00:00</div>';
         // Close content wrapper and status bar
@@ -517,9 +522,11 @@ var Rslidy = (function () {
         var menu = '<div id="menu" class="hidden">';
         // Add menu content
 		var texttt = this.help_text;
-        menu += '<div class="menu-content"><button id="button-help" onclick="openSweetAlert(' + '\'' + texttt + '\'' + ');">Help</button></div>';
-        menu += '<div class="menu-content"><a href="#" id="button-zoom-more">A+</a> <a href="#" id="button-zoom-reset">R</a> <a href="#" id="button-zoom-less">A-</a></div>';
-        menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" disabled></label></div>';
+        menu += '<div class="menu-content" style="text-align:center"><button id="button-help" style="width:100%" title="Get some help" onclick="openSweetAlert(' + '\'' + texttt + '\'' + ');">Help</button></div>';
+		menu += '<hr>'
+        menu += '<div class="menu-content" style="text-align:center"><button id="button-zoom-more" style="width:30%" title="Increase font size">A+</button> <button id="button-zoom-reset" style="width:20%" title="Reset font size">R</button> <button id="button-zoom-less" style="width:30%" title="Decrease font size">A-</button></div>';
+        menu += '<hr>'
+		menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" disabled></label></div>';
         menu += '<div class="menu-content"><label>Shake <input type="checkbox" value="Shake" id="checkbox-shake" disabled></label></div>';
         menu += '<div class="menu-content"><label>Click Nav <input type="checkbox" value="Tilt" id="checkbox-clicknav"></label></div>';
         menu += '<div class="menu-content"><label>Low Light Mode <input type="checkbox" value="Low Light Mode" id="checkbox-lowlightmode"></label></div>';
@@ -1029,6 +1036,8 @@ var Rslidy = (function () {
         var content_section = document.getElementById("content-section");
 		
 		var progress_bar = document.getElementById("progress-bar");
+		var progress_bar_indicator = document.getElementById("progress-bar-indicator");
+		progress_bar_indicator.style.left = 'calc(-0.8em + 100%*' + (slide_index + 1) / this.num_slides + ')';
 		progress_bar.style.width = 'calc(100%*' + (slide_index + 1) / this.num_slides + ')';
 	
         var original_slides = content_section.getElementsByClassName("slide");
