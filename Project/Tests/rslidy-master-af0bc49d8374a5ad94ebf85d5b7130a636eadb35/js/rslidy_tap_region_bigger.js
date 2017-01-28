@@ -238,7 +238,7 @@ var Rslidy = (function () {
 
             sourceImage.style.maxHeight = "100%";
             sourceImage.style.maxWidth = "100%";
-            openSweetAlert2(sourceImage);
+            openSweetAlertImage(sourceImage);
           });
         }
     };
@@ -1441,18 +1441,23 @@ function openSweetAlert(string) {
 	confirmButtonText: "Got it!",
 	animation: true,
 	}, function (confirmed) {
-  });
+  }).catch(swal.noop);
 }
 
 
-function openSweetAlert2(string) {
+function openSweetAlertImage(string) {
     swal({
     html: string,
     showCancelButton: false,
+    showConfirmButton: false,
 	confirmButtonText: "Close",
     animation: true,
+    onOpen: function(){
+        var modalElement = document.getElementsByClassName("swal2-modal")[0];
+        modalElement.classList.add("imageAlert");
+    }
     }, function (confirmed) {
-  });
+  }).catch(swal.noop);
 }
  
 
