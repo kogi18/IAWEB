@@ -286,7 +286,7 @@ button:hover, .status-bar-item:hover{
 	background-color: rgb(80,80,80);
 }
 */
-
+.s
 
 button:focus, .status-bar-item:focus{
 	outline: 0;
@@ -411,19 +411,28 @@ height:2em;
 
 #status-bar-button-nav-left,
 #status-bar-button-nav-info,
+#status-bar-button-nav-info div,
+#status-bar-button-nav-info input,
 #status-bar-button-nav-right
 {
   display: inline-flex;
   font-family: Verdana,Geneva,sans-serif; 
+  margin: 0 !important;
 }
 
-#status-bar-button-nav-info{
-  margin-left: 2px;
+
+#slide-input-container, #slide-caption{
+  font-size: 18px;
+  padding: 1px 0;
 }
 
-#status-bar-button-nav-left,
-#status-bar-button-nav-right{
-    margin-top: 0 !important;
+#slide-input-container{
+  padding-left: 6px;
+}
+
+#slide-caption{
+  padding-left: 3px;
+  padding-right: 6px;
 }
 
 #status-bar-button-nav-left:hover,
