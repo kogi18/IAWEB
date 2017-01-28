@@ -148,7 +148,9 @@ var Rslidy = (function () {
 				menu.style.MozTransition = 'opacity 0.3s';
 				
 				var menu_button = document.getElementById("button-menu");
-				menu_button.value = "Menu";
+                this.utils.switchElementsClass([menu_button], "clicked");
+
+                setTimeout(function() { menu_button.value = "Menu"; }, this.button_delay); 
 
 				
 				menu.style.opacity = 0;
@@ -236,7 +238,7 @@ var Rslidy = (function () {
 
         for (var i=0, len=images.length, img; i<len; i++) {
           img = images[i];
-          img.addEventListener("dblclick", function() {
+          img.addEventListener("click", function() {
             var sourceImage = document.createElement('img');
             sourceImage.src = this.src;
 
@@ -244,42 +246,8 @@ var Rslidy = (function () {
             sourceImage.style.maxWidth = "100%";
             openSweetAlertImage(sourceImage);
           });
-		  
-		  img.addEventListener("click", function() {
-            test = this;
-//            alert("ok selected");
-          });
-		  
-		  /*
-          img.addEventListener("mousewheel", function(e) {
-            if (e.deltaY == 125) {
-                var h = (test.style.height).replace("em","");
-                this.style.height = h*1.25 + "em";
-            }
-            else {
-                var h = (test.style.height).replace("em","");
-                this.style.height = h/1.25 + "em";
-            }
-          });
- */       
         }
-		
-		window.addEventListener('keypress', function (e) {
-            if (e.key == '+') {
-                var h = (test.style.height).replace("em","");
-                test.style.height = h*1.25 + "em";
-            }
-            else if (e.key == '-') {
-                var h = (test.style.height).replace("em","");
-                test.style.height = h/1.25 + "em";
-            }
-            else {}
-        }, false);
     };
-	
-	
-	
-	
     // ---
     // Description: Used for final style adaptions.
     // ---
@@ -796,6 +764,8 @@ var Rslidy = (function () {
 			menu.style.opacity = 0;
 			
             this.utils.switchElementsClass([menu_button], "clicked");
+
+            setTimeout(function() { menu_button.value = "Menu"; }, this.button_delay); 
 
 			setTimeout(function() {
 				menu.classList.remove("not_hidden");
