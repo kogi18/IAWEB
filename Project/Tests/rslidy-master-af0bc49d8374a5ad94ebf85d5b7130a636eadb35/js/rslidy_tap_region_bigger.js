@@ -492,18 +492,24 @@ var Rslidy = (function () {
         var image_first = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"1,0 4,0 4,16 1,16\" style=\"fill:black;\" /> /><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /> /> </svg>'>";
 		var image_last = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"-1 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"0,0 0,16 12,8\" style=\"fill:black;\" /><polygon points=\"15,0 12,0 12,16 15,16\" style=\"fill:black;\" /></svg>'>";
         
-		status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav">';
+        // Add left nevigation buttons
+		status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav-left">';
         status_bar += '<button id="status-bar-nav-button-first" class="status-bar-nav-button" title="Go to the first slide" type="button">' + image_first + '</button>';
         status_bar += '<button id="status-bar-nav-button-previous" class="status-bar-nav-button" title="Go to the previous slide" type="button">' + image_previous + '</button>';
+        status_bar += '</div>';
+        // Add current slide number
+        status_bar += '<div id="status-bar-button-nav-info">';
+        status_bar += '<div title="Jump to slide ..." id="slide-input-container"><input value="1" id="slide-input" type="textbox" maxlength="3"></div>';
+        status_bar += '<div title="Slide count" id="slide-caption"> /?</div>';
+        status_bar += '</div>';
+        // Add right nevigation buttons
+        status_bar += '<div class="hidden-on-mobile" id="status-bar-button-nav-right">';
         status_bar += '<button id="status-bar-nav-button-next" class="status-bar-nav-button" title="Go to the next slide" type="button">' + image_next + '</button>';
         status_bar += '<button id="status-bar-nav-button-last" class="status-bar-nav-button" title="Go to the last slide" type="button">' + image_last + '</button>';
         status_bar += '</div>';
         // Add menu button
         status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" title="Open the menu" type="button">';
-        // Add current slide number
-        status_bar += '<div class="status-bar-item" title="Pin table of content on the right side" id="slide-caption"> /23</div>';
-        status_bar += '<div class="status-bar-item" title="Jump to slide ..." id="slide-input-container"><input value="1" id="slide-input" type="textbox" maxlength="3"></div>';
-        // Add timer
+         // Add timer
         status_bar += '<div class="status-bar-item" id="timer">00:00</div>';
         // Close content wrapper and status bar
         status_bar += '</div>';
