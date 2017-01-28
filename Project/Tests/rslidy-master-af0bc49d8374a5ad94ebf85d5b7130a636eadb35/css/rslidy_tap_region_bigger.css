@@ -76,10 +76,12 @@ body
 
 #toc{
   padding-top: 1em;
+  direction: rtl;
 }
 
 #toc .slide-link{
   padding-left: 1em;
+  direction: ltr;
 }
 
 /* Items inside the canvas container (e.g. presentation slides) */

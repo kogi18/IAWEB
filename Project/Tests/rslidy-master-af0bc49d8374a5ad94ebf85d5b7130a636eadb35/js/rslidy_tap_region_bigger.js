@@ -119,7 +119,7 @@ var Rslidy = (function () {
         // Initialize the timer
         this.initTimer();
         // Loading finished - loader is hidden
-        document.getElementById('loader').classList.add("hidden");
+        this.toggleLoading();       
     };
     // ---
     // Description: Adds event listeners like left/right keys.
@@ -254,6 +254,12 @@ var Rslidy = (function () {
             this.timer_time = this.presentation_time;
         }
     };
+    // ---
+    // Description: Toggles the animated loader
+    // ---
+    Rslidy.prototype.toggleLoading = function () {
+        this.utils.switchElementsClass([document.getElementById('loader')],"hidden");
+    }
     // ---
     // Description: Toggles the timer. Works only if this.presentation_time > 0.
     // ---

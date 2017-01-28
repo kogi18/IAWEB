@@ -194,9 +194,12 @@ body.animated :not(.hidden).slide.scale-animation{
 
 /* Big File loading animation */
 #loader {
-	margin: 30% 0;
-	font-size: 3em;
+	position: absolute;
+	top: 45%;
+	font-size: 4em;
 	text-align: center;
+	width: 100%;
+	font-family: "Comic Sans MS";
 }
 
 #loader div{
