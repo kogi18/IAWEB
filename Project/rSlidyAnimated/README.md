@@ -14,8 +14,8 @@ The following HTML commands are necessary to include rslidy:
 <link rel="stylesheet" href="css/rslidy_animation.css" />
 <link rel="stylesheet" href="css/sweetalert2.css">
 
-<script src="js/rslidy.js"></script>
 <script src="js/sweetalert2.min.js"></script>
+<script src="js/rslidy.js"></script>
 
 ```
 
