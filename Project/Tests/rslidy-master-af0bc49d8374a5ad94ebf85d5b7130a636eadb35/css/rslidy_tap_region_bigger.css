@@ -40,6 +40,11 @@ body
   padding: 0;
 }
 
+#overview_trigger,
+#toc_trigger{
+  width: 2.5em; /*To make it harder to trigger*/
+}
+
 #overview, #toc
 {
   list-style: none;
