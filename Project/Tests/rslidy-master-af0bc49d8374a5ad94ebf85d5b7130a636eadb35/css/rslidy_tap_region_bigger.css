@@ -663,11 +663,26 @@ and (max-device-width: 799px)
   -- Elements
   */
 
+  #overview, #toc,
+  #overview_trigger,
+  #toc_trigger{
+    width: 7.5em;
+  }
+
+  #content-section:not(.shifted-toc) ~ #toc_trigger #toc{
+    right: -7.5em;
+  }
+  #content-section:not(.shifted-overview) ~ #overview_trigger #overview{
+    left: -7.5em;
+  }
+
+
   
   #status-bar
   {
     font-size: 1.3em !important;
     height: calc(3.3em) !important;
+    padding-top: 0 !important;
 	/*transform: scale(1,1.5);*/
   }
   

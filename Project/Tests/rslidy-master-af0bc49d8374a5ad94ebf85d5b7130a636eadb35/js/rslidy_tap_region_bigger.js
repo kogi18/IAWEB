@@ -533,7 +533,7 @@ var Rslidy = (function () {
 		
         // Add menu button
         status_bar += '<input value="Menu" id="button-menu" class="status-bar-item" title="Open the menu" type="button">';
-        status_bar += '<button id="status-bar-pin-button" class="status-bar-item" title="Pin the status bar" type="button">' + image_pin + '</button>';
+        status_bar += '<button id="status-bar-pin-button" class="status-bar-item hidden-on-mobile" title="Pin the status bar" type="button">' + image_pin + '</button>';
 		 // Add timer
         status_bar += '<div class="status-bar-item" id="timer">00:00</div>';
         // Close content wrapper and status bar
