@@ -632,11 +632,13 @@ var Rslidy = (function () {
             content_section.classList.remove("shifted-toc");
             if(buttonOV.classList.contains("clicked")){
                 this.utils.switchElementsClass([buttonOV], "clicked");
-                this.full_overview_locked = true;
+                buttonOV.value = "Slides";
+                this.full_overview_locked = false;
             }
             if(buttonTOC.classList.contains("clicked")){
                 this.utils.switchElementsClass([buttonTOC], "clicked");
-                this.toc_overview_locked = true;
+                buttonTOC.value = "ToC";
+                this.toc_overview_locked = false;
             }
             this.full_overview = false;
             this.toc_overview = false;
@@ -651,11 +653,6 @@ var Rslidy = (function () {
     Rslidy.prototype.overviewToggleClicked = function (close_only) {
         console.log("OV: " + this.full_overview + " LOCKED: " + this.full_overview_locked + " CLOSE: " + close_only);
         close_only = close_only || false;
-
-        // for when navigation should hide during left/right manu click
-        if(close_only && this.full_overview_locked && !this.full_overview){
-            this.full_overview_locked = false;
-        }
 
         var content_section = document.getElementById("content-section");
         if((this.full_overview_locked && !this.full_overview && !close_only && !content_section.classList.contains("shifted-overview")) ||
@@ -672,11 +669,6 @@ var Rslidy = (function () {
         console.log("TOC: " + this.toc_overview + " LOCKED: " + this.toc_overview_locked + " CLOSE: " + close_only);
 
         close_only = close_only || false;
-
-        // for when navigation should hide during left/right manu click
-        if(close_only && this.toc_overview_locked && !this.toc_overview){
-            this.toc_overview_locked = false;
-        }
 
         var content_section = document.getElementById("content-section");
         if((this.toc_overview_locked && !this.toc_overview && !close_only && !content_section.classList.contains("shifted-toc")) ||
