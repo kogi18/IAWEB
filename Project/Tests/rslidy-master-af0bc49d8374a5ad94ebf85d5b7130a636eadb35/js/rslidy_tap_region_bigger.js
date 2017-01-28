@@ -147,6 +147,10 @@ var Rslidy = (function () {
 				menu.style.WebkitTransition = 'opacity 0.3s';
 				menu.style.MozTransition = 'opacity 0.3s';
 				
+				var menu_button = document.getElementById("button-menu");
+				menu_button.value = "Menu";
+
+				
 				menu.style.opacity = 0;
 				
 				setTimeout(function() {
@@ -1033,7 +1037,7 @@ var Rslidy = (function () {
 		
 		var progress_bar = document.getElementById("progress-bar");
 		var progress_bar_indicator = document.getElementById("progress-bar-indicator");
-		progress_bar_indicator.style.left = 'calc(-0.4em + 100%*' + (slide_index + 1) / this.num_slides + ')';
+		progress_bar_indicator.style.left = 'calc(-0.8em + 100%*' + (slide_index + 1) / this.num_slides + ')';
 		progress_bar.style.width = 'calc(100%*' + (slide_index + 1) / this.num_slides + ')';
 	
         var original_slides = content_section.getElementsByClassName("slide");
