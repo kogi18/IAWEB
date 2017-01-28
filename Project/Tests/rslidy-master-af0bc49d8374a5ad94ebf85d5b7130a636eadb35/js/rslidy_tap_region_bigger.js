@@ -481,10 +481,10 @@ var Rslidy = (function () {
 		status_bar += '<div id="status-bar-content">';
 		status_bar += '<div id="progress-bar-indicator"></div>';
 		status_bar += '<div id="progress-bar"></div>';
-        status_bar += '<input type="button" value="Slides" title="Pin slides preview on the left side" id="button-overview" class="status-bar-item">';
+        status_bar += '<input type="button" value="Slides" title="Pin slides preview on the left side" id="button-overview" class="status-bar-item" style="width: 4em">';
         // Add overview button
         // Add TOC button
-        status_bar += '<input type="button" value="ToC" title="Pin table of content on the right side" id="button-toc" class="status-bar-item">';
+        status_bar += '<input type="button" value="ToC" title="Pin table of content on the right side" id="button-toc" class="status-bar-item" style="width: 3.5em">';
         // Add buttons for previous/next slide
         
 		var image_previous = "<img class='ignore' src='data:image/svg+xml;utf8,<svg width=\"12\" height=\"16\" viewBox=\"3 0 16 12\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"16,0 16,16 4,8\" style=\"fill:black;\" /></svg>'>";

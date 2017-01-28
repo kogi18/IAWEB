@@ -651,6 +651,11 @@ and (max-device-width: 799px)
   bottom: 3em;
 }
 
+#progress-bar-indicator
+{
+  bottom: 3.3em;
+}
+
 
 }
 
