@@ -177,8 +177,8 @@ var Rslidy = (function () {
         document.getElementById("overview_trigger").addEventListener('mouseout', function () { this.overviewToggleClicked(true); }.bind(this));
         document.getElementById("toc_trigger").addEventListener('mouseout', function () { this.tocToggleClicked(true); }.bind(this));
 
-        document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; if(this.full_overview_locked){setTimeout(function() { document.getElementById("button-overview").value = "X"; }, this.button_delay);}else{setTimeout(function() { document.getElementById("button-overview").value = "Slides";}, this.button_delay);} this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));
-        document.getElementById("button-toc").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-toc")], "clicked");  this.toc_overview_locked = this.toc_overview_locked != true; if(this.toc_overview_locked){setTimeout(function() { document.getElementById("button-toc").value = "X"; }, this.button_delay);}else{setTimeout(function() { document.getElementById("button-toc").value = "ToC"; }, this.button_delay);} this.tocToggleClicked(!document.getElementById("button-toc").classList.contains("clicked")); }.bind(this));
+        document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; if(this.full_overview_locked){setTimeout(function() { document.getElementById("button-overview").value = "X";}, this.button_delay);}else{setTimeout(function() { document.getElementById("button-overview").value = "Slides";}, this.button_delay);} this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));
+        document.getElementById("button-toc").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-toc")], "clicked");  this.toc_overview_locked = this.toc_overview_locked != true; if(this.toc_overview_locked){setTimeout(function() { document.getElementById("button-toc").value = "X";}, this.button_delay);}else{setTimeout(function() { document.getElementById("button-toc").value = "ToC";}, this.button_delay);} this.tocToggleClicked(!document.getElementById("button-toc").classList.contains("clicked")); }.bind(this));
         document.getElementById("status-bar-nav-button-previous").addEventListener('click', function () { this.navPrevious(); }.bind(this));
         document.getElementById("status-bar-nav-button-next").addEventListener('click', function () { this.navNext(); }.bind(this));
         document.getElementById("status-bar-nav-button-first").addEventListener('click', function () { this.showSlide(0); }.bind(this));
@@ -743,9 +743,7 @@ var Rslidy = (function () {
 			menu.classList.remove("hidden");
 			menu.classList.add("not_hidden");
 
-            this.utils.switchElementsClass([menu_button], "clicked");
-
-            setTimeout(function() { menu_button.value = "X"; }, this.button_delay); 
+            setTimeout(function() { menu_button.value = "X";}, this.button_delay); 
 			
 			setTimeout(function() {
 				menu.style.WebkitTransition = 'opacity 0.3s';
@@ -761,8 +759,8 @@ var Rslidy = (function () {
 			
 			menu.style.opacity = 0;
 			
-            this.utils.switchElementsClass([menu_button], "clicked");
-
+            setTimeout(function() { menu_button.value = "Menu";}, this.button_delay);  
+			
 			setTimeout(function() {
 				menu.classList.remove("not_hidden");
 				menu.classList.add("hidden");
