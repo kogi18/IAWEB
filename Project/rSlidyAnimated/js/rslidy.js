@@ -1577,7 +1577,7 @@ function openSweetAlertImage(string) {
 	showConfirmButton: false,
 	confirmButtonText: "Close",
 	animation: true,
-	title: "<button>-10%</button>Zoom at <span>100</span>%<button>+10%</button>",
+	title: "<button>-1000%</button><button>-100%</button><button>-10%</button>Zoom at <span>100</span>%<button>+10%</button><button>+100%</button><button>+1000%</button>",
 	onOpen: function(){
 		var modalElement = document.getElementsByClassName("swal2-modal")[0];
 		modalElement.classList.add("imageAlert");
@@ -1651,11 +1651,12 @@ function start() {
 	var start = performance.now();
 	// Append the loading animation placeholder at almost JS start
 	preload();
-
 	var rslidy = new Rslidy();
 	// timeout allows the repaint to catch a break between preload and init
 	setTimeout(function(){
-	rslidy.init();
+		rslidy.init();
+		// load the set markup languages of highlight.js
+		hljs.initHighlighting();
 	}, 1);
 }
 window.onload = start;

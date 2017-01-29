@@ -16,10 +16,18 @@
 	<link rel="stylesheet" href="css/rslidy.css"/>
 	<link rel="stylesheet" href="css/slides-default.css"/>
 	<link rel="stylesheet" href="css/rslidy-animation.css"/>
+	<!-- 3rd Party Code -->
 	<link rel="stylesheet" href="css/sweetalert2.css">
+	<link rel="stylesheet" href="css/highlight-languages/default.css">
 
 	<script src="js/rslidy.js"></script>
+	<!-- 3rd Party Code -->
 	<script src="js/sweetalert2.min.js"></script>
+	<script src="js/highlight.pack.js"></script>
+
+	<!-- DEMO FILES LOADING -->
+	<link rel="stylesheet" href="demo-files/css/keith.css"/>
+
 
 </head>
 
@@ -51,69 +59,226 @@
 
 
 	<p>
-	Project Website:<br/>
-	<a href="https://github.com/kogi18/IAWEB/">
-	<code>https://github.com/kogi18/IAWEB/</code>
-	</a>
-	<br/>
-	<br/>
-	Slides:<br/>
-	<a href="https://github.com/kogi18/IAWEB/tree/master/Project/rSlidyAnimated/">
-	<code>https://github.com/kogi18/IAWEB/tree/master/Project/rSlidyAnimated/</code>
-	</a>
+		Project Website:<br/>
+		<a href="https://github.com/kogi18/IAWEB/">
+			<code>https://github.com/kogi18/IAWEB/</code>
+		</a>
+	</p>
+
+	<p>
+		Slides:<br/>
+		<a href="https://github.com/kogi18/IAWEB/tree/master/Project/rSlidyAnimated/">
+			<code>https://github.com/kogi18/IAWEB/tree/master/Project/rSlidyAnimated/</code>
+		</a>
+	</p>
+
+	<p>
+		Local Test Server - Feel Free to Try on Any Device:<br/>
+		<a href="IP:8080">
+			<code>IP:8080</code>
+		</a>
+	</p>
+
+	<p class="note">
+		I am not sure how it is with eduroam networking, but I use a local tomcat server for testing on mobile phone
+		<br/>
+		ALTERNATIVE: find a free WWW server and post the link here
 	</p>
 
 
-	<div class="footer">
-	<p id="location" style="text-align:right;">
+	<div id="location" class="footer">
+	<p>
 		Tue 31 Jan 2017, TU Graz, Graz, Austria.
 	</p>
 	</div>
 </div>
 
 <div class="slide">
-	<h1>Overview</h1>
+	<h1>Overview TO DO</h1>
 
 	<ol>
 	  <li>Original rSlidy</li>
 	  <li>Changes in categories ... TO DO</li>
+	  <li>Small statistc how much LOC were added, how much is JS, CSS, HTML?</li>
 	</ol>
 
 </div>
 
 <div class="slide">
-	README.md
+	<h1>rSlidy</h1>
 
-	Markus Schofnegger, 2015
+	<p class="note">
+		I am using rSlidy all tthe time instead of rslidy. Even the laoder has a big S. At least for mee it looks more stylish - what to do in the end?
+	</p>
 
-## Introduction
+	<p class="note">
+		Markus Schofnegger, 2015 - Master/Bachelor? Project
+	</p>
 
-rslidy is a web-based presentation tool using HTML, CSS and JavaScript. It is able to display slides stored within a single HTML file.
+	<h2>Web-based Presentation Tool</h2>
+	<p>
+		It is the "powerpoint" run on HTML, CSS and JavaScript.
+	</p>
+	<p>
+		It is able to display slides stored within a single HTML file.
+	</p>
 
-## Installation
+	<h2>Simple Installation</h2>
 
-To use rslidy for a presentation, the rslidy.js file and all relevant CSS files have to be included in your HTML file, which should also contain the presentation itself. Alternatively, the rslidy.min.js and rslidy-combined.min.css files can be used if no custom settings or other modifications are needed.
-The following HTML commands are necessary to include rslidy:
-```
-<link rel="stylesheet" href="css/reset.css"/>
-<link rel="stylesheet" href="css/normalise.css"/>
-<link rel="stylesheet" href="css/rslidy.css" />
-<link rel="stylesheet" href="css/slides-default.css"/>
-<link rel="stylesheet" href="css/rslidy-animation.css"/>
-<link rel="stylesheet" href="css/sweetalert2.css">
+	<p>
+		To use rslidy for a presentation, the rslidy.js file and all relevant CSS files have to be included in your HTML file, which should also contain the presentation itself.
+	</p>
 
-<script src="js/rslidy.js"></script>
-<script src="js/sweetalert2.min.js"></script>
+	<p>
+		Alternatively, the rslidy.min.js and rslidy-combined.min.css files can be used if no custom settings or other modifications are needed.
+	</p>
 
-```
+	<p>The following HTML commands are necessary to include rslidy:</p>
+
+	<pre><code class="html">
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/normalise.css"/>
+		<link rel="stylesheet" href="css/rslidy.css" />
+		<link rel="stylesheet" href="css/slides-default.css"/>
+
+		<script src="js/rslidy.js"></script>
+	</code></pre>
 
 
-## TypeScript and Grunt
+	<p class="note">highlight CSS or JS have to check</p>
 
-IS NOT UPDATED YET
+	<h2>TypeScript and Grunt</h2>
+
+	<p>
+
+		Following command can be used to create the final JavaScript file from the original TypeScript file:
+		```
+		tsc rslidy.ts
+		```
+
+		Grunt can be used to minify both JS and CSS files and it also creates a ZIP archive of rslidy. Grunt uses following plugins in rslidy: grunt-contrib-uglify, grunt-contrib-cssmin and grunt-zip.
+
+	</p>
+</div>
+
+
+<div class="slide">
+	<h1>Animated rSlidy</h1>
+
+	<h2>What was missing?</h2>
+	<p>
+		Animation and more user firendly function.
+	</p>
+
+	<h2>Installation needs just additional files</h2>
+
+	<p>
+		The upgraded rslidy version setup is the same by loading the needed JS and CSS in the presentation file.S
+	</p>
+
+	<p>
+		New files are the animation CSS file and 3rd party components.
+	</p>
+
+	<p>The new needed HTML head became as follows:</p>
+
+	<pre><code class="html">
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/normalise.css"/>
+		<link rel="stylesheet" href="css/rslidy.css"/>
+		<link rel="stylesheet" href="css/slides-default.css"/>
+		<link rel="stylesheet" href="css/rslidy-animation.css"/>
+		<!-- 3rd Party Code -->
+		<link rel="stylesheet" href="css/sweetalert2.css">
+		<link rel="stylesheet" href="css/highlight-languages/default.css">
+
+		<script src="js/rslidy.js"></script>
+		<!-- 3rd Party Code -->
+		<script src="js/sweetalert2.min.js"></script>
+		<script src="js/highlight.pack.js"></script>
+	</code></pre>
+	<h2>TypeScript and Grunt</h2>
+	<p>IS NOT UPDATED YET</p>
+
 
 
 </div>
+<div class="slide">
+Use the pin image to show how it looks in the popup?
+<img class="ignore" src="data:image/svg+xml;utf8,&lt;svg width=&quot;12&quot; height=&quot;16&quot; viewBox=&quot;-1 0 16 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;3&quot; r=&quot;3&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot; fill=&quot;rgba(0,0,0,0.9)&quot; /&gt;&lt;polygon points=&quot;11,5 10,4 0,16&quot; style=&quot;fill:black;&quot; /&gt;&lt;/svg&gt;">
+</div>
+
+
+<div class="slide">
+	<h1>Tasks that still need a slide - TO DELETE</h1>
+
+	<ul>
+	  <li>a listings style and element for code parts - IN PROGRESS (needed already in the rSlidy usage and definitly in the animation parts)</li>
+	  <li>animated slide preview</li>
+	  <li>Small statistc how much LOC were added, how much is JS, CSS, HTML?</li>
+	  <li>svg resizing</li>
+	  <li>how many slides remain</li>
+	  <li>menu buttons should change into Xs</li>
+	  <li>when BG clicked we go back to slide mode from image mode</li>
+	  <li>instead of opening in new page, hide everything besides the image</li>
+	  <li>Slide Transitions</li>
+	  <li>hide it on the side</li>
+	  <li>for big file loading</li>
+	  <li>hiding the link details popup at the bottom</li>
+	  <li>menu menu could look better</li>
+	  <li>Lock/pin bottom status bar</li>
+	  <li>menu open</li>
+	  <li>button to begining and end</li>
+	  <li>remove !important <==CAN BE IGNORE</li>
+	  <li>you-are-here animated indicator</li>
+	  <li>tap region bigger than actual buttons</li>
+	  <li>smoother easing for sliding in menus</li>
+	  <li>up/down buttons for scrolling instead for between slides</li>
+	   <li>bottom menu bar shown only when hovering in that area</li>
+	</ul>
+</div>
+
+
+<div class="slide">
+	<h1>Abandoned tasks - NEEDS A NAME CHANGE</h1>
+
+	<ul>
+	  <li>TS Script for Grund</li>
+	  <li>including subheadings with dropdown menu style or accordion style</li>
+	  <li>Animated CSS Text styles</li>
+	  <li>hidden canvas to actually draw on the slide</li>
+	  <li>Marker</li>
+	</ul>
+
+</div>
+
+<div class="slide">
+	<h1>Statistics TO DO</h1>
+
+	<p>
+		Some Github statistics can be approximately used.
+	</p>
+
+</div>
+
+<div class="slide">
+	<h1>Problems we met</h1>
+
+	<ul>
+	  <li>Same animation on same element cannot be triggered in subclass - tried to reverse it on hover or .clicked addition - HAD TO MAKE A DUPLICATE WITH NEW NAME TO MAKE IT WORK</li>
+	</ul>
+
+</div>
+
+<div class="slide">
+	<h1>Conclusion</h1>
+
+	<ul>
+	  <li>It works?</li>
+	</ul>
+
+</div>
+
 </body>
 </html>
 
