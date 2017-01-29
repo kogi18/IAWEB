@@ -7,9 +7,9 @@
 	<!-- for css3 media queries to work properly on mobile devices-->
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-	<title>Animated rslidy: Responsive HTML5 Slide Decks”</title>
+	<title>Animated rslidy: Responsive HTML5 Slide Decks</title>
 
-	<!-- Copyright © 2017 G5 -->
+	<!-- Copyright © 2017 Rok Kogovšek, Alexei Kruglov, Fernando Pulido Ruiz, Helmut Zöhrer -->
 
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/normalise.css"/>
@@ -23,7 +23,97 @@
 
 </head>
 
+<!--
+	We have a selection of animated transitions between slides:
+		1.opacity [default]
+		2.scale
+		3.sliding-right
+		4.sliding-left
+		5.sliding-left-right
+		6.sliding-right-left
+	Choose one as the defualt for this slideshow  in body class
+-->
+
 <body class="animated">
+
+<!-- TITLE SLIDE -->
+
+<div class="slide titleslide">
+	<h1>Animated rslidy: Responsive HTML5 Slide Decks</h1>
+
+	<h2>Rok Kogovšek, Alexei Kruglov, Fernando Pulido Ruiz, Helmut Zöhrer</h2>
+	<h3>Course 706.041: Information Architecture and Web Usability</h3>
+	<h3>Graz University of Technology, Austria</h3>
+	
+	<h1></h1>
+	<h3>Final Project Presentation</h3>
+	<h3>Group 5</h3>
+
+
+	<p>
+	Project Website:<br/>
+	<a href="https://github.com/kogi18/IAWEB/">
+	<code>https://github.com/kogi18/IAWEB/</code>
+	</a>
+	<br/>
+	<br/>
+	Slides:<br/>
+	<a href="https://github.com/kogi18/IAWEB/tree/master/Project/rSlidyAnimated/">
+	<code>https://github.com/kogi18/IAWEB/tree/master/Project/rSlidyAnimated/</code>
+	</a>
+	</p>
+
+
+	<div class="footer">
+	<p id="location" style="text-align:right;">
+		Tue 31 Jan 2017, TU Graz, Graz, Austria.
+	</p>
+	</div>
+</div>
+
+<div class="slide">
+	<h1>Overview</h1>
+
+	<ol>
+	  <li>Original rSlidy</li>
+	  <li>Changes in categories ... TO DO</li>
+	</ol>
+
+</div>
+
+<div class="slide">
+	README.md
+
+	Markus Schofnegger, 2015
+
+## Introduction
+
+rslidy is a web-based presentation tool using HTML, CSS and JavaScript. It is able to display slides stored within a single HTML file.
+
+## Installation
+
+To use rslidy for a presentation, the rslidy.js file and all relevant CSS files have to be included in your HTML file, which should also contain the presentation itself. Alternatively, the rslidy.min.js and rslidy-combined.min.css files can be used if no custom settings or other modifications are needed.
+The following HTML commands are necessary to include rslidy:
+```
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/normalise.css"/>
+<link rel="stylesheet" href="css/rslidy.css" />
+<link rel="stylesheet" href="css/slides-default.css"/>
+<link rel="stylesheet" href="css/rslidy-animation.css"/>
+<link rel="stylesheet" href="css/sweetalert2.css">
+
+<script src="js/rslidy.js"></script>
+<script src="js/sweetalert2.min.js"></script>
+
+```
+
+
+## TypeScript and Grunt
+
+IS NOT UPDATED YET
+
+
+</div>
 </body>
 </html>
 

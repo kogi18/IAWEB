@@ -11,20 +11,15 @@ The following HTML commands are necessary to include rslidy:
 <link rel="stylesheet" href="css/normalise.css"/>
 <link rel="stylesheet" href="css/rslidy.css" />
 <link rel="stylesheet" href="css/slides-default.css"/>
-<link rel="stylesheet" href="css/rslidy_animation.css" />
+<link rel="stylesheet" href="css/rslidy-animation.css"/>
 <link rel="stylesheet" href="css/sweetalert2.css">
 
-<script src="js/sweetalert2.min.js"></script>
 <script src="js/rslidy.js"></script>
+<script src="js/sweetalert2.min.js"></script>
 
 ```
 
 
 ## TypeScript and Grunt
 
-Following command can be used to create the final JavaScript file from the original TypeScript file:
-```
-tsc rslidy.ts
-```
-
-Grunt can be used to minify both JS and CSS files and it also creates a ZIP archive of rslidy. Grunt uses following plugins in rslidy: grunt-contrib-uglify, grunt-contrib-cssmin and grunt-zip.
+IS NOT UPDATED YET

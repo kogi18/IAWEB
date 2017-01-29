@@ -25,7 +25,7 @@ body
 
 a
 {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 
@@ -46,6 +46,11 @@ a
   top: 0;
   bottom: 0;
   padding: 0;
+  }
+
+  
+
+  
 }
 
 #overview_trigger,
@@ -65,6 +70,56 @@ a
   word-wrap: break-word;
   transition: 0.5s cubic-bezier(.46,0,.74,1.27);
 }
+
+#button-overview, #button-toc, #button-menu{ 
+    animation-duration: 0.3s; 
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: flip2Face;
+}
+
+#button-overview.clicked, #button-toc.clicked, #button-menu.clicked{
+    animation-name: flip2Back; 
+    transform: rotateY(180);
+}
+
+@keyframes flip2Back { 
+    0% { 
+        transform: translateZ(0) rotateY(0) scale(1); 
+    } 
+    40% { 
+        transform: translateZ(-150px) rotateY(70deg) scale(.95); 
+    } 
+    50% { 
+        transform: translateZ(-150px) rotateY(90deg) scale(.9); 
+    } 
+    90% { 
+        transform: translateZ(-150px) rotateY(160deg) scale(.95); 
+    } 
+    100% { 
+        transform: translateZ(0) rotateY(180deg)  scale(1); 
+    } 
+}
+
+@keyframes flip2Face { 
+    0% { 
+        transform: translateZ(0) rotateY(180deg) scale(1); 
+    } 
+    40% { 
+        transform: translateZ(-150px) rotateY(160deg) scale(.95); 
+    } 
+    50% { 
+        transform: translateZ(-150px) rotateY(90deg) scale(.9); 
+    } 
+    90% { 
+        transform: translateZ(-150px) rotateY(70deg) scale(.95); 
+    } 
+    100% { 
+        transform: translateZ(0) rotateY(0)  scale(1); 
+    } 
+} 
+
+
 
 
 #content-section:not(.shifted-toc) ~ #toc_trigger #toc{
@@ -135,6 +190,18 @@ a
 {
   background-color: rgba(255,255,255,0.6);
   cursor: pointer;
+}
+
+.slide-thumbnail:hover .overview-item
+{
+  position: relative;
+  z-index: 0;
+  animation: scrollThumbnail 2.5s ease-in-out 0s infinite alternate; 
+}
+
+@keyframes scrollThumbnail{
+  0%    {  top: 0;    }
+  100%  {  top: -20%; }
 }
 
 .slide-clickelement
@@ -278,44 +345,43 @@ a
 /*
 button, .status-bar-item{
     cursor: pointer;
-	background-color: rgb(100,100,100);
-	color: rgba(255,255,255,0.9);
+  background-color: rgb(100,100,100);
+  color: rgba(255,255,255,0.9);
     border-radius: 0.25em;
-	transition: background-color 0.3s;
-	
-	
-	filter: invert(0%);
-	transition: filter 0.1s;
-	
+  transition: background-color 0.3s;
+  
+  
+  filter: invert(0%);
+  transition: filter 0.1s;
+  
 }
 
 
 button:hover, .status-bar-item:hover{
-	background-color: rgb(80,80,80);
+  background-color: rgb(80,80,80);
 }
 */
-.s
 
 button:focus, .status-bar-item:focus{
-	outline: 0;
+  outline: 0;
 }
 
 
 /*
 button, .status-bar-item{
-	background-color: rgb(48, 133, 214);
-	border: 0;
+  background-color: rgb(48, 133, 214);
+  border: 0;
     border-radius: 3px;
     box-shadow: none;
     color: #fff;
     cursor: pointer;
-	font-size: 18px;
+  font-size: 18px;
 
 }
 
-	
+  
 button:hover, .status-bar-item:hover{
-	background-color: rgb(35, 120, 201);
+  background-color: rgb(35, 120, 201);
 }
 */
 
@@ -340,7 +406,7 @@ button:hover, .status-bar-item:hover{
 #status-bar:hover
 {
 height:2em;
-	opacity: 1;
+  opacity: 1;
 }
 */
 
@@ -412,11 +478,11 @@ height:2em;
 
   height: 2.3em;
   background-color: rgba(255,255,255,0);
-		
-	padding-top: 2px;
+    
+  padding-top: 2px;
 
-	
-	background: -webkit-linear-gradient(top, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Safari 5.1 to 6.0 */
+  
+  background: -webkit-linear-gradient(top, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* Standard syntax (must be last) */
@@ -427,7 +493,7 @@ height:2em;
 
 #status-bar:hover #status-bar-content
 {
-	transform: translateY(0);
+  transform: translateY(0);
 }
 
 .status-bar-nav-button
@@ -497,7 +563,7 @@ height:2em;
 /*
 .status-bar-item:hover
 {
-	background-color: rgba(244,244,244,0.5);
+  background-color: rgba(244,244,244,0.5);
 }
 */
 
@@ -691,7 +757,7 @@ and (max-device-width: 799px)
     font-size: 1.3em !important;
     height: calc(3.3em) !important;
     padding-top: 0 !important;
-	/*transform: scale(1,1.5);*/
+  /*transform: scale(1,1.5);*/
   }
   
   #status-bar-content{  
@@ -706,7 +772,7 @@ and (max-device-width: 799px)
   
   input
   {
-	  line-height: 2.5em;
+    line-height: 2.5em;
   }
   
   .status-bar-item

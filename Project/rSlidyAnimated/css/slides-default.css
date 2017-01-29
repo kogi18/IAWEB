@@ -258,10 +258,19 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
     width: 95% !important;
     max-height:95% !important;
     max-width: 95% !important;
+    overflow: auto;
 }
 
 .swal2-modal.imageAlert .swal2-content {
     width:100% !important;
     height:100% !important;
     text-align: center;
+}
+
+.swal2-modal.imageAlert .swal2-title{
+  font-size: 1em;
+}
+
+.swal2-modal.imageAlert .swal2-title button{
+  margin: 0 1em;
 }

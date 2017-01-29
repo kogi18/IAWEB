@@ -192,6 +192,18 @@ a
   cursor: pointer;
 }
 
+.slide-thumbnail:hover .overview-item
+{
+  position: relative;
+  z-index: 0;
+  animation: scrollThumbnail 2.5s ease-in-out 0s infinite alternate; 
+}
+
+@keyframes scrollThumbnail{
+  0%    {  top: 0;    }
+  100%  {  top: -20%; }
+}
+
 .slide-clickelement
 {
   z-index: 1;
