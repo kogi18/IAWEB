@@ -366,7 +366,12 @@
 	<pre><code class="html">
 
 	<!-- JavaScript implementation -->
-	<document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; if(this.full_overview_locked){setTimeout(function() { document.getElementById("button-overview").value = "X"; }, this.button_delay);}else{setTimeout(function() { document.getElementById("button-overview").value = "Slides";}, this.button_delay);} this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));>
+	<document.getElementById("button-overview").addEventListener('click', function ()
+	 {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked");
+	  this.full_overview_locked = this.full_overview_locked != true; 
+	  if(this.full_overview_locked){setTimeout(function() 
+	  { document.getElementById("button-overview").value = "X"; }, this.button_delay);}
+	  else{setTimeout(function() { document.getElementById("button-overview").value = "Slides";}, this.button_delay);} this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));>
 
 	<!-- Part of animation -->
 		<@keyframes flip2Face { 
