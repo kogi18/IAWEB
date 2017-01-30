@@ -867,7 +867,7 @@ var Rslidy = (function () {
 								if (href.toLowerCase().indexOf("#") >= 0) {
 			
 								} else {
-									var redirectWindow = window.open(href, '_self');
+									var redirectWindow = window.open(href, '_blank');
 									redirectWindow.location; // opens in new tab
 								}
 							});
@@ -893,7 +893,7 @@ var Rslidy = (function () {
 								if (href.toLowerCase().indexOf("#") >= 0) {
 			
 								} else {
-									var redirectWindow = window.open(href, '_self');
+									var redirectWindow = window.open(href, '_blank');
 									redirectWindow.location; // opens in new tab
 								}
 								
