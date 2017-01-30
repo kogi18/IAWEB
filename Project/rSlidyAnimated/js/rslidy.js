@@ -1611,12 +1611,17 @@ function openSweetAlertImage(string) {
 		};
 		
 		window.addEventListener('keypress', function (e) {
-			if (e.key == '+' || e.key == '-') {
+			if (e.key == '+' || e.key == '-' || e.key == '0') {
 				var zoom = parseInt(titleElement.innerHTML);
 				if(e.key == '+'){
 					zoom = zoom + 10;
-				}else{
+				}
+				else if(e.key == '-')
+				{
 					zoom = zoom - 10;
+				}
+				else{
+					zoom = 100;
 				}
 				if(zoom > 0){
 					img.style.height = zoom * heightPer + "px";
