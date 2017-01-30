@@ -239,7 +239,7 @@
   <li>7,8% TeX</li>
 </ul> 
 
-	<img src="demo-files/images/pie_44F8FF6.jpg" alt="Pie Chart">
+	<img src="demo-files/images/pie_chart.png" alt="Pie Chart" height="250" width="350">
 
 	<p>
 		Not sure how to look up for this data. Maybe is it in Git?(i am bad with git) Anyone knows? (TO BE DELETED)
@@ -281,6 +281,9 @@ Use the pin image to show how it looks in the popup?
   </li>
 
   <li>In narrow-screen devices as the Iphone 5, we still have the "Slides" button problem, and also the "Menu" button overlaps due to the lack of space in the screen and goes down, below the rest of the menu bar, keeping itself alone</li>
+
+  <li>In PC screens at different resolutions, good performance was shown. Content adapts succesfully
+  </li>
 </ul> 
 
 </div>
@@ -288,15 +291,46 @@ Use the pin image to show how it looks in the popup?
 <div class="slide">
 	<h1>Menu bar buttons animation</h1>
 	
-	<h4>Simple description of what was done</h4>
+	<h4>We implemented a rotation on the Y axes animation for the menu bar buttons. Now all 3 buttons have a flip rotation on their Y axes. This was done using Keyframes in CSS</h4>
 
 	<p>
-	Bit deeper description (technical aspects), explanation of the css
+	Some code:
 	</p>
 
 	<pre><code class="html">
-		<code will be here/>
-		
+
+	<!-- JavaScript implementation -->
+	<document.getElementById("button-overview").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked"); this.full_overview_locked = this.full_overview_locked != true; if(this.full_overview_locked){setTimeout(function() { document.getElementById("button-overview").value = "X"; }, this.button_delay);}else{setTimeout(function() { document.getElementById("button-overview").value = "Slides";}, this.button_delay);} this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));>
+
+	<!-- Part of animation -->
+		<@keyframes flip2Face { 
+    0% { 
+        transform: translateZ(0) rotateY(180deg) scale(1); 
+    } 
+    40% { 
+        transform: translateZ(-150px) rotateY(160deg) scale(.95); 
+    } 
+    50% { 
+        transform: translateZ(-150px) rotateY(90deg) scale(.9); 
+    } 
+    90% { 
+        transform: translateZ(-150px) rotateY(70deg) scale(.95); 
+    } 
+    100% { 
+        transform: translateZ(0) rotateY(0)  scale(1); 
+    } 
+} 
+
+>
+		<!-- CSS -->
+
+		<#button-overview, #button-toc, #button-menu{ 
+    animation-duration: 0.3s; 
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: flip2Face;
+ 	}>
+
 	</code></pre>
 
 
