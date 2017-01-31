@@ -738,11 +738,13 @@ and (max-device-width: 799px)
   -- Elements
   */
 
-  #overview, #toc,
-  #overview_trigger,
-  #toc_trigger{
+  #overview, #toc{
     width: 7.5em;
   }
+  
+  #overview_trigger, #toc_trigger{
+  width: 2.5em; /*To make it harder to trigger*/
+}
 
   #content-section:not(.shifted-toc) ~ #toc_trigger #toc{
     right: -7.5em;
