@@ -3,7 +3,7 @@
 
 <head>
 <style>
-    ul li { margin-bottom: 20px; }
+	ul li { margin-bottom: 20px; }
 </style>
 	<meta charset="UTF-8"/>
 
@@ -210,51 +210,33 @@
 
 
 <div class="slide">
-	<h1>Facts and statistics</h1>
-
-	<h3>How many lines of code were added?</h3>
-	<p>
-		"number of lines"
-	</p>
-
-	<h5>And how many of them are CSS, JavaScript and HTML?</h5>
-
-	<p>
-		Currently, the final version of the project divides itself in:
-	</p>
-
+	<h1>Lines of Code</h1>
 	<ul>
-  <li>33% CSS
-
-  </li>
-
-  <li>32,3% HTML
-  </li>
-
-  <li>18,8% JavaScript</li>
-  </li>
-
-  <li>8,1% Typescript</li>
-
-  <li>7,8% TeX</li>
-</ul> 
-
-	<img src="demo-files/images/pie_chart.png" alt="Pie Chart" height="250" width="350">
-
-	<p>
-		Not sure how to look up for this data. Maybe is it in Git?(i am bad with git) Anyone knows? (TO BE DELETED)
-	</p>
-
-
-	
-
-
-
+		<li>JavaScript
+			<ul>
+				<li>Original rSlidy: ~1200 LOC</li>
+				<li>Animated rSlidy: ~1700 LOC</li>
+				<li>SweetAlert2: ~300 LOC</li>
+				<li>highlight.js: ~800 LOC</li>
+				<li>Total addition: 500~1600 LOC </li>
+			</ul>
+		</li>
+		<li>CSS
+			<ul>
+				<li>Original rSlidy: ~1100 LOC</li>
+				<li>Animated rSlidy: ~1900 LOC</li>
+				<li>SweetAlert2: ~700 LOC</li>
+				<li>highlight.js: ~100 LOC per code coloring style</li>
+				<li>Total addition: 800~1600 LOC </li>
+			</ul>
+		</li>
+		<li>The original size increased by ~3200 LOC or ~20kB</li>
+	</ul> 
 </div>
 
 
 <div class="slide">
-<h1>Increase and resize images in pop-up window
+<h1>Increase and resize images in pop-up window</h1>
 <img class="ignore" src="data:image/svg+xml;utf8,&lt;svg width=&quot;12&quot; height=&quot;16&quot; viewBox=&quot;-1 0 16 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;3&quot; r=&quot;3&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot; fill=&quot;rgba(0,0,0,0.9)&quot; /&gt;&lt;polygon points=&quot;11,5 10,4 0,16&quot; style=&quot;fill:black;&quot; /&gt;&lt;/svg&gt;">
 </h1>
 
@@ -280,47 +262,83 @@
 </div>
 
 <div class="slide">
-<h3>The following functions in JS implemented</h3>
-<pre><code class="html">
-<script>
-		var images = document.getElementsByTagName("img");
-        var img;
-        var test;
-        for (var i=0, len=images.length, img; i<len; i++) {
-          img = images[i];
-		  img.addEventListener("click", function() {
-            var sourceImage = document.createElement('img');
-            sourceImage.src = this.src;
-
-            sourceImage.style.maxHeight = "100%";
-            sourceImage.style.maxWidth = "100%";
-            openSweetAlertImage(sourceImage);
-          });
-          }
-	
-        window.addEventListener('keypress', function (e) {
-            if (e.key == '+') {
-                var h = (test.style.height).replace("em","");
-                test.style.height = h*1.25 + "em";
-            }
-            else if (e.key == '-') {
-                var h = (test.style.height).replace("em","");
-                test.style.height = h/1.25 + "em";
-            }
-            else {}
-        }, false);
-
-    };
-	
-	function openSweetAlertImage(string) {
-    swal({
-    html: string,
-    showCancelButton: false,
-    animation: true,
-    }, function (confirmed) {
+<h1>Javascript of Image Increase and Resize</h1>
+<pre><code class="javascript html">
+var images = document.getElementsByTagName("img");
+for (var i=0, var len=images.length, var img; i&lt;len; i++) {
+  img = images[i];
+  img.addEventListener("click", function() {
+	var sourceImage = document.createElement('img');
+	sourceImage.src = this.src;
+	sourceImage.style.maxHeight = "100%";
+	sourceImage.style.maxWidth = "100%";
+	openSweetAlertImage(sourceImage);
   });
 }
-</script>
+
+function openSweetAlertImage(string) {
+	swal({
+	html: string,
+	showCancelButton: false,
+	showConfirmButton: false,
+	confirmButtonText: "Close",
+	animation: true,
+	title: "<button>-1000%</button><button>-100%</button><button>-10%</button>Zoom at <span>100</span>%<button>+10%</button><button>+100%</button><button>+1000%</button>",
+	onOpen: function(){
+		var modalElement = document.getElementsByClassName("swal2-modal")[0];
+		modalElement.classList.add("imageAlert");
+
+		var titleElement = modalElement.getElementsByClassName("swal2-title")[0];
+		var zoomButtons = titleElement.getElementsByTagName("button");
+		titleElement = titleElement.getElementsByTagName("span")[0];
+		var img = modalElement.getElementsByClassName("swal2-content")[0].getElementsByTagName("img")[0];
+		var widthPer = img.naturalWidth / 100;
+		var heightPer = img.naturalHeight / 100;
+
+		var fitScreenPer = 90 * window.innerWidth / img.naturalWidth;
+		fitScreenPer = Math.floor(fitScreenPer/10) * 10;
+		titleElement.innerHTML = fitScreenPer;
+		img.style.height = heightPer*fitScreenPer + "px";
+		img.style.width =   widthPer*fitScreenPer + "px";
+
+
+		for(var buttonID = 0; buttonID < zoomButtons.length; buttonID++){
+			zoomButtons[buttonID].addEventListener("click", function(changeBy){
+				var zoom = parseInt(titleElement.innerHTML);
+				zoom = zoom + parseInt(this.innerHTML);
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			});
+		};
+		
+		window.addEventListener('keypress', function (e) {
+			if (e.key == '+' || e.key == '-' || e.key == '0') {
+				var zoom = parseInt(titleElement.innerHTML);
+				if(e.key == '+'){
+					zoom = zoom + 10;
+				}
+				else if(e.key == '-')
+				{
+					zoom = zoom - 10;
+				}
+				else{
+					zoom = 100;
+				}
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			}
+		}, false);
+
+	}
+	}, function (confirmed) {
+  }).catch(swal.noop);
+}
 </code></pre>
 
 </div>
@@ -375,32 +393,32 @@
 
 	<!-- Part of animation -->
 		<@keyframes flip2Face { 
-    0% { 
-        transform: translateZ(0) rotateY(180deg) scale(1); 
-    } 
-    40% { 
-        transform: translateZ(-150px) rotateY(160deg) scale(.95); 
-    } 
-    50% { 
-        transform: translateZ(-150px) rotateY(90deg) scale(.9); 
-    } 
-    90% { 
-        transform: translateZ(-150px) rotateY(70deg) scale(.95); 
-    } 
-    100% { 
-        transform: translateZ(0) rotateY(0)  scale(1); 
-    } 
+	0% { 
+		transform: translateZ(0) rotateY(180deg) scale(1); 
+	} 
+	40% { 
+		transform: translateZ(-150px) rotateY(160deg) scale(.95); 
+	} 
+	50% { 
+		transform: translateZ(-150px) rotateY(90deg) scale(.9); 
+	} 
+	90% { 
+		transform: translateZ(-150px) rotateY(70deg) scale(.95); 
+	} 
+	100% { 
+		transform: translateZ(0) rotateY(0)  scale(1); 
+	} 
 } 
 
 >
 		<!-- CSS -->
 
 		<#button-overview, #button-toc, #button-menu{ 
-    animation-duration: 0.3s; 
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-name: flip2Face;
- 	}>
+	animation-duration: 0.3s; 
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-name: flip2Face;
+	}>
 
 	</code></pre>
 
