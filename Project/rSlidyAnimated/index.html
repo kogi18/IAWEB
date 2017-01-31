@@ -228,112 +228,7 @@
 
 </div>
 
-<div class="slide">
-<h1>Increase and resize images in pop-up window</h1>
 
-<figure>
-<div class="figure">
-
-<img src="demo-files/images/eurostat.png" alt="Euro Stat" style="height:16em;margin-right:10em;" />
-<img src="demo-files/images/southwest-2012-10-23-scroll.png" alt="South west" style="height:18em;margin-right:10em;" />
-<img src="demo-files/images/skos-faculty.png" alt="PNG" style="height:10em" />
-<figcaption><strong>Images in "PNG" format.</strong></figcaption>
-<br></br>
-<br></br>
-<br></br>
-
-<img src="demo-files/images/breakpoint.svg" alt="Breakpoint" style="height:10em;margin-right:10em;" />
-<img src="demo-files/images/collage-hier.svg" alt="Collage hier" style="height:8em;margin-right:10em;" />
-<img src="demo-files/images/collage-multidim.svg" alt="Collage multidim" style="height:6em;margin-right:10em;" />
-<img class="ignore" src="data:image/svg+xml;utf8,&lt;svg width=&quot;12&quot; height=&quot;16&quot; viewBox=&quot;-1 0 16 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;3&quot; r=&quot;3&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot; fill=&quot;rgba(0,0,0,0.9)&quot; /&gt;&lt;polygon points=&quot;11,5 10,4 0,16&quot; style=&quot;fill:black;&quot; /&gt;&lt;/svg&gt;">
-
-<figcaption><strong>Images in "SVG" format.</strong></figcaption>
-</div>
-
-</figure>
-</div>
-
-<div class="slide">
-<h1>Javascript of Image Increase and Resize</h1>
-<pre><code class="javascript html">
-var images = document.getElementsByTagName("img");
-for (var i=0, var len=images.length, var img; i&lt;len; i++) {
-  img = images[i];
-  img.addEventListener("click", function() {
-	var sourceImage = document.createElement('img');
-	sourceImage.src = this.src;
-	sourceImage.style.maxHeight = "100%";
-	sourceImage.style.maxWidth = "100%";
-	openSweetAlertImage(sourceImage);
-  });
-}
-
-function openSweetAlertImage(string) {
-	swal({
-	html: string,
-	showCancelButton: false,
-	showConfirmButton: false,
-	confirmButtonText: "Close",
-	animation: true,
-	title: "<button>-1000%</button> ...",
-	onOpen: function(){
-		var modalElement = document.getElementsByClassName("swal2-modal")[0];
-		modalElement.classList.add("imageAlert");
-
-		var titleElement = modalElement.getElementsByClassName("swal2-title")[0];
-		var zoomButtons = titleElement.getElementsByTagName("button");
-		titleElement = titleElement.getElementsByTagName("span")[0];
-		var img = modalElement.getElementsByClassName("swal2-content")[0].getElementsByTagName("img")[0];
-		var widthPer = img.naturalWidth / 100;
-		var heightPer = img.naturalHeight / 100;
-
-		var fitScreenPer = 90 * window.innerWidth / img.naturalWidth;
-		fitScreenPer = Math.floor(fitScreenPer/10) * 10;
-		titleElement.innerHTML = fitScreenPer;
-		img.style.height = heightPer*fitScreenPer + "px";
-		img.style.width =   widthPer*fitScreenPer + "px";
-
-
-		for(var buttonID = 0; buttonID < zoomButtons.length; buttonID++){
-			zoomButtons[buttonID].addEventListener("click", function(changeBy){
-				var zoom = parseInt(titleElement.innerHTML);
-				zoom = zoom + parseInt(this.innerHTML);
-				if(zoom > 0){
-					img.style.height = zoom * heightPer + "px";
-					img.style.width = zoom * widthPer + "px";
-					titleElement.innerHTML = zoom;
-				}
-			});
-		};
-		
-		window.addEventListener('keypress', function (e) {
-			if (e.key == '+' || e.key == '-' || e.key == '0') {
-				var zoom = parseInt(titleElement.innerHTML);
-				if(e.key == '+'){
-					zoom = zoom + 10;
-				}
-				else if(e.key == '-')
-				{
-					zoom = zoom - 10;
-				}
-				else{
-					zoom = 100;
-				}
-				if(zoom > 0){
-					img.style.height = zoom * heightPer + "px";
-					img.style.width = zoom * widthPer + "px";
-					titleElement.innerHTML = zoom;
-				}
-			}
-		}, false);
-
-	}
-	}, function (confirmed) {
-  }).catch(swal.noop);
-}
-</code></pre>
-
-</div>
 
 
 <div class="slide">
@@ -351,6 +246,46 @@ function openSweetAlertImage(string) {
 	  <li>button to jump to first / last slide added</li>
 	</ul>
 </div>
+
+
+
+
+<div class="slide">
+	<h1>The Menu</h1>
+	
+	<h2>What it looked like before:</h2>
+	<hr>
+	<img src="demo-files/images/old_menu.png" alt="Old menu">
+	<hr>
+	<h2>Changes</h2>
+	<ul>
+	  <li>added alpha value (transparency)</li>
+	  <li>rounded corners</li>
+	  <li>added shadows</li>
+	  <li>exchanged links with buttons</li>
+	  <li>added checkbox for suppressing the link address bar in the left bottom (no more overlapping)</li>	  
+	</ul>
+	
+
+</div>
+
+<div class="slide">
+	<h1>The Help Information</h1>
+	
+	<h2>What it looked like before:</h2>
+	<hr>
+	<img src="demo-files/images/old_help.png" alt="Old help info" width="20%">
+	<hr>
+	<h2>Changes</h2>
+	<ul>
+	  <li>changed the alert to a modern popup box</li>
+	  <li>focusing on the help text due to graying of the rest of the page</li>
+	</ul>
+	
+
+</div>
+
+
 
 <div class="slide">
 	<h1>Menu bar buttons animation</h1>
@@ -399,40 +334,6 @@ document.getElementById("button-overview").addEventListener('click', function ()
 </div>
 
 
-<div class="slide">
-	<h1>The Menu</h1>
-	
-	<h2>What it looked like before:</h2>
-	<hr>
-	<img src="demo-files/images/old_menu.png" alt="Old menu">
-	<hr>
-	<h2>Changes</h2>
-	<ul>
-	  <li>added alpha value (transparency)</li>
-	  <li>rounded corners</li>
-	  <li>added shadows</li>
-	  <li>exchanged links with buttons</li>
-	  <li>added checkbox for suppressing the link address bar in the left bottom (no more overlapping)</li>	  
-	</ul>
-	
-
-</div>
-
-<div class="slide">
-	<h1>The Help Information</h1>
-	
-	<h2>What it looked like before:</h2>
-	<hr>
-	<img src="demo-files/images/old_help.png" alt="Old help info" width="20%">
-	<hr>
-	<h2>Changes</h2>
-	<ul>
-	  <li>changed the alert to a modern popup box</li>
-	  <li>focusing on the help text due to graying of the rest of the page</li>
-	</ul>
-	
-
-</div>
 
 <div class="slide">
 	<h1>Side menus</h1>
@@ -704,6 +605,116 @@ body.animated .slide ul.incremental.opacity-animation li:not(.invisible){
 		<li><strong>Sliding right-left</strong></li>
 	</ul>
 </div>
+
+
+
+<div class="slide">
+<h1>Increase and resize images in pop-up window</h1>
+
+<figure>
+<div class="figure">
+
+<img src="demo-files/images/eurostat.png" alt="Euro Stat" style="height:16em;margin-right:10em;" />
+<img src="demo-files/images/southwest-2012-10-23-scroll.png" alt="South west" style="height:18em;margin-right:10em;" />
+<img src="demo-files/images/skos-faculty.png" alt="PNG" style="height:10em" />
+<figcaption><strong>Images in "PNG" format.</strong></figcaption>
+<br></br>
+<br></br>
+<br></br>
+
+<img src="demo-files/images/breakpoint.svg" alt="Breakpoint" style="height:10em;margin-right:10em;" />
+<img src="demo-files/images/collage-hier.svg" alt="Collage hier" style="height:8em;margin-right:10em;" />
+<img src="demo-files/images/collage-multidim.svg" alt="Collage multidim" style="height:6em;margin-right:10em;" />
+<img class="ignore" src="data:image/svg+xml;utf8,&lt;svg width=&quot;12&quot; height=&quot;16&quot; viewBox=&quot;-1 0 16 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;3&quot; r=&quot;3&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot; fill=&quot;rgba(0,0,0,0.9)&quot; /&gt;&lt;polygon points=&quot;11,5 10,4 0,16&quot; style=&quot;fill:black;&quot; /&gt;&lt;/svg&gt;">
+
+<figcaption><strong>Images in "SVG" format.</strong></figcaption>
+</div>
+
+</figure>
+</div>
+
+<div class="slide">
+<h1>Javascript of Image Increase and Resize</h1>
+<pre><code class="javascript html">
+var images = document.getElementsByTagName("img");
+for (var i=0, var len=images.length, var img; i&lt;len; i++) {
+  img = images[i];
+  img.addEventListener("click", function() {
+	var sourceImage = document.createElement('img');
+	sourceImage.src = this.src;
+	sourceImage.style.maxHeight = "100%";
+	sourceImage.style.maxWidth = "100%";
+	openSweetAlertImage(sourceImage);
+  });
+}
+
+function openSweetAlertImage(string) {
+	swal({
+	html: string,
+	showCancelButton: false,
+	showConfirmButton: false,
+	confirmButtonText: "Close",
+	animation: true,
+	title: "<button>-1000%</button> ...",
+	onOpen: function(){
+		var modalElement = document.getElementsByClassName("swal2-modal")[0];
+		modalElement.classList.add("imageAlert");
+
+		var titleElement = modalElement.getElementsByClassName("swal2-title")[0];
+		var zoomButtons = titleElement.getElementsByTagName("button");
+		titleElement = titleElement.getElementsByTagName("span")[0];
+		var img = modalElement.getElementsByClassName("swal2-content")[0].getElementsByTagName("img")[0];
+		var widthPer = img.naturalWidth / 100;
+		var heightPer = img.naturalHeight / 100;
+
+		var fitScreenPer = 90 * window.innerWidth / img.naturalWidth;
+		fitScreenPer = Math.floor(fitScreenPer/10) * 10;
+		titleElement.innerHTML = fitScreenPer;
+		img.style.height = heightPer*fitScreenPer + "px";
+		img.style.width =   widthPer*fitScreenPer + "px";
+
+
+		for(var buttonID = 0; buttonID < zoomButtons.length; buttonID++){
+			zoomButtons[buttonID].addEventListener("click", function(changeBy){
+				var zoom = parseInt(titleElement.innerHTML);
+				zoom = zoom + parseInt(this.innerHTML);
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			});
+		};
+		
+		window.addEventListener('keypress', function (e) {
+			if (e.key == '+' || e.key == '-' || e.key == '0') {
+				var zoom = parseInt(titleElement.innerHTML);
+				if(e.key == '+'){
+					zoom = zoom + 10;
+				}
+				else if(e.key == '-')
+				{
+					zoom = zoom - 10;
+				}
+				else{
+					zoom = 100;
+				}
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			}
+		}, false);
+
+	}
+	}, function (confirmed) {
+  }).catch(swal.noop);
+}
+</code></pre>
+
+</div>
+
 
 
 <div class="slide">
