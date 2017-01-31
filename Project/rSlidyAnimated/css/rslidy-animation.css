@@ -35,7 +35,7 @@ body.animated .slide ul.incremental li:not(.invisible){
 }
 
 /* Set also the progressbar width transition with same duration as 2 slides*/
-#progress-bar{
+body.animated #progress-bar{
 	transition: width 2s;
 }
 

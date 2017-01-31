@@ -30,6 +30,7 @@
 
 	<!-- DEMO FILES LOADING -->
 	<link rel="stylesheet" href="demo-files/css/keith.css"/>
+	<link rel="stylesheet" href="demo-files/css/classic-loader.css"/>
 
 
 </head>
@@ -97,12 +98,17 @@
 </div>
 
 <div class="slide">
-	<h1>Overview TO DO</h1>
+	<h1>Overview</h1>
 
 	<ol>
-	  <li>Original rSlidy</li>
-	  <li>Changes in categories ... TO DO</li>
-	  <li>Small statistc how much LOC were added, how much is JS, CSS, HTML?</li>
+	  <li>Original & Animated rSlidy</li>
+	  <li>Responsive Web Design</li>
+	  <li>Increase and resize images</li>
+	  <li>Navigation and slideshow infrmation</li>
+	  <li>Code in slides presentation</li>
+	  <li>rSlidy loading animation</li>
+	  <li>Slideshow transitions</li>
+	  <li>Conclusions</li>
 	</ol>
 
 </div>
@@ -110,17 +116,12 @@
 <div class="slide">
 	<h1>rSlidy</h1>
 
-	<p class="note">
-		I am using rSlidy all tthe time instead of rslidy. Even the laoder has a big S. At least for mee it looks more stylish - what to do in the end?
-	</p>
-
-	<p class="note">
-		Markus Schofnegger, 2015 - Master/Bachelor? Project
-	</p>
-
 	<h2>Web-based Presentation Tool</h2>
 	<p>
-		It is the "powerpoint" run on HTML, CSS and JavaScript.
+		A 2015 TUG project started by Markus Schofnegger.
+	</p>
+	<p>
+		It is the "powerpoint" equivalent run on HTML, CSS and JavaScript.
 	</p>
 	<p>
 		It is able to display slides stored within a single HTML file.
@@ -129,14 +130,12 @@
 	<h2>Simple Installation</h2>
 
 	<p>
-		To use rslidy for a presentation, the rslidy.js file and all relevant CSS files have to be included in your HTML file, which should also contain the presentation itself.
+		To use rslidy for a presentation, the rslidy.js file and all relevant CSS files have to be included in your HTML slides file.
 	</p>
 
 	<p>
 		Alternatively, the rslidy.min.js and rslidy-combined.min.css files can be used if no custom settings or other modifications are needed.
 	</p>
-
-	<p>The following HTML commands are necessary to include rslidy:</p>
 
 	<pre><code class="html">
 		<link rel="stylesheet" href="css/reset.css"/>
@@ -151,14 +150,11 @@
 	<h2>TypeScript and Grunt</h2>
 
 	<p>
-
-		Following command can be used to create the final JavaScript file from the original TypeScript file:
-		```
-		tsc rslidy.ts
-		```
-
-		Grunt can be used to minify both JS and CSS files and it also creates a ZIP archive of rslidy. Grunt uses following plugins in rslidy: grunt-contrib-uglify, grunt-contrib-cssmin and grunt-zip.
-
+		To create the final JavaScript file from the original TypeScript Grunt can be used:
+	</p>
+	<pre><code class="javascript">tsc rslidy.ts</code></pre>
+	<p>
+		Grunt can be used to minify both JS and CSS files and it also creates a ZIP archive of rslidy. 
 	</p>
 </div>
 
@@ -168,7 +164,7 @@
 
 	<h2>What was missing?</h2>
 	<p>
-		Animation and more user friendly function.
+		Animation and more user friendly plug & play presentation functions.
 	</p>
 
 	<h2>Installation needs just additional files</h2>
@@ -200,45 +196,40 @@
 		<script src="js/sweetalert2.min.js"></script>
 		<script src="js/highlight.pack.js"></script>
 	</code></pre>
-	<h2>TypeScript and Grunt</h2>
-	<p>IS NOT UPDATED YET</p>
 
-
+	<h2>TypeScript for Grunt has yet to be modified</h2>
 
 </div>
-
-
 
 <div class="slide">
-	<h1>Lines of Code</h1>
-	<ul>
-		<li>JavaScript
-			<ul>
-				<li>Original rSlidy: ~1200 LOC</li>
-				<li>Animated rSlidy: ~1700 LOC</li>
-				<li>SweetAlert2: ~300 LOC</li>
-				<li>highlight.js: ~800 LOC</li>
-				<li>Total addition: 500~1600 LOC </li>
-			</ul>
-		</li>
-		<li>CSS
-			<ul>
-				<li>Original rSlidy: ~1100 LOC</li>
-				<li>Animated rSlidy: ~1900 LOC</li>
-				<li>SweetAlert2: ~700 LOC</li>
-				<li>highlight.js: ~100 LOC per code coloring style</li>
-				<li>Total addition: 800~1600 LOC </li>
-			</ul>
-		</li>
-		<li>The original size increased by ~3200 LOC or ~20kB</li>
-	</ul> 
-</div>
+	<h1>Responsive Web Design</h1>
 
+
+	<h2>In the overall, rSlidy is responsive and compatible in any device</h2>
+	
+	<p>
+	Tested it on actual Samsung Galaxy S2 and S6, Iphone 5, Iphone 6, Iphone 6 plus, Ipad, Ipad pro, different screen resolutions and online tests.
+	</p>
+
+	<h4>However, some small design problems can be found when on some devices</h4>
+
+	<p>We tried to solve most of the probleems, but for some time ran out:</p>
+
+<ul>
+  <li>Works smoothly on medium to wide screen hand devices like the SGS6, Iphones 6, 6 plus. However on some medium and bellow the content gets displaced due to the amount of navigation elements.
+  </li>
+
+  <li>On tablets similar content displacements occur in vertical mode, while in horizontal view, the slide content DOES adapt to the slide succesfully.
+  </li>
+
+  <li>In PC screens at different resolutions, good performance was shown. Content adapts succesfully
+  </li>
+</ul> 
+
+</div>
 
 <div class="slide">
 <h1>Increase and resize images in pop-up window</h1>
-<img class="ignore" src="data:image/svg+xml;utf8,&lt;svg width=&quot;12&quot; height=&quot;16&quot; viewBox=&quot;-1 0 16 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;3&quot; r=&quot;3&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot; fill=&quot;rgba(0,0,0,0.9)&quot; /&gt;&lt;polygon points=&quot;11,5 10,4 0,16&quot; style=&quot;fill:black;&quot; /&gt;&lt;/svg&gt;">
-</h1>
 
 <figure>
 <div class="figure">
@@ -254,6 +245,7 @@
 <img src="demo-files/images/breakpoint.svg" alt="Breakpoint" style="height:10em;margin-right:10em;" />
 <img src="demo-files/images/collage-hier.svg" alt="Collage hier" style="height:8em;margin-right:10em;" />
 <img src="demo-files/images/collage-multidim.svg" alt="Collage multidim" style="height:6em;margin-right:10em;" />
+<img class="ignore" src="data:image/svg+xml;utf8,&lt;svg width=&quot;12&quot; height=&quot;16&quot; viewBox=&quot;-1 0 16 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;3&quot; r=&quot;3&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot; fill=&quot;rgba(0,0,0,0.9)&quot; /&gt;&lt;polygon points=&quot;11,5 10,4 0,16&quot; style=&quot;fill:black;&quot; /&gt;&lt;/svg&gt;">
 
 <figcaption><strong>Images in "SVG" format.</strong></figcaption>
 </div>
@@ -283,7 +275,7 @@ function openSweetAlertImage(string) {
 	showConfirmButton: false,
 	confirmButtonText: "Close",
 	animation: true,
-	title: "<button>-1000%</button><button>-100%</button><button>-10%</button>Zoom at <span>100</span>%<button>+10%</button><button>+100%</button><button>+1000%</button>",
+	title: "<button>-1000%</button> ...",
 	onOpen: function(){
 		var modalElement = document.getElementsByClassName("swal2-modal")[0];
 		modalElement.classList.add("imageAlert");
@@ -342,90 +334,6 @@ function openSweetAlertImage(string) {
 </code></pre>
 
 </div>
-<div class="slide">
-	<h1>Responsive Web Design</h1>
-
-
-	<h2>In the overall, rSlidy is responsive and compatible in any device</h2>
-	
-
-	<h4>However, some small design problems were found when doing compatibility tests</h4>
-
-	<p>
-	After testing testing on a Samsung Galaxy S6, Iphone 5, Iphone 6, Iphone 6 plus, Ipad, Ipad pro, and PC screen with different resolutions:
-		
-	</p>
-
-<ul>
-  <li>Works smoothly on medium to wide screen hand devices like the SGS6, Iphones 6, 6 plus, but when pressing button "slides", the content of the slide move to the right and some content is actually hidden because it is displaced to leave space for the slides thumbnails at the left
-
-  </li>
-
-  <li>In Ipad or Ipad pro, the same problem with the content being displaced takes place. However, when working in horizontal view, the slide content DOES adapt to the slide succesfully
-  </li>
-
-  <li>In narrow-screen devices as the Iphone 5, we still have the "Slides" button problem, and also the "Menu" button overlaps due to the lack of space in the screen and goes down, below the rest of the menu bar, keeping itself alone</li>
-
-  <li>In PC screens at different resolutions, good performance was shown. Content adapts succesfully
-  </li>
-</ul> 
-
-</div>
-
-<div class="slide">
-	<h1>Menu bar buttons animation</h1>
-	
-	<h4>We implemented a rotation on the Y axes animation for the menu bar buttons. Now all 3 buttons have a flip rotation on their Y axes. This was done using Keyframes in CSS</h4>
-
-	<p>
-	Some code:
-	</p>
-
-	<pre><code class="html">
-
-	<!-- JavaScript implementation -->
-	<document.getElementById("button-overview").addEventListener('click', function ()
-	 {this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked");
-	  this.full_overview_locked = this.full_overview_locked != true; 
-	  if(this.full_overview_locked){setTimeout(function() 
-	  { document.getElementById("button-overview").value = "X"; }, this.button_delay);}
-	  else{setTimeout(function() { document.getElementById("button-overview").value = "Slides";}, this.button_delay);} this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked")); }.bind(this));>
-
-	<!-- Part of animation -->
-		<@keyframes flip2Face { 
-	0% { 
-		transform: translateZ(0) rotateY(180deg) scale(1); 
-	} 
-	40% { 
-		transform: translateZ(-150px) rotateY(160deg) scale(.95); 
-	} 
-	50% { 
-		transform: translateZ(-150px) rotateY(90deg) scale(.9); 
-	} 
-	90% { 
-		transform: translateZ(-150px) rotateY(70deg) scale(.95); 
-	} 
-	100% { 
-		transform: translateZ(0) rotateY(0)  scale(1); 
-	} 
-} 
-
->
-		<!-- CSS -->
-
-		<#button-overview, #button-toc, #button-menu{ 
-	animation-duration: 0.3s; 
-	animation-timing-function: ease-in-out;
-	animation-fill-mode: forwards;
-	animation-name: flip2Face;
-	}>
-
-	</code></pre>
-
-
-
-</div>
-
 
 
 <div class="slide">
@@ -442,8 +350,52 @@ function openSweetAlertImage(string) {
 	  <li>functionality to pin it / make it pop up on hover</li>
 	  <li>button to jump to first / last slide added</li>
 	</ul>
-	
+</div>
 
+<div class="slide">
+	<h1>Menu bar buttons animation</h1>
+	
+	<p>We implemented a rotation on the Y axes animation for the menu bar buttons, similar to the classical hamburger icon animation.</p>
+
+	<pre><code class="javascrtipt">
+// JavaScript triggers the switch to clicked class and state + button value change
+document.getElementById("button-overview").addEventListener('click', function (){
+	this.utils.switchElementsClass([document.getElementById("button-overview")], "clicked");
+	this.full_overview_locked = this.full_overview_locked != true; 
+	if(this.full_overview_locked){
+		setTimeout(function(){
+			document.getElementById("button-overview").value = "X";
+		}, this.button_delay);
+	}else{
+		setTimeout(function() {
+			document.getElementById("button-overview").value = "Slides";
+		}, this.button_delay);
+	}
+	this.overviewToggleClicked(!document.getElementById("button-overview").classList.contains("clicked"));
+}.bind(this));
+	</code></pre>
+
+	<pre><code class="css">
+/*CSS has to bind different keframes to same element for 1 time animations*/
+#button-overview, #button-toc, #button-menu{ 
+	animation-duration: 0.3s; 
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-name: flip2Face;
+}
+#button-overview.clicked, #button-toc.clicked, #button-menu.clicked{
+    animation-name: flip2Back; /* flip2Back is the reverse version of flip2Face*/
+    transform: rotateY(180);
+}
+
+@keyframes flip2Face { 
+	0%	{	transform: translateZ(0)	rotateY(180deg) scale(1);	} 
+	40%	{	transform: translateZ(-150px)	rotateY(160deg) scale(.95);	} 
+	50%	{	transform: translateZ(-150px)	rotateY(90deg)	scale(.9);	} 
+	90%	{	transform: translateZ(-150px)	rotateY(70deg)	scale(.95);	} 
+	100%	{	transform: translateZ(0)	rotateY(0)	scale(1);	} 
+}
+</code></pre>
 </div>
 
 
@@ -466,7 +418,6 @@ function openSweetAlertImage(string) {
 
 </div>
 
-
 <div class="slide">
 	<h1>The Help Information</h1>
 	
@@ -483,61 +434,313 @@ function openSweetAlertImage(string) {
 
 </div>
 
-
+<div class="slide">
+	<h1>Side menus</h1>
+	  <p>Previously ToC and Slide side menu fixed to the left side and activated by button click.</p>
+	  
+	<hr>
+	<figure>
+		<div class="figure">
+			<img src="demo-files/images/SlidesOld.png" alt="Old Slide OVerview" width="20%">
+			<img src="demo-files/images/tocOld.png" alt="Old ToC menu" width="20%">
+		</div>
+	</figure>
+	<hr>
+	<h2>Changes</h2>
+	<ul>
+		<li>ToC menu moved to right side</li>
+		<li>hover trigger on menu containers</li>
+		<li>corrected the design slightly - for better clearity</li>
+		<li>slide preview has scroll animation added</li>
+		<li>smoother easing for sliding the menus</li>
+		<li>menu buttons are now lock buttons</li>
+	</ul>
+</div>
 
 <div class="slide">
-	<h1>Tasks that still need a slide - TO DELETE</h1>
-
+	<h1>Code samples</h1>
 	<ul>
-	  <li>a listings style and element for code parts - IN PROGRESS (needed already in the rSlidy usage and definitly in the animation parts)</li>
-	  <li>animated slide preview</li>
-	  <li>Small statistc how much LOC were added, how much is JS, CSS, HTML?</li>
-	  <li>svg resizing</li>
-	  <li>how many slides remain</li>
-	  <li>menu buttons should change into Xs</li>
-	  <li>when BG clicked we go back to slide mode from image mode</li>
-	  <li>instead of opening in new page, hide everything besides the image</li>
-	  <li>Slide Transitions</li>
-	  <li>hide it on the side</li>
-	  <li>for big file loading</li>
-	  <li>hiding the link details popup at the bottom</li>
-	  <li>menu menu could look better</li>
-	  <li>Lock/pin bottom status bar</li>
-	  <li>menu open</li>
-	  <li>button to begining and end</li>	
-	  <li>remove !important <==CAN BE IGNORE</li>
-	  <li>you-are-here animated indicator</li>
-	  <li>tap region bigger than actual buttons</li>
-	  <li>smoother easing for sliding in menus</li>
-	  <li>up/down buttons for scrolling instead for between slides</li>
-	   <li>bottom menu bar shown only when hovering in that area</li>
+		<li>Previously left to the user</li>
+		<li>Now using 3rd party script (
+			<a href="https://highlightjs.org/">
+				<code>https://highlightjs.org</code>
+			</a>) as base for formating and element coloring</li>
+		<li>Tags pre and code with language class defines the code sample:</li>
+		<li>Automatic precompiling of &lt; and &gt; symbols into text codes for processing HTML code in rslidy.js</li>
+	</ul>
+
+	<h3>Code</h3>
+	<pre><code class="html">
+<pre><code class="html">
+<!-- HTML example -->
+<a id="hello" class="world">1</a>
+</code><code class="javascript">
+// JS example
+for(var i = 0; i &lt; table.length; i++){
+	table[i].addEventListener('click', function (e) {...}
+}
+</code><code class="css">
+/* CSS example */
+#hello, a.world:hover{
+	color: black;
+}
+</code></pre>
+	</code></pre>
+	<h3>Result</h3>
+	<pre><code class="html">
+	<!-- HTML example -->
+	<a id="hello" class="world">1</a>
+	</code><code class="javascript">
+	// JS example
+	for(var i = 0; i &lt; table.length; i++){
+		table[i].addEventListener('click', function (e) {...}
+	}
+	</code><code class="css">
+	/* CSS example */
+	#hello, a.world:hover{
+		color: black;
+	}
+	</code></pre>
+</div>
+
+<div class="slide">
+	<h1>Loading Animation</h1>
+	<ul>
+		<li>Previously no animation was present - uncertainty</li>
+		<li>Inspired by the pulz loader but kept as simple as the GUI</li>
+		<li>For rendering of the loader before the initialization, setTimeout(function(){...},1) needs to be called</li>
+	</ul>
+	<div class="pulzLoader">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<p style="text-align:center">
+		<script type="text/javascript">
+			function triggerLoadingInDemo(){
+				var rslidy = new Rslidy();
+				rslidy.utils = new Utils();
+				rslidy.toggleLoading();
+			}
+		</script>
+		<button id="triggerLoading" onclick="triggerLoadingInDemo()" >Show loading animation</button>
+	</p>
+</div>
+
+<div class="slide">
+	<h1>Slide Transitions</h1>
+	<ul>
+		<li>Defined class keywords for setting up animations between slide and incremental list transitions</li>
+		<li>The original rSlidy uses for hidding the slide <u>display:none</u> - is uncompatible with animation</li>
+		<li>To keep the old definition, a new body class <strong>animated</strong> is defined for hidding redefinition on whole body</li>
+		<li>New hidden definition uses visibility and sizes - have to be redefined in keframes to keep original design</li>
+		<li>Reversing the animation on same element with different class does not work - have to define reverse animation keframes</li>
+		<li>Adittionally we need to prepare list animation keyframes, since the padding differs from the slides</li>
+	</ul>
+
+	<pre><code class="css">
+body.animated .slide{
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	padding: 0;
+}
+
+@keyframes opacityOff{
+	0%	{opacity: 1;	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	99%	{opacity: 0;	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{opacity: 0;	visibility: hidden;	height: 0;	width: 0;	padding: 0;}
+}
+@keyframes opacityOn{
+	0%	{opacity: 0;	visibility: hidden;	height: 0;	width: 0;	padding: 0;}
+	1%	{opacity: 0;	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+	100%	{opacity: 1;	visibility: visible;	height: auto;	width: auto;	padding: 2em;}
+}
+@keyframes opacityOnList{
+	0%	{opacity: 0;	visibility: hidden;	height: 0;	width: 0;}
+	1%	{opacity: 0;	visibility: visible;	height: auto;	width: auto;}
+	100%	{opacity: 1;	visibility: visible;	height: auto;	width: auto;}
+}
+
+/* General transition animation settings */
+body.animated .slide,
+body.animated .slide ul.incremental li:not(.invisible){
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+body.animated .slide ul.incremental li:not(.invisible){
+	animation-fill-mode: backwards;
+}
+</code></pre>
+
+</div>
+
+<div class="slide">
+	<h1>Transition Direction And Name</h1>
+	<ul>
+		<li>The animated slides are the previous (is at animation start marked as <u>hidden</u>) and active (marked <u>without hidden</u> class) slide</li>
+		<li>Modified <u>showSlide</u> function to set <strong>animate</strong>, <strong>animatedForward</strong> and <strong>animatedBackwards</strong> classes as markers for active and previous slide </li>
+		<li>The <strong>animate</strong> class clearly marks the previous slide</li>
+		<li>The direction classes are important <u>for complex animations</u> to be consistent with the direction
+		<li>Excluding direction classes (when slide number does not change) is used also for catching <u>NO animation</u> situations - initial load or reload ( at start)</li>
+		<li>Transition definitions are made as combinations of marker classes and so called container or name classes</li>
+		<li>The name classes are used in the presentation file either in the body tag (<strong>opacity</strong>) for global declaration or in slide divs and ul tags (<strong>opacity-animation</strong>) for local declarations</li>
+		<li>The new hidden definition works only if at most 1 slide has sizes different than 0 - therefore the guideline is: <u>active slide animation start after previous finishes</u></li>
+	</ul>
+
+	<pre><code class="css">
+/* Without direction we skip the animation*/
+body.animated :not(.animatedForward):not(.animatedBackwards).slide{
+	animation-duration: 0s;
+	animation-delay: 0.001s; /* for loader preloading it is set to the minimum JS 1ms delay*/
+}
+/* TIME DELAY FOR NEW SLIDE SHOULD BE SAME AS TRANSITION DURATION*/
+body.animated :not(.hidden).slide{
+	animation-delay: 1s;		
+}
+/************************************************************************/
+/*			DEFAULT OPACITY transition			*/
+/************************************************************************/
+/* General animation settings for old slide */
+body.animated .hidden.slide.animate,
+/* Also sets the calls for default animation of opacity change */
+body.animated.opacity .hidden.slide.animate,
+body.animated .hidden.slide.animate.opacity-animation{
+	animation-name: opacityOff; /* Default animation */
+}
+
+/* General animation settings for new slide */
+body.animated :not(.hidden).slide,
+/* Also sets the calls for default animation of opacity change */
+body.animated.opacity :not(.hidden).slide,
+body.animated :not(.hidden).slide.opacity-animation{
+	animation-name: opacityOn; /* Default animation */
+}
+
+body.animated .slide ul.incremental li:not(.invisible),
+body.animated.opacity .slide ul.incremental li:not(.invisible),
+body.animated .slidel.opacity-animation ul.incrementa li:not(.invisible),
+body.animated .slide ul.incremental.opacity-animation li:not(.invisible){
+	animation-name: opacityOnList; /* Default animation */	
+}
+</code></pre>
+
+</div>
+
+<div class="slide">
+	<h1>Prepared Opacity Transitions</h1>
+	<ul class="incremental">
+		<li><strong>Opacity</strong>[Default]</li>
+		<li>Scale</li>
+		<li>Sliding left</li>
+		<li>Sliding right</li>
+		<li>Sliding left-right</li>
+		<li>Sliding right-left</li>
+	</ul>
+</div>
+
+<div class="slide scale-animation">
+	<h1>Prepared Scale Transitions</h1>
+	<ul class="incremental">
+		<li>Opacity[Default]</li>
+		<li><strong>Scale</strong></li>
+		<li>Sliding left</li>
+		<li>Sliding right</li>
+		<li>Sliding left-right</li>
+		<li>Sliding right-left</li>
+	</ul>
+</div>
+
+
+<div class="slide sliding-left-animation">
+	<h1>Prepared Left Transitions</h1>
+	<ul class="incremental">
+		<li>Opacity[Default]</li>
+		<li>Scale</li>
+		<li><strong>Sliding left</strong></li>
+		<li>Sliding right</li>
+		<li>Sliding left-right</li>
+		<li>Sliding right-left</li>
+	</ul>
+</div>
+
+
+<div class="slide sliding-right-animation">
+	<h1>Prepared Right Transitions</h1>
+	<ul class="incremental">
+		<li>Opacity[Default]</li>
+		<li>Scale</li>
+		<li>Sliding left</li>
+		<li><strong>Sliding right</strong></li>
+		<li>Sliding left-right</li>
+		<li>Sliding right-left</li>
+	</ul>
+</div>
+
+<div class="slide sliding-left-right-animation">
+	<h1>Prepared Left-Right Transitions</h1>
+	<ul>
+		<li>Opacity[Default]</li>
+		<li>Scale</li>
+		<li>Sliding left</li>
+		<li>Sliding right</li>
+		<li><strong>Sliding left-right</strong></li>
+		<li>Sliding right-left</li>
+	</ul>
+</div>
+
+<div class="slide sliding-right-left-animation">
+	<h1>Prepared Right-Left transitions</h1>
+	<ul>
+		<li>Opacity[Default]</li>
+		<li>Scale</li>
+		<li>Sliding left</li>
+		<li>Sliding right</li>
+		<li>Sliding left-right</li>
+		<li><strong>Sliding right-left</strong></li>
 	</ul>
 </div>
 
 
 <div class="slide">
-	<h1>Abandoned tasks - NEEDS A NAME CHANGE</h1>
+	<h1>Lines of Code</h1>
+	<ul>
+		<li><strong>JavaScript</strong>
+			<ul>
+				<li>Original rSlidy: ~1200 LOC</li>
+				<li>Animated rSlidy: ~1700 LOC</li>
+				<li>SweetAlert2: ~300 LOC</li>
+				<li>highlight.js: ~800 LOC</li>
+				<li>Total addition: 500~1600 LOC </li>
+			</ul>
+		</li>
+		<li><strong>CSS</strong>
+			<ul>
+				<li>Original rSlidy: ~1100 LOC</li>
+				<li>Animated rSlidy: ~1900 LOC</li>
+				<li>SweetAlert2: ~700 LOC</li>
+				<li>highlight.js: ~100 LOC per code coloring style</li>
+				<li>Total addition: 800~1600 LOC </li>
+			</ul>
+		</li>
+		<li>The original size increased by ~3200 LOC or ~20kB</li>
+	</ul> 
+</div>
 
-	<p>
-		Could we say: Unreached goals?
-	</p>
 
+
+<div class="slide">
+	<h1>Future Ideas</h1>
 	<ul>
 	  <li>TS Script for Grund</li>
-	  <li>including subheadings with dropdown menu style or accordion style</li>
-	  <li>Animated CSS Text styles</li>
-	  <li>hidden canvas to actually draw on the slide</li>
-	  <li>Marker</li>
+	  <li>Including Subheadings with in TOC on heading hover</li>
+	  <li>Animated CSS text tyles</li>
+	  <li>Canvas to actually draw on the slide - Marker support</li>
 	</ul>
-
-</div>
-
-<div class="slide">
-	<h1>Statistics TO DO</h1>
-
-	<p>
-		Some Github statistics can be approximately used.
-	</p>
 
 </div>
 
@@ -545,7 +748,11 @@ function openSweetAlertImage(string) {
 	<h1>Problems we met</h1>
 
 	<ul>
-	  <li>Same animation on same element cannot be triggered in subclass - tried to reverse it on hover or .clicked addition - HAD TO MAKE A DUPLICATE WITH NEW NAME TO MAKE IT WORK</li>
+	  <li>Same animation on same element cannot be triggered in subclass - either need additional element or reversed keframe</li>
+	  <li>Element rendering knowledge is needed for animation planning - the display:none problem.</li>
+	  <li>RWD testing should not be underestimated</li>
+	  <li>Javascript preloading and initialization tricky with HTML rendering</li>
+	  <p class="note">Missing qualifications??? Would be nice if there wer more written stuff here</p>
 	</ul>
 
 </div>
@@ -554,7 +761,8 @@ function openSweetAlertImage(string) {
 	<h1>Conclusion</h1>
 
 	<ul>
-	  <li>It works?</li>
+	  <li>Achieved better user experience for slide shows</li>
+	  <li></li>
 	</ul>
 
 </div>
