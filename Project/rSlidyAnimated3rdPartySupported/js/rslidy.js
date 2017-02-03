@@ -71,17 +71,25 @@ var Rslidy = (function () {
 		this.motion_last = 0;
 		this.motion_break = 500; // Minimum interval between movement gestures
 		this.button_delay = 150; //delay for all buttons animations
-			
-		// NEW HELP TEXT - html formated - alert does not have html rendering
-		this.help_text = "<head> <link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
-			"<link rel='stylesheet' href='css/rslidy.css'><link rel='stylesheet' href='css/slides-default.css'></head>" +
-			"<body><div class='slide'><h1>rSlidy Help Tab</h1>" +
-			"<p>rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.</p>" +
+		
+		// intial help_text
+		
+		// NEW HELP TEXT
+		this.help_text =
+		this.help_text = "<p>rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.</p>" +
 			"<ul> <li>Use the buttons LEFT and RIGHT to navigate through the slide show. On devices with a touchscreen, it is possible to use swipe gestures.</li>" +
 			"<li> All available slides and a table of contents can be shown on the left or right side by hovering at the side - alternativelyyou can lock the views with the corresponding buttons in the status bar on the bottom of the page.</li>" +
 			"<li> Settings for gestures and the night mode can be changed by clicking the Menu button in the status bar.</li>" +
 			"<li> When using mobile device, Shake and Tilt gestures are enabled by default. These can be disabled in the menu. Tilting helps navigating, while shaking resets the presentation to the first slide.</li>" +
 			"</ul><p>Other settings like the aspect ratio of the slides and the zoom level of the thumbnails can be changed in the rslidy.js file, while menu options or defualt font size can be also fixed in HTML slide file.</p></div></body>";
+		 "<p>rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.</p>" +
+			"<ul> <li>Use the buttons LEFT and RIGHT to navigate through the slide show. On devices with a touchscreen, it is possible to use swipe gestures.</li>" +
+			"<li> All available slides and a table of contents can be shown on the left side by clicking the corresponding buttons in the status bar on the bottom of the page.</li>" +
+			"<li> Settings for gestures and the night mode can be changed by clicking the Menu button in the status bar.</li>" +
+			"<li> When using mobile device, Shake and Tilt gestures are enabled by default. These can be disabled in the menu. Tilting helps navigating, while shaking resets the presentation to the first slide.</li>" +
+			"<li> If available, speaker notes can be toggled by pressing N or by double-tapping on touch devices.</li>" +
+			"<li> If enabled, the timer can be started/paused by pressing T or by clicking the timer in the status bar below.</li></ul>" +
+			"<p>Other settings like the aspect ratio of the slides and the zoom level of the thumbnails can be changed in the rslidy.js file.</p>";
 	}
 	// ---
 	// Description: Handles the initialization of rslidy, e.g. setting up the menus.
@@ -224,7 +232,7 @@ var Rslidy = (function () {
 		
 		document.getElementById("button-menu").addEventListener('click', function () { this.menuToggleClicked(false); }.bind(this));
 		document.getElementById("button-help").addEventListener('click', function () { if (this.close_menu_on_selection == true)
-			this.menuToggleClicked(false); var newWindow = window.open(); newWindow.document.write(this.help_text); }.bind(this));
+			this.menuToggleClicked(false); }.bind(this));
 		document.getElementById("button-zoom-more").addEventListener('click', function (e) { this.changeSlideZoom(e, 1); }.bind(this));
 		document.getElementById("button-zoom-reset").addEventListener('click', function (e) { this.changeSlideZoom(e, 0); }.bind(this));
 		document.getElementById("button-zoom-less").addEventListener('click', function (e) { this.changeSlideZoom(e, -1); }.bind(this));
@@ -271,7 +279,12 @@ var Rslidy = (function () {
 		for (var i=0, len=images.length, img; i<len; i++) {
 		  img = images[i];
 		  img.addEventListener("click", function() {
-			openImageTab(this.src);
+			var sourceImage = document.createElement('img');
+			sourceImage.src = this.src;
+
+			sourceImage.style.height = "100%";
+			sourceImage.style.width = "100%";
+			openSweetAlertImage(sourceImage);
 		  });
 		}
 	};
@@ -583,7 +596,7 @@ var Rslidy = (function () {
 		var menu = '<div id="menu" class="hidden">';
 		// Add menu content
 		var texttt = this.help_text;
-		menu += '<div class="menu-content" style="text-align:center"><button id="button-help" style="width:100%" title="Get some help">Help</button></div>';
+		menu += '<div class="menu-content" style="text-align:center"><button id="button-help" style="width:100%" title="Get some help" onclick="openSweetAlert(' + '\'' + texttt + '\'' + ');">Help</button></div>';
 		menu += '<hr>'
 		menu += '<div class="menu-content" style="text-align:center"><button id="button-zoom-more" style="width:30%" title="Increase font size">A+</button> <button id="button-zoom-reset" style="width:20%" title="Reset font size">R</button> <button id="button-zoom-less" style="width:30%" title="Decrease font size">A-</button></div>';
 		menu += '<hr>'
@@ -1590,97 +1603,113 @@ var Utils = (function () {
 	return Utils;
 })();
 
-function openImageTabListeners(){
-	var img = document.getElementById("zoomedImg");
-	console.log(img);
-	var titleElement = document.getElementById("zoomNumber");
-	var zoomButtons = document.getElementsByTagName("button");
-	var widthPer = img.naturalWidth / 100;
-	var heightPer = img.naturalHeight / 100;
-
-	var fitScreenPer = 90 * window.innerWidth / img.naturalWidth;
-	fitScreenPer = Math.floor(fitScreenPer/10) * 10;
-	titleElement.innerHTML = fitScreenPer;
-	img.style.height = heightPer*fitScreenPer + "px";
-	img.style.width =   widthPer*fitScreenPer + "px";
-
-
-	console.log("ZOOM: " + fitScreenPer*100 +"W: " + img.naturalWidth+ " PER: "+ heightPer + " H: " + img.naturalHeight + " PER: "+ heightPer);
-
-	for(var buttonID = 0; buttonID < zoomButtons.length; buttonID++){
-		zoomButtons[buttonID].addEventListener("click", function(changeBy){
-			var zoom = parseInt(titleElement.innerHTML);
-			zoom = zoom + parseInt(this.innerHTML);
-			if(zoom > 0){
-				img.style.height = zoom * heightPer + "px";
-				img.style.width = zoom * widthPer + "px";
-				titleElement.innerHTML = zoom;
-			}
-		});
-	};
-	
-	window.addEventListener('keypress', function (e) {
-		if (e.key == '+' || e.key == '-' || e.key == '0') {
-			var zoom = parseInt(titleElement.innerHTML);
-			if(e.key == '+'){
-				zoom = zoom + 10;
-			}
-			else if(e.key == '-')
-			{
-				zoom = zoom - 10;
-			}
-			else{
-				zoom = 100;
-			}
-			if(zoom > 0){
-				img.style.height = zoom * heightPer + "px";
-				img.style.width = zoom * widthPer + "px";
-				titleElement.innerHTML = zoom;
-			}
-		}
-	}, false);
-
-	var isCtrl = false;
-	window.addEventListener('keydown', function (e) {
-		if (e.which === 17) {
-            isCtrl = true;
-        }
-    }, false);
-	window.addEventListener('keyup', function (e) {
-		if (e.which === 17) {
-            isCtrl = false;
-        }
-    }, false);
-
-	window.addEventListener("mousewheel", function (e) {
-		if(isCtrl){
-			var delta = Math.max(-1, Math.min(1, e.wheelDelta));
-			var zoom = parseInt(titleElement.innerHTML);
-			if(delta > 0){
-				zoom = zoom + 10;
-			}
-			else if(delta < 0)
-			{
-				zoom = zoom - 10;
-			}
-			if(zoom > 0){
-				img.style.height = zoom * heightPer + "px";
-				img.style.width = zoom * widthPer + "px";
-				titleElement.innerHTML = zoom;
-			}
-		}
-	}, false);
+function openSweetAlert(string) {
+	swal({
+	title: "Welcome to rslidy!",
+	html: string,
+	showCancelButton: false,
+	confirmButtonText: "Got it!",
+	animation: true,
+	}, function (confirmed) {
+  }).catch(swal.noop);
 }
 
-function openImageTab(imgSrc) {
-	var newWindow = window.open();
 
-	var htmlCode ="<head><link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
-			"<link rel='stylesheet' href='css/rslidy.css'><link rel='stylesheet' href='css/slides-default.css'></head>" +
-			"<body><div class='slide imageAlert'><h1><button>-1000%</button><button>-100%</button><button>-10%</button>Zoom at <span id='zoomNumber'>100</span>%<button>+10%</button><button>+100%</button><button>+1000%</button></h1>" +
-			"<div><img id='zoomedImg' src='"+ imgSrc + "'></div></div>"+
-			"<script type='text/javascript'>" + String(openImageTabListeners) + "; openImageTabListeners();</script></body>";
-	newWindow.document.write(htmlCode);
+function openSweetAlertImage(string) {
+	swal({
+	html: string,
+	showCancelButton: false,
+	showConfirmButton: false,
+	confirmButtonText: "Close",
+	animation: true,
+	title: "<button>-1000%</button><button>-100%</button><button>-10%</button>Zoom at <span>100</span>%<button>+10%</button><button>+100%</button><button>+1000%</button>",
+	onOpen: function(){
+		var modalElement = document.getElementsByClassName("swal2-modal")[0];
+		modalElement.classList.add("imageAlert");
+
+		var titleElement = modalElement.getElementsByClassName("swal2-title")[0];
+		var zoomButtons = titleElement.getElementsByTagName("button");
+		titleElement = titleElement.getElementsByTagName("span")[0];
+		var img = modalElement.getElementsByClassName("swal2-content")[0].getElementsByTagName("img")[0];
+		var widthPer = img.naturalWidth / 100;
+		var heightPer = img.naturalHeight / 100;
+
+		var fitScreenPer = 90 * window.innerWidth / img.naturalWidth;
+		fitScreenPer = Math.floor(fitScreenPer/10) * 10;
+		titleElement.innerHTML = fitScreenPer;
+		img.style.height = heightPer*fitScreenPer + "px";
+		img.style.width =   widthPer*fitScreenPer + "px";
+
+/*
+		console.log("ZOOM: " + fitScreenPer*100 +"W: " + img.naturalWidth+ " PER: "+ heightPer + " H: " + img.naturalHeight + " PER: "+ heightPer);
+*/
+		for(var buttonID = 0; buttonID < zoomButtons.length; buttonID++){
+			zoomButtons[buttonID].addEventListener("click", function(changeBy){
+				var zoom = parseInt(titleElement.innerHTML);
+				zoom = zoom + parseInt(this.innerHTML);
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			});
+		};
+		
+		window.addEventListener('keypress', function (e) {
+			if (e.key == '+' || e.key == '-' || e.key == '0') {
+				var zoom = parseInt(titleElement.innerHTML);
+				if(e.key == '+'){
+					zoom = zoom + 10;
+				}
+				else if(e.key == '-')
+				{
+					zoom = zoom - 10;
+				}
+				else{
+					zoom = 100;
+				}
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			}
+		}, false);
+
+		var isCtrl = false;
+		window.addEventListener('keydown', function (e) {
+			if (e.which === 17) {
+	            isCtrl = true;
+	        }
+	    }, false);
+		window.addEventListener('keyup', function (e) {
+			if (e.which === 17) {
+	            isCtrl = false;
+	        }
+	    }, false);
+
+		window.addEventListener("mousewheel", function (e) {
+			if(isCtrl){
+				var delta = Math.max(-1, Math.min(1, e.wheelDelta));
+				var zoom = parseInt(titleElement.innerHTML);
+				if(delta > 0){
+					zoom = zoom + 10;
+				}
+				else if(delta < 0)
+				{
+					zoom = zoom - 10;
+				}
+				if(zoom > 0){
+					img.style.height = zoom * heightPer + "px";
+					img.style.width = zoom * widthPer + "px";
+					titleElement.innerHTML = zoom;
+				}
+			}
+			e.preventDefault();
+		}, false);
+		}
+	}, function (confirmed) {
+  }).catch(swal.noop);
 }
  
 

@@ -1,0 +1,869 @@
+﻿/* Settings applying to everything */
+html
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Body */
+body
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: -1;
+  /*background-color: white;*/
+}
+
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+a
+{
+  text-decoration: underline;
+}
+
+
+/*
+-- overview/content separation
+*/
+
+/*
+-- Overview panel
+*/
+#overview, #toc,
+#overview_trigger,
+#toc_trigger{
+  width: 15em;
+  height: 100%;
+  position: fixed;
+  display: block;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  }
+
+
+#overview_trigger,
+#toc_trigger{
+  width: 2.5em; /*To make it harder to trigger*/
+}
+
+#overview, #toc
+{
+  list-style: none;
+  background-color: rgb(200,200,200);
+  margin: 0 0 2em 0;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  word-wrap: break-word;
+  transition: 0.5s cubic-bezier(.46,0,.74,1.27);
+}
+
+#button-overview, #button-toc, #button-menu{ 
+    animation-duration: 0.3s; 
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: flip2Face;
+}
+
+#button-overview.clicked, #button-toc.clicked, #button-menu.clicked{
+    animation-name: flip2Back; 
+    transform: rotateY(180);
+}
+
+@keyframes flip2Back { 
+    0% { 
+        transform: translateZ(0) rotateY(0) scale(1); 
+    } 
+    40% { 
+        transform: translateZ(-150px) rotateY(70deg) scale(.95); 
+    } 
+    50% { 
+        transform: translateZ(-150px) rotateY(90deg) scale(.9); 
+    } 
+    90% { 
+        transform: translateZ(-150px) rotateY(160deg) scale(.95); 
+    } 
+    100% { 
+        transform: translateZ(0) rotateY(180deg)  scale(1); 
+    } 
+}
+
+@keyframes flip2Face { 
+    0% { 
+        transform: translateZ(0) rotateY(180deg) scale(1); 
+    } 
+    40% { 
+        transform: translateZ(-150px) rotateY(160deg) scale(.95); 
+    } 
+    50% { 
+        transform: translateZ(-150px) rotateY(90deg) scale(.9); 
+    } 
+    90% { 
+        transform: translateZ(-150px) rotateY(70deg) scale(.95); 
+    } 
+    100% { 
+        transform: translateZ(0) rotateY(0)  scale(1); 
+    } 
+} 
+
+
+
+
+#content-section:not(.shifted-toc) ~ #toc_trigger #toc{
+  right: -15em;
+}
+#content-section:not(.shifted-overview) ~ #overview_trigger #overview{
+  left: -15em;
+}
+
+#overview_trigger,
+#toc_trigger{
+  z-index: 1;
+}
+
+#overview_trigger, #overview{
+  left: 0;
+}
+
+#toc_trigger, #toc{
+  right: 0;
+}
+
+#toc{
+  padding-top: 1em;
+  direction: rtl;
+}
+
+#toc .slide-link{
+  padding-left: 1em;
+  direction: ltr;
+}
+
+/* Items inside the canvas container (e.g. presentation slides) */
+.overview-item
+{
+  z-index: -1;
+  display: block;
+  overflow: hidden;
+}
+
+/* Link on item */
+.overview-item a
+{
+  /*display: block;
+  margin-bottom: 2em;
+  font-size: 1.2em;*/
+  text-decoration: none;
+  outline: 0;
+  outline-color: none;
+  
+   pointer-events: none;
+   cursor: default;
+}
+
+/* Hover on link */
+.overview-item a:hover
+{
+}
+
+.slide-thumbnail
+{
+  display: block;
+  /* overflow: hidden; causes click events not being fired on firefox (which is kinda ironic) */
+  overflow: hidden;
+}
+
+.slide-thumbnail:hover
+{
+  background-color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+.slide-thumbnail:hover .overview-item
+{
+  position: relative;
+  z-index: 0;
+  animation: scrollThumbnail 2.5s ease-in-out 0s infinite alternate; 
+}
+
+@keyframes scrollThumbnail{
+  0%    {  top: 0;    }
+  100%  {  top: -20%; }
+}
+
+.slide-clickelement
+{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.slide-link
+{
+  z-index: 1;
+  font-size: 0.8em;
+  cursor: pointer;
+  margin-bottom: 0.2em;
+  text-decoration: underline;
+  color: rgb(0,0,255);
+}
+
+
+  /* YOU ARE HERE: SLIDES */
+.slide-selected
+{
+  background-color: rgba(255,255,255,0.95);
+}
+
+.thumbnail-caption
+{
+  font-size: 0.7em;
+  text-align: center;
+  background-color: rgb(177,177,177);
+  
+  /* Separating border */
+  border-bottom: 2px solid gray;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+
+/*
+-- Content section
+*/
+
+#content-section
+{
+  height: 100%;
+  width: auto;
+  background-color: rgba(255,255,255,1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: left 0.2s;
+  display: block;
+  margin-bottom: 2em;
+  overflow-x: hidden;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  word-wrap: break-word;
+  
+  transition: 0.5s cubic-bezier(.46,0,.74,1.27);
+  }
+
+
+#content-section .slide
+{
+  font-size: 1em;
+}
+
+.shifted-overview
+{
+  left: 15em !important;
+}
+
+.shifted-toc
+{
+  right: 15em !important;
+}
+
+/* Main content area */
+#content
+{
+  padding: 5em 1em 0 1em;
+  text-align: center;
+}
+
+/* Wrapper */
+#new-body
+{
+  height: 100%;
+  width: 100%;
+}
+
+/*
+-- Speaker Notes
+*/
+#speakernotes-overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.speakernotes-container
+{
+  color: white;
+  word-wrap: break-word;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+.speakernotes
+{
+  display: none !important;
+}
+
+/*
+-- Status bar
+*/
+#status-bar
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 5em;
+  display: table;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+
+/*
+button, .status-bar-item{
+    cursor: pointer;
+  background-color: rgb(100,100,100);
+  color: rgba(255,255,255,0.9);
+    border-radius: 0.25em;
+  transition: background-color 0.3s;
+  
+  
+  filter: invert(0%);
+  transition: filter 0.1s;
+  
+}
+
+
+button:hover, .status-bar-item:hover{
+  background-color: rgb(80,80,80);
+}
+*/
+
+button:focus, .status-bar-item:focus{
+  outline: 0;
+}
+
+
+/*
+button, .status-bar-item{
+  background-color: rgb(48, 133, 214);
+  border: 0;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+  font-size: 18px;
+
+}
+
+  
+button:hover, .status-bar-item:hover{
+  background-color: rgb(35, 120, 201);
+}
+*/
+
+
+/*
+#status-bar
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255,255,255,1);
+  display: table;
+  z-index: 1;
+  opacity: 0;
+  transition: height 2s;
+  transition: opacity 0.5s;
+  overflow: hidden;
+}
+
+#status-bar:hover
+{
+height:2em;
+  opacity: 1;
+}
+*/
+
+
+#progress-bar
+{
+  position: absolute;
+  bottom: 2.15em;
+
+  width: 100%;
+  height: 0.3em;
+  /*background-color: rgba(48, 133, 214, 0.5);*/
+  background-color: rgba(26, 83, 255,0.9);
+
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  z-index: 1;
+}
+
+#progress-bar-indicator-left
+{
+  position: absolute;
+  bottom: 2.45em;
+
+  /*width: 0.4em;
+  height: 0.3em;*/
+  left: 1em;
+  /*background-color: rgba(48, 133, 214, 0.5);*/
+  /*background-color: rgba(26, 83, 255,0.9);*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.4em 0.5em 0.4em;
+  border-color: transparent transparent rgba(200,200,200,0.5) transparent;
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  z-index: 1;
+}
+
+
+#progress-bar-indicator-right
+{
+  position: absolute;
+  bottom: 2.45em;
+
+  /*width: 0.4em;
+  height: 0.3em;*/
+  right: 1em;
+  /*background-color: rgba(48, 133, 214, 0.5);*/
+  /*background-color: rgba(26, 83, 255,0.9);*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.4em 0.5em 0.4em;
+  border-color: transparent transparent rgba(200,200,200,0.5) transparent;
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  z-index: 1;
+}
+
+
+#status-bar-content
+{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  transform: translateY(2.15em);
+  transition: all 0.4s ease-in-out;
+
+  height: 2.3em;
+  background-color: rgba(255,255,255,0);
+    
+  padding-top: 2px;
+
+  
+  background: -webkit-linear-gradient(top, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(200,200,200,0.9), rgba(244,244,244,1)); /* Standard syntax (must be last) */
+
+
+  border-top: 1px solid rgba(200,200,200,1);
+}
+
+#status-bar:hover #status-bar-content
+{
+  transform: translateY(0);
+}
+
+.status-bar-nav-button
+{
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+
+
+#status-bar-button-nav-left,
+#status-bar-button-nav-info,
+#status-bar-button-nav-info div,
+#status-bar-button-nav-info input,
+#status-bar-button-nav-right
+{
+  display: inline-flex;
+  font-family: Verdana,Geneva,sans-serif; 
+  margin: 0 !important;
+}
+
+
+#slide-input-container, #slide-caption{
+  font-size: 18px;
+  padding: 1px 0;
+}
+
+#slide-input-container{
+  padding-left: 6px;
+}
+
+#slide-caption{
+  padding-left: 3px;
+  padding-right: 6px;
+}
+
+#status-bar-button-nav-left:hover,
+#status-bar-button-nav-right:hover
+{
+  color: white; 
+}
+
+
+
+#status-bar-nav-link-previous
+{
+  margin-right: 3em;
+}
+
+#status-bar-content input
+{
+  margin-bottom: 1px;
+}
+
+#status-bar-content div
+{
+  margin-top: 2px;
+}
+
+.status-bar-item
+{
+  float: left;
+  margin-left: 2px;
+  display: block;
+}
+
+/*
+.status-bar-item:hover
+{
+  background-color: rgba(244,244,244,0.5);
+}
+*/
+
+#timer
+{
+  float: right;
+  margin-right: 2px;
+  padding-right: 2px;
+  border-right: 2px solid black;
+  cursor: pointer;
+}
+
+#slide-input-container
+{
+  float: right;
+}
+
+#slide-input
+{
+  width: 2em;
+  text-align: center;
+  border: 0px;
+  outline: 0;
+}
+
+#slide-caption
+{
+  float: right;
+  color: black;
+  background-color: rgba(255,0,0,0);
+  opacity: 1.0 !important;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#button-menu
+{
+  float: right;
+  margin-right: 2px;
+  width: 70px;
+}
+
+#status-bar-pin-button
+{
+  float: right;
+  margin-right: 2px;
+  min-width: 2em;
+}
+
+/*
+-- Menu
+*/
+#menu
+{
+  position: absolute;
+  font-size: 1.5em;
+  bottom: calc(2em/1.5 + 0.3em);
+  right: calc(2em/1.5);
+
+  width: auto;
+  height: auto;
+  padding: 0.2em;
+  background-color: rgba(233,233,233,0.9);
+
+  box-shadow: 0.05em -0.05em 0.1em rgba(127,127,127,0.8);
+
+  /*border: 1px solid rgba(127,127,127,0.95);*/
+  
+  padding: 0.5em;
+  
+  z-index: 4;
+  border-radius: 0.25em;
+}
+
+
+.menu-content
+{
+  text-align: right;
+}
+
+#menu input[type=checkbox]{
+  transform: scale(1.5) translate(0,-1px);
+}
+
+/*
+-- Common modifiers
+*/
+.hidden
+{
+  display: none;
+}
+
+.not_hidden
+{
+  display: visible;
+}
+
+.invisible
+{
+  visibility: hidden;
+}
+
+.noselect
+{
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/*
+-- SVG fix
+*/
+.svg-replacement
+{
+  pointer-events: none;
+}
+
+.svg-link
+{
+  display: inline-block;
+}
+
+/*
+-- Colors
+*/
+.color-invert
+{
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+/* Styles for larger screens oftablet and only desktop */
+@media only screen 
+and (min-width: 641px)
+{
+  /*
+  -- Common modifiers
+  */
+  .hidden-on-desktop
+  {
+    display: none;
+  }
+
+}
+
+/* Styles for smaller screens for mobile only */
+@media only screen 
+and (min-device-width: 320px)
+and (max-device-width: 640px)
+{
+  /*
+  -- Viewport settings
+  */
+  @viewport
+  {
+    /* placeholder */
+  }
+
+  /*
+  -- Common modifiers
+  */
+  .hidden-on-mobile
+  {
+    display: none !important;
+  }
+
+  /*
+  -- Elements
+  */
+
+  #overview, #toc{
+    width: 7.5em;
+  }
+  
+  #overview_trigger, #toc_trigger{
+  width: 2.5em; /*To make it harder to trigger*/
+}
+
+  #content-section:not(.shifted-toc) ~ #toc_trigger #toc{
+    right: -7.5em;
+  }
+  #content-section:not(.shifted-overview) ~ #overview_trigger #overview{
+    left: -7.5em;
+  }
+
+
+  
+  #status-bar
+  {
+    font-size: 1.3em !important;
+    height: calc(3.3em) !important;
+    padding-top: 0 !important;
+  /*transform: scale(1,1.5);*/
+  }
+  
+  #status-bar-content{  
+  transform: translateY(3em);
+}
+
+  
+  #menu
+  {
+    bottom: 3em;
+  }
+  
+  input
+  {
+    line-height: 2.5em;
+  }
+  
+  .status-bar-item
+{
+  line-height: 2.5em;
+}
+
+
+#slide-caption
+{
+  line-height: 2.5em;
+}
+
+#progress-bar
+{
+  bottom: 3em;
+}
+
+#progress-bar-indicator-left, #progress-bar-indicator-right
+{
+  bottom: 3.3em;
+}
+
+
+}
+
+/* Orientation portrait override */
+@media only screen
+and (orientation: portrait)
+{
+  #content-section
+  {
+    position: relative !important;
+  }
+}
+
+/* Print styles */
+@media print
+{
+
+  body
+  {
+    color: black;
+    background-color: white;
+    font: normal small Verdana, sans-serif;
+  }
+
+  /* Hide basic controls */
+  #overview, #status-bar, #menu
+  {
+    display: none;
+  }
+
+  .slide
+  {
+    display: block !important;
+    page-break-after: auto;
+    page-break-inside: avoid; /* Do not break the page in the middle of a slide */
+  }
+
+  .titleslide
+  {
+    page-break-after: always;
+    page-break-inside: avoid; /* Do not break the page in the middle of a slide */
+  }
+
+  /* Display whole content now */
+  html, body, #content-section
+  {
+    overflow: visible !important;
+  }
+
+  /* In case the user had the overview panel open */
+  .shifted-overview
+  {
+    left: 0em !important;
+  }
+
+  .shifted-toc
+  {
+    right: 0em !important;
+  }
+
+  /* In case the user had the low light mode activated */
+  .color-invert
+  {
+    filter: invert(0%) !important;
+    -webkit-filter: invert(0%) !important;
+  }
+
+}

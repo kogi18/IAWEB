@@ -1,0 +1,38 @@
+.pulzLoader{
+  text-align: center;
+  margin: 2.5em;
+}
+.pulzLoader div {
+  display: inline-block;
+  width: 10px;
+  height: 40px;
+  border-radius: 4px;
+  animation: pulz-loading 1s ease-in-out infinite;
+}
+.pulzLoader div:nth-child(1) {
+  background-color: #3498db;
+}
+.pulzLoader div:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.pulzLoader div:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.pulzLoader div:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+@keyframes pulz-loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

@@ -252,17 +252,54 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
 }
 
 
-.imageAlert {
+.swal2-modal.imageAlert {
+    min-height: inherit !important;
+    min-width: inherit !important;
+    width: 95% !important;
+    max-height:95% !important;
+    max-width: 95% !important;
+    overflow: auto;
+
+}
+
+.swal2-modal.imageAlert .swal2-content {
+    width:100% !important;
+    height:100% !important;
     text-align: center;
-    height: 95%;
 }
 
-.imageAlert div{
-    overflow: scroll;
-    max-height: 95%;
-    background-color: lightgray;
+.swal2-modal.imageAlert .swal2-title{
+  font-size: 1em;
 }
 
-.imageAlert button{
+.swal2-modal.imageAlert .swal2-title button{
   margin: 0 1em;
+}
+
+.swal2-show {
+  -webkit-animation-name: showSweetAlertCorrected !important;
+          animation-name: showSweetAlertCorrected !important;
+}
+
+@-webkit-keyframes showSweetAlertCorrected {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes showSweetAlertCorrected {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
 }
