@@ -276,9 +276,9 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
   margin: 0 1em;
 }
 
-.swal2-show.imageAlert {
-  -webkit-animation-name: showSweetAlertCorrected;
-          animation-name: showSweetAlertCorrected;
+.swal2-show {
+  -webkit-animation-name: showSweetAlertCorrected !important;
+          animation-name: showSweetAlertCorrected !important;
 }
 
 @-webkit-keyframes showSweetAlertCorrected {

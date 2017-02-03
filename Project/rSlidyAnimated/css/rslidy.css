@@ -699,9 +699,9 @@ height:2em;
   -webkit-filter: invert(100%);
 }
 
-/* Styles for larger screens only */
+/* Styles for larger screens oftablet and only desktop */
 @media only screen 
-and (min-width: 800px)
+and (min-width: 641px)
 {
   /*
   -- Common modifiers
@@ -713,10 +713,10 @@ and (min-width: 800px)
 
 }
 
-/* Styles for smaller screens only */
+/* Styles for smaller screens for mobile only */
 @media only screen 
-and (min-device-width: 320px) 
-and (max-device-width: 799px)
+and (min-device-width: 320px)
+and (max-device-width: 640px)
 {
   /*
   -- Viewport settings

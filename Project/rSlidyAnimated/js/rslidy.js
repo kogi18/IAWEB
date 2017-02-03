@@ -111,6 +111,8 @@ var Rslidy = (function () {
 		this.injectMenu();
 		this.setCurrentSlide(0, true);
 		this.removeAnimation();
+		this.setupUserSettings();
+		// for click event the addListeners have to be called after setupUserSettings
 		this.addListeners();
 		this.doStyleAdaptions();
 		// Platform specific settings
@@ -121,6 +123,47 @@ var Rslidy = (function () {
 		this.initTimer();
 		// Loading finished - loader is hidden
 		this.toggleLoading();       
+	};
+	// ---
+	// Description: Adds event listeners like left/right keys.
+	// ---
+	Rslidy.prototype.setupUserSettings = function () {
+		// check if hidden setupDefaultValues div exists
+		if(document.getElementById("setupDefaultValues") != null){
+			// for each setting toggle effect if it exists and is not the defualt one
+			var currentSettingValue = document.getElementById("statusbar-pin-locked");	// is default NO LOCK
+			if(currentSettingValue != null && currentSettingValue.value.toLowerCase() == "true"){
+				this.pinToggleClicked(false);
+			}
+			currentSettingValue = document.getElementById("menu-tilt-used");	// TILT is default TRUE
+			if(currentSettingValue != null && currentSettingValue.value.toLowerCase() == "false"){
+				document.getElementById("checkbox-tilt").checked = false;
+			}
+			currentSettingValue = document.getElementById("menu-shake-used");	// SHAKE is default TRUE
+			if(currentSettingValue != null && currentSettingValue.value.toLowerCase() == "false"){
+				document.getElementById("checkbox-shake").checked = false;
+			}
+			currentSettingValue = document.getElementById("menu-click-nav-used");	// NAV CLICK is default FALSE
+			if(currentSettingValue != null && currentSettingValue.value.toLowerCase() == "true"){
+				document.getElementById("checkbox-clicknav").checked = true;
+			}
+			currentSettingValue = document.getElementById("menu-low-light-mode-used");	// LOW LIGHT MODE is default FALSE
+			if(currentSettingValue != null && currentSettingValue.value.toLowerCase() == "true"){
+				document.getElementById("checkbox-lowlightmode").checked = true;
+				this.toggleLowLightMode();
+			}
+			currentSettingValue = document.getElementById("menu-hide-address-used");	// HIDE ADDRESS is default FALSE
+			if(currentSettingValue != null && currentSettingValue.value.toLowerCase() == "true"){
+				document.getElementById("checkbox-hideaddressbar").checked = true;
+				this.hideAddressBarToggleClicked();
+				this.menuToggleClicked(false);
+			}
+			// font size should be specified in EM
+			currentSettingValue = document.getElementById("default-font-size");
+			if(currentSettingValue != null){
+				this.changeSlideZoom(null, 0);
+			} 
+		}
 	};
 	// ---
 	// Description: Adds event listeners like left/right keys.
@@ -561,8 +604,8 @@ var Rslidy = (function () {
 		menu += '<hr>'
 		menu += '<div class="menu-content" style="text-align:center"><button id="button-zoom-more" style="width:30%" title="Increase font size">A+</button> <button id="button-zoom-reset" style="width:20%" title="Reset font size">R</button> <button id="button-zoom-less" style="width:30%" title="Decrease font size">A-</button></div>';
 		menu += '<hr>'
-		menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" disabled></label></div>';
-		menu += '<div class="menu-content"><label>Shake <input type="checkbox" value="Shake" id="checkbox-shake" disabled></label></div>';
+		menu += '<div class="menu-content"><label>Tilt <input type="checkbox" value="Tilt" id="checkbox-tilt" checked disabled></label></div>';
+		menu += '<div class="menu-content"><label>Shake <input type="checkbox" value="Shake" id="checkbox-shake" checked disabled></label></div>';
 		menu += '<div class="menu-content"><label>Click Nav <input type="checkbox" value="Tilt" id="checkbox-clicknav"></label></div>';
 		menu += '<div class="menu-content"><label>Low Light Mode <input type="checkbox" value="Low Light Mode" id="checkbox-lowlightmode"></label></div>';
 		menu += '<div class="menu-content"><label>Hide Address Bar <input type="checkbox" value="Hide Address Bar" id="checkbox-hideaddressbar"></label></div>';
@@ -820,9 +863,16 @@ var Rslidy = (function () {
 	// ---
 	Rslidy.prototype.changeSlideZoom = function (e, value) {
 		var slides_large = document.querySelectorAll('#content-section .slide');
+		var defualtUserFontSize = document.getElementById("default-font-size");
+		if(defualtUserFontSize != null && defualtUserFontSize.value != ""){
+			defualtUserFontSize = defualtUserFontSize.value;
+		}else{
+			defualtUserFontSize = "1.0em"; // rSLidy default
+		}
 		for (var i = 0; i < slides_large.length; i++) {
-			if (value == 0)
-				slides_large[i].style.fontSize = "1.0em";
+			if (value == 0){
+				slides_large[i].style.fontSize = defualtUserFontSize;
+			}
 			var current_font_size = parseFloat(slides_large[i].style.fontSize);
 			if ((current_font_size > this.min_slide_zoom && value == -1) || (current_font_size < this.max_slide_zoom && value == 1))
 				slides_large[i].style.fontSize = current_font_size + (this.zoom_step * value) + "em";
@@ -832,7 +882,8 @@ var Rslidy = (function () {
 		// Adjust SVG replacements
 		this.adjustSVGReplacementsWidth();
 		// Prevent default actions after event handling
-		e.preventDefault();
+		if(e != null)
+			e.preventDefault();
 	};
 	// ---
 	// Description: Called whenever the night mode button is clicked.
@@ -1071,7 +1122,6 @@ var Rslidy = (function () {
 		var checkbox_tilt = document.getElementById("checkbox-tilt");
 		if (checkbox_tilt.disabled == true) {
 			checkbox_tilt.disabled = false;
-			checkbox_tilt.checked = true;
 		}
 		// Return if not activated
 		if (checkbox_tilt.checked == false)
@@ -1115,7 +1165,6 @@ var Rslidy = (function () {
 		var checkbox_shake = document.getElementById("checkbox-shake");
 		if (checkbox_shake.disabled == true) {
 			checkbox_shake.disabled = false;
-			checkbox_shake.checked = true;
 		}
 		// Return if not activated
 		if (checkbox_shake.checked == false)
