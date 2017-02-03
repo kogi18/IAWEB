@@ -259,6 +259,7 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
     max-height:95% !important;
     max-width: 95% !important;
     overflow: auto;
+
 }
 
 .swal2-modal.imageAlert .swal2-content {
@@ -273,4 +274,32 @@ div.slide img.svg, div.slide object.svg, div.slide embed.svg {
 
 .swal2-modal.imageAlert .swal2-title button{
   margin: 0 1em;
+}
+
+.swal2-show.imageAlert {
+  -webkit-animation-name: showSweetAlertCorrected;
+          animation-name: showSweetAlertCorrected;
+}
+
+@-webkit-keyframes showSweetAlertCorrected {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes showSweetAlertCorrected {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
 }
