@@ -73,12 +73,12 @@ var Rslidy = (function () {
 		this.button_delay = 150; //delay for all buttons animations
 			
 		// NEW HELP TEXT - html formated - alert does not have html rendering
-		this.help_text = "<head> <link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
+		this.help_text = "<head> <title>rSlidy Help</title><link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
 			"<link rel='stylesheet' href='css/rslidy.css'><link rel='stylesheet' href='css/slides-default.css'></head>" +
 			"<body><div class='slide'><h1>rSlidy Help Tab</h1>" +
 			"<p>rslidy transforms HTML pages into presentation slides. Its usage is very similar to common presentation software.</p>" +
 			"<ul> <li>Use the buttons LEFT and RIGHT to navigate through the slide show. On devices with a touchscreen, it is possible to use swipe gestures.</li>" +
-			"<li> All available slides and a table of contents can be shown on the left or right side by hovering at the side - alternativelyyou can lock the views with the corresponding buttons in the status bar on the bottom of the page.</li>" +
+			"<li> All available slides and a table of contents can be shown on the left or right side by hovering at the side - alternatively, you can lock the views with the corresponding buttons in the status bar on the bottom of the page.</li>" +
 			"<li> Settings for gestures and the night mode can be changed by clicking the Menu button in the status bar.</li>" +
 			"<li> When using mobile device, Shake and Tilt gestures are enabled by default. These can be disabled in the menu. Tilting helps navigating, while shaking resets the presentation to the first slide.</li>" +
 			"</ul><p>Other settings like the aspect ratio of the slides and the zoom level of the thumbnails can be changed in the rslidy.js file, while menu options or defualt font size can be also fixed in HTML slide file.</p></div></body>";
@@ -1674,8 +1674,8 @@ function openImageTabListeners(){
 
 function openImageTab(imgSrc) {
 	var newWindow = window.open();
-
-	var htmlCode ="<head><link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
+	
+	var htmlCode ="<head><title>rSlidy Image View</title><link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
 			"<link rel='stylesheet' href='css/rslidy.css'><link rel='stylesheet' href='css/slides-default.css'></head>" +
 			"<body><div class='slide imageAlert'><h1><button>-1000%</button><button>-100%</button><button>-10%</button>Zoom at <span id='zoomNumber'>100</span>%<button>+10%</button><button>+100%</button><button>+1000%</button></h1>" +
 			"<div><img id='zoomedImg' src='"+ imgSrc + "'></div></div>"+
