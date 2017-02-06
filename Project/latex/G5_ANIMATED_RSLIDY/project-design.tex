@@ -1,6 +1,6 @@
 %----------------------------------------------------------------
 %
-%  File    :  survey-design.tex
+%  File    :  project-design.tex
 %
 %  Author  :  Keith Andrews, IICM, TU Graz, Austria
 % 
@@ -15,10 +15,10 @@
 
 \label{chap:design}
 
-The design of rSlidy has undergone numerous major changes throughout our project. A comparison between the old and the new version is given in this chapter.
+The design of \textit{rSlidy} has undergone numerous major changes throughout our project. A comparison between the old and the new version is given in this chapter.
 
 \section{The Status Bar}
-The initial version of rSlidy was equipped with a permanent status bar, as shown in Figure \ref{fig:statusbarOLD}.
+The initial version of \textit{rSlidy} was equipped with a permanent status bar, as shown in Figure \ref{fig:statusbarOLD}.
 
 It has been modified in terms of design and functionality. The final appearance of the status bar is shown in  Figure \ref{fig:statusbarNEW}. The following individual changes have been made.
 
@@ -28,18 +28,18 @@ It has been modified in terms of design and functionality. The final appearance 
 	
 	\caption[Original Status Bar]{
 		Design of rSlidy's original status bar.
-		\imgcredit{Screenshot taken by the authors of this survey.}
+		\imgcredit{Screenshot taken by the authors of this report.}
 	}
 	\label{fig:statusbarOLD}
 \end{figure}
 
 \begin{figure}[tp]
 	\centering
-	\includegraphics[width = \textwidth]{images/status_bar_NEW.png}
+	\includegraphics[width = \textwidth]{images/status_bar_new.png}
 	
 	\caption[Modified Status Bar]{
 		Design of rSlidy's modified status bar.
-		\imgcredit{Screenshot taken by the authors of this survey.}
+		\imgcredit{Screenshot taken by the authors of this report.}
 	}
 	\label{fig:statusbarNEW}
 \end{figure}
@@ -100,7 +100,7 @@ document.getElementById("status-bar-nav-button-last")
 
 
 \subsection{Pin Functionality}
-In opposition to the original rSlidy status bar, the new one features pinning / unpinning. The pinned status bar works the same as the old one. The unpinned status bar disappears when not hovering over it. When the mouse is not close to the bottom of the document, only the progress bar is visible in the unpinned mode. Two subtle triangles have been added to the unpinned status bar which are meant to function as little indicators for the actual bar. This implementation may not be the most elegant one, because it is relying on the title of the button to work properly. Some simple boolean variable which describes whether the bar is pinned or not may be a more robust solution. Still, this (see Listing \ref{list:pin_unpin}) is what we came up with and it works fine as long as the title tag of the pin button in the rslidy.js file is either "Pin the status bar" or "Unpin the status bar" (depending on whether the user wants the bar to be pinned or not by default).
+In opposition to the original \textit{rSlidy} status bar, the new one features pinning / unpinning. The pinned status bar works the same as the old one. The unpinned status bar disappears when not hovering over it. When the mouse is not close to the bottom of the document, only the progress bar is visible in the unpinned mode. Two subtle triangles have been added to the unpinned status bar which are meant to function as little indicators for the actual bar. This implementation may not be the most elegant one, because it is relying on the title of the button to work properly. Some simple boolean variable which describes whether the bar is pinned or not may be a more robust solution. Still, this (see Listing \ref{list:pin_unpin}) is what we came up with and it works fine as long as the title tag of the pin button in the rslidy.js file is either "Pin the status bar" or "Unpin the status bar" (depending on whether the user wants the bar to be pinned or not by default).
 
 
 \begin{minipage}{\linewidth}
@@ -141,38 +141,6 @@ Rslidy.prototype.pinToggleClicked = function (close_only) {
 \end{lstlisting}
 \end{minipage}
 
-\subsection{Buttons animations}
-Similar to an animated hamburger icon, which changes its shape on click, the buttons within the status bar of rSlidy are animated now as well. Listing \ref{list:buttonflip} shows how the animated flip was created. These style changes and the button's text changed to an "X" lead to a simple and intuitive animation of a button which turns around to change its functionality. 
-
-\begin{minipage}{\linewidth}
-	\begin{lstlisting}[
-	language=CSS,
-	label=list:buttonflip,
-	caption={[Flip Button Animation] Implementation of the animation of the buttons in the status bar %
-	\imgcredit{The 
-	code example is based 
-	on the users' implementation.}
-	}
-	]
-#button-overview, #button-toc, #button-menu{ 
-	animation-duration: 0.3s; 
-	animation-timing-function: ease-in-out;
-	animation-fill-mode: forwards;
-	animation-name: flip2Face;
-}
-
-#button-overview.clicked, #button-toc.clicked, #button-menu.clicked{
-	animation-name: flip2Back; 
-	transform: rotateY(180);
-}
-	\end{lstlisting}
-\end{minipage}
-
-
-
-
-
-
 \section{The Menu}
 The menu has been modernized and harmonized as seen in a direct comparison of Figure \ref{fig:menuOLD} and Figure \ref{fig:menuNEW}.
 
@@ -182,7 +150,7 @@ The menu has been modernized and harmonized as seen in a direct comparison of Fi
 	
 	\caption[Original Menu]{
 		Design of rSlidy's original menu.
-		\imgcredit{Screenshot taken by the authors of this survey.}
+		\imgcredit{Screenshot taken by the authors of this report.}
 	}
 	\label{fig:menuOLD}
 \end{figure}
@@ -193,7 +161,7 @@ The menu has been modernized and harmonized as seen in a direct comparison of Fi
 	
 	\caption[Modified Menu]{
 		Design of rSlidy's modified menu.
-		\imgcredit{Screenshot taken by the authors of this survey.}
+		\imgcredit{Screenshot taken by the authors of this report.}
 	}
 	\label{fig:menuNEW}
 \end{figure}
@@ -214,3 +182,37 @@ This information, which can be opened from the menu, used to be a usual alert bo
 The initially intended version is based on a library called "sweetalert" (\url{https://limonte.github.io/sweetalert2/}). It allows animated popup messages with focusing on the actual text. The advantage of this way of implementation is the the polished design while having to rely on a third party library. 
 
 The revised version simply opens a new tab to display the help message. This does not look as sophisticated as the other version, but still works fine and is an independent way of solving the popup problem.
+
+
+\section{Side Menus} % (fold)
+\label{sec:side_menus}
+
+\begin{figure}[tp]
+	\centering
+	\includegraphics[width = .9\textwidth]{images/tocOld.png}
+	
+	\caption[Original Side Menus]{
+		Design of rSlidy's original Slides and ToC side menus, both fixed and overlapped on left side of user interface.
+		\imgcredit{Screenshot taken by the authors of this report.}
+	}
+	\label{fig:sideOLD}
+\end{figure}
+
+
+\begin{figure}[tp]
+	\centering
+	\includegraphics[width = .9\textwidth]{images/sidemenus.png}
+	
+	\caption[Modified Side Menus]{
+		Design of rSlidy's modified Slides and ToC side menus, which open on hover and lock to the screen on button click. SLides overview is fixed to left side and ToC is fixed to the right side.
+		\imgcredit{Screenshot taken by the authors of this report.}
+	}
+	\label{fig:sideNEW}
+\end{figure}
+
+% section side_menus (end)
+
+\section{User Set Default Values} % (fold)
+\label{sec:user_settings}
+
+% section user_prefered_s (end)
