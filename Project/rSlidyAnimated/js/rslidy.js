@@ -215,8 +215,16 @@ var Rslidy = (function () {
 		document.getElementById("button-toc").addEventListener('click', function () {this.utils.switchElementsClass([document.getElementById("button-toc")], "clicked");  this.toc_overview_locked = this.toc_overview_locked != true; if(this.toc_overview_locked){setTimeout(function() { document.getElementById("button-toc").value = "X"; }, this.button_delay);}else{setTimeout(function() { document.getElementById("button-toc").value = "ToC"; }, this.button_delay);} this.tocToggleClicked(!document.getElementById("button-toc").classList.contains("clicked")); }.bind(this));
 		document.getElementById("status-bar-nav-button-previous").addEventListener('click', function () { this.navPrevious(); }.bind(this));
 		document.getElementById("status-bar-nav-button-next").addEventListener('click', function () { this.navNext(); }.bind(this));
-		document.getElementById("status-bar-nav-button-first").addEventListener('click', function () { this.showSlide(0); }.bind(this));
-		document.getElementById("status-bar-nav-button-last").addEventListener('click', function () { this.showSlide(this.num_slides - 1); }.bind(this));
+		document.getElementById("status-bar-nav-button-first")
+			.addEventListener('click', function ()
+			{
+				this.showSlide(0);
+			}.bind(this));
+		document.getElementById("status-bar-nav-button-last")
+			.addEventListener('click', function ()
+			{
+				this.showSlide(this.num_slides - 1);
+			}.bind(this));
 		document.getElementById("timer").addEventListener('click', function () { this.toggleTimer(); }.bind(this));
 		document.getElementById("slide-caption").addEventListener('click', function () { this.tocToggleClicked(false); }.bind(this));
 		
