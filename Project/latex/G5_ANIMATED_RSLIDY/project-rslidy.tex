@@ -15,23 +15,44 @@
 
 \label{chap:rslidy}
 
-Fernando use that pdfyou found to write as much as possible about the original \textit{rSlidy}. And what where the reasons that this upgrade project was started - basicly the faults of the original \textit{rSlidy}.
+\textit{rSlidy} is a pure HTML, CSS and JavaScript solution for slide 
+presentations in ongoing development at TUG. The project seems to have been 
+started by Markus Schofnegger according to the author lines in the core 
+JavaScript file. It already had many upgrades in form of projects before it 
+came to us for the next upgrade. The average user does not need much more then 
+basic HTML coding knowledge to use it, since every presentation is composed in 
+a single HTML file with references to the supporting JavaScript core and CSS 
+files. The slides themselves are defined as divs with slide class, with the 
+content being encapsulate in standard HTML tags, chosen by the user for uniform 
+design over the slides. Custom CSS and JavaScript code can be added after the 
+neaded resource files.
 
-\section{History?} % (fold)
-\label{sec:history}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+language=CSS,
+label=list:rslidySetup,
+caption={[Connecting rSlidy Resources]%
+	By adding the following lines to the head of the HTML slide file, the 
+slideshow is initialize on load event. 
+}
+]
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/normalise.css"/>
+<link rel="stylesheet" href="css/rslidy.css" />
+<link rel="stylesheet" href="css/slides-default.css"/>
 
-% section history (end)
+<script src="js/rslidy.js"> </script>
+\end{lstlisting}
+\end{minipage}
 
-\section{Installation} % (fold)
-\label{sec:installation}
-
-% section installation (end)
-
-\section{Animated upgrade} % (fold)
-\label{sec:}
-
-Why we went to upgrade,
-how the new code install is,
-That there are 2 versions
+After observing the faults of the project, the goal became to create more user 
+friendly plug \& play presentation functions, mainly by animation integration. 
+The upgraded rslidy version setup is the same by loading the needed JS and CSS 
+in the presentation file, however an addition rslidy-animation.css is needed, 
+since it defines the newly added animations, that had no previous component. 
+While developing solutions we also found some nice 3rd party components, that 
+are presented in enhanced version of our solution. This is also the reason for 
+providing 2 solution versions, one pure \textit{rSlidy} solution and an 
+enhanced solution.
 
 % section  (end)

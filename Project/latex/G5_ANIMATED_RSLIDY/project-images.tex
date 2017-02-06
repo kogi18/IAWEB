@@ -15,7 +15,14 @@
 
 \label{chap:images}
 
-In this part of the project we have focused on presentation of images. We have added a zoom feature, which opens the clicked picture in a new window or in the enhanced version in a pop-up. The implementation works on different picture formats, of which we tested svg, jpeg, gif and png. Our enhancements give users a better opportunity to see detailed parts of the selected image, by fitting it to the width of the screen, while supporting zooming for smaller details or prefered size readjustment. Since zooming is involved and screen space is limited, we solve the overflow problem with scroll bars.
+In this part of the project we have focused on presentation of images. We have 
+added a zoom feature, which opens the clicked picture in a new window or in the 
+enhanced version in a pop-up. The implementation works on different picture 
+formats, of which we tested svg, jpeg, gif and png. Our enhancements give users 
+a better opportunity to see detailed parts of the selected image, by fitting it 
+to the width of the screen, while supporting zooming for smaller details or 
+prefered size readjustment. Since zooming is involved and screen space is 
+limited, we solve the overflow problem with scroll bars.
 
 \begin{figure}[hp]
 \centering
@@ -44,21 +51,31 @@ Size of image set by the presentation creator.%
     \includegraphics[keepaspectratio,width=0.45\hsize]%
     {images/image2.png}%
 }%
-\caption[]{A SVG image inside the presentation before and after the magnification click.
-\imgcredit{Screenshots taken by the authors of this report, while the original image is from a provided presentation \citep{keithDataVis}.
+\caption[]{A SVG image inside the presentation before and after the 
+magnification click.
+\imgcredit{Screenshots taken by the authors of this report, while the original 
+image is from a provided presentation \citep{keithDataVis}.
 \label{fig:popup}
 }}
 
 \end{figure}
 
-On click the selected image opens in a new tab or in the enhanced version in a pop-up window. While the complex pop-up function is provided by a 3rd party solution, the simplier new tab opening is done by supplying HTML content through JavaScript's document.write function on a new blank document. The provided content includes the page layout, buttons, the magnified picture, and JavaScript, which is needed for image resizing. To simplify the JavaScript inclusion, a seperate function is written, which is then converted to tex through the String function.
+On click the selected image opens in a new tab or in the enhanced version in a 
+pop-up window. While the complex pop-up function is provided by a 3rd party 
+solution, the simplier new tab opening is done by supplying HTML content 
+through JavaScript's document.write function on a new blank document. The 
+provided content includes the page layout, buttons, the magnified picture, and 
+JavaScript, which is needed for image resizing. To simplify the JavaScript 
+inclusion, a seperate function is written, which is then converted to tex 
+through the String function.
 
 \begin{figure}[tp]
 \centering
 \includegraphics[keepaspectratio,scale=0.5]{images/button.png}
 
 \caption[Image Magnification Controls]{
-The magnification control bar next to the zooming buttons includes an updatable label, to report the current zoom in regards to original image size. 
+The magnification control bar next to the zooming buttons includes an updatable 
+label, to report the current zoom in regards to original image size. 
 \imgcredit{Screenshot taken by the authors of this report.}
 
 }
@@ -67,13 +84,20 @@ The magnification control bar next to the zooming buttons includes an updatable 
 
 \newpage
 
-In either the popup or tab window we can zoom it for +-10\%, +-100\%, and +-1000\% by pressing the provided buttons. Alternatively with keyboard or mouse support, we can also zoom it with +/- keyboard buttons or CTRL plus mouse scrolling event by a the default step of 10. To fit it back into the default size, where zoom is 100\%, we can do it by pressing keyboard button 0.
+In either the popup or tab window we can zoom it for +-10\%, +-100\%, and 
++-1000\% by pressing the provided buttons. Alternatively with keyboard or mouse 
+support, we can also zoom it with +/- keyboard buttons or CTRL plus mouse 
+scrolling event by a the default step of 10. To fit it back into the default 
+size, where zoom is 100\%, we can do it by pressing keyboard button 0.
 
 \begin{lstlisting}[
 language=JavaScript,
 label=openImgCode,
 caption={[Image Magnification Initialization]%
-Implementation of image detection and click event binding of content push. The called function is for the tab solution, while the pop-up solution seperates the control bar in the 3rd party sweetalert function call for layout improvement.
+Implementation of image detection and click event binding of content push. The 
+called function is for the tab solution, while the pop-up solution seperates 
+the control bar in the 3rd party sweetalert function call for layout 
+improvement.
 }
 ]
 	  // Input listeners
@@ -92,11 +116,20 @@ Implementation of image detection and click event binding of content push. The c
 function openImageTab(imgSrc) {
 	var newWindow = window.open();
 	
-	var htmlCode ="<head><title>rSlidy Image View</title><link rel='stylesheet' href='css/reset.css'><link rel='stylesheet' href='css/normalise.css'>" +
-			"<link rel='stylesheet' href='css/rslidy.css'><link rel='stylesheet' href='css/slides-default.css'></head>" +
-			"<body><div class='slide imageAlert'><h1><button>-1000\%</button><button>-100\%</button><button>-10\%</button>Zoom at <span id='zoomNumber'>100</span>\%<button>+10\%</button><button>+100\%</button><button>+1000\%</button></h1>" +
-			"<div><img id='zoomedImg' src='"+ imgSrc + "'></div></div>"+
-			"<script type='text/javascript'>" + String(openImageTabListeners) + "; openImageTabListeners();</script></body>";
+	var htmlCode ="<head><title>rSlidy Image View</title><link 
+rel='stylesheet' href='css/reset.css'><link rel='stylesheet' 
+href='css/normalise.css'>" +
+			"<link rel='stylesheet' href='css/rslidy.css'><link 
+rel='stylesheet' href='css/slides-default.css'></head>" +
+			"<body><div class='slide 
+imageAlert'><h1><button>-1000\%</button><button>-100\%</button><button>-10\%</bu
+tton>Zoom at <span 
+id='zoomNumber'>100</span>\%<button>+10\%</button><button>+100\%</button><button
+>+1000\%</button></h1>" +
+			"<div><img id='zoomedImg' src='"+ imgSrc + 
+"'></div></div>"+
+			"<script type='text/javascript'>" + 
+String(openImageTabListeners) + "; openImageTabListeners();</script></body>";
 	newWindow.document.write(htmlCode);
 }
 \end{lstlisting}

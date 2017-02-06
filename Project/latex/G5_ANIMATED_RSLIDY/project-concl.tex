@@ -15,26 +15,29 @@
 
 \label{chap:Concl}
 
-CSS LOC 800+
-JS LOC 500+
+In the end the pure \textit{rSlidy} solution amounted over 800 new CSS lines of 
+code (LOC) and over 500 new
+JavaScript LOC. There is still some room for improvement that can be done. Nice 
+examples are ideas we disscussed at the planning stage, such as adding a 
+canvas, to have marker support or animated CSS text styles for getting 
+attention on particular parts of text. Another missing part that the original 
+had, was a TypeScript implementation for working with Grunt.
+
+While responsive web design was used and tested for, most problems were 
+successfully removed. However testing on actual devices devices besides using 
+developer tools and online testing sites, revealed some small design errors. 
+Our group tested it out on Samsung Galaxy S2 and S6, Iphone 5, 6 and 6 plus, 
+Ipad and Ipad Pro. The testing was also done on different desktop screen 
+resolutions. The found problems should be corrected, however it leaves room of 
+uncertanties that due to time constraints were not tested for. This just proves 
+the responsive web design should not be underestimated, specifically when an 
+existing project one has no preknowledge is being developed.
 
 
-
-Still room for improvement - Some tasks that were disscussed at the planning stage but deemd not needed in this stage
-
-TypeScript for Grunt
-Including Subheadings with in TOC on heading hover
-Animated CSS text tyles
-Canvas to actually draw on the slide - Marker support
-
-
-Achieved better user experience for slide shows
-
-Interesting problems
-Same animation on same element cannot be triggered in subclass - either need additional element or reversed keframe
-
-Element rendering knowledge is needed for animation planning - the display:none problem.
-
-RWD testing should not be underestimated --- HERE Fernandos text
-
-Javascript preloading and initialization tricky with HTML rendering
+ Despite the room for improvement, our opinion is united, that we achieved 
+better user experience for slide presentations and implemented interesting 
+animation solutions. On that note we also found interesting issues with CSS 
+animation, such as the keyframe for same element issue, preloading of files and 
+HTML rendering order or the deep dependence of CSS animation on the HTML 
+rendering tree. Achieving our goal and learning of new issues, we rate this 
+project as a success.

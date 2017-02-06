@@ -15,13 +15,31 @@
 
 \label{chap:3rdParty}
 
-During development and research for good user experience solutions we also found many 3rd party implementations, of which some could be directly used with \textit{rslidy} with just slight adjustments. Of them we used two with MIT or similar rights range license and included them in the extended code solution.
+During development and research for good user experience solutions we also 
+found many 3rd party implementations, of which some could be directly used with 
+\textit{rslidy} with just slight adjustments. Of them we used two with MIT or 
+similar rights range license and included them in the extended code solution.
 
 \section{Highlight.js}
 
-Previously code sample CSS coloring and overflow was left to the user. We however found a great 3rd party JavaScript solution at \url{
-https://highlightjs.org}, that already supports 169 languages with 77 coding style sheets. The user can just select a small amount of languages and a stlye and include it in the head of rSlidy HTML slide file. However to make it work correctly with XML and HTML code samples due to the rendering of < and > as part of the HTML document, a small addition is needed in the header. Reference to the script link-highlight-to-rslidy.js, that prerenders all code samples from symboly tags to text codes \&lt; and \&gt; during the initialization. It also replaces the onLoad function from the rslidy.js with an updated one which also activates Highlight.js. The actual sample is defined with the tags pre and code, where the code has a class with the used language name, e.q. html, css or javascript.
+Previously code sample CSS coloring and overflow was left to the user. We 
+however found a great 3rd party JavaScript solution at \url{
+https://highlightjs.org}, that already supports 169 languages with 77 coding 
+style sheets. The user can just select a small amount of languages and a stlye 
+and include it in the head of rSlidy HTML slide file. However to make it work 
+correctly with XML and HTML code samples due to the rendering of < and > as 
+part of the HTML document, a small addition is needed in the header. Reference 
+to the script link-highlight-to-rslidy.js, that prerenders all code samples 
+from symboly tags to text codes \&lt; and \&gt; during the initialization. It 
+also replaces the onLoad function from the rslidy.js with an updated one which 
+also activates Highlight.js. The actual sample is defined with the tags pre and 
+code, where the code has a class with the used language name, e.q. html, css or 
+javascript.
 
 \section{SweetAlert2}
 
-The enhanced solution also uses a pop-up script instead of new tabs for images and help. It uses a solution from \url{https://limonte.github.io/sweetalert2/}. It offers a variety of dialog types, to which we just pass the HTML code similar as with the tab solution. This code however needs extra code in the rslidy.js file and it is inseperatable from the enhanced solution.
+The enhanced solution also uses a pop-up script instead of new tabs for images 
+and help. It uses a solution from \url{https://limonte.github.io/sweetalert2/}. 
+It offers a variety of dialog types, to which we just pass the HTML code 
+similar as with the tab solution. This code however needs extra code in the 
+rslidy.js file and it is inseperatable from the enhanced solution.
